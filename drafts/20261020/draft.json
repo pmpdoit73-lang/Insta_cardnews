@@ -1,0 +1,73 @@
+{
+  "id": "20261020",
+  "created_at": "2026-10-20T00:35:27.985772+09:00",
+  "publish_at": "2026-10-20T19:00:00+09:00",
+  "status": "pending",
+  "handle": "",
+  "issue": "13명 사상 통영대전 추돌 사고…크루즈 주행 조사",
+  "kind": "충격 뉴스",
+  "angle": "고속도로 크루즈 기능 믿고 달리다 사고 날 수 있다는 점, 운전하는 우리 집 식구 누구나 해당돼요",
+  "title": [
+    "통영대전고속도로",
+    "추돌로 13명 사상"
+  ],
+  "highlight": "13명 사상",
+  "cover_image_prompt": "Wide view of a Korean expressway at dusk with long lines of car taillights stretching into hills, slightly hazy atmosphere, no text, no signs, no people",
+  "body": [
+    {
+      "head": "무슨 일?",
+      "lines": [
+        "통영대전고속도로서",
+        "추돌 사고가 나서",
+        "13명이 다쳤어요"
+      ],
+      "highlight": "추돌 사고",
+      "image_prompt": "Orange traffic cones and emergency flashing lights on a highway shoulder at night, blurred background, no text, no faces"
+    },
+    {
+      "head": "왜 중요해?",
+      "lines": [
+        "경찰이 크루즈 기능",
+        "주행 여부를",
+        "조사하고 있어요"
+      ],
+      "highlight": "크루즈 기능",
+      "image_prompt": "Close-up of a car steering wheel with cruise control buttons, dashboard softly lit, driver hands not shown, no readable text"
+    },
+    {
+      "head": "우리 집은?",
+      "lines": [
+        "크루즈 켜도 맡기지 말고",
+        "앞차 거리 살피고",
+        "졸리면 꼭 쉬어요"
+      ],
+      "highlight": "꼭 쉬어요",
+      "image_prompt": "Empty highway rest area parking lot in early morning with a single parked car and a coffee cup on its roof, no signs, no people"
+    }
+  ],
+  "cta": [
+    "운전하는 가족에게",
+    "꼭 공유해 주세요"
+  ],
+  "caption": "통영대전고속도로에서 추돌 사고가 나 13명이 다치거나 숨졌어요.\n경찰은 사고 차량이 크루즈 기능으로 달렸는지 조사 중이에요.\n편한 기능이지만 운전은 결국 사람이 하는 거예요.\n앞차 거리 넉넉히, 졸리면 휴게소에서 꼭 쉬어 가요.\n여러분은 고속도로에서 크루즈 기능 자주 쓰시나요?",
+  "hashtags": [
+    "#통영대전고속도로",
+    "#고속도로사고",
+    "#추돌사고",
+    "#크루즈컨트롤",
+    "#안전운전",
+    "#졸음운전",
+    "#운전습관",
+    "#장거리운전",
+    "#교통안전",
+    "#생활뉴스",
+    "#오늘의뉴스",
+    "#카드뉴스"
+  ],
+  "photo_query": "highway night traffic",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 20,
+    "has_photo": false
+  }
+}
