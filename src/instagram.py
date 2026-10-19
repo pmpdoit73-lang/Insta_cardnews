@@ -28,8 +28,22 @@ def _token():
     return os.environ["INSTAGRAM_ACCESS_TOKEN"].strip()
 
 
+_user_id = None
+
+
 def _user():
-    return os.environ["INSTAGRAM_USER_ID"].strip()
+    """INSTAGRAM_USER_ID가 숫자가 아니면(계정 이름 등) 토큰으로 진짜 숫자 ID를 찾는다."""
+    global _user_id
+    if _user_id:
+        return _user_id
+    value = os.environ.get("INSTAGRAM_USER_ID", "").strip()
+    if value.isdigit():
+        _user_id = value
+    else:
+        body = _call("GET", "me", fields="user_id,username")
+        _user_id = str(body.get("user_id") or body["id"])
+        print(f"[instagram] 계정 숫자 ID를 토큰으로 찾음 (@{body.get('username', '')})")
+    return _user_id
 
 
 def _call(method, path, **params):
