@@ -24,7 +24,7 @@ def bot_id():
 
 
 def _chat_id():
-    return os.environ["TELEGRAM_CHAT_ID"]
+    return os.environ["TELEGRAM_CHAT_ID"].strip()
 
 
 def send_text(text, keyboard=None, silent=False):

@@ -78,6 +78,8 @@ def publish_time(d):
 # ---------- 내용 만들기 ----------
 
 def _handle():
+    if not os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip():  # 인스타 연결 전
+        return os.environ.get("INSTAGRAM_HANDLE", "").strip()
     try:
         return "@" + instagram.username()
     except Exception as e:

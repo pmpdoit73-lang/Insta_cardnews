@@ -76,8 +76,8 @@ NAVER_QUERIES = ["사고 발생", "충격", "깜짝", "적발", "역대 최초",
 
 
 def naver_news(limit=8):
-    client_id = os.environ.get("NAVER_CLIENT_ID")
-    client_secret = os.environ.get("NAVER_CLIENT_SECRET")
+    client_id = os.environ.get("NAVER_CLIENT_ID", "").strip()
+    client_secret = os.environ.get("NAVER_CLIENT_SECRET", "").strip()
     if not (client_id and client_secret):
         return []
     result, seen = [], set()
