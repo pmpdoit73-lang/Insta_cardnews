@@ -1,6 +1,6 @@
-"""10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·11:20·17:30)이 되면 승인된 카드뉴스를 인스타에 올린다.
+"""10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·11:20·17:30)이 되면 카드뉴스를 인스타에 올린다.
 
-쓰레드 자동화와 다른 점: 승인(✅)을 눌러야만 올린다. 게시 시각까지 승인이 없으면 그 회차는 안 올린다.
+승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
 
 실행: python src/poll.py
 """
@@ -15,7 +15,7 @@ import instagram
 import telegram
 
 OFFSET_FILE = Path(__file__).resolve().parent.parent / "state" / "telegram_offset.txt"
-LATE_LIMIT = timedelta(hours=2)  # 승인된 글이라도 게시 시각보다 이만큼 넘게 늦으면 올리지 않음
+LATE_LIMIT = timedelta(hours=2)  # 게시 시각보다 이만큼 넘게 늦으면 올리지 않음
 
 
 def read_offset():
@@ -124,13 +124,7 @@ def process_schedule():
     for d in draft.open_drafts():
         if d["status"] == "failed" or draft.publish_time(d) > now:
             continue
-        if d["status"] == "pending":  # 승인 없이 시간이 됨 → 안 올림
-            d["status"] = "skipped"
-            draft.save(d)
-            draft.refresh(d)
-            telegram.send_text(f"⏭ {draft.time_label(draft.publish_time(d))}까지 승인이 없어서 이번 카드뉴스는 안 올렸어요.\n({d.get('issue', '')})")
-            print(f"[poll] {d['id']} 승인 없음 → 안 올림")
-        elif now - draft.publish_time(d) > LATE_LIMIT:
+        if now - draft.publish_time(d) > LATE_LIMIT:
             d["status"] = "skipped"
             draft.save(d)
             draft.refresh(d)

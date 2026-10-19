@@ -28,7 +28,7 @@ DRAFT_LEAD = timedelta(minutes=30)    # 게시 시각이 이보다 가까우면 
 CTA = ["저장해두고", "가족한테도 알려주세요"]
 
 STATUS_LABEL = {
-    "pending": "⏳ 승인 대기 중",
+    "pending": "⏳ 대기 중 (그대로 두면 예정 시각에 자동 게시)",
     "approved": "✅ 승인됨 (예정 시각에 게시)",
     "published": "🎉 게시 완료",
     "skipped": "⏭ 안 올림",
@@ -220,7 +220,7 @@ def summary(d):
     if d.get("error"):
         lines += ["", f"⚠️ {d['error'][:300]}"]
     if d["status"] == "pending":
-        lines += ["", f"✅ 승인을 눌러야 {time_label(when)}에 올라가요. 승인이 없으면 이번 회차는 안 올려요.",
+        lines += ["", f"그대로 두면 {time_label(when)}에 자동으로 올라가요. 올리기 싫으면 ⏭ 안 올리기를 눌러주세요.",
                   "(버튼은 10분마다 확인해요)"]
     return "\n".join(lines)
 
