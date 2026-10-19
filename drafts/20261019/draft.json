@@ -1,0 +1,74 @@
+{
+  "id": "20261019",
+  "created_at": "2026-10-19T23:25:42.994090+09:00",
+  "publish_at": "2026-10-19T19:00:00+09:00",
+  "status": "pending",
+  "handle": "",
+  "issue": "전남광주 8개 수능 시험지구 체제 유지…'스마트안경' 금지",
+  "kind": "생활정보",
+  "angle": "수험생 둔 집이라면 꼭 챙겨야 할 반입 금지 물품 변화, 스마트안경도 안 돼요",
+  "title": [
+    "수능 시험장에",
+    "스마트안경 금지"
+  ],
+  "highlight": "스마트안경",
+  "cover_image_prompt": "Empty Korean high school exam classroom with neat rows of wooden desks, sharpened pencils and an eraser on a desk, soft morning light through windows, no people, no text",
+  "body": [
+    {
+      "head": "무슨 일?",
+      "lines": [
+        "전남·광주 수능이",
+        "8개 시험지구로",
+        "그대로 치러져요"
+      ],
+      "highlight": "8개 시험지구",
+      "image_prompt": "Quiet school hallway with closed classroom doors and polished floor, early morning calm atmosphere, no people, no signs or text"
+    },
+    {
+      "head": "왜 중요해?",
+      "lines": [
+        "스마트안경도",
+        "반입 금지 물품에",
+        "새로 들어갔어요"
+      ],
+      "highlight": "반입 금지",
+      "image_prompt": "Close-up of a pair of modern smart glasses lying on a white table next to a closed pencil case, clean minimal lighting, no text"
+    },
+    {
+      "head": "우리 집은?",
+      "lines": [
+        "수험생 안경이",
+        "일반 안경인지",
+        "미리 확인해요"
+      ],
+      "highlight": "미리 확인",
+      "image_prompt": "Kitchen table at home with a simple pair of regular eyeglasses, a student bag and a lunch box being prepared, warm homey light, no faces, no text"
+    }
+  ],
+  "cta": [
+    "수험생 가족에게",
+    "공유해 주세요"
+  ],
+  "caption": "전남·광주 수능은 8개 시험지구 체제를 그대로 유지한대요.\n달라진 건 '스마트안경' 금지예요.\n겉보기엔 일반 안경 같아도 걸리면 곤란해질 수 있어요.\n시험 전에 아이 안경, 소지품 꼭 한 번 더 살펴봐 주세요.\n여러분 집 수험생은 시험 준비물 다 챙기셨나요?",
+  "hashtags": [
+    "#수능",
+    "#수능준비물",
+    "#스마트안경",
+    "#수능반입금지",
+    "#수험생",
+    "#수험생맘",
+    "#광주수능",
+    "#전남수능",
+    "#수능시험장",
+    "#고3",
+    "#입시정보",
+    "#생활정보",
+    "#카드뉴스"
+  ],
+  "photo_query": "exam classroom desk",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 14,
+    "has_photo": false
+  }
+}
