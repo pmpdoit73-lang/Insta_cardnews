@@ -1,34 +1,35 @@
-"""오늘의 카드뉴스 초안을 만들어 텔레그램으로 보낸다.
+"""다음 회차(07:00·11:20·17:30 중 가장 가까운 시각) 카드뉴스 초안을 만들어 텔레그램으로 보낸다.
 
 실행: python src/make_draft.py
-- 오늘 초안이 이미 있으면 아무것도 안 함 (FORCE=1이면 다른 이슈로 새로 만듦)
+- 다음 회차 초안이 이미 있으면 아무것도 안 함 (FORCE=1이면 다른 이슈로 새로 만듦)
+- 알람은 회차마다 몇 시간 전에 한 번씩 (21:00 → 다음 날 07:00, 08:00 → 11:20, 14:00 → 17:30)
 """
 
 import os
 import sys
-from datetime import datetime
 
 import draft
 import telegram
 
 
 def main():
-    now = datetime.now(draft.KST)
-    today = draft.load(now.strftime("%Y%m%d"))
+    slot = draft.next_slot()
+    existing = draft.for_slot(slot)
     force = os.environ.get("FORCE") == "1"
-    if today and not force:
-        print(f"[make_draft] 오늘 초안이 이미 있어요 ({today['status']})")
+    label = f"{slot:%m/%d} {draft.time_label(slot)}"
+    if existing and not force:
+        print(f"[make_draft] {label} 초안이 이미 있어요 ({existing['status']})")
         return
-    if today and today["status"] == "published":
-        print("[make_draft] 오늘은 이미 게시했어요")
+    if existing and existing["status"] == "published":
+        print(f"[make_draft] {label}은 이미 게시했어요")
         return
-    if today:  # 수동 실행: 오늘 초안을 다른 이슈로 다시
-        draft.rewrite(today)
-        d = today
+    if existing:  # 수동 실행: 같은 회차 초안을 다른 이슈로 다시
+        draft.rewrite(existing)
+        d = existing
     else:
-        d = draft.create(now)
+        d = draft.create(slot)
     draft.send(d)
-    print(f"[make_draft] 초안 {d['id']} 전송 완료: {d['issue']}")
+    print(f"[make_draft] {label} 초안 {d['id']} 전송 완료: {d['issue']}")
 
 
 if __name__ == "__main__":

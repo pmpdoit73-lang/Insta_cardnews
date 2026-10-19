@@ -23,12 +23,13 @@ import writer
 KST = timezone(timedelta(hours=9))
 DRAFT_DIR = Path(__file__).resolve().parent.parent / "drafts"
 THEME = "A"           # gil이 고른 디자인: A안 뉴스 속보형
-PUBLISH_HOUR = 19     # 하루 한 번, 저녁 7시 게시
+SLOTS = [(7, 0), (11, 20), (17, 30)]  # 하루 세 번 게시 시각 (시, 분)
+DRAFT_LEAD = timedelta(minutes=30)    # 게시 시각이 이보다 가까우면 그다음 회차 초안을 만든다
 CTA = ["저장해두고", "가족한테도 알려주세요"]
 
 STATUS_LABEL = {
     "pending": "⏳ 승인 대기 중",
-    "approved": "✅ 승인됨 (저녁 7시에 게시)",
+    "approved": "✅ 승인됨 (예정 시각에 게시)",
     "published": "🎉 게시 완료",
     "skipped": "⏭ 안 올림",
     "failed": "⚠️ 게시 실패",
@@ -59,7 +60,7 @@ def open_drafts():
     return [d for d in all_drafts() if d.get("status") in ("pending", "approved", "failed")]
 
 
-def recent_issues(n=14):
+def recent_issues(n=30):
     issues = []
     for d in all_drafts()[-n:]:
         issues.append(d.get("issue", ""))
@@ -73,6 +74,36 @@ def card_paths(d):
 
 def publish_time(d):
     return datetime.fromisoformat(d["publish_at"])
+
+
+def time_label(when):
+    """07:00 → '오전 7:00', 17:30 → '오후 5:30'"""
+    ampm = "오전" if when.hour < 12 else "오후"
+    hour = when.hour if when.hour <= 12 else when.hour - 12
+    return f"{ampm} {hour}:{when.minute:02d}"
+
+
+def next_slot(now=None):
+    """초안을 만들 다음 게시 시각 (now + 30분 이후의 첫 회차)."""
+    now = now or datetime.now(KST)
+    for days in (0, 1):
+        day = now + timedelta(days=days)
+        for h, m in SLOTS:
+            slot = day.replace(hour=h, minute=m, second=0, microsecond=0)
+            if slot > now + DRAFT_LEAD:
+                return slot
+
+
+def slot_id(slot):
+    return slot.strftime("%Y%m%d-%H%M")
+
+
+def for_slot(slot):
+    """그 회차 초안 (예전 방식 id로 만든 초안도 게시 시각이 같으면 찾는다)."""
+    d = load(slot_id(slot))
+    if d:
+        return d
+    return next((x for x in all_drafts() if publish_time(x) == slot), None)
 
 
 # ---------- 내용 만들기 ----------
@@ -123,12 +154,11 @@ def render_cards(d):
     render.render(card, photos, folder(d["id"]), THEME)
 
 
-def create(now=None):
-    now = now or datetime.now(KST)
+def create(slot):
     d = {
-        "id": now.strftime("%Y%m%d"),
-        "created_at": now.isoformat(),
-        "publish_at": now.replace(hour=PUBLISH_HOUR, minute=0, second=0, microsecond=0).isoformat(),
+        "id": slot_id(slot),
+        "created_at": datetime.now(KST).isoformat(),
+        "publish_at": slot.isoformat(),
         "status": "pending",
         "handle": _handle(),
     }
@@ -175,7 +205,7 @@ def ig_caption(d):
 def summary(d):
     when = publish_time(d)
     lines = [
-        f"🗞 {when:%m/%d} 카드뉴스 · 저녁 {when:%H}시 게시 예정",
+        f"🗞 {when:%m/%d} {time_label(when)} 카드뉴스 게시 예정",
         f"상태: {STATUS_LABEL[d['status']]}",
         "",
         f"🔥 이슈: {d.get('issue', '')} ({d.get('kind', '')})",
@@ -190,8 +220,8 @@ def summary(d):
     if d.get("error"):
         lines += ["", f"⚠️ {d['error'][:300]}"]
     if d["status"] == "pending":
-        lines += ["", "✅ 승인을 눌러야 저녁 7시에 올라가요. 승인이 없으면 오늘은 안 올려요.",
-                  "(버튼은 20분마다 확인해요)"]
+        lines += ["", f"✅ 승인을 눌러야 {time_label(when)}에 올라가요. 승인이 없으면 이번 회차는 안 올려요.",
+                  "(버튼은 10분마다 확인해요)"]
     return "\n".join(lines)
 
 
