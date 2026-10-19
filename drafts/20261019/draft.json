@@ -2,7 +2,7 @@
   "id": "20261019",
   "created_at": "2026-10-19T23:25:42.994090+09:00",
   "publish_at": "2026-10-19T19:00:00+09:00",
-  "status": "pending",
+  "status": "failed",
   "handle": "",
   "issue": "전남광주 8개 수능 시험지구 체제 유지…'스마트안경' 금지",
   "kind": "생활정보",
@@ -70,5 +70,6 @@
   "message": {
     "message_id": 14,
     "has_photo": false
-  }
+  },
+  "error": "인스타 kingreview0669/media 실패: Unsupported post request. Object with ID 'kingreview0669' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
 }
