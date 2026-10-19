@@ -1,7 +1,7 @@
 name: 버튼 확인 및 게시
 
 on:
-  # 알람 서비스(cron-job.org)가 한국 15:00~23:40 사이 20분마다 깨움
+  # 알람 서비스(cron-job.org)가 한국 06:00~23:50 사이 10분마다 깨움
   workflow_dispatch:
 
 permissions:
