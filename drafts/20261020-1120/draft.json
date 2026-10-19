@@ -1,0 +1,74 @@
+{
+  "id": "20261020-1120",
+  "created_at": "2026-10-20T06:30:43.052571+09:00",
+  "publish_at": "2026-10-20T11:20:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "'절임배추·양념세트로 간편하게'…임실 김장페스티벌 예약 접수",
+  "kind": "생활정보",
+  "angle": "김장철 앞두고 배추 절이기·양념 만들기 수고를 덜 수 있는 예약 소식이라, 김장 걱정하는 집에 바로 쓸모 있음",
+  "title": [
+    "임실 김장페스티벌",
+    "예약 접수 시작"
+  ],
+  "highlight": "예약 접수",
+  "cover_image_prompt": "Rows of salted napa cabbage halves stacked in large plastic tubs at an outdoor autumn kimchi-making event, red pepper paste in big bowls nearby, warm natural light, no text, no faces",
+  "body": [
+    {
+      "head": "무슨 일?",
+      "lines": [
+        "임실군이",
+        "김장페스티벌",
+        "예약을 받아요"
+      ],
+      "highlight": "예약",
+      "image_prompt": "Autumn countryside field in Imsil with neat rows of green napa cabbages ready for harvest, soft morning light, no people, no text"
+    },
+    {
+      "head": "왜 좋을까?",
+      "lines": [
+        "절임배추·양념세트로",
+        "간편하게",
+        "김장할 수 있어요"
+      ],
+      "highlight": "간편하게",
+      "image_prompt": "Close-up of a bowl of red kimchi seasoning paste with garlic, ginger and scallions beside salted cabbage on a wooden table, no text, no faces"
+    },
+    {
+      "head": "나는 뭘?",
+      "lines": [
+        "올해 김장 고민되면",
+        "예약 일정부터",
+        "먼저 확인해요"
+      ],
+      "highlight": "먼저 확인",
+      "image_prompt": "Kitchen table with a paper calendar page blank, a pen, and a basket of cabbages and radishes, cozy home setting, no readable text, no faces"
+    }
+  ],
+  "cta": [
+    "김장 계획 세울 때",
+    "저장해 두세요"
+  ],
+  "caption": "전북 임실에서 김장페스티벌 예약 접수가 시작됐어요.\n절임배추와 양념세트가 준비돼 있어서 배추 절이고 양념 만드는 수고를 덜 수 있대요.\n허리 아픈 김장, 올해는 조금 편하게 해 볼까 싶은 분들 눈여겨보세요.\n자세한 일정과 방법은 임실군 안내를 꼭 확인하세요.\n여러분 집은 올해 김장 몇 포기 하실 계획이세요?",
+  "hashtags": [
+    "#김장",
+    "#김장페스티벌",
+    "#임실",
+    "#임실김장",
+    "#절임배추",
+    "#김장양념",
+    "#김장철",
+    "#김장준비",
+    "#살림정보",
+    "#생활정보",
+    "#주부일상",
+    "#김치담그기",
+    "#간편김장"
+  ],
+  "photo_query": "kimchi cabbage making",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 27,
+    "has_photo": false
+  }
+}
