@@ -1,0 +1,55 @@
+name: 초안 만들기
+
+on:
+  # 알람 서비스(cron-job.org)가 한국 15시에 깨움. 오늘 초안이 이미 있으면 아무것도 안 함
+  # Actions 탭에서 "Run workflow"로 수동 실행할 때 force를 체크하면 오늘 초안을 다른 이슈로 새로 만듦
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "오늘 초안을 다른 이슈로 새로 만들기"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write  # 초안 상태(drafts/, state/)를 저장소에 저장
+
+concurrency:
+  group: insta-bot  # 초안 만들기와 버튼 확인이 동시에 돌지 않게
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 초안 만들기
+        run: python src/make_draft.py
+        env:
+          FORCE: ${{ inputs.force && '1' || '' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_API_HOST: ${{ secrets.INSTAGRAM_API_HOST }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      - name: 상태 저장
+        if: always()
+        run: |
+          git config user.name "insta-cardnews-bot"
+          git config user.email "insta-cardnews-bot@users.noreply.github.com"
+          git add -A drafts/ state/ 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "초안 만들기 $(date -u +%Y%m%d-%H%M)"
+          git pull --rebase origin main
+          git push origin HEAD:main
