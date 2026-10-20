@@ -1,0 +1,74 @@
+{
+  "id": "20261020-1730",
+  "created_at": "2026-10-20T10:50:34.753825+09:00",
+  "publish_at": "2026-10-20T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "전세 실종에…1∼9월 서울 아파트 월세 비중 50% 첫 돌파",
+  "kind": "충격 뉴스",
+  "angle": "전세가 사라지고 월세가 절반을 넘었다는 건, 세입자 집집마다 매달 나가는 돈이 늘어난다는 뜻이라 골랐어요",
+  "title": [
+    "서울 아파트 월세",
+    "절반 넘었어요"
+  ],
+  "highlight": "절반 넘었어요",
+  "cover_image_prompt": "Dense Seoul apartment complex at dusk with warm lights in windows, wide shot, no text, no signs, no people",
+  "body": [
+    {
+      "head": "무슨 일?",
+      "lines": [
+        "서울 아파트 월세가",
+        "올해 1~9월 처음으로",
+        "비중 50%를 넘었어요"
+      ],
+      "highlight": "50%",
+      "image_prompt": "Empty apartment living room with moving boxes and keys on the floor, soft daylight, no text, no faces"
+    },
+    {
+      "head": "왜 중요해?",
+      "lines": [
+        "전세 매물이 사라져서",
+        "월세로 밀려나는 집이",
+        "많아졌다는 뜻이에요"
+      ],
+      "highlight": "전세 매물",
+      "image_prompt": "Calculator, monthly bills and a coin jar on a kitchen table, close-up, no readable text, no people"
+    },
+    {
+      "head": "우리 집이라면",
+      "lines": [
+        "계약 만기 전 미리",
+        "전세·월세 시세를",
+        "비교해 두세요"
+      ],
+      "highlight": "미리",
+      "image_prompt": "Calendar on a wall beside a small notebook and pen on a wooden desk, cozy home, no readable text, no faces"
+    }
+  ],
+  "cta": [
+    "재계약 앞둔 집이면",
+    "저장하고 공유해요"
+  ],
+  "caption": "서울 아파트 임대차 중 월세 비중이 올해 1~9월 처음으로 50%를 넘었어요.\n전세 매물이 줄면서 월세로 옮기는 세입자가 많아진 거예요.\n매달 나가는 주거비가 늘 수 있으니\n계약 만기 몇 달 전부터 시세를 살펴보는 게 좋아요.\n여러분 집은 전세인가요, 월세인가요?",
+  "hashtags": [
+    "#서울아파트",
+    "#월세",
+    "#전세",
+    "#전세실종",
+    "#월세비중",
+    "#임대차",
+    "#세입자",
+    "#재계약",
+    "#주거비",
+    "#부동산뉴스",
+    "#내집마련",
+    "#살림정보",
+    "#생활뉴스"
+  ],
+  "photo_query": "Seoul apartment buildings",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 33,
+    "has_photo": false
+  }
+}
