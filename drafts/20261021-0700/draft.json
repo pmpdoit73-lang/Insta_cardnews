@@ -1,0 +1,74 @@
+{
+  "id": "20261021-0700",
+  "created_at": "2026-10-20T17:00:49.603272+09:00",
+  "publish_at": "2026-10-21T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "화요일 곳곳에 추위 부르는 가을비…이비 지나면 '영하권 추위'",
+  "kind": "생활정보",
+  "angle": "비 그치면 바로 영하권, 우리 집 겨울 준비를 오늘 챙기자는 생활인 시선",
+  "title": [
+    "가을비 그치면",
+    "바로 영하권 와요"
+  ],
+  "highlight": "영하권",
+  "cover_image_prompt": "Cold autumn rain falling on a quiet residential street with wet fallen yellow leaves, grey sky, moody chilly atmosphere, no text, no people faces",
+  "body": [
+    {
+      "head": "무슨 일?",
+      "lines": [
+        "화요일 곳곳에",
+        "가을비가 내려요",
+        "비 뒤엔 추위가 와요"
+      ],
+      "highlight": "가을비",
+      "image_prompt": "Raindrops streaming down a window pane with blurred autumn trees outside, cozy indoor view, no text, no faces"
+    },
+    {
+      "head": "왜 중요?",
+      "lines": [
+        "이 비 지나면",
+        "기온이 뚝 떨어져",
+        "영하권 추위예요"
+      ],
+      "highlight": "영하권 추위",
+      "image_prompt": "Frost forming on car windshield and grass in early morning light, cold blue tones, no text, no faces"
+    },
+    {
+      "head": "우리 집은?",
+      "lines": [
+        "두꺼운 이불 꺼내고",
+        "보일러 미리 점검",
+        "출근길 옷 챙겨요"
+      ],
+      "highlight": "보일러",
+      "image_prompt": "Folded thick winter blankets and a warm knit scarf on a bed next to a mug of hot tea, cozy home interior, no text, no faces"
+    }
+  ],
+  "cta": [
+    "저장해 두고",
+    "가족에게 공유해요"
+  ],
+  "caption": "화요일 곳곳에 가을비 소식이 있어요.\n문제는 비가 그친 뒤예요. 기온이 뚝 떨어져 영하권 추위가 온대요.\n두꺼운 이불, 보일러 점검, 아이들 외투까지 오늘 미리 챙겨 두세요.\n아침저녁 출근길엔 한 겹 더 입는 게 좋아요.\n여러분 집은 겨울 준비 어디까지 하셨어요?",
+  "hashtags": [
+    "#가을비",
+    "#영하권추위",
+    "#날씨예보",
+    "#추위대비",
+    "#겨울준비",
+    "#보일러점검",
+    "#환절기",
+    "#출근길날씨",
+    "#살림팁",
+    "#생활정보",
+    "#오늘날씨",
+    "#초겨울",
+    "#카드뉴스"
+  ],
+  "photo_query": "autumn cold rain",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 40,
+    "has_photo": false
+  }
+}
