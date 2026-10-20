@@ -1,0 +1,74 @@
+{
+  "id": "20261021-1120",
+  "created_at": "2026-10-21T06:30:43.751523+09:00",
+  "publish_at": "2026-10-21T11:20:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "현대차, '디 올 뉴 투싼' 대담하게 진화한 가격 … 3140만원부터",
+  "kind": "생활정보",
+  "angle": "새 차 바꿀까 고민하는 집이라면 투싼 신형 시작 가격부터 알아두면 좋아서 골랐어요",
+  "title": [
+    "현대 투싼 신형",
+    "3140만원부터"
+  ],
+  "highlight": "3140만원",
+  "cover_image_prompt": "A sleek modern compact SUV parked in a bright suburban apartment parking lot at golden hour, no logos, no text, no people",
+  "body": [
+    {
+      "head": "무슨 일?",
+      "lines": [
+        "현대차가 새 투싼",
+        "'디 올 뉴 투싼'을",
+        "내놨어요"
+      ],
+      "highlight": "디 올 뉴 투싼",
+      "image_prompt": "Close-up of a new SUV headlight and front grille under soft showroom lighting, no logos, no text, no faces"
+    },
+    {
+      "head": "핵심 숫자",
+      "lines": [
+        "시작 가격은",
+        "3140만원부터예요",
+        "옵션 따라 올라가요"
+      ],
+      "highlight": "3140만원부터",
+      "image_prompt": "A calculator, car key and household budget notebook on a wooden kitchen table, no visible writing, no faces"
+    },
+    {
+      "head": "우리 집은?",
+      "lines": [
+        "바꿀 계획이라면",
+        "원하는 옵션 넣고",
+        "총액부터 따져봐요"
+      ],
+      "highlight": "총액부터",
+      "image_prompt": "A family sedan and an SUV parked side by side in a quiet residential garage, no logos, no text, no people"
+    }
+  ],
+  "cta": [
+    "차 바꿀 때 보려면 저장",
+    "고민 중인 가족에게 공유"
+  ],
+  "caption": "현대차가 '디 올 뉴 투싼'을 새로 내놨어요.\n시작 가격은 3140만원부터예요.\n옵션을 더하면 값은 올라가니 꼭 총액으로 비교해 보세요.\n지금 타는 차 상태와 할부·유지비까지 함께 따져보면 후회가 덜해요.\n여러분은 다음 차로 SUV, 세단 중 뭘 고르실 건가요?",
+  "hashtags": [
+    "#투싼",
+    "#디올뉴투싼",
+    "#현대차",
+    "#신차",
+    "#신차가격",
+    "#SUV",
+    "#준중형SUV",
+    "#자동차",
+    "#차바꾸기",
+    "#가계부",
+    "#살림정보",
+    "#생활정보",
+    "#카드뉴스"
+  ],
+  "photo_query": "compact SUV parking",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 46,
+    "has_photo": false
+  }
+}
