@@ -2,7 +2,7 @@
   "id": "20261020-1120",
   "created_at": "2026-10-20T06:30:43.052571+09:00",
   "publish_at": "2026-10-20T11:20:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "'절임배추·양념세트로 간편하게'…임실 김장페스티벌 예약 접수",
   "kind": "생활정보",
@@ -70,5 +70,8 @@
   "message": {
     "message_id": 27,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18134462776723908",
+  "permalink": "https://www.instagram.com/p/Des0JywDQSJ/",
+  "published_at": "2026-10-20T11:59:02.364524+09:00"
 }
