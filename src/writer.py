@@ -1,6 +1,7 @@
-"""Claude로 이슈를 고르고 카드뉴스 5장 대본·캡션·해시태그·사진 프롬프트를 쓴다."""
+"""Claude로 가전·주방 살림 주제를 고르고 카드뉴스 5장 대본·캡션·해시태그·사진 프롬프트를 쓴다."""
 
 import json
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import anthropic
@@ -8,6 +9,7 @@ import anthropic
 MODEL = "claude-opus-5-5"
 PERSONA = (Path(__file__).resolve().parent.parent / "prompts" / "persona.md").read_text(encoding="utf-8")
 
+KINDS = ["가전 꿀팁", "주방 꿀팁", "살림 꿀팁", "가전 소식"]
 TITLE_MAX, BODY_MAX = 11, 13  # 카드 한 줄 최대 글자 수 (넘으면 render가 글씨를 줄임)
 
 LINES = {"type": "array", "items": {"type": "string"}}
@@ -42,9 +44,9 @@ SCRIPT = {
 SCHEMA = {
     "type": "object",
     "properties": {
-        "issue": {"type": "string", "description": "고른 이슈 원문 제목"},
-        "kind": {"type": "string", "enum": ["충격 뉴스", "생활정보"], "description": "표지 라벨"},
-        "angle": {"type": "string", "description": "왜 골랐는지, 생활과 어떻게 이었는지 한 줄"},
+        "issue": {"type": "string", "description": "고른 주제 한 줄 (기사면 기사 제목, 꿀팁이면 '에어프라이어 바스켓 기름때 제거' 처럼)"},
+        "kind": {"type": "string", "enum": KINDS, "description": "표지 라벨"},
+        "angle": {"type": "string", "description": "왜 골랐는지, 지금 계절·살림과 어떻게 이었는지 한 줄"},
         **SCRIPT["properties"],
     },
     "required": ["issue", "kind", "angle", *SCRIPT["required"]],
@@ -53,6 +55,8 @@ SCHEMA = {
 
 
 def _trend_text(trends):
+    if not trends:
+        return "(오늘은 기사를 못 가져왔어. 아래 지침대로 계절 꿀팁을 골라.)"
     lines = []
     for source, titles in trends.items():
         lines.append(f"## {source}")
@@ -63,9 +67,10 @@ def _trend_text(trends):
 RULES = (
     f"- 표지 title은 정확히 2줄, 한 줄 {TITLE_MAX}자 이내. 첫 줄에 주어(누가/무엇이)를 이름으로.\n"
     f"- 본문 카드는 정확히 3장, 카드마다 2~3줄, 한 줄 {BODY_MAX}자 이내. 한 장에 한 가지만.\n"
-    "  흐름: 무슨 일인지 → 왜 중요한지(숫자·금액·날짜) → 나는 뭘 하면 되는지/우리 집이었으면?\n"
+    "  흐름: 흔한 실수/문제 → 이유 → 이렇게 하세요, 또는 꿀팁 1·2·3\n"
     "- highlight는 해당 줄 안에 글자 그대로 들어 있어야 해.\n"
-    "- 이슈 제목에 없는 사실(숫자·날짜·이름)은 지어내지 마. 모르면 덜 구체적으로 써.\n"
+    "- 기사의 숫자·날짜·제품명은 기사 제목에 있는 것만 써. 꿀팁의 시간·온도·양은 널리 알려진 방법만.\n"
+    "- 위험한 방법(전자레인지에 금속, 세제 섞기, 전원 켠 채 손대기)은 절대 권하지 마.\n"
     "- 사진 프롬프트 4개(표지+본문 3)는 서로 다른 장면으로, 글자·간판·얼굴이 나오지 않게."
 )
 
@@ -73,26 +78,29 @@ RULES = (
 def write_cards(trends, recent_issues=(), external=None):
     """trends: {출처: [제목...]}, recent_issues: 최근에 다룬·거절한 이슈(중복 방지)."""
     recent = "\n".join(f"- {r}" for r in recent_issues) or "(없음)"
+    today = datetime.now(timezone(timedelta(hours=9)))
     user_msg = (
-        "아래는 오늘 한국에서 뜨는 이슈 목록이야.\n\n"
+        f"오늘은 {today:%Y년 %m월 %d일}이야. 아래는 최근 가전·주방 관련 기사 목록이야.\n\n"
         f"{_trend_text(trends)}\n\n"
-        f"최근에 이미 다뤘거나 거절된 이슈 (피해서 골라):\n{recent}\n\n"
-        "1. 금지 주제를 빼고, 오늘·어제 나온 새 소식 중 하나를 골라.\n"
-        "   - '충격 뉴스': 제목만 봐도 '헉, 진짜?' 소리가 나오는 사건·사고·깜짝 뉴스\n"
-        "   - '생활정보': 많은 사람이 돈·시간을 아끼거나 손해를 피할 수 있는 새 제도·변경·신청 소식\n"
-        "   둘 중 더 센 것을 고르고 kind에 적어. 언제 써도 되는 상식, 며칠 지난 이야기는 고르지 마.\n"
-        "2. 그 이슈로 카드뉴스 5장 대본, 캡션, 해시태그, 사진 프롬프트를 만들어.\n"
+        f"최근에 이미 다뤘거나 거절된 주제 (같은 가전·같은 요령은 피해서 골라):\n{recent}\n\n"
+        "1. 계정 소개(주방의 질을 높이는 가성비 가전·쿠팡 꿀템)에 딱 맞는 주제 하나를 골라.\n"
+        "   - 기사 중에 가전을 쓰는 사람이 꼭 알아야 할 소식(리콜, 전기요금, 쓸모 있는 신기능)이 있으면 '가전 소식'\n"
+        "   - 아니면 '이거 몰랐으면 손해' 싶은 꿀팁을 골라 '가전 꿀팁'·'주방 꿀팁'·'살림 꿀팁' 중 하나로.\n"
+        "     지금 계절에 맞으면 더 좋아 (예: 가을·겨울엔 김장, 가습기, 전기요금, 난방 가전).\n"
+        "   - 누구나 아는 뻔한 얘기보다 '나만 몰랐네' 싶은 구체적인 요령을 골라. kind에 종류를 적어.\n"
+        "2. 그 주제로 카드뉴스 5장 대본, 캡션, 해시태그, 사진 프롬프트를 만들어.\n"
+        "   사진은 깔끔한 한국 가정 주방·가전이 보이는 장면으로.\n"
         + RULES + _external_text(external)
     )
     return _checked(user_msg, SCHEMA)
 
 
 def rewrite_cards(d):
-    """같은 이슈로 대본만 새로 쓴다."""
+    """같은 주제로 대본만 새로 쓴다."""
     user_msg = (
-        f"이슈: {d['issue']}\n종류: {d['kind']}\n시선: {d.get('angle', '')}\n\n"
+        f"주제: {d['issue']}\n종류: {d['kind']}\n시선: {d.get('angle', '')}\n\n"
         f"지난번 표지 제목: {' / '.join(d['title'])}\n\n"
-        "같은 이슈로 카드뉴스 5장 대본을 다시 써 줘. 지난번 표지와 다른 각도로 시작해.\n" + RULES
+        "같은 주제로 카드뉴스 5장 대본을 다시 써 줘. 지난번 표지와 다른 각도로 시작해.\n" + RULES
     )
     return _checked(user_msg, SCRIPT)
 

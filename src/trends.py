@@ -1,11 +1,10 @@
-"""오늘의 핫이슈 후보를 여러 출처에서 모은다.
+"""가전·주방 살림 주제 후보를 여러 출처에서 모은다.
 
-- 구글 트렌드 (한국 급상승 검색어, 키 불필요)
-- 구글 뉴스 한국판 주요 뉴스 (키 불필요)
+- 구글 뉴스 검색: 가전·주방 키워드로 최근 기사 (키 불필요)
 - 네이버 뉴스 검색 (NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 있을 때만)
-- 유튜브 인기 동영상 (YOUTUBE_API_KEY 있을 때만)
 
-한 출처가 실패해도 나머지로 계속 진행한다.
+한 출처가 실패해도 나머지로 계속 진행한다. 모두 실패해도 꿀팁은 언제든 쓸 수 있으므로
+빈 목록으로 진행한다 (writer가 계절에 맞는 꿀팁을 고른다).
 """
 
 import html
@@ -14,6 +13,8 @@ import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+
+from urllib.parse import quote
 
 import requests
 
@@ -25,7 +26,7 @@ MAX_AGE_HOURS = 36  # 이보다 오래된 뉴스는 빼서 '지나간 이슈'를
 HT = "{https://trends.google.com/trending/rss}"
 
 
-def _age_label(pub):
+def _age_label(pub, max_hours=MAX_AGE_HOURS):
     """발행 시각 → '3시간 전' 같은 표시. 너무 오래됐으면 None."""
     if not pub:
         return ""
@@ -34,19 +35,21 @@ def _age_label(pub):
     except (TypeError, ValueError):
         return ""
     hours = (datetime.now(timezone.utc) - when).total_seconds() / 3600
-    if hours > MAX_AGE_HOURS:
+    if hours > max_hours:
         return None
+    if hours >= 48:
+        return f"{int(hours // 24)}일 전"
     return f"{max(int(hours), 0)}시간 전"
 
 
-def _rss_titles(url, limit):
+def _rss_titles(url, limit, max_hours=MAX_AGE_HOURS):
     resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
     resp.raise_for_status()
     root = ET.fromstring(resp.content)
     titles = []
     for item in root.iter("item"):
         title = item.findtext("title")
-        age = _age_label(item.findtext("pubDate"))
+        age = _age_label(item.findtext("pubDate"), max_hours)
         if not title or age is None:
             continue
         line = html.unescape(title.strip())
@@ -62,17 +65,31 @@ def _rss_titles(url, limit):
     return titles
 
 
-def google_trends(limit=20):
-    return _rss_titles("https://trends.google.com/trending/rss?geo=KR", limit)
+# 가전·주방 기사는 뉴스보다 천천히 나오므로 일주일 안 기사까지 본다
+TOPIC_MAX_HOURS = 24 * 7
+TOPIC_QUERIES = ["주방 꿀팁", "가전 꿀팁", "살림 꿀팁", "에어프라이어", "식기세척기", "김치냉장고",
+                 "전기요금 절약 가전", "가전 리콜", "주방가전 신제품", "냉장고 보관법"]
 
 
-def google_news(limit=20):
-    titles = _rss_titles("https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko", limit)
-    # "제목 - 언론사" 형태에서 언론사 이름을 뗀다
-    return [re.sub(r"\s+-\s+[^-()]+(?= \(\d+시간 전\)$|$)", "", t) for t in titles]
+def google_news(limit=5):
+    titles, seen = [], set()
+    for query in TOPIC_QUERIES:
+        url = f"https://news.google.com/rss/search?q={quote(query)}&hl=ko&gl=KR&ceid=KR:ko"
+        try:
+            found = _rss_titles(url, limit, TOPIC_MAX_HOURS)
+        except Exception as e:
+            print(f"[trends] 구글 뉴스 '{query}' 실패: {e}")
+            continue
+        for t in found:
+            # "제목 - 언론사 (3시간 전)" 형태에서 언론사 이름을 뗀다
+            t = re.sub(r"\s+-\s+[^-()]+(?= \(\d+(시간|일) 전\)$|$)", "", t)
+            if t not in seen:
+                seen.add(t)
+                titles.append(t)
+    return titles
 
 
-NAVER_QUERIES = ["사고 발생", "충격", "깜짝", "적발", "역대 최초", "달라지는 제도", "생활 꿀팁", "신청 방법"]  # 사건·사고 + 생활정보
+NAVER_QUERIES = TOPIC_QUERIES
 
 
 def naver_news(limit=8):
@@ -94,7 +111,7 @@ def naver_news(limit=8):
             print(f"[trends] 네이버 '{query}' 실패: {e}")
             continue
         for i in resp.json().get("items", []):
-            age = _age_label(i.get("pubDate"))
+            age = _age_label(i.get("pubDate"), TOPIC_MAX_HOURS)
             title = re.sub(r'<[^>]+>', '', html.unescape(i['title']))
             if age is None or title in seen:
                 continue
@@ -103,25 +120,9 @@ def naver_news(limit=8):
     return result
 
 
-def youtube_popular(limit=20):
-    key = os.environ.get("YOUTUBE_API_KEY")
-    if not key:
-        return []
-    resp = requests.get(
-        "https://www.googleapis.com/youtube/v3/videos",
-        params={"part": "snippet", "chart": "mostPopular", "regionCode": "KR",
-                "maxResults": limit, "key": key},
-        timeout=TIMEOUT,
-    )
-    resp.raise_for_status()
-    return [i["snippet"]["title"] for i in resp.json().get("items", [])]
-
-
 SOURCES = {
-    "구글 트렌드": google_trends,
-    "구글 뉴스": google_news,
-    "네이버 뉴스": naver_news,
-    "유튜브 인기": youtube_popular,
+    "가전·주방 뉴스 (구글)": google_news,
+    "가전·주방 뉴스 (네이버)": naver_news,
 }
 
 
@@ -137,5 +138,5 @@ def collect():
         if items:
             result[name] = items
     if not result:
-        raise RuntimeError("핫이슈 출처를 하나도 가져오지 못했어요.")
+        print("[trends] 기사를 하나도 못 가져옴 → 계절 꿀팁으로 진행")
     return result
