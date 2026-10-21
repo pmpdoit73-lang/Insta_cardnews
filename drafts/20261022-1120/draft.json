@@ -1,0 +1,74 @@
+{
+  "id": "20261022-1120",
+  "created_at": "2026-10-22T06:30:50.201151+09:00",
+  "publish_at": "2026-10-22T11:20:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "식기세척기 밥풀 눌어붙음, 애벌 요령과 필터 청소",
+  "kind": "가전 꿀팁",
+  "angle": "식기세척기 세제 신제품 기사가 이어지는 지금, 세제보다 먼저 챙길 사용 습관을 골랐어요",
+  "title": [
+    "식기세척기 밥풀,",
+    "세제 탓 아니에요"
+  ],
+  "highlight": "세제 탓 아니에요",
+  "cover_image_prompt": "Open dishwasher in a clean bright Korean kitchen, neatly loaded rice bowls and plates, soft morning light, no text, no people",
+  "body": [
+    {
+      "head": "흔한 실수",
+      "lines": [
+        "밥그릇 그대로",
+        "바싹 말린 뒤 넣기",
+        "밥풀이 굳어 안 떨어져요"
+      ],
+      "highlight": "밥풀이 굳어",
+      "image_prompt": "Korean rice bowls with dried rice grains stuck inside on a kitchen counter, close-up, natural light, no text, no faces"
+    },
+    {
+      "head": "이렇게 해요",
+      "lines": [
+        "식사 후 바로",
+        "물에 잠깐 불리기",
+        "굵은 찌꺼기만 털어요"
+      ],
+      "highlight": "물에 잠깐 불리기",
+      "image_prompt": "Rice bowls soaking in water in a stainless kitchen sink, clean Korean home kitchen, no text, no faces"
+    },
+    {
+      "head": "필터 체크",
+      "lines": [
+        "식기세척기 바닥 필터",
+        "찌꺼기 막히면 세척력↓",
+        "주 1회 빼서 헹궈요"
+      ],
+      "highlight": "주 1회",
+      "image_prompt": "Dishwasher bottom filter removed and rinsed under running tap water, close-up of hands-free scene, clean kitchen, no text"
+    }
+  ],
+  "cta": [
+    "저장해 두고",
+    "설거지 전에 꺼내 봐요"
+  ],
+  "caption": "식기세척기 돌렸는데 밥풀이 그대로라면 세제보다 습관을 먼저 봐요.\n밥그릇이 바싹 마르면 전분이 굳어 잘 안 떨어져요.\n식사 후 바로 물에 잠깐 불리고, 굵은 찌꺼기만 털어 넣으세요.\n바닥 필터는 주 1회 빼서 흐르는 물에 헹궈 주면 세척력이 살아나요.\n여러분은 식기세척기 넣기 전에 애벌 하세요, 안 하세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#식기세척기",
+    "#식기세척기꿀팁",
+    "#식기세척기필터",
+    "#식세기",
+    "#설거지꿀팁",
+    "#밥풀제거",
+    "#주방가전",
+    "#살림노하우",
+    "#맞벌이살림",
+    "#자취꿀팁"
+  ],
+  "photo_query": "dishwasher kitchen dishes",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 76,
+    "has_photo": false
+  }
+}
