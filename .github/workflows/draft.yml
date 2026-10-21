@@ -2,6 +2,7 @@ name: 초안 만들기
 
 on:
   # 알람 서비스(cron-job.org)가 한국 08·14·21시에 깨움. 다음 회차 초안이 이미 있으면 아무것도 안 함
+  # 버튼 확인·게시도 함께 해서, 알람이 이 파일을 10분마다 불러도 제시간에 게시됨
   # Actions 탭에서 "Run workflow"로 수동 실행할 때 force를 체크하면 다음 회차 초안을 다른 이슈로 새로 만듦
   workflow_dispatch:
     inputs:
@@ -28,7 +29,22 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: 버튼 확인 및 게시
+        run: python src/poll.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_API_HOST: ${{ secrets.INSTAGRAM_API_HOST }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       - name: 초안 만들기
+        if: always()
         run: python src/make_draft.py
         env:
           FORCE: ${{ inputs.force && '1' || '' }}
