@@ -2,7 +2,7 @@
   "id": "20261020-1730",
   "created_at": "2026-10-20T10:50:34.753825+09:00",
   "publish_at": "2026-10-21T14:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "전세 실종에…1∼9월 서울 아파트 월세 비중 50% 첫 돌파",
   "kind": "충격 뉴스",
@@ -70,5 +70,8 @@
   "message": {
     "message_id": 33,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18082628108772956",
+  "permalink": "https://www.instagram.com/p/Devm9WfHJh0/",
+  "published_at": "2026-10-21T14:01:26.482791+09:00"
 }
