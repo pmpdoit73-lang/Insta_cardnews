@@ -2,7 +2,7 @@
   "id": "20261021-0700",
   "created_at": "2026-10-20T17:00:49.603272+09:00",
   "publish_at": "2026-10-21T10:05:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "화요일 곳곳에 추위 부르는 가을비…이비 지나면 '영하권 추위'",
   "kind": "생활정보",
@@ -70,5 +70,8 @@
   "message": {
     "message_id": 40,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17878784694632921",
+  "permalink": "https://www.instagram.com/p/DevMLgLjgMD/",
+  "published_at": "2026-10-21T10:07:28.075348+09:00"
 }
