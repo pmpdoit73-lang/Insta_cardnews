@@ -2,7 +2,7 @@
   "id": "20261022-0700",
   "created_at": "2026-10-21T17:00:51.808425+09:00",
   "publish_at": "2026-10-22T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "청소기 필터, 세척보다 말리는 시간이 더 중요하다",
   "kind": "가전 꿀팁",
@@ -70,5 +70,8 @@
   "message": {
     "message_id": 69,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18119279899991781",
+  "permalink": "https://www.instagram.com/p/DexbtcwlSzu/",
+  "published_at": "2026-10-22T07:01:40.029096+09:00"
 }
