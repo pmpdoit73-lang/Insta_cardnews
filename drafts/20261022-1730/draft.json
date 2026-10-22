@@ -2,7 +2,7 @@
   "id": "20261022-1730",
   "created_at": "2026-10-22T10:50:44.898894+09:00",
   "publish_at": "2026-10-22T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "후드 필터 기름때, 철수세미 대신 뜨거운 물에 불려 제거",
   "kind": "주방 꿀팁",
@@ -69,5 +69,8 @@
   "message": {
     "message_id": 83,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18022876937924195",
+  "permalink": "https://www.instagram.com/p/Deyj4GqlXFU/",
+  "published_at": "2026-10-22T17:32:15.153050+09:00"
 }
