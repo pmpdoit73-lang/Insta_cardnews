@@ -1,0 +1,73 @@
+{
+  "id": "20261023-0700",
+  "created_at": "2026-10-22T17:00:53.966101+09:00",
+  "publish_at": "2026-10-23T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "김장철 김치냉장고, 김치 넣기 전 관리와 보관 요령",
+  "kind": "가전 꿀팁",
+  "angle": "쿠쿠·풀무원 김치냉장고 신제품 소식이 쏟아지는 김장철, 새로 사든 쓰던 걸 쓰든 김장 전 꼭 챙길 관리법",
+  "title": [
+    "김치냉장고,",
+    "김장 전에 이것부터"
+  ],
+  "highlight": "김장 전에",
+  "cover_image_prompt": "Clean modern Korean kitchen with an open kimchi refrigerator showing empty clean drawers, soft autumn morning light, minimal and tidy, no text, no people",
+  "body": [
+    {
+      "head": "흔한 실수",
+      "lines": [
+        "김치냉장고 바로",
+        "김치통 가득 채우기",
+        "냄새·성에가 남아요"
+      ],
+      "highlight": "김치통 가득",
+      "image_prompt": "Kimchi refrigerator drawer packed tightly with many plastic kimchi containers, slightly frosty interior, Korean home kitchen, no text, no faces"
+    },
+    {
+      "head": "먼저 청소",
+      "lines": [
+        "전원 끄고 칸 비우기",
+        "미지근한 물 행주로",
+        "닦고 완전히 말려요"
+      ],
+      "highlight": "완전히 말려요",
+      "image_prompt": "Empty kimchi refrigerator drawer being wiped with a clean white cloth, unplugged power cord visible, bright clean kitchen, hands only, no text"
+    },
+    {
+      "head": "보관 요령",
+      "lines": [
+        "김치통은 80%만",
+        "채우고 비닐 덮기",
+        "공기 닿으면 쉬어요"
+      ],
+      "highlight": "80%만",
+      "image_prompt": "Kimchi container filled about eighty percent with fresh napa cabbage kimchi covered with plastic wrap on top, wooden kitchen counter, no text, no faces"
+    }
+  ],
+  "cta": [
+    "김장 전에 꼭 저장",
+    "김장하는 분께 공유!"
+  ],
+  "caption": "김장철이 코앞이에요.\n김치냉장고는 김치 넣기 전 청소가 먼저예요.\n전원 끄고 칸을 비운 뒤 닦고, 물기 없이 완전히 말려 주세요.\n김치통은 80%만 채우고 위를 비닐로 덮으면 공기가 덜 닿아요.\n여러분 집은 올해 김장 몇 포기 하세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#김치냉장고",
+    "#김치냉장고청소",
+    "#김장",
+    "#김장철",
+    "#김치보관",
+    "#김치보관법",
+    "#살림노하우",
+    "#주방가전",
+    "#가을살림"
+  ],
+  "photo_query": "kimchi refrigerator kitchen",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 90,
+    "has_photo": false
+  }
+}
