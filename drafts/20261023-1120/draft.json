@@ -1,0 +1,74 @@
+{
+  "id": "20261023-1120",
+  "created_at": "2026-10-23T06:30:47.441052+09:00",
+  "publish_at": "2026-10-23T11:20:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "에어프라이어 새로 샀다면 첫 사용 전 빈 공회전으로 코팅·기계 냄새 빼기",
+  "kind": "가전 꿀팁",
+  "angle": "1만원 에어프라이어 기사로 새로 장만하는 집이 늘어 첫 사용 요령을 골랐어요. 최근 다룬 청소기·식세기·김치냉장고와 겹치지 않아요",
+  "title": [
+    "에어프라이어 새로 샀다면",
+    "첫 요리 전 공회전부터"
+  ],
+  "highlight": "공회전",
+  "cover_image_prompt": "A brand-new compact air fryer on a clean white Korean kitchen counter, basket pulled out, soft morning light, minimal and bright, no text, no people",
+  "body": [
+    {
+      "head": "흔한 실수",
+      "lines": [
+        "새 에어프라이어로",
+        "바로 요리하면",
+        "음식에 기계 냄새가 배요"
+      ],
+      "highlight": "기계 냄새",
+      "image_prompt": "Golden fried food in an air fryer basket on a Korean kitchen counter, slight steam, warm lighting, no text, no faces"
+    },
+    {
+      "head": "왜 그럴까?",
+      "lines": [
+        "새 제품엔 제조 때 남은",
+        "기름·코팅 냄새가 있어요",
+        "처음 가열할 때 나와요"
+      ],
+      "highlight": "코팅 냄새",
+      "image_prompt": "Close-up of an empty nonstick air fryer basket interior, clean and shiny, soft side light, no text"
+    },
+    {
+      "head": "이렇게 하세요",
+      "lines": [
+        "바스켓 씻어 말린 뒤",
+        "빈 채로 10~15분 돌리고",
+        "창문 열어 환기해요"
+      ],
+      "highlight": "창문 열어",
+      "image_prompt": "Air fryer running empty near an open kitchen window with sheer curtain moving, autumn light, tidy Korean apartment kitchen, no text, no people"
+    }
+  ],
+  "cta": [
+    "새 에어프라이어 산 분께",
+    "저장해서 공유해 주세요"
+  ],
+  "caption": "요즘 1만원대 에어프라이어 소식에 새로 장만하는 집이 많죠.\n새 제품은 바로 쓰면 첫 요리에 기계·코팅 냄새가 밸 수 있어요.\n바스켓을 중성세제로 씻어 완전히 말린 뒤, 빈 채로 10~15분 돌려 주세요.\n이때 냄새와 연기가 조금 날 수 있으니 창문은 꼭 열어 두고요.\n설명서에 첫 사용법이 있으면 그걸 먼저 따라 주세요.\n여러분은 에어프라이어로 처음 만든 요리가 뭐였어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#에어프라이어",
+    "#에어프라이어첫사용",
+    "#에어프라이어공회전",
+    "#새가전",
+    "#주방가전",
+    "#자취꿀팁",
+    "#살림노하우",
+    "#에어프라이어요리",
+    "#신혼살림",
+    "#가성비가전"
+  ],
+  "photo_query": "air fryer kitchen",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 97,
+    "has_photo": false
+  }
+}
