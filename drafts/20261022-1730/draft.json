@@ -1,0 +1,73 @@
+{
+  "id": "20261022-1730",
+  "created_at": "2026-10-22T10:50:44.898894+09:00",
+  "publish_at": "2026-10-22T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "후드 필터 기름때, 철수세미 대신 뜨거운 물에 불려 제거",
+  "kind": "주방 꿀팁",
+  "angle": "찬 바람 불어 창문 닫고 요리하는 계절, 김장 앞두고 미뤄둔 후드 필터를 긁지 않고 불려서 닦는 요령",
+  "title": [
+    "후드 필터 기름때",
+    "박박 문지르지 마요"
+  ],
+  "highlight": "후드 필터",
+  "cover_image_prompt": "Clean modern Korean apartment kitchen with a stainless steel range hood above a gas stove, soft morning light, minimal and tidy countertop, no text, no people",
+  "body": [
+    {
+      "head": "흔한 실수",
+      "lines": [
+        "철수세미로 긁으면",
+        "필터망이 휘고",
+        "흠집에 때가 더 껴요"
+      ],
+      "highlight": "필터망이 휘고",
+      "image_prompt": "Close-up of a greasy metal range hood mesh filter on a kitchen counter next to a steel wool scrubber, Korean home kitchen, no text, no faces"
+    },
+    {
+      "head": "이렇게 하세요",
+      "lines": [
+        "싱크대에 뜨거운 물",
+        "주방세제 + 베이킹소다",
+        "필터 담가 30분 불려요"
+      ],
+      "highlight": "30분 불려요",
+      "image_prompt": "Kitchen sink filled with steaming hot soapy water with a range hood filter soaking in it, small bowl of baking soda beside, bright Korean kitchen, no text, no faces"
+    },
+    {
+      "head": "마무리",
+      "lines": [
+        "부드러운 솔로 쓸고",
+        "물기 완전히 말린 뒤",
+        "후드에 다시 끼워요"
+      ],
+      "highlight": "완전히 말린",
+      "image_prompt": "Clean shiny range hood filter drying upright on a dish rack by a sunny window, soft brush next to it, tidy Korean kitchen, no text, no faces"
+    }
+  ],
+  "cta": [
+    "김장 전에 한 번!",
+    "저장하고 따라 해요"
+  ],
+  "caption": "후드 필터 기름때, 철수세미로 긁으면 망만 상해요.\n싱크대에 뜨거운 물을 받아 주방세제와 베이킹소다를 풀고 30분 불려 보세요.\n부드러운 솔로 쓸어내고 물기를 완전히 말린 뒤 끼우면 끝이에요.\n작업 전엔 꼭 후드 전원을 끄고 필터를 빼 주세요.\n여러분은 후드 필터 몇 달에 한 번 닦으세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#주방청소",
+    "#후드필터청소",
+    "#후드청소",
+    "#기름때제거",
+    "#베이킹소다활용",
+    "#대청소",
+    "#김장준비",
+    "#살림노하우",
+    "#주부꿀팁",
+    "#자취꿀팁"
+  ],
+  "photo_query": "range hood filter",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 83,
+    "has_photo": false
+  }
+}
