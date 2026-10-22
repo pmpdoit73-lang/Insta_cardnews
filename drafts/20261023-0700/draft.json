@@ -2,7 +2,7 @@
   "id": "20261023-0700",
   "created_at": "2026-10-22T17:00:53.966101+09:00",
   "publish_at": "2026-10-23T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "김장철 김치냉장고, 김치 넣기 전 관리와 보관 요령",
   "kind": "가전 꿀팁",
@@ -69,5 +69,8 @@
   "message": {
     "message_id": 90,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18139212454627834",
+  "permalink": "https://www.instagram.com/p/De0AgABmRUK/",
+  "published_at": "2026-10-23T07:01:41.180860+09:00"
 }
