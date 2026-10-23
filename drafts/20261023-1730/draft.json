@@ -2,7 +2,7 @@
   "id": "20261023-1730",
   "created_at": "2026-10-23T10:50:43.874141+09:00",
   "publish_at": "2026-10-23T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "젖은 빨래 냄새, 세탁기 문 열어두기와 빨래 바로 꺼내기",
   "kind": "살림 꿀팁",
@@ -70,5 +70,8 @@
   "message": {
     "message_id": 104,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17921862105445907",
+  "permalink": "https://www.instagram.com/p/De1IkNum2Vd/",
+  "published_at": "2026-10-23T17:31:20.391220+09:00"
 }
