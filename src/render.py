@@ -1,4 +1,6 @@
-"""카드뉴스 합성: 배경 사진 위에 한글 글씨를 얹어 1080x1350 JPG 5장을 만든다.
+"""카드뉴스 합성: 배경 사진 위에 한글 글씨를 얹어 1080x1350 JPG를 만든다.
+
+지금 쓰는 디자인은 목록형(render_list, 8~10장). A·B·C안(render, 5장)은 예전 시안으로 남겨 둠.
 
 제미나이는 한글 글씨를 자주 깨뜨리므로 사진에는 글씨를 넣지 않고,
 제목·본문·CTA 글씨는 전부 여기서 Pillow로 그린다.
@@ -278,6 +280,143 @@ def render(card, photos, out_dir, theme="A"):
     return paths
 
 
+# ---------- 목록형 (2026-10-23~, 지금 쓰는 디자인) ----------
+# 모든 장이 같은 구성: 사진 전체 + 아래쪽 어두운 그라데이션 + 가운데 정렬 흰 글씨.
+# 왼쪽 위 @계정, 오른쪽 위 "2/10" 쪽번호. 강조는 노란색(번호, 표지 강조어, 저장 유도).
+
+L_GRAY = (215, 215, 215)
+
+
+def l_frame(photo, seed, n, total, handle):
+    """사진 + 아래 그라데이션 + 위쪽 계정·쪽번호 알약."""
+    im = bottom_gradient(load_photo(photo, W, H, seed), 480, 250)
+    ov = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(ov)
+    pf = font("Bold", 34)
+    label = f"{n}/{total}"
+    pw = d.textlength(label, font=pf)
+    d.rounded_rectangle([W - MARGIN - pw - 56, MARGIN, W - MARGIN, MARGIN + 70], 35, fill=(25, 25, 25, 170))
+    d.text((W - MARGIN - (pw + 56) / 2, MARGIN + 35), label, font=pf, fill="white", anchor="mm")
+    if handle:
+        hf = font("SemiBold", 30)
+        hw = d.textlength(handle, font=hf)
+        d.rounded_rectangle([MARGIN, MARGIN, MARGIN + hw + 50, MARGIN + 70], 35, fill=(255, 255, 255, 215))
+        d.text((MARGIN + 25, MARGIN + 35), handle, font=hf, fill=(30, 30, 30), anchor="lm")
+    return Image.alpha_composite(im, ov)
+
+
+def stack(d, blocks, bottom):
+    """글씨 덩어리들을 아래(bottom)에 맞춰 위에서부터 가운데 정렬로 그린다.
+
+    blocks: [(줄 목록, 글꼴, 색, 줄 간격 배수, 덩어리 아래 여백, 강조어)]
+    """
+    heights = [int(f.size * gap) * len(lines) + after for lines, f, _, gap, after, _ in blocks]
+    y = bottom - sum(heights)
+    for (lines, f, color, gap, after, hl), h in zip(blocks, heights):
+        draw_lines(d, lines, 0, y, f, color, hl, A_DARK, A_YELLOW, gap, center=True)
+        y += h
+
+
+def l_cover(c, photo, total):
+    im = l_frame(photo, 1, 1, total, c["handle"])
+    d = ImageDraw.Draw(im)
+    width = W - 2 * MARGIN
+    tf = fit(d, c["title"], "Black", 100, width)
+    blocks = [
+        (c["title"], tf, "white", 1.22, 20, c.get("highlight", "")),
+        ([c["subtitle"]], fit(d, [c["subtitle"]], "Medium", 46, width), "white", 1.3, 50, ""),
+        (["넘겨서 확인하기 →"], font("SemiBold", 36), A_YELLOW, 1.2, 0, ""),
+    ]
+    stack(d, blocks, H - 70)
+    lf = font("Bold", 32)  # 표지 라벨(가전 꿀팁 등)은 제목 위 가운데
+    lw = d.textlength(c["label"], font=lf)
+    top = H - 70 - sum(int(f.size * g) * len(ls) + a for ls, f, _, g, a, _ in blocks) - 80
+    d.rounded_rectangle([(W - lw) / 2 - 25, top, (W + lw) / 2 + 25, top + 56], 12, fill=A_RED)
+    d.text((W / 2, top + 28), c["label"], font=lf, fill="white", anchor="mm")
+    return im
+
+
+def l_tip(c, t, i, n, photo, total):
+    im = l_frame(photo, n, n, total, c["handle"])
+    d = ImageDraw.Draw(im)
+    width = W - 2 * MARGIN
+    blocks = [
+        ([f"{i:02d}"], font("Black", 96), A_YELLOW, 1.1, 5, ""),
+        ([t["title"]], fit(d, [t["title"]], "Black", 92, width), "white", 1.25, 25, ""),
+        (t["lines"], fit(d, t["lines"], "Medium", 46, width), "white", 1.45, 0, ""),
+    ]
+    if t.get("note"):
+        blocks[-1] = blocks[-1][:4] + (25, "")
+        blocks.append(([t["note"]], fit(d, [t["note"]], "Medium", 34, width), L_GRAY, 1.3, 0, ""))
+    stack(d, blocks, H - 90)
+    return im
+
+
+def l_end(c, w, n, photo, total):
+    im = l_frame(photo, n, n, total, c["handle"])
+    d = ImageDraw.Draw(im)
+    width = W - 2 * MARGIN
+    blocks = [
+        ([w["title"]], fit(d, [w["title"]], "Black", 84, width), "white", 1.25, 25, ""),
+        (w["lines"], fit(d, w["lines"], "Medium", 38, width), "white", 1.5, 45, ""),
+        ([c["slogan"]], font("Medium", 32), L_GRAY, 1.3, 20, ""),
+        ([c["save_line"]], fit(d, [c["save_line"]], "Bold", 42, width), A_YELLOW, 1.2, 0, ""),
+    ]
+    stack(d, blocks, H - 80)
+    return im
+
+
+def render_list(card, photos, out_dir):
+    """목록형 카드(표지 + 팁 N장 + 마무리)를 out_dir/card1.jpg ~ 로 저장하고 경로 목록을 돌려준다.
+
+    card: {"label", "title", "highlight", "subtitle", "tips": [{"title", "lines", "note"}],
+           "warning": {"title", "lines"}, "save_line", "slogan", "handle"}
+    photos: 장마다 배경 사진 경로 (None이면 시험용 흐린 배경).
+    """
+    tips = card["tips"]
+    total = len(tips) + 2
+    photos = list(photos) + [None] * (total - len(photos))
+    images = [l_cover(card, photos[0], total)]
+    for i, t in enumerate(tips, 1):
+        images.append(l_tip(card, t, i, i + 1, photos[i], total))
+    images.append(l_end(card, card["warning"], total, photos[-1], total))
+
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("card*.jpg"):  # 장수가 줄었을 때 남는 옛 카드 지우기
+        old.unlink()
+    paths = []
+    for i, im in enumerate(images, 1):
+        p = out / f"card{i}.jpg"
+        im.convert("RGB").save(p, "JPEG", quality=92)  # 인스타 API는 JPG만 받음
+        paths.append(p)
+    return paths
+
+
+LIST_SAMPLE = {
+    "label": "가전 꿀팁",
+    "title": ["기름때 확 줄이는", "에어프라이어 관리법 6"],
+    "highlight": "기름때",
+    "subtitle": "굽기만 하고 청소는 미루셨죠?",
+    "tips": [
+        {"title": "바스켓 불리기", "lines": ["뜨거운 물에 주방세제 한 방울, 10분", "박박 문지르지 않아도 기름이 녹아요"],
+         "note": "철수세미는 코팅이 벗겨져요"},
+        {"title": "종이호일 깔기", "lines": ["바스켓 크기에 맞춰 구멍 난 걸로", "공기가 돌아서 바삭함은 그대로예요"],
+         "note": ""},
+        {"title": "열선 닦기", "lines": ["전원 뽑고 식힌 뒤 마른 솔로", "탄 냄새가 확 줄어요"], "note": ""},
+        {"title": "냄새 빼기", "lines": ["물 1컵 + 식초 2큰술, 180도 5분", "생선 냄새가 남지 않아요"], "note": ""},
+        {"title": "겉면 닦기", "lines": ["물기 꽉 짠 행주로 한 번", "손때가 쌓이지 않아요"], "note": ""},
+        {"title": "말려서 넣기", "lines": ["씻은 바스켓은 30분 말리기", "녹과 곰팡이를 막아요"], "note": ""},
+    ],
+    "warning": {"title": "이건 절대 하지 마세요",
+                "lines": ["바스켓 없이 돌리기, 본체 물에 담그기는 고장 나요",
+                          "알루미늄 호일은 열선에 닿지 않게 깔아 주세요"]},
+    "save_line": "저장해두고 청소할 때 꺼내보세요",
+    "slogan": "주방의 질을 높이는 살림 꿀팁",
+    "handle": "@kingreview0669",
+}
+
+
 SAMPLE = {
     "label": "가전 꿀팁",
     "title": ["에어프라이어 냄새", "식초 2큰술로 끝"],
@@ -297,7 +436,8 @@ SAMPLE = {
 if __name__ == "__main__":
     import sys
 
-    theme = sys.argv[1] if len(sys.argv) > 1 else "A"
+    theme = sys.argv[1] if len(sys.argv) > 1 else "L"
     out = sys.argv[2] if len(sys.argv) > 2 else f"sample_{theme}"
-    for p in render(SAMPLE, [], out, theme):
+    paths = render_list(LIST_SAMPLE, [], out) if theme == "L" else render(SAMPLE, [], out, theme)
+    for p in paths:
         print(p)
