@@ -1,0 +1,74 @@
+{
+  "id": "20261023-1730",
+  "created_at": "2026-10-23T10:50:43.874141+09:00",
+  "publish_at": "2026-10-23T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "젖은 빨래 냄새, 세탁기 문 열어두기와 빨래 바로 꺼내기",
+  "kind": "살림 꿀팁",
+  "angle": "가을비 잦고 실내 건조 늘어나는 시기, 세탁 후 쉰내 잡는 요령으로 기사 '젖은 빨래 지옥 탈출'과 연결",
+  "title": [
+    "빨래 쉰내 원인",
+    "세탁 끝난 뒤에 있어요"
+  ],
+  "highlight": "쉰내",
+  "cover_image_prompt": "Clean Korean apartment laundry nook with a front-loading washing machine door slightly open, soft autumn daylight, folded white towels nearby, no text, no people",
+  "body": [
+    {
+      "head": "흔한 실수",
+      "lines": [
+        "세탁 끝난 빨래를",
+        "통 안에 몇 시간 두기",
+        "냄새가 여기서 시작돼요"
+      ],
+      "highlight": "몇 시간 두기",
+      "image_prompt": "Close-up of damp tangled laundry sitting inside a washing machine drum, dim light, Korean home, no text, no faces"
+    },
+    {
+      "head": "이렇게 하세요",
+      "lines": [
+        "세탁기 알림 울리면",
+        "바로 꺼내서 털어 널기",
+        "빨래 사이 간격 넉넉히"
+      ],
+      "highlight": "바로 꺼내서",
+      "image_prompt": "Laundry drying rack by an apartment window with shirts hung spaced apart, gentle autumn light, no text, no people"
+    },
+    {
+      "head": "세탁기 관리",
+      "lines": [
+        "세탁 후 세탁기 문과",
+        "세제함은 열어 말리기",
+        "고무패킹 물기도 닦기"
+      ],
+      "highlight": "열어 말리기",
+      "image_prompt": "Front-loading washer with door and detergent drawer open, a cloth resting on the rubber gasket, bright clean laundry room, no text, no faces"
+    }
+  ],
+  "cta": [
+    "비 오는 날 꺼내 보게",
+    "저장해 두세요"
+  ],
+  "caption": "가을비 오는 날, 빨래에서 쉰내 나서 다시 돌린 적 있으시죠?\n세탁이 끝난 빨래를 통 안에 오래 두면 냄새가 생기기 쉬워요.\n알림 울리면 바로 꺼내 털어서, 간격 넉넉히 널어 주세요.\n세탁기도 문과 세제함을 열어 두고 고무패킹 물기를 닦아 말려야 해요.\n여러분은 빨래 주로 어디서 말리세요?",
+  "hashtags": [
+    "#살림꿀팁",
+    "#세탁꿀팁",
+    "#가전꿀팁",
+    "#빨래쉰내",
+    "#빨래냄새제거",
+    "#세탁기관리",
+    "#세탁기청소",
+    "#실내건조",
+    "#장마철빨래",
+    "#가을살림",
+    "#살림노하우",
+    "#주부꿀팁",
+    "#자취꿀팁"
+  ],
+  "photo_query": "washing machine laundry",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 104,
+    "has_photo": false
+  }
+}
