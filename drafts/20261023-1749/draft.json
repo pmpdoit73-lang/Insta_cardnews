@@ -2,7 +2,7 @@
   "id": "20261023-1749",
   "created_at": "2026-10-23T17:01:03.609734+09:00",
   "publish_at": "2026-10-23T17:49:00+09:00",
-  "status": "approved",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "오븐형 에어프라이어 활용법",
   "kind": "가전 꿀팁",
@@ -113,5 +113,8 @@
     ],
     "image_prompt": "Same air fryer pushed against the wall with a dish towel and plates stacked on its top"
   },
-  "save_line": "저장해두고 3단 다 채울 때 꺼내보세요"
+  "save_line": "저장해두고 3단 다 채울 때 꺼내보세요",
+  "instagram_id": "18128396224758703",
+  "permalink": "https://www.instagram.com/p/De1K4WGG0Lj/",
+  "published_at": "2026-10-23T17:51:32.380215+09:00"
 }
