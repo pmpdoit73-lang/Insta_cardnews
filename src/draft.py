@@ -2,8 +2,8 @@
 
 초안은 drafts/<날짜>/ 폴더에 저장된다.
   draft.json      대본·상태
-  bg1~4.jpg       제미나이 배경 사진 (표지 + 본문 3장)
-  card1~5.jpg     글씨까지 얹은 완성 카드
+  bg1~N.jpg       제미나이 배경 사진 (표지 + 팁 6~8장 + 마무리, 같은 세트장)
+  card1~N.jpg     글씨까지 얹은 완성 카드 (8~10장)
 status: pending(승인 대기) → approved(승인) → published(게시 완료)
         또는 skipped(건너뜀·승인 없음) / failed(게시 실패)
 """
@@ -22,10 +22,9 @@ import writer
 
 KST = timezone(timedelta(hours=9))
 DRAFT_DIR = Path(__file__).resolve().parent.parent / "drafts"
-THEME = "A"           # gil이 고른 디자인: A안 뉴스 속보형
-SLOTS = [(7, 0), (11, 20), (17, 30)]  # 하루 세 번 게시 시각 (시, 분)
+SLOTS = [(7, 0), (17, 30)]  # 하루 두 번 게시 시각 (시, 분), 2026-10-23 gil 요청으로 3번 → 2번
 DRAFT_LEAD = timedelta(minutes=30)    # 게시 시각이 이보다 가까우면 그다음 회차 초안을 만든다
-CTA = ["저장해두고", "가족한테도 알려주세요"]
+SLOGAN = "주방의 질을 높이는 살림 꿀팁"  # 마지막 장 브랜드 한 줄
 
 STATUS_LABEL = {
     "pending": "⏳ 대기 중 (그대로 두면 예정 시각에 자동 게시)",
@@ -68,8 +67,13 @@ def recent_issues(n=30):
     return [x for x in dict.fromkeys(issues) if x]
 
 
+def _numbered(d, prefix):
+    """card1.jpg, card2.jpg … card10.jpg를 번호 순서대로 (card10이 card2 앞에 오지 않게)."""
+    return sorted(folder(d["id"]).glob(f"{prefix}*.jpg"), key=lambda p: int(p.stem[len(prefix):]))
+
+
 def card_paths(d):
-    return [folder(d["id"]) / f"card{i}.jpg" for i in range(1, 6)]
+    return _numbered(d, "card")
 
 
 def publish_time(d):
@@ -127,17 +131,23 @@ def _fill_script(d, avoid=()):
 
 
 def _fill_photos(d):
-    prompts = [d["cover_image_prompt"]] + [b["image_prompt"] for b in d["body"]]
-    notes = []
+    """표지 사진을 먼저 만들고, 나머지는 표지를 참고 이미지로 넣어 같은 세트장으로 맞춘다."""
+    for old in _numbered(d, "bg"):
+        old.unlink()
+    prompts = [d["cover_image_prompt"]] + [t["image_prompt"] for t in d["tips"]] + [d["warning"]["image_prompt"]]
+    scene, query = d.get("scene", ""), d.get("photo_query", "")
+    ref, notes = None, []
     for i, prompt in enumerate(prompts, 1):
-        data, note = images.get_image(prompt, d.get("photo_query", ""))
-        p = folder(d["id"]) / f"bg{i}.jpg"
+        data, note = images.get_image(prompt, query, scene, ref)
         if data:
-            p.write_bytes(data)
-        elif p.exists():
-            p.unlink()
+            (folder(d["id"]) / f"bg{i}.jpg").write_bytes(data)
+            if i == 1 and note == "제미나이":
+                ref = data
         notes.append(note)
-    d["image_note"] = ", ".join(f"{i}번 {n}" for i, n in enumerate(notes, 1))
+    if all(n == notes[0] for n in notes):
+        d["image_note"] = f"{len(notes)}장 모두 {notes[0]}"
+    else:
+        d["image_note"] = ", ".join(f"{i}번 {n}" for i, n in enumerate(notes, 1))
 
 
 def render_cards(d):
@@ -145,13 +155,16 @@ def render_cards(d):
         "label": d["kind"],
         "title": d["title"],
         "highlight": d["highlight"],
-        "body": [{"head": b["head"], "lines": b["lines"], "highlight": b["highlight"]} for b in d["body"]],
-        "cta": d.get("cta") or CTA,
+        "subtitle": d["subtitle"],
+        "tips": [{"title": t["title"], "lines": t["lines"], "note": t.get("note", "")} for t in d["tips"]],
+        "warning": {"title": d["warning"]["title"], "lines": d["warning"]["lines"]},
+        "save_line": d["save_line"],
+        "slogan": SLOGAN,
         "handle": d.get("handle", ""),
     }
-    bgs = [folder(d["id"]) / f"bg{i}.jpg" for i in range(1, 5)]
-    photos = [str(p) if p.exists() else None for p in bgs] + [None]
-    render.render(card, photos, folder(d["id"]), THEME)
+    total = len(d["tips"]) + 2
+    bgs = [folder(d["id"]) / f"bg{i}.jpg" for i in range(1, total + 1)]
+    render.render_list(card, [str(p) if p.exists() else None for p in bgs], folder(d["id"]))
 
 
 def create(slot):
@@ -173,6 +186,8 @@ def create(slot):
 def rewrite(d):
     """다른 이슈로 처음부터 다시 만든다."""
     d["rejected_issues"] = [x for x in d.get("rejected_issues", []) + [d.get("issue", "")] if x][-10:]
+    for key in ("body", "cta"):  # 예전 5장 형식 흔적 지우기
+        d.pop(key, None)
     _fill_script(d, avoid=d["rejected_issues"])
     _fill_photos(d)
     render_cards(d)
@@ -180,17 +195,28 @@ def rewrite(d):
 
 
 def retext(d):
-    """이슈·사진은 그대로, 대본만 새로 쓴다."""
+    """이슈는 그대로, 대본을 새로 쓴다. 팁 개수가 같으면 사진도 그대로 쓴다."""
     post = writer.rewrite_cards(d)
-    for b_new, b_old in zip(post["body"], d["body"]):  # 사진은 그대로 쓰므로 프롬프트도 유지
-        b_new["image_prompt"] = b_old["image_prompt"]
-    post.pop("cover_image_prompt", None)
+    same_count = len(post["tips"]) == len(d.get("tips", []))  # 예전 5장 초안은 tips가 없어 사진도 새로
+    if same_count:  # 사진은 그대로 쓰므로 프롬프트도 유지
+        for t_new, t_old in zip(post["tips"], d["tips"]):
+            t_new["image_prompt"] = t_old["image_prompt"]
+        for key in ("cover_image_prompt", "scene"):
+            post.pop(key, None)
+        post["warning"]["image_prompt"] = d["warning"]["image_prompt"]
+    for key in ("body", "cta"):  # 예전 5장 형식 흔적 지우기
+        d.pop(key, None)
     d.update(post)
+    if not same_count:
+        _fill_photos(d)
     render_cards(d)
     save(d)
 
 
 def new_photos(d):
+    if "tips" not in d:  # 예전 5장 초안: 새 형식으로 대본부터 다시
+        retext(d)
+        return
     _fill_photos(d)
     render_cards(d)
     save(d)
@@ -210,6 +236,7 @@ def summary(d):
         "",
         f"🔥 이슈: {d.get('issue', '')} ({d.get('kind', '')})",
         f"📌 표지: {' / '.join(d.get('title', []))}",
+        f"🗂 카드: {len(card_paths(d))}장" + (f" (팁 {len(d['tips'])}개)" if d.get("tips") else ""),
         f"🖼 사진: {d.get('image_note', '')}",
         "",
         "✍️ 캡션",
@@ -244,7 +271,7 @@ def keyboard(d):
 
 
 def send(d):
-    """카드 5장 묶음 + 버튼 달린 설명 메시지를 새로 보낸다."""
+    """카드 묶음(최대 10장) + 버튼 달린 설명 메시지를 새로 보낸다."""
     old = d.get("message")
     if old:
         try:
