@@ -1,0 +1,73 @@
+{
+  "id": "20261024-0700",
+  "created_at": "2026-10-23T17:01:03.609734+09:00",
+  "publish_at": "2026-10-24T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@kingreview0669",
+  "issue": "쌀 씻기, 박박 문지르면 쌀알이 깨져요",
+  "kind": "주방 꿀팁",
+  "angle": "햅쌀이 나오는 10월, 밥솥 쓰는 집이면 매일 하는 쌀 씻기를 제대로 하는 요령",
+  "title": [
+    "쌀 씻을 때",
+    "박박 문지르지 마세요"
+  ],
+  "highlight": "박박",
+  "cover_image_prompt": "Bright clean Korean home kitchen counter with a stainless bowl of freshly rinsed white rice in water, electric rice cooker in soft focus behind, natural morning light, no text, no people faces",
+  "body": [
+    {
+      "head": "흔한 실수",
+      "lines": [
+        "쌀을 손으로",
+        "박박 문질러 씻으면",
+        "쌀알이 깨져요"
+      ],
+      "highlight": "쌀알이 깨져요",
+      "image_prompt": "Close-up of hands gently swirling rice grains in a bowl of cloudy water in a modern Korean kitchen sink, soft daylight, no faces, no text"
+    },
+    {
+      "head": "왜 그럴까?",
+      "lines": [
+        "요즘 쌀은 도정이",
+        "잘 돼 있어 겨가 적어요",
+        "세게 씻을 필요 없어요"
+      ],
+      "highlight": "겨가 적어요",
+      "image_prompt": "Overhead shot of polished white rice grains spilling from a cloth rice sack onto a wooden kitchen counter, clean minimal Korean kitchen, no text"
+    },
+    {
+      "head": "이렇게 하세요",
+      "lines": [
+        "첫 물은 빨리 버리고",
+        "살살 저어 2~3번 헹궈요",
+        "그다음 밥솥에 안쳐요"
+      ],
+      "highlight": "첫 물",
+      "image_prompt": "Rinsed rice in the inner pot of an electric rice cooker on a tidy Korean kitchen counter, steam-free calm scene, warm light, no text, no faces"
+    }
+  ],
+  "cta": [
+    "햅쌀 철에 꼭 저장!",
+    "밥 짓는 가족께 공유해요"
+  ],
+  "caption": "쌀은 박박 문질러야 깨끗하다고 배웠지요.\n그런데 요즘 쌀은 도정이 잘 돼서 세게 문지르면 쌀알만 깨져요.\n첫 물은 쌀이 흡수하기 전에 빨리 버리고,\n손으로 살살 저어 2~3번 헹구면 충분해요.\n햅쌀 나오는 요즘, 밥맛 한번 비교해 보세요.\n여러분은 쌀 몇 번 씻으세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#요리꿀팁",
+    "#쌀씻기",
+    "#쌀씻는법",
+    "#햅쌀",
+    "#밥짓기",
+    "#전기밥솥",
+    "#밥맛",
+    "#살림노하우",
+    "#자취요리",
+    "#주부꿀팁"
+  ],
+  "photo_query": "washing rice bowl",
+  "image_note": "1번 제미나이, 2번 제미나이, 3번 제미나이, 4번 제미나이",
+  "message": {
+    "message_id": 111,
+    "has_photo": false
+  }
+}
