@@ -2,7 +2,7 @@
   "id": "20261023-1120",
   "created_at": "2026-10-23T06:30:47.441052+09:00",
   "publish_at": "2026-10-23T11:20:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@kingreview0669",
   "issue": "에어프라이어 새로 샀다면 첫 사용 전 빈 공회전으로 코팅·기계 냄새 빼기",
   "kind": "가전 꿀팁",
@@ -70,5 +70,8 @@
   "message": {
     "message_id": 97,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18215609902359636",
+  "permalink": "https://www.instagram.com/p/De0eOBQnFhO/",
+  "published_at": "2026-10-23T11:21:18.291999+09:00"
 }
