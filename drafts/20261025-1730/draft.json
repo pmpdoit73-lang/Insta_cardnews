@@ -1,0 +1,124 @@
+{
+  "id": "20261025-1730",
+  "created_at": "2026-10-25T06:30:50.147671+09:00",
+  "publish_at": "2026-10-25T17:30:00+09:00",
+  "status": "pending",
+  "handle": "",
+  "issue": "겨울 앞두고 공기청정기 필터·센서 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "쌀쌀해져 창문 닫는 날이 늘면 공기청정기를 오래 틀게 돼요. 최근 'HEPA 필터 물세척 불가' 기사가 나와서 올바른 필터 관리를 다뤄요",
+  "title": [
+    "필터 수명 늘리는",
+    "공기청정기 관리법 8"
+  ],
+  "highlight": "필터 수명",
+  "subtitle": "켜 두기만 하고 필터는 잊으셨죠?",
+  "scene": "A white floor-standing air purifier placed beside a bright Korean home kitchen, light beige stone countertop, small potted herb and wooden cutting board as props, warm morning sunlight streaming through a window on the left, soft cozy atmosphere, bottom third of frame is plain countertop surface, no text, no faces",
+  "cover_image_prompt": "The white air purifier stands prominently in the center of the sunny kitchen set, slightly angled toward camera, soft morning light glowing on its surface, clean plain countertop in the lower third, no text, no people",
+  "tips": [
+    {
+      "title": "프리필터 2주 청소",
+      "lines": [
+        "2주에 한 번 청소기로 먼지 흡입",
+        "헤파필터까지 먼지가 덜 가요"
+      ],
+      "note": "물세척 가능 제품만 씻고 그늘에 말리세요",
+      "image_prompt": "A hand holding a handheld vacuum nozzle against the mesh pre-filter removed from the air purifier, light grey dust visible, on the countertop"
+    },
+    {
+      "title": "헤파필터 솔질",
+      "lines": [
+        "부드러운 솔로 겉먼지만 살살",
+        "표면 먼지만 털어도 바람이 살아요"
+      ],
+      "note": "세게 문지르면 필터 섬유가 상해요",
+      "image_prompt": "A hand gently brushing the pleated white HEPA filter with a soft dusting brush on the countertop"
+    },
+    {
+      "title": "벽에서 띄우기",
+      "lines": [
+        "벽·가구에서 30cm 이상 띄워요",
+        "공기 흐름이 막히지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "The air purifier moved out into open space away from the wall, a measuring tape lying on the floor between purifier and wall"
+    },
+    {
+      "title": "환기 먼저 하기",
+      "lines": [
+        "창문 열고 10분 환기 후 켜요",
+        "필터 부담이 줄어 오래가요"
+      ],
+      "note": "미세먼지 나쁜 날은 환기를 짧게 하세요",
+      "image_prompt": "The kitchen window opened wide with a sheer curtain moving in the breeze, air purifier turned off beside it"
+    },
+    {
+      "title": "요리할 땐 후드",
+      "lines": [
+        "굽고 튀길 땐 후드 먼저 켜요",
+        "기름 연기가 필터를 빨리 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A frying pan with sizzling vegetables on the stove, light steam rising toward the range hood, air purifier in the background"
+    },
+    {
+      "title": "먼지센서 닦기",
+      "lines": [
+        "두 달에 한 번 면봉으로 센서 닦기",
+        "미세먼지 수치가 정확해져요"
+      ],
+      "note": "반드시 전원 플러그를 뽑고 닦으세요",
+      "image_prompt": "A hand holding a dry cotton swab near the small sensor opening on the side of the air purifier, unplugged power cord lying on the floor"
+    },
+    {
+      "title": "자동 모드 쓰기",
+      "lines": [
+        "평소엔 자동 모드로 맞춰요",
+        "필요할 때만 세져서 전기 절약"
+      ],
+      "note": "",
+      "image_prompt": "A finger lightly touching the control panel on top of the air purifier, soft glowing indicator light, no readable text"
+    },
+    {
+      "title": "교체 주기 지키기",
+      "lines": [
+        "알림 뜨면 설명서 주기대로 교체",
+        "오래된 필터는 냄새가 다시 나요"
+      ],
+      "note": "",
+      "image_prompt": "A new wrapped replacement filter and a used greyish filter side by side on the countertop next to the air purifier"
+    }
+  ],
+  "warning": {
+    "title": "헤파필터 물세척 금지",
+    "lines": [
+      "헤파필터는 물로 씻지 마세요",
+      "젖으면 섬유 구조가 망가져 못 써요",
+      "방향제를 필터에 뿌리는 것도 금물"
+    ],
+    "image_prompt": "A HEPA filter placed next to the kitchen sink under a running faucet and a spray bottle of air freshener beside it on the countertop"
+  },
+  "save_line": "저장해두고 필터 청소할 때 꺼내보세요",
+  "caption": "공기청정기 헤파필터, 저도 예전엔 물로 씻을 뻔했어요 😅\n창문 닫는 날이 늘면 공기청정기가 하루 종일 돌아가죠.\n프리필터는 2주마다 먼지 털고, 헤파필터는 물 대신 솔로 살살.\n벽에서 30cm 띄우고, 요리할 땐 후드 먼저 켜 주세요.\n센서는 플러그 뽑고 면봉으로, 교체는 설명서 주기대로요.\n여러분 집 공기청정기 필터, 마지막으로 언제 보셨어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#공기청정기",
+    "#공기청정기관리",
+    "#공기청정기필터",
+    "#헤파필터",
+    "#필터청소",
+    "#겨울가전",
+    "#미세먼지",
+    "#살림노하우",
+    "#가전관리",
+    "#살림스타그램"
+  ],
+  "photo_query": "air purifier kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 177,
+    "has_photo": false
+  }
+}
