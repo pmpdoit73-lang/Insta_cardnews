@@ -1,0 +1,116 @@
+{
+  "id": "20261025-0700",
+  "created_at": "2026-10-24T17:01:10.371113+09:00",
+  "publish_at": "2026-10-25T07:00:00+09:00",
+  "status": "pending",
+  "handle": "",
+  "issue": "제철 생밤 보관·손질법 (냉장고·에어프라이어 활용)",
+  "kind": "주방 꿀팁",
+  "angle": "10월 말 밤이 한창인데 한 봉지 사 두면 금방 곰팡이·벌레가 생겨요. 냉장고와 에어프라이어로 오래, 맛있게 먹는 요령을 묶었어요.",
+  "title": [
+    "달고 오래가는",
+    "생밤 보관법 7"
+  ],
+  "highlight": "오래가는",
+  "subtitle": "한 봉지 샀다가 절반 버리셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, warm sunlight from a window on the left, a light beige stone countertop, a compact white basket-type air fryer at the back right, a small wooden cutting board, a white ceramic bowl and a linen cloth as props, soft green plant on the windowsill, the lower third of the frame is a clean simple countertop surface",
+  "cover_image_prompt": "Same kitchen set, a generous pile of fresh glossy brown raw chestnuts in a woven basket in the foreground center, a few chestnuts scattered on the countertop, the white air fryer softly visible behind, warm morning light, no text, no faces",
+  "tips": [
+    {
+      "title": "뜨는 밤 골라내기",
+      "lines": [
+        "물에 담가 5분, 뜨는 밤은 빼요",
+        "속이 비었거나 벌레 먹은 밤이에요"
+      ],
+      "note": "",
+      "image_prompt": "A clear glass bowl of water on the countertop with chestnuts, a few floating on top and most sunk at the bottom, a hand scooping out a floating one"
+    },
+    {
+      "title": "물기 꼭 말리기",
+      "lines": [
+        "씻은 밤은 그늘에서 반나절 말려요",
+        "물기가 남으면 곰팡이가 빨리 펴요"
+      ],
+      "note": "",
+      "image_prompt": "Washed chestnuts spread out in a single layer on a linen cloth on the countertop, drying, droplets visible"
+    },
+    {
+      "title": "냉장고 채소칸",
+      "lines": [
+        "봉지에 담아 채소칸에 넣어 두세요",
+        "차갑게 두면 단맛이 더 오래가요"
+      ],
+      "note": "",
+      "image_prompt": "A hand placing a bag of chestnuts into an open refrigerator vegetable drawer, kitchen countertop visible in front"
+    },
+    {
+      "title": "봉지에 숨구멍",
+      "lines": [
+        "비닐봉지에 구멍을 몇 개 뚫어요",
+        "숨을 쉬어야 봉지 안에 습기가 안 차요"
+      ],
+      "note": "",
+      "image_prompt": "A clear plastic bag of chestnuts on the countertop, a hand poking small holes in the bag with a toothpick"
+    },
+    {
+      "title": "오래 두려면 냉동",
+      "lines": [
+        "껍질 깐 밤을 한 번 먹을 만큼 소분",
+        "냉동해 두면 밥·조림에 바로 써요"
+      ],
+      "note": "",
+      "image_prompt": "Peeled pale yellow chestnuts divided into small zipper bags on the countertop, a hand sealing one bag"
+    },
+    {
+      "title": "껍질 쉽게 까기",
+      "lines": [
+        "뜨거운 물에 10분 불려 두세요",
+        "겉껍질이 말랑해져 칼이 잘 들어가요"
+      ],
+      "note": "칼은 몸 바깥쪽으로 밀며 까세요",
+      "image_prompt": "Chestnuts soaking in a white ceramic bowl of steaming hot water, a small paring knife and a few half-peeled chestnuts on the wooden board"
+    },
+    {
+      "title": "에어프라이어 군밤",
+      "lines": [
+        "칼집 내고 200도에서 15~20분",
+        "겉은 고소하고 속은 포슬포슬해요"
+      ],
+      "note": "칼집 없이 구우면 밤이 터져요",
+      "image_prompt": "The white air fryer basket pulled out showing roasted chestnuts with split X-shaped cuts, a few roasted chestnuts on the wooden board, gentle steam"
+    }
+  ],
+  "warning": {
+    "title": "칼집 없이 굽지 마세요",
+    "lines": [
+      "껍질째 통으로 가열하면 속 압력에 터져요",
+      "에어프라이어·전자레인지 모두 마찬가지예요",
+      "구멍 없는 밀폐 봉지 실온 보관도 곰팡이 원인"
+    ],
+    "image_prompt": "Same kitchen set, whole uncut chestnuts on the countertop next to the air fryer, and a tightly sealed plastic bag of damp chestnuts beside them, slightly cautionary mood but still bright"
+  },
+  "save_line": "저장해두고 밤 사 올 때 꺼내보세요",
+  "caption": "작년에 산 생밤, 베란다에 뒀다가 절반은 곰팡이로 버렸어요 😢\n밤은 사 오자마자 물에 담가 뜨는 것부터 골라내세요.\n물기 말려서 구멍 낸 봉지에 넣고 냉장고 채소칸에 두면 단맛이 오래가요.\n오래 둘 건 껍질 까서 소분 냉동, 깔 땐 뜨거운 물에 10분 불리면 쉬워요.\n군밤은 칼집 내고 에어프라이어 200도 15~20분이면 끝이에요.\n여러분은 밤, 삶아 드세요 구워 드세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#생밤보관",
+    "#밤보관법",
+    "#밤껍질까기",
+    "#에어프라이어군밤",
+    "#에어프라이어요리",
+    "#냉장고정리",
+    "#제철음식",
+    "#가을제철",
+    "#식재료보관",
+    "#살림노하우",
+    "#주부꿀팁"
+  ],
+  "photo_query": "raw chestnuts kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 166,
+    "has_photo": false
+  }
+}
