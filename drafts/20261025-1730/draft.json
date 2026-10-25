@@ -2,7 +2,7 @@
   "id": "20261025-1730",
   "created_at": "2026-10-25T06:30:50.147671+09:00",
   "publish_at": "2026-10-25T17:30:00+09:00",
-  "status": "pending",
+  "status": "failed",
   "handle": "",
   "issue": "겨울 앞두고 공기청정기 필터·센서 관리법",
   "kind": "가전 꿀팁",
@@ -120,5 +120,6 @@
   "message": {
     "message_id": 177,
     "has_photo": false
-  }
+  },
+  "error": "인스타 me 실패: Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the instructions."
 }
