@@ -1,0 +1,124 @@
+{
+  "id": "20261026-1730",
+  "created_at": "2026-10-26T06:30:53.982487+09:00",
+  "publish_at": "2026-10-26T17:30:00+09:00",
+  "status": "pending",
+  "handle": "",
+  "issue": "물자국 없이 반짝이게, 식기세척기 세제·린스 제대로 쓰는 법",
+  "kind": "가전 꿀팁",
+  "angle": "식기세척기 린스 역할 기사와 신제품 세제 출시가 이어진 지금, 애벌·필터 다음 단계로 '세제·린스·건조' 요령을 묶었어요",
+  "title": [
+    "물자국 확 줄이는",
+    "식기세척기 사용법 8"
+  ],
+  "highlight": "물자국",
+  "subtitle": "컵에 하얀 얼룩, 매번 남죠?",
+  "scene": "A built-in white dishwasher with its door open in a bright Korean home kitchen, light beige quartz countertop, small potted herb and a neatly folded linen towel nearby, warm morning sunlight streaming through a window on the left, clean minimal lower third of the frame showing plain countertop",
+  "cover_image_prompt": "The open dishwasher in the set, racks filled with sparkling clean glasses and white plates glistening in the morning sunlight, steam softly rising, countertop clear in the foreground",
+  "tips": [
+    {
+      "title": "린스 칸 채우기",
+      "lines": [
+        "린스 표시등 켜지면 바로 보충",
+        "물방울이 덜 맺혀 얼룩이 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pouring clear rinse aid from a plain bottle into the rinse aid compartment on the dishwasher door"
+    },
+    {
+      "title": "세제는 1회분만",
+      "lines": [
+        "타블렛은 1개, 가루는 계량컵대로",
+        "많이 넣으면 뿌연 막이 남아요"
+      ],
+      "note": "",
+      "image_prompt": "A single dishwasher tablet held by a hand above the open detergent dispenser"
+    },
+    {
+      "title": "세제칸 물기 닦기",
+      "lines": [
+        "넣기 전 세제칸을 마른 상태로",
+        "미리 녹아 뭉치는 걸 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand wiping the detergent compartment dry with a small cloth"
+    },
+    {
+      "title": "그릇은 안쪽 향하게",
+      "lines": [
+        "오목한 면을 아래·가운데로",
+        "물이 고이지 않고 잘 씻겨요"
+      ],
+      "note": "",
+      "image_prompt": "Hands placing bowls upside down angled toward the center of the lower rack"
+    },
+    {
+      "title": "플라스틱은 위칸",
+      "lines": [
+        "플라스틱 통은 위칸에 놓기",
+        "열선과 멀어 변형이 덜해요"
+      ],
+      "note": "식기세척기 사용 가능 표시 확인",
+      "image_prompt": "Hands placing plastic containers and lids on the top rack"
+    },
+    {
+      "title": "끝나면 문 살짝",
+      "lines": [
+        "종료 후 문 열고 10분 두기",
+        "김이 빠져 건조가 빨라요"
+      ],
+      "note": "뜨거운 김에 얼굴 가까이 대지 마세요",
+      "image_prompt": "Dishwasher door slightly ajar with gentle steam escaping, clean dishes visible inside"
+    },
+    {
+      "title": "아래칸부터 꺼내기",
+      "lines": [
+        "정리할 땐 아래칸 먼저 비우기",
+        "위칸 물방울이 안 떨어져요"
+      ],
+      "note": "",
+      "image_prompt": "Hands lifting dry plates out of the lower rack while the top rack stays in place"
+    },
+    {
+      "title": "한 달 1번 통세척",
+      "lines": [
+        "한 달 1번 빈 통 고온 코스로",
+        "쌓인 세제 찌꺼기가 빠져요"
+      ],
+      "note": "전용 세정제는 표시된 양만",
+      "image_prompt": "Empty dishwasher interior with racks clear, a small packet of cleaner placed inside, shiny stainless tub"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 넣지 마세요",
+    "lines": [
+      "일반 주방세제는 거품이 넘쳐요",
+      "나무 도마·칼은 갈라지고 무뎌져요",
+      "코팅 프라이팬은 코팅이 상해요"
+    ],
+    "image_prompt": "On the countertop beside the dishwasher: a bottle of hand dish soap, a wooden cutting board, a chef knife and a nonstick frying pan, set apart from the machine"
+  },
+  "save_line": "저장해두고 설거지 돌릴 때 꺼내보세요",
+  "caption": "식기세척기 컵 얼룩, 기계 탓인 줄만 알았어요 😅\n알고 보니 린스 칸이 몇 달째 비어 있었더라고요.\n세제는 1회분만, 세제칸은 마른 상태로 넣어 주세요.\n그릇은 안쪽을 보게, 플라스틱은 위칸에 두면 잘 씻겨요.\n끝나면 문 살짝 열고 10분, 꺼낼 땐 아래칸부터요.\n여러분은 식기세척기 린스, 넣고 쓰세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#식기세척기",
+    "#식기세척기사용법",
+    "#식기세척기린스",
+    "#식기세척기세제",
+    "#물자국제거",
+    "#설거지꿀팁",
+    "#살림노하우",
+    "#주방살림",
+    "#맞벌이살림",
+    "#자취꿀팁"
+  ],
+  "photo_query": "dishwasher clean dishes",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 242,
+    "has_photo": false
+  }
+}
