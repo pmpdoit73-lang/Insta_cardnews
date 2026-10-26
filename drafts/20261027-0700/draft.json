@@ -2,7 +2,7 @@
   "id": "20261027-0700",
   "created_at": "2026-10-26T22:31:10.432314+09:00",
   "publish_at": "2026-10-27T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "issue": "김장철 전동 다지기(초퍼) 활용·관리법",
   "kind": "가전 꿀팁",
@@ -120,5 +120,8 @@
   "message": {
     "message_id": 264,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18095778413427713",
+  "permalink": "https://www.instagram.com/p/De-TvJiGtXe/",
+  "published_at": "2026-10-27T07:02:00.895895+09:00"
 }
