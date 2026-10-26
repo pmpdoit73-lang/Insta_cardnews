@@ -1,0 +1,125 @@
+{
+  "id": "20261027-1730",
+  "created_at": "2026-10-27T06:30:56.174333+09:00",
+  "publish_at": "2026-10-27T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "리콜 김치냉장고 화재 소식, 김장 전 김치냉장고 화재 예방 점검법",
+  "kind": "가전 소식",
+  "angle": "리콜 김치냉장고 화재가 또 나서 고령 가구 주의 기사가 나왔어요. 김장철을 맞아 김치냉장고를 가득 채우기 전에 리콜 확인과 화재 예방 점검을 묶었어요.",
+  "title": [
+    "김장 전 꼭 하는",
+    "김치냉장고 화재 점검 8"
+  ],
+  "highlight": "화재 점검",
+  "subtitle": "부모님 댁 김치냉장고, 몇 년 됐죠?",
+  "scene": "A white stand-up kimchi refrigerator in a bright Korean home kitchen, light beige stone countertop beside it with a small potted herb and a ceramic kimchi container, warm morning sunlight streaming through a window on the left, clean wall outlet visible, lower third of the frame is plain countertop",
+  "cover_image_prompt": "The white kimchi refrigerator stands prominently in the sunny kitchen, door closed, a neat stack of kimchi containers on the countertop beside it, warm cozy morning light, no text, no faces",
+  "tips": [
+    {
+      "title": "모델명 찍어 두기",
+      "lines": [
+        "측면 라벨 모델명, 사진 1장 찍어요",
+        "리콜 조회할 때 바로 꺼내 써요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding a smartphone photographing the model label sticker on the side of the kimchi refrigerator, label unreadable blur"
+    },
+    {
+      "title": "리콜 대상 조회",
+      "lines": [
+        "소비자24 리콜 메뉴에 모델명 검색",
+        "제조사 고객센터 문의도 돼요"
+      ],
+      "note": "",
+      "image_prompt": "A smartphone lying on the countertop next to the kimchi refrigerator, screen blurred, a cup of tea beside it"
+    },
+    {
+      "title": "부모님 댁도 확인",
+      "lines": [
+        "부모님 댁 김치냉장고도 같이 조회",
+        "오래 쓴 제품일수록 더 챙겨요"
+      ],
+      "note": "",
+      "image_prompt": "Two hands, one older, resting on the kimchi refrigerator door handle together, soft morning light"
+    },
+    {
+      "title": "벽 콘센트 단독",
+      "lines": [
+        "벽 콘센트에 1대만 단독으로 꽂아요",
+        "멀티탭 과부하 위험을 줄여요"
+      ],
+      "note": "문어발 멀티탭 연결은 피하세요",
+      "image_prompt": "Close-up of a single plug neatly inserted into a wall outlet beside the kimchi refrigerator, no power strip"
+    },
+    {
+      "title": "플러그 먼지 닦기",
+      "lines": [
+        "플러그 뽑고 마른 천으로 먼지 닦기",
+        "먼지 쌓인 플러그는 화재 원인이에요"
+      ],
+      "note": "젖은 손으로 플러그 만지지 마세요",
+      "image_prompt": "A dry hand wiping an unplugged power plug with a dry cotton cloth on the countertop"
+    },
+    {
+      "title": "벽과 간격 두기",
+      "lines": [
+        "설명서 권장만큼 뒷벽과 띄워요",
+        "열이 빠져야 과열이 덜해요"
+      ],
+      "note": "",
+      "image_prompt": "Side angle showing a clear gap between the kimchi refrigerator back and the wall, tidy floor"
+    },
+    {
+      "title": "이상 신호 알기",
+      "lines": [
+        "타는 냄새·딱딱 소리 나면 플러그 뽑기",
+        "바로 서비스센터에 점검 요청해요"
+      ],
+      "note": "연기가 나면 119에 먼저 신고하세요",
+      "image_prompt": "A hand gently pulling the plug from the wall outlet beside the kimchi refrigerator, calm bright kitchen"
+    },
+    {
+      "title": "10년 넘으면 점검",
+      "lines": [
+        "10년 넘게 쓴 제품은 점검 받아요",
+        "노후 부품이 고장·화재로 이어져요"
+      ],
+      "note": "",
+      "image_prompt": "An older-looking kimchi refrigerator with a small wall calendar nearby, a clipboard on the countertop, no text visible"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "리콜 안내 받고 그냥 쓰는 것",
+      "전원 켠 채 뒤판 열고 직접 수리하기",
+      "김치냉장고 위에 물건 잔뜩 쌓아 두기"
+    ],
+    "image_prompt": "The kimchi refrigerator with a tangled power strip full of plugs beside it and heavy boxes piled on top, slightly cluttered, no text"
+  },
+  "save_line": "저장해두고 김장 전에 꺼내보세요",
+  "caption": "김치냉장고 리콜 대상인지, 저도 이번에 처음 찾아봤어요 😳\n리콜 김치냉장고 화재 소식이 또 들려서 김장 전에 점검해 봤어요.\n측면 라벨 모델명 찍어 두고 소비자24나 제조사에서 리콜 여부를 확인하세요.\n벽 콘센트 단독 사용, 플러그 먼지 닦기, 벽과 간격 두기만 해도 마음이 놓여요.\n부모님 댁 김치냉장고도 꼭 같이 확인해 드리세요.\n여러분 집 김치냉장고는 몇 년 됐어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#김치냉장고",
+    "#김치냉장고리콜",
+    "#김장준비",
+    "#김장철",
+    "#가전안전",
+    "#화재예방",
+    "#리콜확인",
+    "#살림노하우",
+    "#주방가전",
+    "#부모님선물",
+    "#가전관리"
+  ],
+  "photo_query": "kimchi refrigerator kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 287,
+    "has_photo": false
+  }
+}
