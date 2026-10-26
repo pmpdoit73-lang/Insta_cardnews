@@ -1,0 +1,116 @@
+{
+  "id": "20261027-0700",
+  "created_at": "2026-10-26T17:01:02.790386+09:00",
+  "publish_at": "2026-10-27T07:00:00+09:00",
+  "status": "pending",
+  "handle": "",
+  "issue": "쉰내 없이 깨끗하게, 주방 행주 세탁·소독·관리법",
+  "kind": "살림 꿀팁",
+  "angle": "다이소 1000원 행주 기사로 관심이 커진 지금, 쌀쌀해져 빨래가 잘 안 마르는 늦가을에 행주 쉰내를 잡는 요령을 모았어요",
+  "title": [
+    "쉰내 싹 잡는",
+    "주방 행주 관리법 7"
+  ],
+  "highlight": "쉰내 싹",
+  "subtitle": "빨아도 행주에서 냄새 나시죠?",
+  "scene": "A bright, warm Korean home kitchen in morning light. A white countertop microwave sits on a light beige quartz countertop beside a sink with a stainless faucet. A small wooden dish rack, a ceramic utensil holder and a green plant are nearby. Soft sunlight streams through a window on the left. The bottom third of the frame is a clean, simple countertop surface. No text, no faces.",
+  "cover_image_prompt": "Same kitchen set. A neatly folded stack of fresh white and pastel cotton dishcloths sits on the countertop in front of the white microwave, glowing in morning sunlight, steam faintly rising from a clean dishcloth, cozy and clean mood. No text, no faces.",
+  "tips": [
+    {
+      "title": "쓰고 바로 빨기",
+      "lines": [
+        "쓴 행주는 바로 세제로 빨아요",
+        "젖은 채 두면 냄새가 금방 배요"
+      ],
+      "note": "",
+      "image_prompt": "Hands rinsing and squeezing a white cotton dishcloth with dish soap foam under the running faucet."
+    },
+    {
+      "title": "활짝 펴서 말리기",
+      "lines": [
+        "뭉치지 말고 활짝 펴서 걸어요",
+        "빨리 말라야 세균이 덜 번져요"
+      ],
+      "note": "",
+      "image_prompt": "A dishcloth spread flat and hung on a small rack by the sunny window, drying in morning light."
+    },
+    {
+      "title": "끓는 물에 삶기",
+      "lines": [
+        "끓는 물에 10분쯤 삶아 주세요",
+        "찌든 냄새와 얼룩이 같이 빠져요"
+      ],
+      "note": "극세사 행주는 삶지 마세요",
+      "image_prompt": "A stainless pot on the counter with white cotton dishcloths in steaming boiling water, a long tongs resting beside it."
+    },
+    {
+      "title": "과탄산소다 담그기",
+      "lines": [
+        "뜨거운 물에 1큰술 풀어 30분",
+        "누런 얼룩이 하얗게 돌아와요"
+      ],
+      "note": "고무장갑 끼고 환기하며 쓰세요",
+      "image_prompt": "Gloved hands placing a dishcloth into a white basin of hot water with dissolving white powder and a measuring spoon nearby."
+    },
+    {
+      "title": "전자레인지 소독",
+      "lines": [
+        "세제로 빤 젖은 행주를 1~2분",
+        "삶기 귀찮은 날 간단히 돼요"
+      ],
+      "note": "마른 행주·금속실 행주는 금지",
+      "image_prompt": "A damp folded dishcloth in a heat-safe glass bowl being placed into the open white microwave by a hand."
+    },
+    {
+      "title": "용도별 나눠 쓰기",
+      "lines": [
+        "식탁용·그릇용·조리대용 3장",
+        "색을 다르게 하면 안 헷갈려요"
+      ],
+      "note": "",
+      "image_prompt": "Three dishcloths in different pastel colors neatly folded side by side on the countertop."
+    },
+    {
+      "title": "냄새 나면 교체",
+      "lines": [
+        "삶아도 냄새 나면 바로 바꿔요",
+        "올이 풀리면 세균이 숨기 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "An old frayed grey dishcloth next to a new fresh white dishcloth on the countertop."
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스에 식초·세제 섞지 마세요",
+      "유독가스가 나올 수 있어요",
+      "젖은 행주 싱크대에 뭉쳐두기도 금물"
+    ],
+    "image_prompt": "Same kitchen set, a crumpled damp dishcloth left balled up on the sink edge next to a bleach bottle and a vinegar bottle placed side by side, slightly gloomy. No text on labels, no faces."
+  },
+  "save_line": "저장해두고 행주 빨 때 꺼내보세요",
+  "caption": "행주에서 쉰내 나면 그냥 세제만 더 넣었어요 😅\n행주 냄새는 빨래보다 '말리기'에서 갈려요.\n쓰고 바로 빨아 활짝 펴서 말리고,\n일주일에 한 번은 삶거나 과탄산소다에 담가 주세요.\n삶기 귀찮은 날은 젖은 행주 전자레인지 1~2분도 방법이에요.\n락스에 다른 세제 섞는 건 절대 안 돼요!\n여러분은 행주 몇 장 돌려 쓰세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#생활꿀팁",
+    "#행주관리",
+    "#행주삶기",
+    "#행주냄새",
+    "#행주소독",
+    "#과탄산소다",
+    "#주방위생",
+    "#살림노하우",
+    "#주부꿀팁",
+    "#자취꿀팁",
+    "#설거지",
+    "#주방살림"
+  ],
+  "photo_query": "kitchen dishcloth towel",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 252,
+    "has_photo": false
+  }
+}
