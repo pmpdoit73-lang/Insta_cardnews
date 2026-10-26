@@ -1,9 +1,9 @@
 {
   "id": "20261026-0700",
   "created_at": "2026-10-26T06:00:59.059381+09:00",
-  "publish_at": "2026-10-26T07:00:00+09:00",
-  "status": "failed",
-  "handle": "",
+  "publish_at": "2026-10-29T12:30:00+09:00",
+  "status": "approved",
+  "handle": "@salim.kkultip",
   "issue": "밥맛과 수명을 지키는 전기밥솥 관리법",
   "kind": "가전 꿀팁",
   "angle": "김장철과 햅쌀 철이라 밥솥을 가장 많이 쓰는 때예요. 최근 다룬 주제에서 겹치지 않은 전기밥솥의 패킹, 증기캡, 열판 관리를 묶었어요.",
@@ -120,6 +120,5 @@
   "message": {
     "message_id": 231,
     "has_photo": false
-  },
-  "error": "인스타 me 실패: Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the instructions."
+  }
 }

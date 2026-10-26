@@ -1,9 +1,9 @@
 {
   "id": "20261026-1730",
   "created_at": "2026-10-26T06:30:53.982487+09:00",
-  "publish_at": "2026-10-26T17:30:00+09:00",
-  "status": "failed",
-  "handle": "",
+  "publish_at": "2026-10-29T21:00:00+09:00",
+  "status": "approved",
+  "handle": "@salim.kkultip",
   "issue": "물자국 없이 반짝이게, 식기세척기 세제·린스 제대로 쓰는 법",
   "kind": "가전 꿀팁",
   "angle": "식기세척기 린스 역할 기사와 신제품 세제 출시가 이어진 지금, 애벌·필터 다음 단계로 '세제·린스·건조' 요령을 묶었어요",
@@ -120,6 +120,5 @@
   "message": {
     "message_id": 242,
     "has_photo": false
-  },
-  "error": "인스타 me 실패: Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the instructions."
+  }
 }
