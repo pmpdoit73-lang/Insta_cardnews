@@ -1,0 +1,124 @@
+{
+  "id": "20261027-0700",
+  "created_at": "2026-10-26T22:31:10.432314+09:00",
+  "publish_at": "2026-10-27T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "김장철 전동 다지기(초퍼) 활용·관리법",
+  "kind": "가전 꿀팁",
+  "angle": "초퍼 기사와 김장 재료 기사가 겹치는 시기라, 마늘·생강 다질 일 많은 김장철에 바로 쓰는 다지기 요령을 골랐어요",
+  "title": [
+    "김장철 손목 살리는",
+    "다지기 활용법 8"
+  ],
+  "highlight": "손목 살리는",
+  "subtitle": "마늘 다지다 죽 된 적 있죠?",
+  "scene": "A compact electric food chopper with a clear plastic bowl and white motor top, sitting on a light beige quartz countertop in a bright Korean home kitchen, small wooden cutting board and a ceramic bowl nearby, soft warm morning sunlight from a window on the left, clean and simple lower third of the frame",
+  "cover_image_prompt": "The electric food chopper in the center of the countertop, bowl half filled with peeled garlic cloves, a few loose garlic cloves and ginger beside it, warm morning light highlighting the chopper",
+  "tips": [
+    {
+      "title": "끊어서 누르기",
+      "lines": [
+        "버튼을 2~3초씩 끊어 누르세요",
+        "곤죽 안 되고 알갱이가 살아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pressing the top button of the chopper briefly, coarsely chopped garlic visible in the bowl"
+    },
+    {
+      "title": "용기 절반만 채우기",
+      "lines": [
+        "재료는 용기 절반 정도만 넣어요",
+        "고르게 다져지고 모터도 편해요"
+      ],
+      "note": "",
+      "image_prompt": "Chopper bowl filled about halfway with garlic cloves, extra garlic waiting in a ceramic bowl beside it"
+    },
+    {
+      "title": "2~3cm로 썰어 넣기",
+      "lines": [
+        "큰 재료는 2~3cm로 썰어 넣어요",
+        "날에 안 걸리고 크기가 일정해요"
+      ],
+      "note": "",
+      "image_prompt": "A hand cutting ginger and onion into small chunks on the wooden cutting board next to the chopper"
+    },
+    {
+      "title": "오래 돌리지 않기",
+      "lines": [
+        "길게 돌렸다면 잠깐 쉬어 주세요",
+        "모터가 과열되지 않아 오래 써요"
+      ],
+      "note": "연속 사용 시간은 설명서를 꼭 확인하세요",
+      "image_prompt": "The chopper resting idle on the countertop with finely chopped garlic inside, hands away from it"
+    },
+    {
+      "title": "물 넣고 헹굼 돌리기",
+      "lines": [
+        "물 반 컵, 세제 한 방울 넣고 돌려요",
+        "날 사이 찌꺼기가 쉽게 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "Chopper bowl with soapy water and light foam inside, a small glass of water beside it"
+    },
+    {
+      "title": "칼날은 솔로 닦기",
+      "lines": [
+        "칼날은 손 말고 솔로 닦아 주세요",
+        "손 다칠 일 없고 구석까지 깨끗해요"
+      ],
+      "note": "칼날은 날 아닌 중심 축을 잡으세요",
+      "image_prompt": "A hand holding the blade unit by its central stem and scrubbing it with a small kitchen brush over the sink edge"
+    },
+    {
+      "title": "본체는 행주로",
+      "lines": [
+        "모터 본체는 젖은 행주로 닦아요",
+        "물이 들어가면 고장 날 수 있어요"
+      ],
+      "note": "닦기 전 전원 코드부터 빼세요",
+      "image_prompt": "A hand wiping the unplugged white motor top with a damp cloth, power cord set aside"
+    },
+    {
+      "title": "다진 마늘 소분 냉동",
+      "lines": [
+        "지퍼백에 납작하게 펴서 칸을 눌러요",
+        "필요한 만큼 똑 떼어 쓰기 편해요"
+      ],
+      "note": "",
+      "image_prompt": "Minced garlic flattened in a zipper bag with grid lines pressed in, lying on the countertop next to the chopper"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "모터 본체를 물에 담그지 마세요",
+      "전원 꽂은 채 칼날에 손대지 마세요",
+      "뜨거운 재료는 식힌 뒤 넣으세요"
+    ],
+    "image_prompt": "Same countertop with the chopper motor top placed next to a sink basin full of water and a plugged-in cord, a steaming pot nearby, suggesting what to avoid"
+  },
+  "save_line": "저장해두고 김장 준비할 때 꺼내보세요",
+  "caption": "다지기 처음 샀을 땐 마늘을 죽으로 만들었어요 😅\n김장철엔 마늘·생강 다질 일이 정말 많죠.\n버튼은 2~3초씩 끊어 누르고, 용기는 절반만 채우면 알갱이가 살아요.\n쓰고 나면 물과 세제 한 방울 넣고 돌리면 세척이 쉬워요.\n모터 본체는 물에 담그지 말고 행주로만 닦아 주세요.\n여러분은 마늘, 칼로 다지세요 기계로 다지세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#다지기",
+    "#초퍼",
+    "#전동다지기",
+    "#마늘다지기",
+    "#김장준비",
+    "#김장철",
+    "#주방가전",
+    "#살림템",
+    "#다진마늘보관",
+    "#주방살림"
+  ],
+  "photo_query": "food chopper garlic",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 264,
+    "has_photo": false
+  }
+}
