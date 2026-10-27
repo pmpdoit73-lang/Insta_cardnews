@@ -2,7 +2,7 @@
   "id": "20261027-1730",
   "created_at": "2026-10-27T06:30:56.174333+09:00",
   "publish_at": "2026-10-27T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "issue": "리콜 김치냉장고 화재 소식, 김장 전 김치냉장고 화재 예방 점검법",
   "kind": "가전 소식",
@@ -121,5 +121,8 @@
   "message": {
     "message_id": 287,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18363069223247588",
+  "permalink": "https://www.instagram.com/p/De_bzWNFhoV/",
+  "published_at": "2026-10-27T17:31:49.357255+09:00"
 }
