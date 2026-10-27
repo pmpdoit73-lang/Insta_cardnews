@@ -1,0 +1,124 @@
+{
+  "id": "20261028-1730",
+  "created_at": "2026-10-28T06:31:00.816122+09:00",
+  "publish_at": "2026-10-28T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "김장철 비닐랩·위생백·지퍼백 제대로 쓰는 주방 보관법",
+  "kind": "주방 꿀팁",
+  "angle": "김장·연말 음식 보관이 늘어나는 10월 말, 랩 관련 기사가 많아 매일 쓰는 비닐랩을 덜 낭비하고 위생적으로 쓰는 요령으로 골랐어요(이미 다룬 가전·요령과 겹치지 않음)",
+  "title": [
+    "한 통 오래 쓰는",
+    "주방 비닐랩 활용법 8"
+  ],
+  "highlight": "비닐랩 활용법",
+  "subtitle": "랩 끝 찾다가 다 뜯어지셨죠?",
+  "scene": "A bright Korean home kitchen in morning light: a white roll of plastic cling wrap in its cardboard dispenser box as the hero object on a light beige quartz countertop, a wooden cutting board, a glass bowl, a small ceramic plate, soft warm sunlight from a window on the left with sheer curtains, a few green plants on the windowsill, clean and minimal, lower third of the frame is plain countertop",
+  "cover_image_prompt": "Same set: the cling wrap box sits front and center on the countertop with a short sheet of clear wrap neatly pulled out and catching the morning sunlight, a glass bowl beside it, warm cozy atmosphere, no text, no faces",
+  "tips": [
+    {
+      "title": "랩 끝 찾기",
+      "lines": [
+        "랩 롤에 테이프를 붙였다 떼세요",
+        "끝이 따라 올라와 바로 찾아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pressing a strip of masking tape onto the cling wrap roll to lift the loose edge, wrap box open on the countertop"
+    },
+    {
+      "title": "냉장 보관하기",
+      "lines": [
+        "쓰기 전 랩을 냉장고에 넣어두세요",
+        "덜 달라붙어 엉키지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "The cling wrap box placed on a refrigerator door shelf visible at the edge of the set, cool light mixing with morning sun"
+    },
+    {
+      "title": "그릇 가장자리",
+      "lines": [
+        "그릇 테두리에 물을 살짝 묻히세요",
+        "랩이 착 붙어 잘 안 벗겨져요"
+      ],
+      "note": "",
+      "image_prompt": "A fingertip running a little water along the rim of the glass bowl, wrap box beside it"
+    },
+    {
+      "title": "반찬 밀착 보관",
+      "lines": [
+        "랩을 반찬 표면에 바로 덮으세요",
+        "공기가 덜 닿아 마르지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "Hands pressing clear wrap directly onto the surface of side dish in a small ceramic plate"
+    },
+    {
+      "title": "반 갈라 쓰기",
+      "lines": [
+        "자른 양파·레몬 단면에 감싸세요",
+        "냄새가 덜 퍼지고 덜 말라요"
+      ],
+      "note": "",
+      "image_prompt": "Half an onion and half a lemon tightly wrapped in clear wrap on the wooden cutting board"
+    },
+    {
+      "title": "밥 한 공기씩",
+      "lines": [
+        "갓 지은 밥을 한 공기씩 싸두세요",
+        "납작하게 싸면 빨리 식혀 얼려요"
+      ],
+      "note": "뜨거울 땐 김이 조금 빠진 뒤 싸세요",
+      "image_prompt": "Hands wrapping a flat portion of white rice in clear wrap on the countertop, steam faintly rising"
+    },
+    {
+      "title": "도마 위생",
+      "lines": [
+        "고기 썰 때 도마에 랩을 까세요",
+        "도마에 핏물·냄새가 덜 배요"
+      ],
+      "note": "칼날에 랩이 섞이지 않게 살펴요",
+      "image_prompt": "A wooden cutting board covered with a sheet of clear wrap, raw meat slices on top, knife beside it"
+    },
+    {
+      "title": "전자레인지 덮기",
+      "lines": [
+        "전자레인지용 랩만 느슨하게 덮어요",
+        "한쪽 틈을 둬서 김이 빠지게요"
+      ],
+      "note": "음식에 닿지 않게 살짝 띄우세요",
+      "image_prompt": "A ceramic bowl loosely covered with clear wrap leaving a small gap at one side, ready to heat"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "오븐·에어프라이어에 랩을 넣지 마세요",
+      "높은 열에 녹아 음식에 붙어요",
+      "기름진 음식 데울 땐 랩을 닿게 하지 마세요"
+    ],
+    "image_prompt": "Same set: a sheet of crumpled melted-looking clear wrap next to an air fryer basket and a greasy fried dish, cautionary mood, no text"
+  },
+  "save_line": "저장해두고 반찬 쌀 때 꺼내보세요",
+  "caption": "랩 끝 못 찾아서 손톱으로 긁다가 한 통 반은 버렸어요 😅\n테이프 한 번 붙였다 떼면 끝이 바로 올라와요.\n랩을 냉장고에 넣어두면 덜 엉키고, 그릇 테두리에 물을 묻히면 착 붙어요.\n밥은 한 공기씩 납작하게, 고기 썰 땐 도마에 깔아 쓰면 설거지도 줄어요.\n단, 오븐·에어프라이어엔 랩 대신 다른 걸 쓰세요.\n여러분은 랩을 주로 어디에 제일 많이 쓰세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#살림노하우",
+    "#비닐랩",
+    "#랩활용법",
+    "#주방랩",
+    "#반찬보관",
+    "#식재료보관",
+    "#냉동밥",
+    "#주방정리",
+    "#김장준비",
+    "#자취꿀팁",
+    "#살림템"
+  ],
+  "photo_query": "plastic wrap kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 314,
+    "has_photo": false
+  }
+}
