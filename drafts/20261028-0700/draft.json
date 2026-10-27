@@ -2,7 +2,7 @@
   "id": "20261028-0700",
   "created_at": "2026-10-27T17:00:51.970110+09:00",
   "publish_at": "2026-10-28T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "issue": "전자레인지 청소·관리법",
   "kind": "가전 꿀팁",
@@ -120,5 +120,8 @@
   "message": {
     "message_id": 300,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17962859643226785",
+  "permalink": "https://www.instagram.com/p/DfA4gtPlJvz/",
+  "published_at": "2026-10-28T07:01:49.735707+09:00"
 }
