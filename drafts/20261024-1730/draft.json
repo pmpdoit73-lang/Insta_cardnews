@@ -2,7 +2,7 @@
   "id": "20261024-1730",
   "created_at": "2026-10-24T06:30:48.328580+09:00",
   "publish_at": "2026-10-27T21:00:00+09:00",
-  "status": "approved",
+  "status": "published",
   "handle": "@salim.kkultip",
   "issue": "냉장고 뒤 먼지부터 문 패킹까지, 전기요금 줄이는 냉장고 관리법",
   "kind": "가전 꿀팁",
@@ -120,5 +120,8 @@
   "message": {
     "message_id": 156,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17943245592362112",
+  "permalink": "https://www.instagram.com/p/De_z48SEZ_I/",
+  "published_at": "2026-10-27T21:02:14.018186+09:00"
 }
