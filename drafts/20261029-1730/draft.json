@@ -1,0 +1,116 @@
+{
+  "id": "20261029-1730",
+  "created_at": "2026-10-29T06:31:05.066865+09:00",
+  "publish_at": "2026-10-29T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "겨울 앞두고 주방가전 대기전력·전기요금 줄이는 요령",
+  "kind": "가전 꿀팁",
+  "angle": "'안 써도 전기를 먹는다'는 대기전력 기사에 맞춰, 난방비 걱정이 커지는 초겨울에 바로 써먹을 주방가전 절약 습관을 묶었어요",
+  "title": [
+    "전기요금 확 줄이는",
+    "주방가전 절약법 7"
+  ],
+  "highlight": "전기요금",
+  "subtitle": "꺼두면 전기 안 먹는 줄 아셨죠?",
+  "scene": "A bright Korean home kitchen in warm morning sunlight from a window on the left. A light beige quartz countertop holds a white electric rice cooker, a small coffee machine, an electric kettle and a white power strip with individual switches. Small potted herb, wooden cutting board and a ceramic jar as props. Clean, cozy, softly lit, lower third of the frame is plain countertop.",
+  "cover_image_prompt": "The white power strip with individual switches in the foreground, plugs of the rice cooker, coffee machine and kettle connected, one switch glowing, appliances softly blurred behind in warm morning light, no text, no faces",
+  "tips": [
+    {
+      "title": "개별 스위치 멀티탭",
+      "lines": [
+        "안 쓰는 가전은 멀티탭 스위치 끄기",
+        "플러그만 꽂혀도 대기전력이 새요"
+      ],
+      "note": "냉장고는 멀티탭 끄지 말고 따로 꽂으세요",
+      "image_prompt": "A hand pressing a switch off on the power strip, the indicator light turning dark"
+    },
+    {
+      "title": "밥솥 보온은 짧게",
+      "lines": [
+        "보온 12시간 넘기면 소분해 냉동",
+        "오래 보온하면 전기도 밥맛도 손해"
+      ],
+      "note": "",
+      "image_prompt": "Freshly cooked rice being portioned into small glass containers next to the open rice cooker"
+    },
+    {
+      "title": "전기포트 필요한 만큼",
+      "lines": [
+        "마실 양만, 최소 눈금까지만 끓이기",
+        "물이 적을수록 금방 끓어 전기 절약"
+      ],
+      "note": "최소 눈금보다 적게 넣고 끓이지 마세요",
+      "image_prompt": "A hand pouring water from a measuring cup into the electric kettle, one mug beside it"
+    },
+    {
+      "title": "냉장고 60~70%만",
+      "lines": [
+        "냉장실은 60~70%만 채우기",
+        "찬 공기가 돌아야 덜 힘들게 돌아요"
+      ],
+      "note": "",
+      "image_prompt": "An open refrigerator door at the side of the counter showing neatly spaced containers with gaps between them"
+    },
+    {
+      "title": "뜨거운 음식 식혀 넣기",
+      "lines": [
+        "뜨거운 반찬은 한김 식혀 넣기",
+        "냉장고가 온도 낮추느라 과열돼요"
+      ],
+      "note": "상온에 너무 오래 두진 마세요",
+      "image_prompt": "A pot of steaming soup cooling on a trivet on the countertop with a lid slightly open"
+    },
+    {
+      "title": "커피머신 절전 모드",
+      "lines": [
+        "자동 꺼짐 시간을 짧게 맞춰두기",
+        "하루 종일 예열하면 전기 낭비예요"
+      ],
+      "note": "",
+      "image_prompt": "A finger pressing the button on the coffee machine, a cup of fresh coffee beside it"
+    },
+    {
+      "title": "식기세척기 모아서",
+      "lines": [
+        "하루 한 번 꽉 채워 에코 코스로",
+        "자주 돌리는 것보다 물·전기 아껴요"
+      ],
+      "note": "",
+      "image_prompt": "Stacked plates and bowls in a basket ready for the dishwasher on the countertop"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "멀티탭에 전열기구 여러 개 동시 사용 금지",
+      "허용 전력 넘으면 과열·화재 위험이 있어요",
+      "젖은 손으로 플러그 뽑지 마세요"
+    ],
+    "image_prompt": "An overloaded power strip with many plugs crammed in and a tangled cord, a wet towel nearby, on the same countertop"
+  },
+  "save_line": "저장해두고 고지서 볼 때 꺼내보세요",
+  "caption": "밥솥 보온, 이틀씩 켜둔 적 많았어요 😅\n겨울엔 난방비 때문에 주방 전기라도 아끼고 싶더라고요.\n꺼진 가전도 플러그가 꽂혀 있으면 대기전력을 먹어요.\n멀티탭 스위치, 밥솥 보온 줄이기, 전기포트 필요한 만큼만.\n작은 습관 7개만 바꿔도 마음이 한결 가벼워요.\n여러분 집 밥솥은 보온 몇 시간까지 켜두세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#전기요금절약",
+    "#대기전력",
+    "#전기세아끼기",
+    "#멀티탭",
+    "#전기밥솥",
+    "#밥솥보온",
+    "#냉장고정리",
+    "#식기세척기",
+    "#겨울살림",
+    "#살림노하우",
+    "#주방가전"
+  ],
+  "photo_query": "kitchen power strip",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 336,
+    "has_photo": false
+  }
+}
