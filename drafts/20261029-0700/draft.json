@@ -1,0 +1,124 @@
+{
+  "id": "20261029-0700",
+  "created_at": "2026-10-28T17:01:10.354743+09:00",
+  "publish_at": "2026-10-29T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "하얀 물때 없이 오래 쓰는 전기포트 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "쌀쌀해져 차·커피 마시는 날이 늘면 전기포트 사용이 잦아지고 바닥에 하얀 물때(석회)가 금방 쌓이는 계절이라서 골랐어요",
+  "title": [
+    "물때 싹 지우는",
+    "전기포트 관리법 8"
+  ],
+  "highlight": "물때 싹",
+  "subtitle": "바닥 하얀 얼룩, 그냥 쓰고 계셨죠?",
+  "scene": "A white stainless steel electric kettle on its base, placed on a light beige quartz countertop in a bright Korean home kitchen, a few ceramic mugs and a small wooden tray nearby, a potted herb on the windowsill, warm morning sunlight streaming through the window, clean and cozy mood, lower third of the frame is plain countertop",
+  "cover_image_prompt": "The white electric kettle on its base in the center, lid slightly open with gentle steam rising, a ceramic mug with tea beside it, warm morning sunlight, plain countertop in lower third, no text, no faces",
+  "tips": [
+    {
+      "title": "구연산으로 물때 빼기",
+      "lines": [
+        "물 가득에 구연산 1큰술 넣고 끓여요",
+        "1시간 두면 하얀 물때가 녹아요"
+      ],
+      "note": "끓인 뒤엔 맑은 물로 2~3번 헹궈 주세요",
+      "image_prompt": "A hand pouring a spoonful of white citric acid powder into the open kettle filled with water, small bowl of powder on the counter"
+    },
+    {
+      "title": "구연산 없으면 식초",
+      "lines": [
+        "물과 식초를 1:1로 넣고 끓여요",
+        "식초 산 성분이 석회를 풀어 줘요"
+      ],
+      "note": "식초 냄새 빠지게 맹물로 한 번 더 끓이세요",
+      "image_prompt": "A glass bottle of clear vinegar and a measuring cup next to the open kettle, hand pouring vinegar in"
+    },
+    {
+      "title": "헹굼은 맹물 끓이기",
+      "lines": [
+        "세척 후 맹물로 1~2번 끓여 버려요",
+        "남은 산 냄새와 맛이 싹 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pouring hot water from the kettle into the sink-side bowl, light steam"
+    },
+    {
+      "title": "남은 물 바로 버리기",
+      "lines": [
+        "다 쓰면 남은 물은 바로 비워요",
+        "고인 물이 마르며 물때가 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "The kettle tilted over an empty glass bowl, last drops of water pouring out"
+    },
+    {
+      "title": "뚜껑 열어 말리기",
+      "lines": [
+        "비운 뒤 뚜껑 열고 30분 말려요",
+        "속 습기가 빠져 냄새가 안 배요"
+      ],
+      "note": "",
+      "image_prompt": "The empty kettle with lid fully open, sitting on the counter in sunlight, dry inside"
+    },
+    {
+      "title": "주둥이 필터망 세척",
+      "lines": [
+        "필터망 빼서 칫솔로 살살 닦아요",
+        "물때 조각이 컵에 안 떨어져요"
+      ],
+      "note": "분리되는 모델만, 설명서를 먼저 보세요",
+      "image_prompt": "Hands holding a small removable mesh spout filter and a soft toothbrush beside the kettle"
+    },
+    {
+      "title": "최소·최대선 지키기",
+      "lines": [
+        "물은 눈금 MIN~MAX 사이로 넣어요",
+        "넘치거나 헛끓는 걸 막아 줘요"
+      ],
+      "note": "",
+      "image_prompt": "Close view of the kettle's water level window with water at a middle level, hand holding a glass pitcher"
+    },
+    {
+      "title": "받침대 접점 닦기",
+      "lines": [
+        "전원 뽑고 마른 천으로 받침 닦아요",
+        "물기·먼지 없어야 접촉이 좋아요"
+      ],
+      "note": "반드시 플러그 뽑고 마른 천으로만 닦으세요",
+      "image_prompt": "The unplugged kettle base with the plug lying beside it, a hand wiping the base with a dry microfiber cloth"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "본체·받침을 물에 담그면 고장·감전 위험",
+      "빈 포트로 전원 켜면 과열될 수 있어요",
+      "철수세미는 속 스테인리스에 흠집 내요"
+    ],
+    "image_prompt": "On the same countertop, the kettle base next to a sink basin full of water, a steel wool scrubber, and an empty kettle, cautionary arrangement, no text"
+  },
+  "save_line": "저장해두고 물때 보일 때 꺼내보세요",
+  "caption": "전기포트 바닥 하얀 얼룩, 몇 년을 그냥 끓여 마셨어요 😅\n그 하얀 건 물속 석회가 쌓인 물때예요.\n구연산 1큰술 넣고 끓여 1시간 두면 금방 녹아요.\n구연산 없으면 식초와 물 1:1로도 돼요.\n쓰고 남은 물은 바로 버리고, 뚜껑 열어 말리면 물때가 덜 생겨요.\n본체는 물에 담그지 말고, 받침은 플러그 뽑고 마른 천으로만!\n여러분은 전기포트로 주로 뭐 끓여 드세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#전기포트",
+    "#전기포트세척",
+    "#전기포트물때",
+    "#구연산청소",
+    "#물때제거",
+    "#주방가전",
+    "#살림노하우",
+    "#자취꿀팁",
+    "#가전관리",
+    "#주방살림"
+  ],
+  "photo_query": "electric kettle kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 326,
+    "has_photo": false
+  }
+}
