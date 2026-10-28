@@ -2,7 +2,7 @@
   "id": "20261025-0700",
   "created_at": "2026-10-24T17:01:10.371113+09:00",
   "publish_at": "2026-10-28T12:30:00+09:00",
-  "status": "approved",
+  "status": "failed",
   "handle": "@salim.kkultip",
   "issue": "제철 생밤 보관·손질법 (냉장고·에어프라이어 활용)",
   "kind": "주방 꿀팁",
@@ -112,5 +112,6 @@
   "message": {
     "message_id": 166,
     "has_photo": false
-  }
+  },
+  "error": "인스타 17841439757805918/media 실패: Only photo or video can be accepted as media type."
 }
