@@ -1,0 +1,125 @@
+{
+  "id": "20261030-0700",
+  "created_at": "2026-10-29T17:01:08.311677+09:00",
+  "publish_at": "2026-10-30T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "자리만 바꿔도 신선함이 달라지는 냉장고 칸별 식재료 보관법",
+  "kind": "주방 꿀팁",
+  "angle": "AI 냉장고가 보관법을 추천해 주는 신제품 소식이 화제인데, 지금 쓰는 냉장고도 칸별 자리만 지키면 충분해요. 김장 전 냉장고 정리할 때와도 딱 맞아요",
+  "title": [
+    "자리만 바꿔도 오래가는",
+    "냉장고 칸별 보관법 8"
+  ],
+  "highlight": "오래가는",
+  "subtitle": "빈 곳에 그냥 밀어 넣고 계셨죠?",
+  "scene": "A bright, warm Korean home kitchen in morning light. A white two-door refrigerator stands beside a light beige quartz countertop, its door open showing clean glass shelves, door bins and a vegetable drawer. Soft sunlight streams through a window with a small potted herb on the sill. Wooden cutting board and a ceramic jar on the counter. The bottom third of the frame is a simple, uncluttered countertop surface. No text, no logos, no faces.",
+  "cover_image_prompt": "Same kitchen set, the white refrigerator door wide open as the hero, shelves neatly organized with clear containers, vegetables in the drawer, sauces in the door bins, warm morning sunlight glowing on the fridge, calm and tidy mood, empty countertop in the lower third.",
+  "tips": [
+    {
+      "title": "70%만 채우기",
+      "lines": [
+        "냉장실은 70% 정도만 채워요",
+        "냉기가 돌아서 골고루 시원해요"
+      ],
+      "note": "",
+      "image_prompt": "Fridge shelves with neat gaps between clear containers, visible space for air flow, a hand sliding one container back."
+    },
+    {
+      "title": "문 칸엔 소스·음료",
+      "lines": [
+        "달걀·우유는 안쪽 선반에 둬요",
+        "문 칸은 여닫을 때 온도가 흔들려요"
+      ],
+      "note": "",
+      "image_prompt": "Door bins holding sauce bottles and water bottles, a hand placing an egg carton and a milk carton on an inner shelf."
+    },
+    {
+      "title": "날고기는 맨 아래",
+      "lines": [
+        "고기·생선은 맨 아래 칸에 둬요",
+        "핏물이 다른 음식에 안 떨어져요"
+      ],
+      "note": "용기나 쟁반에 받쳐 넣으세요",
+      "image_prompt": "A hand placing a covered glass dish of raw meat onto the lowest shelf, set on a small tray, ready-to-eat side dishes on upper shelves."
+    },
+    {
+      "title": "채소는 타월에 싸기",
+      "lines": [
+        "키친타월로 감싸 세워서 넣어요",
+        "물기를 잡아 덜 무르고 오래가요"
+      ],
+      "note": "",
+      "image_prompt": "Open vegetable drawer with green onions and leafy greens wrapped in paper towels, standing upright, a hand tucking in a bundle."
+    },
+    {
+      "title": "한 김 식혀 넣기",
+      "lines": [
+        "뜨거운 음식은 김이 빠지면 넣어요",
+        "냉장고 속 다른 음식이 안전해요"
+      ],
+      "note": "",
+      "image_prompt": "A pot of soup cooling on the countertop with gentle steam, an empty glass container beside it, fridge in background."
+    },
+    {
+      "title": "온도 확인하기",
+      "lines": [
+        "냉장 0~5도, 냉동 -18도 이하예요",
+        "세균이 덜 자라 신선하게 지켜요"
+      ],
+      "note": "",
+      "image_prompt": "A small round fridge thermometer hanging on a middle shelf, a hand reaching to check it, no readable numbers."
+    },
+    {
+      "title": "투명 용기+날짜",
+      "lines": [
+        "남은 음식은 투명 통에 날짜 표시",
+        "안 보여서 잊는 음식이 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "Stacked clear containers of leftovers with blank masking tape strips on lids, a hand pressing a strip on a lid."
+    },
+    {
+      "title": "냉동은 납작하게",
+      "lines": [
+        "지퍼백을 납작하게 펴서 얼려요",
+        "세워 꽂으면 찾기도 녹이기도 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "Flat frozen zipper bags of food standing upright like files in a freezer drawer, a hand pulling one out."
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "냉기 구멍 앞을 음식으로 막지 마세요",
+      "냉기가 막혀 칸마다 온도가 달라져요",
+      "뜨거운 냄비 통째로 넣지 마세요"
+    ],
+    "image_prompt": "Same fridge overstuffed, containers crammed against the back air vent and a hot steaming pot pushed onto a shelf, cluttered mood."
+  },
+  "save_line": "저장해두고 장 본 날 꺼내보세요",
+  "caption": "냉장고 문 칸에 달걀 넣고 20년 넘게 살았어요 😅\n냉장고는 어디에 두느냐에 따라 신선함이 달라져요.\n70%만 채우고, 문 칸엔 소스·음료만.\n고기·생선은 맨 아래, 채소는 키친타월에 싸서 세워 두세요.\n냉장 0~5도, 냉동 -18도 이하인지도 한 번 확인해 보세요.\n여러분 집 냉장고 문 칸엔 뭐가 들어 있어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#냉장고정리",
+    "#냉장고보관법",
+    "#식재료보관",
+    "#냉장고수납",
+    "#주방정리",
+    "#살림노하우",
+    "#자취꿀팁",
+    "#신혼살림",
+    "#김장준비",
+    "#채소보관",
+    "#냉동보관"
+  ],
+  "photo_query": "organized refrigerator shelves",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 347,
+    "has_photo": false
+  }
+}
