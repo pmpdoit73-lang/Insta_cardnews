@@ -1,0 +1,123 @@
+{
+  "id": "20261030-1730",
+  "created_at": "2026-10-30T06:31:06.751072+09:00",
+  "publish_at": "2026-10-30T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "issue": "김장철 무·배추 손질하는 도마 관리법",
+  "kind": "주방 꿀팁",
+  "angle": "김장철 배추·무·젓갈 손질로 도마 냄새·물때가 심해지는 시기라 이미 다룬 가전과 겹치지 않는 도마 관리로 골랐어요",
+  "title": [
+    "냄새·곰팡이 없는",
+    "도마 관리법 8"
+  ],
+  "highlight": "곰팡이 없는",
+  "subtitle": "김장하고 나면 도마에 냄새 배죠?",
+  "scene": "A bright, warm Korean home kitchen in morning light: a large light-colored wooden cutting board as the hero object on a clean white quartz countertop, a small stainless sink to the side, a ceramic jar of wooden utensils, a green potted herb, soft sunlight streaming from a window on the left, lower third of frame is plain countertop",
+  "cover_image_prompt": "Same kitchen set, the clean wooden cutting board standing prominently upright in center, glowing in morning sunlight, a few fresh napa cabbage leaves and a white radish beside it, lower third plain countertop, no text, no faces",
+  "tips": [
+    {
+      "title": "쓰기 전 물 적시기",
+      "lines": [
+        "쓰기 전 찬물에 한 번 헹궈요",
+        "물막이 생겨 냄새·색 덜 배요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding the wooden cutting board under running cold water at the sink, droplets on the surface"
+    },
+    {
+      "title": "생선·고기는 따로",
+      "lines": [
+        "채소용·고기용 도마 2개 나눠요",
+        "교차오염과 냄새 섞임을 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Two cutting boards side by side on the counter, one with sliced vegetables, one empty smaller board for meat"
+    },
+    {
+      "title": "굵은소금 문지르기",
+      "lines": [
+        "굵은소금 1큰술 뿌려 문질러요",
+        "칼자국 속 찌꺼기가 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "A hand scrubbing coarse salt across the wooden cutting board with half a lemon"
+    },
+    {
+      "title": "김치 물은 바로",
+      "lines": [
+        "김치 썬 뒤 바로 세제로 씻어요",
+        "고춧물이 마르면 잘 안 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "Cutting board with a few kimchi pieces and red stains, a hand with a sponge and soap foam beginning to wash"
+    },
+    {
+      "title": "세워서 말리기",
+      "lines": [
+        "씻은 뒤 세워서 바짝 말려요",
+        "눕혀 두면 뒷면에 곰팡이 펴요"
+      ],
+      "note": "",
+      "image_prompt": "Clean wooden cutting board standing upright on a rack near the sunny window, drying"
+    },
+    {
+      "title": "햇볕 소독",
+      "lines": [
+        "가끔 햇볕에 반나절 말려요",
+        "습기와 냄새가 함께 날아가요"
+      ],
+      "note": "오래 두면 나무 도마가 휠 수 있어요",
+      "image_prompt": "Wooden cutting board leaning by the open window in bright sunlight"
+    },
+    {
+      "title": "오일로 코팅",
+      "lines": [
+        "마른 나무 도마에 식용유 살짝",
+        "갈라짐 막고 물이 덜 스며요"
+      ],
+      "note": "",
+      "image_prompt": "A hand rubbing a thin layer of oil onto the dry wooden board with a paper towel, small oil bottle beside"
+    },
+    {
+      "title": "교체 시기 보기",
+      "lines": [
+        "칼자국 깊고 검게 변하면 교체",
+        "틈에 세균이 남기 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "Close-up of an old, heavily scratched darkened board next to the clean board on the counter"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "나무 도마를 물에 담가두지 마세요",
+      "갈라지고 틈에 곰팡이가 생겨요",
+      "락스와 식초는 절대 섞지 마세요"
+    ],
+    "image_prompt": "Same kitchen set, a wooden cutting board soaking in a full sink basin of water, slightly warped"
+  },
+  "save_line": "저장해두고 김장 끝나고 꺼내보세요",
+  "caption": "도마 냄새, 세제를 더 쓰면 되는 줄 알았어요 😅\n김장철엔 배추·무·젓갈 때문에 도마가 금방 지쳐요.\n쓰기 전 물 적시기, 굵은소금 문지르기만 해도 냄새가 확 줄어요.\n씻은 뒤엔 꼭 세워서 바짝 말리고, 나무 도마는 가끔 오일로 코팅해요.\n물에 담가두는 건 금물이에요.\n여러분은 도마 몇 개 나눠 쓰세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#도마관리",
+    "#나무도마",
+    "#도마냄새",
+    "#도마곰팡이",
+    "#김장준비",
+    "#김장철",
+    "#주방위생",
+    "#살림노하우",
+    "#주방살림",
+    "#자취꿀팁"
+  ],
+  "photo_query": "wooden cutting board kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 358,
+    "has_photo": false
+  }
+}
