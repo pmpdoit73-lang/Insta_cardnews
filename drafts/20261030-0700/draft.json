@@ -2,7 +2,7 @@
   "id": "20261030-0700",
   "created_at": "2026-10-29T17:01:08.311677+09:00",
   "publish_at": "2026-10-30T07:00:00+09:00",
-  "status": "pending",
+  "status": "failed",
   "handle": "@salim.kkultip",
   "issue": "자리만 바꿔도 신선함이 달라지는 냉장고 칸별 식재료 보관법",
   "kind": "주방 꿀팁",
@@ -121,5 +121,6 @@
   "message": {
     "message_id": 347,
     "has_photo": false
-  }
+  },
+  "error": "인스타 17841439757805918/media_publish 실패: Application request limit reached"
 }
