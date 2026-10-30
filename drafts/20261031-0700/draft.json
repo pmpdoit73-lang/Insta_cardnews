@@ -1,0 +1,114 @@
+{
+  "id": "20261031-0700",
+  "created_at": "2026-10-30T17:01:15.940782+09:00",
+  "publish_at": "2026-10-31T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "이사철 세탁기 옮기기 전후 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "이사 전 세탁기 고정볼트 기사에서 착안, 가을 이사철에 세탁기 옮길 때 고장·누수를 막는 요령을 묶음",
+  "title": [
+    "고장 없이 옮기는",
+    "세탁기 이사 관리법 7"
+  ],
+  "highlight": "고장 없이",
+  "subtitle": "이사 날, 세탁기는 그냥 맡기셨죠?",
+  "scene": "A bright Korean home utility nook next to the kitchen with a white front-loading drum washing machine as the hero appliance, light wood countertop beside it, a small potted plant and folded towels, warm morning sunlight from a window on the left, clean simple floor and counter in the bottom third",
+  "cover_image_prompt": "The white front-loading washing machine centered in the sunny utility nook, door slightly open, a neat coil of hose and a small toolbox on the counter, warm cozy mood, no text, no faces",
+  "tips": [
+    {
+      "title": "고정볼트 챙기기",
+      "lines": [
+        "설치 때 뺀 고정볼트, 다시 끼우세요",
+        "이동 중 통 흔들림을 막아줘요"
+      ],
+      "note": "볼트가 없으면 설명서 품번으로 구하세요",
+      "image_prompt": "Hands holding long transit bolts near the back of the washing machine"
+    },
+    {
+      "title": "잔수 빼기",
+      "lines": [
+        "배수필터 열고 남은 물을 빼세요",
+        "옮길 때 물이 새지 않아요"
+      ],
+      "note": "수건과 낮은 그릇을 꼭 받쳐두세요",
+      "image_prompt": "Hand opening the small front drain filter cap with a shallow tray and towel below"
+    },
+    {
+      "title": "수도꼭지 먼저",
+      "lines": [
+        "급수호스는 수도꼭지 잠근 뒤 빼세요",
+        "바닥이 물바다 되는 걸 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Hand turning off a faucet valve with the water inlet hose attached"
+    },
+    {
+      "title": "전원 미리 빼기",
+      "lines": [
+        "이사 전날 전원 플러그를 뽑아두세요",
+        "물기가 마를 시간이 생겨요"
+      ],
+      "note": "젖은 손으로 플러그를 만지지 마세요",
+      "image_prompt": "Unplugged power cord neatly wrapped and placed on top of the washer"
+    },
+    {
+      "title": "세제통 비우기",
+      "lines": [
+        "세제통 빼서 물로 헹궈 말리세요",
+        "굳은 세제·곰팡이가 안 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "Removed detergent drawer drying on a towel on the counter"
+    },
+    {
+      "title": "수평 맞추기",
+      "lines": [
+        "새집에선 다리로 수평부터 맞추세요",
+        "탈수 때 소음·떨림이 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "Small bubble level placed on top of the washing machine"
+    },
+    {
+      "title": "첫 빨래 전 통세척",
+      "lines": [
+        "설치 후 빈 통으로 통세척 1번",
+        "이동 중 들어간 먼지를 씻어요"
+      ],
+      "note": "",
+      "image_prompt": "Washing machine running empty with clean water swirling in the drum"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "세탁기를 눕혀서 옮기지 마세요",
+      "통과 부품이 어긋나 고장 날 수 있어요"
+    ],
+    "image_prompt": "The washing machine with a red-toned mood beside a moving dolly tilted sideways, no text"
+  },
+  "save_line": "저장해두고 이사할 때 꺼내보세요",
+  "caption": "이사 때 세탁기 고정볼트 버려서 한참 찾았어요 😅\n가을 이사철, 세탁기는 옮기기 전후가 중요해요.\n고정볼트 다시 끼우고, 잔수 빼고, 수도꼭지부터 잠그기.\n새집에선 수평 맞추고 빈 통으로 한 번 돌려주세요.\n작은 순서 하나로 고장·누수를 막을 수 있어요.\n여러분은 이사 때 가전 중 뭐가 제일 걱정되세요?",
+  "hashtags": [
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#주방꿀팁",
+    "#세탁기",
+    "#세탁기관리",
+    "#이사꿀팁",
+    "#이사준비",
+    "#세탁기고정볼트",
+    "#드럼세탁기",
+    "#자취꿀팁",
+    "#살림노하우",
+    "#생활꿀팁"
+  ],
+  "photo_query": "washing machine laundry",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 368,
+    "has_photo": false
+  }
+}
