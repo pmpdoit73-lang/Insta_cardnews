@@ -72,6 +72,19 @@ def _wait_ready(container_id, tries=20):
     raise RuntimeError("인스타 사진 처리가 너무 오래 걸려요")
 
 
+def _published_id(container_id):
+    """컨테이너가 실제로 게시됐으면 최근 게시물 id, 아니면 None."""
+    try:
+        time.sleep(10)
+        if _call("GET", container_id, fields="status_code").get("status_code") != "PUBLISHED":
+            return None
+        latest = _call("GET", f"{_user()}/media", fields="id", limit=1).get("data", [])
+        return latest[0]["id"] if latest else None
+    except RuntimeError as e:
+        print(f"[instagram] 게시 여부 확인 실패: {e}")
+        return None
+
+
 def post_carousel(image_urls, caption):
     """사진 주소 2~10개로 캐러셀을 올리고 (게시물 id, 링크)를 돌려준다."""
     children = []
@@ -83,7 +96,15 @@ def post_carousel(image_urls, caption):
     album = _call("POST", f"{_user()}/media", media_type="CAROUSEL",
                   children=",".join(children), caption=caption)
     _wait_ready(album["id"])
-    media_id = _call("POST", f"{_user()}/media_publish", creation_id=album["id"])["id"]
+    try:
+        media_id = _call("POST", f"{_user()}/media_publish", creation_id=album["id"])["id"]
+    except RuntimeError as e:
+        # 인스타가 "요청 한도 초과" 오류를 내면서도 실제로는 올리는 경우가 있다 (2026-10-28~30).
+        # 묶음 컨테이너가 PUBLISHED면 성공으로 보고 가장 최근 게시물을 찾는다
+        media_id = _published_id(album["id"])
+        if not media_id:
+            raise e
+        print(f"[instagram] 게시 오류가 났지만 실제로는 올라감: {e}")
     try:
         link = _call("GET", media_id, fields="permalink").get("permalink", "")
     except RuntimeError:

@@ -2,7 +2,7 @@
   "id": "20261030-1120-info",
   "created_at": "2026-10-30T11:09:44.728019+09:00",
   "publish_at": "2026-10-30T11:09:44.728019+09:00",
-  "status": "failed",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "냉장 식재료 보관기한 총정리 (gil 요청 수동 게시)",
@@ -126,5 +126,5 @@
     "#정보공유"
   ],
   "image_note": "샘플 (이모지 그림)",
-  "error": "인스타 17841439757805918/media_publish 실패: Application request limit reached"
+  "published_at": "2026-10-30T11:11:00+09:00"
 }
