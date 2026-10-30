@@ -1,6 +1,7 @@
 """카드뉴스 합성: 배경 사진 위에 한글 글씨를 얹어 1080x1350 JPG를 만든다.
 
-지금 쓰는 디자인은 목록형(render_list, 8~10장). A·B·C안(render, 5장)은 예전 시안으로 남겨 둠.
+지금 쓰는 디자인은 목록형(render_list, 8~10장)과 인포그래픽형(render_info, 2장, 하루 1번).
+A·B·C안(render, 5장)은 예전 시안으로 남겨 둠.
 
 제미나이는 한글 글씨를 자주 깨뜨리므로 사진에는 글씨를 넣지 않고,
 제목·본문·CTA 글씨는 전부 여기서 Pillow로 그린다.
@@ -417,6 +418,248 @@ LIST_SAMPLE = {
 }
 
 
+# ---------- 인포그래픽형 (2026-10-30~, 하루 1번) ----------
+# 1장: 크림 배경 한 장짜리 총정리표. 저장 배지 → 큰 제목(강조어 주황) → 기준 한 줄 → 3열 번호 칸
+#      (칸마다 번호·이름·만화 그림·숫자 배지, 5번째 칸은 '저장!', 마지막 칸은 '체크') → 아래 저장 유도 한 줄
+# 2장: 같은 배경에 책갈피 + 경고 + 저장 유도
+
+I_CREAM, I_YELLOW, I_PALE = (255, 248, 230), (255, 205, 60), (255, 241, 196)
+I_ORANGE, I_DARK, I_LINE, I_GRAY = (245, 120, 20), (45, 36, 28), (240, 210, 140), (120, 110, 100)
+I_GAP = 14
+EMOJI_FONT = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
+
+
+def pill(d, cx, top, text, f, fill, color, pad=28, h=None):
+    """가운데 cx에 알약 모양 상자 + 글씨. 상자 아래 y를 돌려준다."""
+    h = h or int(f.size * 1.7)
+    w = d.textlength(text, font=f) + 2 * pad
+    d.rounded_rectangle([cx - w / 2, top, cx + w / 2, top + h], h // 2, fill=fill)
+    d.text((cx, top + h / 2), text, font=f, fill=color, anchor="mm")
+    return top + h
+
+
+def emoji_icon(ch, size):
+    """그림이 없을 때 이모지를 size 크기 그림으로 (글꼴이 없으면 None)."""
+    if not ch or not EMOJI_FONT.exists():
+        return None
+    try:
+        f = ImageFont.truetype(str(EMOJI_FONT), 109)  # 컬러 이모지 글꼴은 109 크기만 됨
+        im = Image.new("RGBA", (136, 128), (0, 0, 0, 0))
+        ImageDraw.Draw(im).text((68, 64), ch, font=f, embedded_color=True, anchor="mm")
+        box = im.getbbox()
+        return im.crop(box).resize((size, size), Image.LANCZOS) if box else None
+    except Exception:
+        return None
+
+
+def icon_image(path, emoji, size):
+    if path:
+        im = Image.open(path).convert("RGB")
+        side = min(im.size)
+        left, top = (im.width - side) // 2, (im.height - side) // 2
+        return im.crop((left, top, left + side, top + side)).resize((size, size), Image.LANCZOS)
+    return emoji_icon(emoji, size)
+
+
+def i_title(d, lines, hl, top, width):
+    """큰 제목: 강조어만 주황색. 제목 아래 y를 돌려준다."""
+    f = fit(d, lines, "Black", 92, width)
+    y = top
+    for ln in lines:
+        parts = ln.split(hl, 1) if hl and hl in ln else [ln]
+        segs = [(parts[0], I_DARK)] + ([(hl, I_ORANGE), (parts[1], I_DARK)] if len(parts) == 2 else [])
+        x = (W - d.textlength(ln, font=f)) / 2
+        for text, col in segs:
+            d.text((x, y), text, font=f, fill=col)
+            x += d.textlength(text, font=f)
+        y += int(f.size * 1.18)
+    return y
+
+
+def i_item(im, d, box, n, item, icon):
+    x0, y0, x1, y1 = box
+    w, h = x1 - x0, y1 - y0
+    d.rounded_rectangle(box, 24, fill="white", outline=I_LINE, width=3)
+    r = 24  # 번호 동그라미
+    d.ellipse([x0 + 14, y0 + 14, x0 + 14 + 2 * r, y0 + 14 + 2 * r], fill=I_YELLOW)
+    d.text((x0 + 14 + r, y0 + 14 + r), str(n), font=font("Black", 30), fill=I_DARK, anchor="mm")
+    nf = fit(d, [item["name"]], "ExtraBold", 34, w - 2 * r - 40)
+    d.text((x0 + 2 * r + 26, y0 + 14 + r), item["name"], font=nf, fill=I_DARK, anchor="lm")
+    top = y0 + 2 * r + 24
+    side = min(h - (top - y0) - 12, int(w * 0.46))
+    if icon is not None:
+        ic = icon.resize((side, side), Image.LANCZOS)
+        im.paste(ic, (x0 + 12, top), ic if ic.mode == "RGBA" else None)
+    bx0 = x0 + 12 + side + 6
+    bw = x1 - 12 - bx0
+    bf = fit(d, [item["badge"]], "Black", 40, bw - 24)
+    bh = int(bf.size * 1.7)
+    by = top + (side - bh) / 2
+    d.rounded_rectangle([bx0, by, bx0 + bw, by + bh], bh // 2, fill=I_PALE)
+    d.text((bx0 + bw / 2, by + bh / 2), item["badge"], font=bf, fill=I_ORANGE, anchor="mm")
+
+
+def i_save_tile(d, box, lines):
+    x0, y0, x1, y1 = box
+    d.rounded_rectangle(box, 24, fill=I_YELLOW)
+    lf = fit(d, lines, "Bold", 34, x1 - x0 - 30)
+    sf = font("Black", 72)
+    total = int(lf.size * 1.3) * len(lines) + sf.size
+    y = y0 + (y1 - y0 - total) / 2
+    for ln in lines:
+        d.text(((x0 + x1) / 2, y), ln, font=lf, fill=I_DARK, anchor="ma")
+        y += int(lf.size * 1.3)
+    d.text(((x0 + x1) / 2, y), "저장!", font=sf, fill=(220, 60, 30), anchor="ma")
+
+
+def i_check_tile(d, box, check):
+    x0, y0, x1, y1 = box
+    d.rounded_rectangle(box, 24, fill=I_PALE, outline=I_YELLOW, width=3)
+    tf = fit(d, ["✓ " + check["title"]], "ExtraBold", 34, x1 - x0 - 30)
+    lf = fit(d, check["lines"], "Medium", 28, x1 - x0 - 30)
+    total = int(tf.size * 1.5) + int(lf.size * 1.35) * len(check["lines"])
+    y = y0 + (y1 - y0 - total) / 2
+    d.text(((x0 + x1) / 2, y), "✓ " + check["title"], font=tf, fill=I_ORANGE, anchor="ma")
+    y += int(tf.size * 1.5)
+    for ln in check["lines"]:
+        d.text(((x0 + x1) / 2, y), ln, font=lf, fill=I_DARK, anchor="ma")
+        y += int(lf.size * 1.35)
+
+
+def i_footer(d, line, hl, handle):
+    f = fit(d, [line], "ExtraBold", 40, W - 2 * MARGIN)
+    y = H - 104
+    parts = line.split(hl, 1) if hl and hl in line else [line]
+    segs = [(parts[0], I_DARK)] + ([(hl, I_ORANGE), (parts[1], I_DARK)] if len(parts) == 2 else [])
+    x = (W - d.textlength(line, font=f)) / 2
+    for text, col in segs:
+        d.text((x, y), text, font=f, fill=col)
+        x += d.textlength(text, font=f)
+    if handle:
+        d.text((W / 2, H - 42), handle, font=font("SemiBold", 26), fill=I_GRAY, anchor="mm")
+
+
+def info_sheet(c, icons):
+    im = Image.new("RGB", (W, H), I_CREAM)
+    d = ImageDraw.Draw(im)
+    side = 40
+    width = W - 2 * side
+    y = pill(d, W / 2, 34, "★ " + c["top_badge"], font("ExtraBold", 32), I_YELLOW, I_DARK)
+    y = i_title(d, c["title"], c.get("highlight", ""), y + 18, width)
+    y = pill(d, W / 2, y + 6, c["basis"], fit(d, [c["basis"]], "SemiBold", 28, width - 60),
+             "white", I_GRAY, h=50) + 18
+
+    items = c["items"]
+    cells = len(items) + 2
+    cols = 3
+    rows = -(-cells // cols)
+    save_at = 4 if rows > 1 else 1
+    order = list(range(len(items)))
+    order.insert(save_at, "save")
+    order.append("check")
+    cw = (width - (cols - 1) * I_GAP) / cols
+    ch = (H - 128 - y - (rows - 1) * I_GAP) / rows
+    for k, what in enumerate(order):
+        r, col = divmod(k, cols)
+        x0 = side + col * (cw + I_GAP)
+        y0 = y + r * (ch + I_GAP)
+        box = (int(x0), int(y0), int(x0 + cw), int(y0 + ch))
+        if what == "save":
+            i_save_tile(d, box, c["save_tile"])
+        elif what == "check":
+            i_check_tile(d, box, c["check"])
+        else:
+            i_item(im, d, box, what + 1, items[what], icons[what])
+    i_footer(d, c["footer_line"], c.get("footer_highlight", ""), c.get("handle", ""))
+    return im
+
+
+def info_end(c):
+    im = Image.new("RGB", (W, H), I_CREAM)
+    d = ImageDraw.Draw(im)
+    width = W - 2 * MARGIN
+    bx, by, bw, bh = W / 2 - 70, 230, 140, 190  # 책갈피
+    d.polygon([(bx, by), (bx + bw, by), (bx + bw, by + bh), (bx + bw / 2, by + bh - 50), (bx, by + bh)],
+              fill=I_YELLOW)
+    d.text((W / 2, by + 75), "SAVE", font=font("Black", 40), fill=I_DARK, anchor="mm")
+    w = c["warning"]
+    tf = fit(d, [w["title"]], "Black", 80, width)
+    y = 510
+    d.text((W / 2, y), w["title"], font=tf, fill=I_DARK, anchor="ma")
+    y += int(tf.size * 1.5)
+    lf = fit(d, w["lines"], "Medium", 40, width - 60)
+    lh = int(lf.size * 1.6)
+    box_h = lh * len(w["lines"]) + 70
+    d.rounded_rectangle([MARGIN, y, W - MARGIN, y + box_h], 30, fill="white", outline=I_LINE, width=3)
+    yy = y + 35
+    for ln in w["lines"]:
+        d.text((W / 2, yy), ln, font=lf, fill=I_DARK, anchor="ma")
+        yy += lh
+    y += box_h + 70
+    sf = fit(d, [c["save_line"]], "ExtraBold", 50, width)
+    pill(d, W / 2, y, c["save_line"], sf, I_YELLOW, I_DARK, pad=40)
+    d.text((W / 2, H - 150), c["slogan"], font=font("Medium", 32), fill=I_GRAY, anchor="mm")
+    if c.get("handle"):
+        d.text((W / 2, H - 95), c["handle"], font=font("SemiBold", 30), fill=I_GRAY, anchor="mm")
+    return im
+
+
+def render_info(card, icons, out_dir):
+    """인포그래픽형 2장(총정리표 + 저장·주의)을 out_dir/card1.jpg, card2.jpg로 저장하고 경로 목록을 돌려준다.
+
+    card: {"top_badge", "title", "highlight", "basis", "items": [{"name", "badge", "emoji"}],
+           "save_tile", "check": {"title", "lines"}, "footer_line", "footer_highlight",
+           "warning": {"title", "lines"}, "save_line", "slogan", "handle"}
+    icons: 항목마다 그림 경로 (None이면 이모지로 대신).
+    """
+    items = card["items"]
+    icons = list(icons) + [None] * (len(items) - len(icons))
+    side = 200
+    pics = [icon_image(p, it.get("emoji", ""), side) for p, it in zip(icons, items)]
+    images = [info_sheet(card, pics), info_end(card)]
+
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("card*.jpg"):
+        old.unlink()
+    paths = []
+    for i, im in enumerate(images, 1):
+        p = out / f"card{i}.jpg"
+        im.convert("RGB").save(p, "JPEG", quality=94)
+        paths.append(p)
+    return paths
+
+
+INFO_SAMPLE = {
+    "top_badge": "장보기 전 저장하세요!",
+    "title": ["버리기 아까운 식재료", "냉장 보관기한 10"],
+    "highlight": "냉장 보관기한",
+    "basis": "개봉 전·냉장(0~5도) 기준 · 일반 권장 기간",
+    "items": [
+        {"name": "달걀", "badge": "3~5주", "emoji": "🥚"},
+        {"name": "우유", "badge": "개봉 3일", "emoji": "🥛"},
+        {"name": "두부", "badge": "2~3일", "emoji": "🧈"},
+        {"name": "다진 고기", "badge": "1~2일", "emoji": "🥩"},
+        {"name": "생선", "badge": "1~2일", "emoji": "🐟"},
+        {"name": "버섯", "badge": "5~7일", "emoji": "🍄"},
+        {"name": "당근", "badge": "2~3주", "emoji": "🥕"},
+        {"name": "식빵", "badge": "냉동 권장", "emoji": "🍞"},
+        {"name": "치즈", "badge": "개봉 3주", "emoji": "🧀"},
+        {"name": "대파", "badge": "1~2주", "emoji": "🥬"},
+    ],
+    "save_tile": ["장볼 때", "꺼내 보는 표"],
+    "check": {"title": "보관 전 체크", "lines": ["냄새·색이", "변하면 버려요"]},
+    "footer_line": "저장해두고 장보기 전 꺼내보세요",
+    "footer_highlight": "장보기 전",
+    "warning": {"title": "이건 절대 하지 마세요",
+                "lines": ["녹은 고기를 다시 얼리기", "세균이 늘어 맛도 안전도 떨어져요",
+                          "뜨거운 음식은 식혀서 넣어 주세요"]},
+    "save_line": "저장해두고 장보기 전 꺼내보세요",
+    "slogan": "주방의 질을 높이는 살림 꿀팁",
+    "handle": "@salim.kkultip",
+}
+
+
 SAMPLE = {
     "label": "가전 꿀팁",
     "title": ["에어프라이어 냄새", "식초 2큰술로 끝"],
@@ -438,6 +681,11 @@ if __name__ == "__main__":
 
     theme = sys.argv[1] if len(sys.argv) > 1 else "L"
     out = sys.argv[2] if len(sys.argv) > 2 else f"sample_{theme}"
-    paths = render_list(LIST_SAMPLE, [], out) if theme == "L" else render(SAMPLE, [], out, theme)
+    if theme == "L":
+        paths = render_list(LIST_SAMPLE, [], out)
+    elif theme == "I":
+        paths = render_info(INFO_SAMPLE, [], out)
+    else:
+        paths = render(SAMPLE, [], out, theme)
     for p in paths:
         print(p)

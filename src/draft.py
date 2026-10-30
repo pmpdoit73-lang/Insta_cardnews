@@ -2,8 +2,10 @@
 
 초안은 drafts/<날짜>/ 폴더에 저장된다.
   draft.json      대본·상태
-  bg1~N.jpg       제미나이 배경 사진 (표지 + 팁 6~8장 + 마무리, 같은 세트장)
-  card1~N.jpg     글씨까지 얹은 완성 카드 (8~10장)
+  bg1~N.jpg       목록형: 제미나이 배경 사진 (표지 + 팁 6~8장 + 마무리, 같은 세트장)
+  icon1~N.jpg     인포그래픽형: 칸마다 들어갈 만화풍 그림 (7개 또는 10개)
+  card1~N.jpg     글씨까지 얹은 완성 카드 (목록형 8~10장, 인포그래픽형 2장)
+format: list(목록형) 또는 info(인포그래픽형 총정리표). 회차별로 SLOT_FORMAT에서 정함
 status: pending(승인 대기) → approved(승인) → published(게시 완료)
         또는 skipped(건너뜀·승인 없음) / failed(게시 실패)
 """
@@ -23,6 +25,7 @@ import writer
 KST = timezone(timedelta(hours=9))
 DRAFT_DIR = Path(__file__).resolve().parent.parent / "drafts"
 SLOTS = [(7, 0), (17, 30)]  # 하루 두 번 게시 시각 (시, 분), 2026-10-23 gil 요청으로 3번 → 2번
+SLOT_FORMAT = {(17, 30): "info"}  # 회차별 형식, 없으면 목록형. 2026-10-30 gil 요청으로 17:30은 인포그래픽형
 DRAFT_LEAD = timedelta(minutes=30)    # 게시 시각이 이보다 가까우면 그다음 회차 초안을 만든다
 SLOGAN = "주방의 질을 높이는 살림 꿀팁"  # 마지막 장 브랜드 한 줄
 
@@ -98,6 +101,14 @@ def next_slot(now=None):
                 return slot
 
 
+def format_for(slot):
+    return SLOT_FORMAT.get((slot.hour, slot.minute), "list")
+
+
+def is_info(d):
+    return d.get("format") == "info"
+
+
 def slot_id(slot):
     return slot.strftime("%Y%m%d-%H%M")
 
@@ -125,15 +136,34 @@ def _handle():
 def _fill_script(d, avoid=()):
     collected = trends.collect()
     print(f"[draft] 이슈 수집: { {k: len(v) for k, v in collected.items()} }")
-    post = writer.write_cards(collected, list(recent_issues()) + list(avoid))
+    avoid = list(recent_issues()) + list(avoid)
+    post = writer.write_info(collected, avoid) if is_info(d) else writer.write_cards(collected, avoid)
     print(f"[draft] 이슈: {post['issue']} / 표지: {post['title']}")
     d.update(post)
+
+
+def _fill_icons(d):
+    """인포그래픽형: 첫 그림을 먼저 만들고, 나머지는 첫 그림을 참고로 넣어 같은 그림체로 맞춘다."""
+    for old in _numbered(d, "icon"):
+        old.unlink()
+    ref, notes = None, []
+    for i, item in enumerate(d["items"], 1):
+        data, note = images.get_icon(item["icon_prompt"], ref)
+        if data:
+            (folder(d["id"]) / f"icon{i}.jpg").write_bytes(data)
+            ref = ref or data
+        notes.append(note)
+    made = notes.count("제미나이")
+    d["image_note"] = f"그림 {len(notes)}개 중 제미나이 {made}개" + (f", 이모지 {len(notes) - made}개" if made < len(notes) else "")
 
 
 def _fill_photos(d):
     """표지 사진을 먼저 만들고, 나머지는 표지를 참고 이미지로 넣어 같은 세트장으로 맞춘다."""
     for old in _numbered(d, "bg"):
         old.unlink()
+    if is_info(d):
+        _fill_icons(d)
+        return
     prompts = [d["cover_image_prompt"]] + [t["image_prompt"] for t in d["tips"]] + [d["warning"]["image_prompt"]]
     scene, query = d.get("scene", ""), d.get("photo_query", "")
     ref, notes = None, []
@@ -151,6 +181,13 @@ def _fill_photos(d):
 
 
 def render_cards(d):
+    if is_info(d):
+        keys = ("top_badge", "title", "highlight", "basis", "items", "save_tile", "check",
+                "footer_line", "footer_highlight", "warning", "save_line", "handle")
+        card = {k: d.get(k, "") for k in keys} | {"slogan": SLOGAN}
+        icons = [folder(d["id"]) / f"icon{i}.jpg" for i in range(1, len(d["items"]) + 1)]
+        render.render_info(card, [str(p) if p.exists() else None for p in icons], folder(d["id"]))
+        return
     card = {
         "label": d["kind"],
         "title": d["title"],
@@ -174,6 +211,7 @@ def create(slot):
         "publish_at": slot.isoformat(),
         "status": "pending",
         "handle": _handle(),
+        "format": format_for(slot),
     }
     folder(d["id"]).mkdir(parents=True, exist_ok=True)
     _fill_script(d)
@@ -186,7 +224,8 @@ def create(slot):
 def rewrite(d):
     """다른 이슈로 처음부터 다시 만든다."""
     d["rejected_issues"] = [x for x in d.get("rejected_issues", []) + [d.get("issue", "")] if x][-10:]
-    for key in ("body", "cta"):  # 예전 5장 형식 흔적 지우기
+    d["format"] = format_for(publish_time(d))  # 형식 정하기 전에 만든 회차도 지금 규칙대로
+    for key in ("body", "cta", "tips", "items"):  # 예전 형식 흔적 지우기
         d.pop(key, None)
     _fill_script(d, avoid=d["rejected_issues"])
     _fill_photos(d)
@@ -196,6 +235,12 @@ def rewrite(d):
 
 def retext(d):
     """이슈는 그대로, 대본을 새로 쓴다. 팁 개수가 같으면 사진도 그대로 쓴다."""
+    if is_info(d):  # 항목이 바뀌면 그림도 바뀌어야 하므로 그림도 새로
+        d.update(writer.rewrite_info(d))
+        _fill_photos(d)
+        render_cards(d)
+        save(d)
+        return
     post = writer.rewrite_cards(d)
     same_count = len(post["tips"]) == len(d.get("tips", []))  # 예전 5장 초안은 tips가 없어 사진도 새로
     if same_count:  # 사진은 그대로 쓰므로 프롬프트도 유지
@@ -214,7 +259,7 @@ def retext(d):
 
 
 def new_photos(d):
-    if "tips" not in d:  # 예전 5장 초안: 새 형식으로 대본부터 다시
+    if "tips" not in d and not is_info(d):  # 예전 5장 초안: 새 형식으로 대본부터 다시
         retext(d)
         return
     _fill_photos(d)
@@ -236,7 +281,9 @@ def summary(d):
         "",
         f"🔥 이슈: {d.get('issue', '')} ({d.get('kind', '')})",
         f"📌 표지: {' / '.join(d.get('title', []))}",
-        f"🗂 카드: {len(card_paths(d))}장" + (f" (팁 {len(d['tips'])}개)" if d.get("tips") else ""),
+        f"🧩 형식: {'인포그래픽 총정리표' if is_info(d) else '목록형'}",
+        f"🗂 카드: {len(card_paths(d))}장" + (f" (항목 {len(d['items'])}개)" if is_info(d) and d.get("items")
+                                           else f" (팁 {len(d['tips'])}개)" if d.get("tips") else ""),
         f"🖼 사진: {d.get('image_note', '')}",
         "",
         "✍️ 캡션",
@@ -266,7 +313,7 @@ def keyboard(d):
     return [
         [_btn(d, "✅ 승인", "ok"), _btn(d, "🚀 지금 게시", "now")],
         [_btn(d, "🔁 같은 이슈로 다시", "retext"), _btn(d, "🆕 새 이슈로", "rewrite")],
-        [_btn(d, "🖼 사진 다시", "photo"), _btn(d, "⏭ 안 올리기", "skip")],
+        [_btn(d, "🖼 그림 다시" if is_info(d) else "🖼 사진 다시", "photo"), _btn(d, "⏭ 안 올리기", "skip")],
     ]
 
 
