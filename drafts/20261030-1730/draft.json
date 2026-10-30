@@ -2,7 +2,7 @@
   "id": "20261030-1730",
   "created_at": "2026-10-30T06:31:06.751072+09:00",
   "publish_at": "2026-10-30T17:30:00+09:00",
-  "status": "pending",
+  "status": "failed",
   "handle": "@salim.kkultip",
   "issue": "김장철 무·배추 손질하는 도마 관리법",
   "kind": "주방 꿀팁",
@@ -119,5 +119,6 @@
   "message": {
     "message_id": 358,
     "has_photo": false
-  }
+  },
+  "error": "인스타 17841439757805918/media_publish 실패: Application request limit reached"
 }
