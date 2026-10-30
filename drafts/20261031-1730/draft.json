@@ -1,0 +1,133 @@
+{
+  "id": "20261031-1730",
+  "created_at": "2026-10-31T06:31:09.022567+09:00",
+  "publish_at": "2026-10-31T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "용기별 전자레인지 사용 가능 여부 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "쌀쌀해져 데워 먹는 일이 늘어나는 때, 헷갈리는 용기별 전자레인지 사용 가능 여부를 한 장에 정리했어요",
+  "top_badge": "데우기 전 저장하세요!",
+  "title": [
+    "전자레인지 돌리기 전",
+    "용기별 가능 여부 10"
+  ],
+  "highlight": "가능 여부",
+  "basis": "식약처 안내·제품 표시 기준 · 가정용 전자레인지",
+  "items": [
+    {
+      "name": "내열유리",
+      "badge": "O 가능",
+      "detail": "내열 표시 확인, 뚜껑은 살짝 열고 돌려요",
+      "emoji": "🫙",
+      "icon_prompt": "a heat-resistant glass food container"
+    },
+    {
+      "name": "무늬 없는 도자기",
+      "badge": "O 가능",
+      "detail": "금·은 테두리 없는 흰 그릇이면 괜찮아요",
+      "emoji": "🍚",
+      "icon_prompt": "a plain white ceramic bowl"
+    },
+    {
+      "name": "금테 그릇",
+      "badge": "X 불가",
+      "detail": "금속 테두리에서 불꽃이 튈 수 있어요",
+      "emoji": "✨",
+      "icon_prompt": "a porcelain plate with a gold rim"
+    },
+    {
+      "name": "알루미늄 호일",
+      "badge": "X 불가",
+      "detail": "금속이라 스파크·화재 위험이 있어요",
+      "emoji": "🧻",
+      "icon_prompt": "a roll of aluminum foil"
+    },
+    {
+      "name": "스테인리스",
+      "badge": "X 불가",
+      "detail": "전자파가 막히고 불꽃이 생길 수 있어요",
+      "emoji": "🥣",
+      "icon_prompt": "a stainless steel bowl"
+    },
+    {
+      "name": "PP 반찬통",
+      "badge": "O 표시 확인",
+      "detail": "'전자레인지용' 표시 있는 것만 써요",
+      "emoji": "🥡",
+      "icon_prompt": "a translucent plastic food container"
+    },
+    {
+      "name": "실리콘 용기",
+      "badge": "O 가능",
+      "detail": "내열 실리콘 표시를 확인하고 써요",
+      "emoji": "🧁",
+      "icon_prompt": "a silicone food container"
+    },
+    {
+      "name": "랩",
+      "badge": "△ 띄워서",
+      "detail": "음식에 닿지 않게 살짝 덮어요",
+      "emoji": "🎞️",
+      "icon_prompt": "a roll of plastic cling wrap"
+    },
+    {
+      "name": "멜라민 그릇",
+      "badge": "X 불가",
+      "detail": "고온에 변형·성분이 나올 수 있어요",
+      "emoji": "🍽️",
+      "icon_prompt": "a patterned melamine plate"
+    },
+    {
+      "name": "나무·칠기",
+      "badge": "X 불가",
+      "detail": "수분이 빠져 갈라지거나 탈 수 있어요",
+      "emoji": "🪵",
+      "icon_prompt": "a wooden bowl"
+    }
+  ],
+  "save_tile": [
+    "데울 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "돌리기 전 체크",
+    "lines": [
+      "바닥 표시 확인",
+      "뚜껑은 살짝 열기"
+    ]
+  },
+  "footer_line": "저장해두고 데우기 전 꺼내보세요",
+  "footer_highlight": "데우기 전",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "호일·금테 그릇은 넣지 마세요, 불꽃이 튀어요",
+      "빈 전자레인지는 돌리지 마세요, 고장 나요",
+      "표시 없는 배달 용기는 그릇에 옮겨 데워요"
+    ]
+  },
+  "save_line": "저장해두고 데울 때 꺼내보세요",
+  "caption": "금테 접시째 전자레인지에 넣었다가 불꽃 보고 깜짝 놀란 적 있어요 😅\n\n헷갈리는 용기별 전자레인지 사용 가능 여부를 정리했어요.\n바닥 표시만 봐도 반은 해결돼요.\n\n내열유리: O 가능 · 내열 표시 확인, 뚜껑은 살짝 열고\n무늬 없는 도자기: O 가능 · 금·은 테두리 없는 그릇이면 괜찮아요\n금테 그릇: X 불가 · 금속 테두리에서 불꽃이 튈 수 있어요\n알루미늄 호일: X 불가 · 스파크·화재 위험이 있어요\n스테인리스: X 불가 · 전자파가 막히고 불꽃이 생길 수 있어요\nPP 반찬통: O 표시 확인 · '전자레인지용' 표시 있는 것만\n실리콘 용기: O 가능 · 내열 실리콘 표시 확인\n랩: △ 띄워서 · 음식에 닿지 않게 살짝 덮어요\n멜라민 그릇: X 불가 · 고온에 변형될 수 있어요\n나무·칠기: X 불가 · 갈라지거나 탈 수 있어요\n\n식약처 안내·제품 표시 기준이에요. 표시가 없으면 내열 그릇에 옮겨 데우세요.\n여러분은 전자레인지에 주로 어떤 그릇 쓰세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#전자레인지",
+    "#전자레인지용기",
+    "#전자레인지사용법",
+    "#주방살림",
+    "#살림노하우",
+    "#자취꿀팁",
+    "#주부꿀팁",
+    "#반찬통",
+    "#내열유리",
+    "#주방안전"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 371,
+    "has_photo": false
+  }
+}
