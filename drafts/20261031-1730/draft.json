@@ -2,7 +2,7 @@
   "id": "20261031-1730",
   "created_at": "2026-10-31T06:31:09.022567+09:00",
   "publish_at": "2026-10-31T17:30:00+09:00",
-  "status": "pending",
+  "status": "failed",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "용기별 전자레인지 사용 가능 여부 총정리",
@@ -129,5 +129,6 @@
   "message": {
     "message_id": 371,
     "has_photo": false
-  }
+  },
+  "error": "인스타 17841439757805918/media_publish 실패: Application request limit reached"
 }
