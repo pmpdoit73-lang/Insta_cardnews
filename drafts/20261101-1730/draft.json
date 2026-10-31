@@ -1,0 +1,112 @@
+{
+  "id": "20261101-1730",
+  "created_at": "2026-11-01T06:31:15.464311+09:00",
+  "publish_at": "2026-11-01T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "수세미부터 프라이팬까지, 주방 소모품 교체 주기 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "연말 대청소 시즌에 맞춰, 아까워서 계속 쓰던 주방 소모품을 언제 바꿀지 한눈에 정리",
+  "top_badge": "대청소 전 저장하세요!",
+  "title": [
+    "아까워서 못 버린 주방템",
+    "교체 주기 총정리 7"
+  ],
+  "highlight": "교체 주기",
+  "basis": "일반 위생 권장 주기 · 상태 따라 앞당기기",
+  "items": [
+    {
+      "name": "수세미",
+      "badge": "2~4주",
+      "detail": "물기 많아 세균이 잘 번식해 자주 바꿔요",
+      "emoji": "🧽",
+      "icon_prompt": "a kitchen dish sponge"
+    },
+    {
+      "name": "행주",
+      "badge": "1~2개월",
+      "detail": "삶아도 냄새 나거나 얼룩지면 바로 교체",
+      "emoji": "🧻",
+      "icon_prompt": "a folded cotton kitchen towel"
+    },
+    {
+      "name": "고무장갑",
+      "badge": "2~3개월",
+      "detail": "안쪽 냄새·작은 구멍 생기면 교체 신호",
+      "emoji": "🧤",
+      "icon_prompt": "a pair of yellow rubber gloves"
+    },
+    {
+      "name": "플라스틱 도마",
+      "badge": "6개월~1년",
+      "detail": "칼자국 깊어지면 그 틈에 세균이 남아요",
+      "emoji": "🔪",
+      "icon_prompt": "a white plastic cutting board"
+    },
+    {
+      "name": "코팅 프라이팬",
+      "badge": "1~2년",
+      "detail": "코팅 벗겨지고 음식 눌어붙으면 바꿔요",
+      "emoji": "🍳",
+      "icon_prompt": "a nonstick frying pan"
+    },
+    {
+      "name": "배수구 거름망",
+      "badge": "1주",
+      "detail": "일회용 망은 매주 갈아야 냄새가 덜해요",
+      "emoji": "🚰",
+      "icon_prompt": "a sink drain mesh strainer"
+    },
+    {
+      "name": "밀폐용기 패킹",
+      "badge": "1년",
+      "detail": "늘어나거나 곰팡이 끼면 패킹만 교체",
+      "emoji": "🥡",
+      "icon_prompt": "a plastic food storage container with lid"
+    }
+  ],
+  "save_tile": [
+    "대청소 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "교체 전 체크",
+    "lines": [
+      "냄새 나면 즉시",
+      "주기보다 상태 우선"
+    ]
+  },
+  "footer_line": "저장해두고 대청소 때 꺼내보세요",
+  "footer_highlight": "대청소 때",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "벗겨진 코팅팬 계속 쓰기, 음식이 눌어붙어요",
+      "락스와 식초 섞어 소독하기, 유독가스 나와요",
+      "냄새 나는 수세미 말려서 재사용하기 금지"
+    ]
+  },
+  "save_line": "저장해두고 매달 확인해요",
+  "caption": "수세미 하나를 두 달 넘게 쓴 적 있어요 😅\n\n아까워서 계속 쓰던 주방 소모품, 교체 주기를 정리했어요.\n주기보다 상태가 나빠지면 더 일찍 바꾸세요.\n\n수세미: 2~4주 · 물기 많아 세균이 잘 번식해요\n행주: 1~2개월 · 삶아도 냄새 나면 교체\n고무장갑: 2~3개월 · 안쪽 냄새·구멍이 신호\n플라스틱 도마: 6개월~1년 · 깊은 칼자국에 세균이 남아요\n코팅 프라이팬: 1~2년 · 코팅 벗겨지면 교체\n배수구 거름망: 1주 · 매주 갈아야 냄새가 덜해요\n밀폐용기 패킹: 1년 · 늘어나거나 곰팡이 끼면 교체\n\n일반 위생 권장 주기 기준이에요. 소독할 때 락스와 식초는 절대 섞지 마세요.\n\n여러분 집 수세미는 언제 바꾸셨어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#살림노하우",
+    "#교체주기",
+    "#주방소모품",
+    "#수세미교체",
+    "#행주관리",
+    "#도마관리",
+    "#프라이팬교체",
+    "#주방위생",
+    "#대청소",
+    "#살림템",
+    "#주방정리"
+  ],
+  "image_note": "그림 7개 중 제미나이 7개",
+  "message": {
+    "message_id": 385,
+    "has_photo": false
+  }
+}
