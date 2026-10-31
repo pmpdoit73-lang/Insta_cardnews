@@ -1,0 +1,126 @@
+{
+  "id": "20261101-0700",
+  "created_at": "2026-10-31T17:01:14.046628+09:00",
+  "publish_at": "2026-11-01T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "겨울 앞두고 꺼내는 보온 텀블러 세척·관리법",
+  "kind": "주방 꿀팁",
+  "angle": "써모스 휴대용 텀블러 기사와 쌀쌀해진 날씨로 따뜻한 음료를 담는 텀블러 사용이 늘어나는 시기라 골랐어요",
+  "title": [
+    "커피 얼룩·냄새 싹",
+    "보온 텀블러 관리법 8"
+  ],
+  "highlight": "얼룩·냄새",
+  "subtitle": "물로만 헹구고 넘어가셨죠?",
+  "scene": "A single stainless steel insulated tumbler with its lid beside it, standing on a bright white marble countertop in a clean Korean home kitchen, small wooden tray, white ceramic mug, soft morning sunlight from a window on the left, warm cozy mood, bottom third of the frame is plain countertop",
+  "cover_image_prompt": "The stainless steel insulated tumbler stands in the center of the sunny marble countertop, lid placed next to it, a small bottle brush and a cup of coffee nearby, clean and gleaming, no text, no faces",
+  "tips": [
+    {
+      "title": "마시고 바로 헹구기",
+      "lines": [
+        "다 마시면 바로 물로 헹궈요",
+        "커피 얼룩이 눌어붙지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand rinsing the tumbler under running water at the sink edge of the same countertop"
+    },
+    {
+      "title": "베이킹소다로 불리기",
+      "lines": [
+        "따뜻한 물에 소다 1큰술, 30분",
+        "안쪽 커피 물때가 쉽게 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "The tumbler filled with warm water, a spoon of baking soda being added, small bowl of white powder beside it"
+    },
+    {
+      "title": "과탄산소다 쓸 땐",
+      "lines": [
+        "따뜻한 물에 1티스푼 녹여 30분",
+        "찌든 얼룩이 거품과 함께 들떠요"
+      ],
+      "note": "가스가 차니 뚜껑은 꼭 열어두세요",
+      "image_prompt": "The open tumbler with gentle fizzing foam on top, lid set aside apart, a small measuring spoon nearby"
+    },
+    {
+      "title": "뚜껑 패킹 분리",
+      "lines": [
+        "실리콘 패킹을 빼서 솔로 닦아요",
+        "냄새는 대부분 패킹에서 나요"
+      ],
+      "note": "뾰족한 도구로 빼면 패킹이 찢어져요",
+      "image_prompt": "Hands gently removing a silicone gasket from the tumbler lid, small brush on the counter"
+    },
+    {
+      "title": "식초물로 냄새 빼기",
+      "lines": [
+        "물에 식초 1큰술 넣고 30분",
+        "배인 커피·우유 냄새가 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "The tumbler with water and a small glass bottle of vinegar beside it, spoon resting on the tray"
+    },
+    {
+      "title": "긴 솔로 바닥까지",
+      "lines": [
+        "주방세제 묻힌 긴 솔로 닦아요",
+        "손이 안 닿는 바닥도 깨끗해요"
+      ],
+      "note": "",
+      "image_prompt": "A long bottle brush inserted into the tumbler, a few soap bubbles at the rim"
+    },
+    {
+      "title": "완전히 말리기",
+      "lines": [
+        "뚜껑 열고 하룻밤 말려요",
+        "습기가 남으면 냄새가 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "The tumbler and disassembled lid and gasket drying separately on a dish rack in the sunlight"
+    },
+    {
+      "title": "뜨거운 물로 예열",
+      "lines": [
+        "담기 전 뜨거운 물 1~2분 부어요",
+        "음료가 더 오래 따뜻해요"
+      ],
+      "note": "뜨거운 물은 넘치지 않게 조심하세요",
+      "image_prompt": "Steaming hot water being poured from a kettle into the tumbler on the counter"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "전자레인지에 넣지 마세요, 금속이라 위험해요",
+      "철수세미는 안쪽을 긁어 녹이 생겨요",
+      "표시 없으면 식세기는 보온력을 떨어뜨려요"
+    ],
+    "image_prompt": "On the same countertop, the tumbler next to a steel scrubber and a microwave door slightly open in the background, cautionary mood, no text"
+  },
+  "save_line": "저장해두고 텀블러 씻을 때 꺼내보세요",
+  "caption": "텀블러, 매일 물로만 헹구고 냄새는 모른 척했어요 😅\n쌀쌀해지니 따뜻한 커피 담을 일이 많아졌죠.\n베이킹소다 1큰술에 30분이면 커피 물때가 쉽게 빠져요.\n냄새가 남으면 뚜껑 실리콘 패킹부터 빼서 닦아보세요.\n다 씻었으면 뚜껑 열고 완전히 말리는 게 핵심이에요.\n여러분은 텀블러에 주로 뭘 담아 드세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#살림노하우",
+    "#텀블러세척",
+    "#텀블러관리",
+    "#텀블러냄새",
+    "#보온병세척",
+    "#베이킹소다활용",
+    "#과탄산소다",
+    "#커피얼룩",
+    "#주방살림",
+    "#살림템",
+    "#겨울준비",
+    "#생활꿀팁"
+  ],
+  "photo_query": "stainless tumbler kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 382,
+    "has_photo": false
+  }
+}
