@@ -1,0 +1,133 @@
+{
+  "id": "20261102-1730",
+  "created_at": "2026-11-02T06:31:15.413258+09:00",
+  "publish_at": "2026-11-02T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "냉동실 식재료 보관기한 총정리 (맛과 품질 기준)",
+  "kind": "주방 꿀팁",
+  "angle": "김장철 전후로 냉동실 정리하는 집이 많은데, 냉장 보관기한은 다뤘으니 이번엔 냉동실 편으로 이어 가요",
+  "top_badge": "냉동실 정리 전 저장!",
+  "title": [
+    "냉동실에 넣고 깜빡했죠",
+    "냉동 보관기한 10"
+  ],
+  "highlight": "냉동 보관기한",
+  "basis": "USDA·식약처 권장 기준 · 영하 18도 이하",
+  "items": [
+    {
+      "name": "다진 고기",
+      "badge": "3~4개월",
+      "detail": "납작하게 펴서 얼리면 빨리 녹아요",
+      "emoji": "🥩",
+      "icon_prompt": "a flat freezer bag of ground meat"
+    },
+    {
+      "name": "소고기 구이용",
+      "badge": "4~12개월",
+      "detail": "한 번 먹을 양씩 랩에 싸서 얼려요",
+      "emoji": "🐄",
+      "icon_prompt": "a raw beef steak on a small tray"
+    },
+    {
+      "name": "닭고기 조각",
+      "badge": "9개월",
+      "detail": "물기 닦고 지퍼백 공기 빼서 얼려요",
+      "emoji": "🍗",
+      "icon_prompt": "raw chicken drumsticks in a freezer bag"
+    },
+    {
+      "name": "흰살생선",
+      "badge": "6개월",
+      "detail": "손질 후 물기 닦아야 비린내가 덜해요",
+      "emoji": "🐟",
+      "icon_prompt": "a white fish fillet on a plate"
+    },
+    {
+      "name": "등푸른생선",
+      "badge": "2~3개월",
+      "detail": "기름이 많아 금방 산패해요",
+      "emoji": "🐠",
+      "icon_prompt": "a fresh mackerel fish"
+    },
+    {
+      "name": "식빵",
+      "badge": "2~3개월",
+      "detail": "한 장씩 나눠 얼리면 바로 구워요",
+      "emoji": "🍞",
+      "icon_prompt": "a loaf of sliced white bread"
+    },
+    {
+      "name": "냉동밥",
+      "badge": "1개월",
+      "detail": "갓 지은 밥을 뜨거울 때 소분해요",
+      "emoji": "🍚",
+      "icon_prompt": "a portion of cooked rice in a small container"
+    },
+    {
+      "name": "베이컨",
+      "badge": "1개월",
+      "detail": "짠 가공육은 냉동 맛 변화가 빨라요",
+      "emoji": "🥓",
+      "icon_prompt": "strips of raw bacon"
+    },
+    {
+      "name": "데친 채소",
+      "badge": "8~12개월",
+      "detail": "살짝 데쳐 식힌 뒤 얼려야 색이 살아요",
+      "emoji": "🥦",
+      "icon_prompt": "blanched broccoli florets in a bowl"
+    },
+    {
+      "name": "국·찌개",
+      "badge": "2~3개월",
+      "detail": "완전히 식혀 1회분씩 나눠 얼려요",
+      "emoji": "🍲",
+      "icon_prompt": "a bowl of hot soup"
+    }
+  ],
+  "save_tile": [
+    "냉동실 열 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "냉동 전 체크",
+    "lines": [
+      "날짜 꼭 적기",
+      "공기 최대한 빼기"
+    ]
+  },
+  "footer_line": "저장해두고 냉동실 정리할 때 꺼내보세요",
+  "footer_highlight": "냉동실 정리",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "녹인 고기 다시 얼리기는 안 돼요",
+      "실온에 두고 해동하면 세균이 늘어요",
+      "뜨거운 음식 바로 넣으면 옆 음식이 녹아요"
+    ]
+  },
+  "save_line": "저장해두고 장보기 전 확인!",
+  "caption": "냉동실 구석에서 날짜 모를 고기 봉지 꺼내 본 적 있어요 😅\n\n냉동하면 영원할 것 같지만 맛과 식감은 점점 떨어져요.\n영하 18도 기준 맛있게 먹을 수 있는 기간을 정리했어요.\n\n다진 고기: 3~4개월 · 납작하게 펴서 얼리면 빨리 녹아요\n소고기 구이용: 4~12개월 · 한 번 먹을 양씩 랩에 싸서 얼려요\n닭고기 조각: 9개월 · 물기 닦고 지퍼백 공기 빼서 얼려요\n흰살생선: 6개월 · 손질 후 물기 닦아야 비린내가 덜해요\n등푸른생선: 2~3개월 · 기름이 많아 금방 산패해요\n식빵: 2~3개월 · 한 장씩 나눠 얼리면 바로 구워요\n냉동밥: 1개월 · 갓 지은 밥을 뜨거울 때 소분해요\n베이컨: 1개월 · 짠 가공육은 냉동 맛 변화가 빨라요\n데친 채소: 8~12개월 · 살짝 데쳐 식힌 뒤 얼려야 색이 살아요\n국·찌개: 2~3개월 · 완전히 식혀 1회분씩 나눠 얼려요\n\nUSDA·식약처 권장 기준이고, 한 번 녹인 건 다시 얼리지 마세요.\n여러분 냉동실에서 제일 오래된 건 뭐예요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#냉동보관",
+    "#냉동실정리",
+    "#식재료보관",
+    "#보관기한",
+    "#냉동보관법",
+    "#살림노하우",
+    "#자취꿀팁",
+    "#주부일상",
+    "#냉장고정리",
+    "#김장철",
+    "#소분냉동"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 406,
+    "has_photo": false
+  }
+}
