@@ -61,7 +61,8 @@ def username():
 
 
 def _wait_ready(container_id, tries=20):
-    """컨테이너 준비가 끝날 때까지 기다린다 (보통 몇 초)."""
+    """컨테이너 준비가 끝날 때까지 기다린다 (보통 몇 초). 첫 확인 전에 조금 쉬어서 호출 횟수를 줄인다."""
+    time.sleep(3)
     for _ in range(tries):
         status = _call("GET", container_id, fields="status_code").get("status_code")
         if status == "FINISHED":
@@ -72,21 +73,44 @@ def _wait_ready(container_id, tries=20):
     raise RuntimeError("인스타 사진 처리가 너무 오래 걸려요")
 
 
-def _published_id(container_id):
-    """컨테이너가 실제로 게시됐으면 최근 게시물 id, 아니면 None."""
-    try:
-        time.sleep(10)
-        if _call("GET", container_id, fields="status_code").get("status_code") != "PUBLISHED":
-            return None
-        latest = _call("GET", f"{_user()}/media", fields="id", limit=1).get("data", [])
-        return latest[0]["id"] if latest else None
-    except RuntimeError as e:
-        print(f"[instagram] 게시 여부 확인 실패: {e}")
+def _key(caption):
+    """캡션 첫 줄로 같은 게시물인지 알아본다."""
+    return (caption or "").strip().split("\n")[0].strip()
+
+
+def _find_existing(caption):
+    """같은 캡션의 게시물이 이미 최근 5개 안에 있으면 (id, 링크). 없으면 None.
+    '다시 게시'를 눌렀는데 사실은 이미 올라가 있던 경우 중복 게시를 막는다."""
+    key = _key(caption)
+    if not key:
         return None
+    try:
+        recent = _call("GET", f"{_user()}/media", fields="id,caption,permalink", limit=5).get("data", [])
+    except RuntimeError as e:
+        print(f"[instagram] 최근 게시물 확인 실패: {e}")
+        return None
+    for m in recent:
+        if _key(m.get("caption")) == key:
+            return m["id"], m.get("permalink", "")
+    return None
+
+
+def _diagnose(container_id):
+    """게시 실패 때 원인 파악용 정보를 로그에 남긴다."""
+    for path, fields in ((container_id, "status_code,status"),
+                         (f"{_user()}/content_publishing_limit", "quota_usage,config")):
+        try:
+            print(f"[instagram] 진단 {path}: {_call('GET', path, fields=fields)}")
+        except RuntimeError as e:
+            print(f"[instagram] 진단 {path} 실패: {e}")
 
 
 def post_carousel(image_urls, caption):
     """사진 주소 2~10개로 캐러셀을 올리고 (게시물 id, 링크)를 돌려준다."""
+    existing = _find_existing(caption)
+    if existing:
+        print("[instagram] 같은 게시물이 이미 올라가 있어서 다시 올리지 않음")
+        return existing
     children = []
     for url in image_urls:
         c = _call("POST", f"{_user()}/media", image_url=url, is_carousel_item="true")
@@ -99,12 +123,17 @@ def post_carousel(image_urls, caption):
     try:
         media_id = _call("POST", f"{_user()}/media_publish", creation_id=album["id"])["id"]
     except RuntimeError as e:
-        # 인스타가 "요청 한도 초과" 오류를 내면서도 실제로는 올리는 경우가 있다 (2026-10-28~30).
-        # 묶음 컨테이너가 PUBLISHED면 성공으로 보고 가장 최근 게시물을 찾는다
-        media_id = _published_id(album["id"])
-        if not media_id:
-            raise e
-        print(f"[instagram] 게시 오류가 났지만 실제로는 올라감: {e}")
+        # 인스타가 "요청 한도 초과" 오류를 내면서도 실제로는 올리는 경우가 있다 (2026-10-28~).
+        # 컨테이너 상태는 늦게 바뀌기도 해서, 최근 게시물에 같은 캡션이 생겼는지 1분 동안 확인한다
+        print(f"[instagram] 게시 오류: {e} → 실제로 올라갔는지 확인")
+        for wait in (10, 20, 30):
+            time.sleep(wait)
+            existing = _find_existing(caption)
+            if existing:
+                print("[instagram] 오류가 났지만 실제로는 올라감")
+                return existing
+        _diagnose(album["id"])
+        raise e
     try:
         link = _call("GET", media_id, fields="permalink").get("permalink", "")
     except RuntimeError:
