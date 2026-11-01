@@ -141,6 +141,23 @@ def post_carousel(image_urls, caption):
     return media_id, link
 
 
+def recent_media(limit=5):
+    """최근 게시물 (id, 캡션, 링크, 댓글 수)."""
+    return _call("GET", f"{_user()}/media", fields="id,caption,permalink,comments_count",
+                 limit=limit).get("data", [])
+
+
+def comments(media_id):
+    """게시물의 댓글 (내가 단 답글 여부 확인용으로 replies도 함께). 권한: instagram_business_manage_comments"""
+    return _call("GET", f"{media_id}/comments",
+                 fields="id,text,username,timestamp,replies{id,username}", limit=50).get("data", [])
+
+
+def reply_comment(comment_id, message):
+    """댓글에 답글을 단다."""
+    return _call("POST", f"{comment_id}/replies", message=message)["id"]
+
+
 def refresh_token():
     """인스타 로그인 방식 토큰(60일)을 새 60일짜리로 바꿔 돌려준다. (페이스북 방식은 해당 없음)"""
     resp = requests.get("https://graph.instagram.com/refresh_access_token",

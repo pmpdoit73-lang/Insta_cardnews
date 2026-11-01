@@ -1,4 +1,5 @@
 """10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
+댓글 답글 버튼(c:로 시작)은 comments.py가 처리한다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
 
@@ -9,6 +10,7 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
+import comments
 import draft
 import hosting
 import instagram
@@ -108,7 +110,8 @@ def process_buttons():
             write_offset(offset)
             continue
         try:
-            note = handle(cb)
+            data = cb.get("data", "")
+            note = comments.handle(data) if comments.is_mine(data) else handle(cb)
         except Exception as e:
             print(f"[poll] 버튼 처리 실패: {e}")
             note = f"처리 실패: {str(e)[:150]}"
