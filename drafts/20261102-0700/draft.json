@@ -2,7 +2,7 @@
   "id": "20261102-0700",
   "created_at": "2026-11-01T17:01:14.941016+09:00",
   "publish_at": "2026-11-02T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "김장철 막힘·냄새 없는 주방 배수구 관리법",
@@ -112,5 +112,8 @@
   "message": {
     "message_id": 402,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18077356313470558",
+  "permalink": "https://www.instagram.com/p/DfNwkasGBy0/",
+  "published_at": "2026-11-02T07:02:45.248032+09:00"
 }
