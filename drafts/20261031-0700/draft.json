@@ -2,7 +2,7 @@
   "id": "20261031-0700",
   "created_at": "2026-10-30T17:01:15.940782+09:00",
   "publish_at": "2026-11-01T11:29:00+09:00",
-  "status": "approved",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "이사철 세탁기 옮기기 전후 관리법",
@@ -111,5 +111,8 @@
     "message_id": 368,
     "has_photo": false
   },
-  "original_publish_at": "2026-10-31T07:00:00+09:00"
+  "original_publish_at": "2026-10-31T07:00:00+09:00",
+  "instagram_id": "18641752282004240",
+  "permalink": "https://www.instagram.com/p/DfIm7W2lhWN/",
+  "published_at": "2026-11-01T11:30:31.983273+09:00"
 }
