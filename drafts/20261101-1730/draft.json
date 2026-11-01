@@ -2,7 +2,7 @@
   "id": "20261101-1730",
   "created_at": "2026-11-01T06:31:15.464311+09:00",
   "publish_at": "2026-11-01T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "수세미부터 프라이팬까지, 주방 소모품 교체 주기 총정리",
@@ -108,5 +108,8 @@
   "message": {
     "message_id": 385,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18080864918386381",
+  "permalink": "https://www.instagram.com/p/DfMTxIultwn/",
+  "published_at": "2026-11-01T17:31:50.291104+09:00"
 }
