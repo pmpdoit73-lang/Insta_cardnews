@@ -1,0 +1,126 @@
+{
+  "id": "20261103-0700",
+  "created_at": "2026-11-02T17:01:17.872388+09:00",
+  "publish_at": "2026-11-03T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "얼룩·탄 자국 없이 오래 쓰는 인덕션(전기레인지) 상판 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "찌개·국 끓이는 날이 늘어나는 초겨울, 국물 넘침과 눌어붙은 얼룩이 잦은 인덕션 상판 관리 요령을 아직 다루지 않아 골랐어요",
+  "title": [
+    "얼룩 없이 반짝이는",
+    "인덕션 상판 관리법 8"
+  ],
+  "highlight": "반짝이는",
+  "subtitle": "국물 넘친 자국, 그냥 두셨죠?",
+  "scene": "A sleek black glass-ceramic induction cooktop built into a bright Korean home kitchen counter of light beige quartz, a small stainless pot and a wooden spoon nearby, a folded white cotton cloth, a potted herb, warm morning sunlight streaming through a window on the left, soft warm tones, lower third of the frame is plain countertop",
+  "cover_image_prompt": "The black induction cooktop shown front and center, its glossy glass surface spotless and reflecting the morning window light, a stainless pot set beside it, clean and bright, no text, no faces",
+  "tips": [
+    {
+      "title": "식은 뒤 닦기",
+      "lines": [
+        "잔열 표시가 꺼진 뒤 닦으세요",
+        "뜨거울 때 닦으면 화상 위험이 커요"
+      ],
+      "note": "전원 끈 뒤 잔열 표시를 꼭 확인하세요",
+      "image_prompt": "A hand pressing the power button area of the cooktop off, a folded cloth waiting beside it, no text on display"
+    },
+    {
+      "title": "매일 물행주질",
+      "lines": [
+        "요리 후 젖은 행주로 한 번 닦기",
+        "얼룩이 굳기 전이라 쉽게 지워져요"
+      ],
+      "note": "",
+      "image_prompt": "A hand wiping the glass cooktop surface with a damp white cotton cloth in a circular motion"
+    },
+    {
+      "title": "마른행주 마무리",
+      "lines": [
+        "물기는 마른 행주로 바로 닦기",
+        "물자국 없이 유리가 반짝여요"
+      ],
+      "note": "",
+      "image_prompt": "A hand buffing the glossy cooktop with a dry microfiber cloth, the surface gleaming in sunlight"
+    },
+    {
+      "title": "눌어붙은 때 불리기",
+      "lines": [
+        "젖은 키친타월 덮고 10분 두기",
+        "굳은 국물 자국이 부드럽게 풀려요"
+      ],
+      "note": "",
+      "image_prompt": "Wet paper towels laid flat over a stained spot on the cooktop, a small glass of water beside it"
+    },
+    {
+      "title": "베이킹소다 반죽",
+      "lines": [
+        "소다 2, 물 1로 반죽해 문지르기",
+        "거친 수세미 없이 탄 자국이 빠져요"
+      ],
+      "note": "부드러운 스펀지로만 문지르세요",
+      "image_prompt": "A small bowl of white baking soda paste and a soft sponge gently rubbing paste on the cooktop surface"
+    },
+    {
+      "title": "하얀 얼룩엔 식초",
+      "lines": [
+        "식초와 물 1:1 뿌리고 5분 두기",
+        "물속 석회가 남긴 하얀 자국이 녹아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand spraying a clear spray bottle onto faint white water spots on the black cooktop"
+    },
+    {
+      "title": "전용 스크래퍼",
+      "lines": [
+        "스크래퍼를 30도로 눕혀 밀기",
+        "딱딱한 탄 덩어리가 깔끔히 떨어져요"
+      ],
+      "note": "칼날은 유리에 세우지 말고 눕혀 쓰세요",
+      "image_prompt": "A hand holding a glass cooktop scraper at a low angle, pushing burnt residue across the glass surface"
+    },
+    {
+      "title": "냄비는 들어 옮기기",
+      "lines": [
+        "냄비 바닥 물기 닦고 들어서 옮기기",
+        "끌면 유리 표면에 긁힘이 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "Two hands lifting a stainless pot straight up off the cooktop, a cloth beside it for drying the pot bottom"
+    }
+  ],
+  "warning": {
+    "title": "철수세미는 절대 금지",
+    "lines": [
+      "철수세미·연마제는 유리를 긁어요",
+      "긁힌 틈에 때가 끼어 더 지저분해져요",
+      "상판 위에 물건 쌓아두지 마세요"
+    ],
+    "image_prompt": "On the cooktop surface, a steel wool pad, an abrasive powder can and stacked plastic containers placed carelessly, slightly cluttered, no text"
+  },
+  "save_line": "저장해두고 국물 넘친 날 꺼내보세요",
+  "caption": "인덕션 상판, 뜨거울 때 박박 문지르다 긁힘만 늘렸어요 😅\n얼룩은 잔열 꺼진 뒤 물행주로 바로 닦는 게 제일 쉬워요.\n눌어붙은 때는 젖은 키친타월로 10분 불리고, 탄 자국은 베이킹소다 반죽으로.\n하얀 물얼룩은 식초물, 딱딱한 덩어리는 전용 스크래퍼를 눕혀서 밀어 주세요.\n철수세미만 피하면 오래도록 반짝여요.\n여러분 집은 인덕션이에요, 가스레인지예요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#인덕션",
+    "#인덕션청소",
+    "#전기레인지",
+    "#전기레인지청소",
+    "#하이라이트청소",
+    "#주방청소",
+    "#베이킹소다청소",
+    "#식초청소",
+    "#살림노하우",
+    "#주방살림",
+    "#청소꿀팁"
+  ],
+  "photo_query": "induction cooktop cleaning",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 418,
+    "has_photo": false
+  }
+}
