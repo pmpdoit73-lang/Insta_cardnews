@@ -1,0 +1,133 @@
+{
+  "id": "20261103-1730",
+  "created_at": "2026-11-03T06:31:28.590341+09:00",
+  "publish_at": "2026-11-03T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "식기세척기에 넣어도 되는 주방도구 O/X 총정리",
+  "kind": "가전 꿀팁",
+  "angle": "식세기 세제 비교 기사로 관심이 높고, 연말 모임 전 그릇 손상을 막는 요령이에요.",
+  "top_badge": "설거지 전 저장하세요!",
+  "title": [
+    "넣으면 망가지는 그릇",
+    "식세기 O/X 10"
+  ],
+  "highlight": "망가지는",
+  "basis": "일반 제품 설명서 기준 · 고온 세척 시",
+  "items": [
+    {
+      "name": "스텐 수저",
+      "badge": "O 가능",
+      "detail": "수저통에 손잡이가 아래로 가게 넣어요",
+      "emoji": "🥄",
+      "icon_prompt": "a stainless steel spoon and chopsticks"
+    },
+    {
+      "name": "유리컵",
+      "badge": "O 가능",
+      "detail": "윗칸에 서로 닿지 않게 엎어 넣어요",
+      "emoji": "🥛",
+      "icon_prompt": "a clear drinking glass"
+    },
+    {
+      "name": "실리콘 주걱",
+      "badge": "O 가능",
+      "detail": "내열 표시 확인 후 윗칸에 넣어요",
+      "emoji": "🥄",
+      "icon_prompt": "a silicone spatula"
+    },
+    {
+      "name": "내열 반찬통",
+      "badge": "O 윗칸",
+      "detail": "열선과 먼 윗칸이라야 변형이 없어요",
+      "emoji": "🍱",
+      "icon_prompt": "a plastic food container with lid"
+    },
+    {
+      "name": "나무 도마",
+      "badge": "X 불가",
+      "detail": "뜨거운 물에 갈라지고 휘어져요",
+      "emoji": "🪵",
+      "icon_prompt": "a wooden cutting board"
+    },
+    {
+      "name": "주방칼",
+      "badge": "X 불가",
+      "detail": "날이 무뎌지고 손잡이가 상해요",
+      "emoji": "🔪",
+      "icon_prompt": "a kitchen chef knife"
+    },
+    {
+      "name": "무쇠 팬",
+      "badge": "X 불가",
+      "detail": "길들인 기름막이 벗겨져 녹슬어요",
+      "emoji": "🍳",
+      "icon_prompt": "a cast iron skillet"
+    },
+    {
+      "name": "코팅 팬",
+      "badge": "X 비추천",
+      "detail": "강한 세제와 고온에 코팅이 빨리 닳아요",
+      "emoji": "🍳",
+      "icon_prompt": "a nonstick frying pan"
+    },
+    {
+      "name": "보온병",
+      "badge": "X 불가",
+      "detail": "진공층이 상해 보온력이 떨어져요",
+      "emoji": "🧴",
+      "icon_prompt": "a stainless steel vacuum flask"
+    },
+    {
+      "name": "금테 그릇",
+      "badge": "X 불가",
+      "detail": "금·은 장식이 벗겨지고 변색돼요",
+      "emoji": "🍽️",
+      "icon_prompt": "a white porcelain plate with gold rim"
+    }
+  ],
+  "save_tile": [
+    "설거지할 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "넣기 전 체크",
+    "lines": [
+      "바닥 표시 확인",
+      "애매하면 손설거지"
+    ]
+  },
+  "footer_line": "저장해두고 식세기 돌리기 전 꺼내보세요",
+  "footer_highlight": "식세기 돌리기 전",
+  "warning": {
+    "title": "이건 절대 넣지 마세요",
+    "lines": [
+      "나무 도마·칼은 갈라지고 무뎌져요",
+      "보온병은 진공층이 상해 못 써요",
+      "식세기 전용 아닌 세제는 넣지 마세요"
+    ]
+  },
+  "save_line": "저장해두고 헷갈릴 때 보세요",
+  "caption": "식세기에 나무 도마 넣었다가 쩍 갈라진 적 있어요 😅\n\n식기세척기에 넣어도 되는 것, 안 되는 것을 한 장에 정리했어요.\n제품 설명서에 공통으로 나오는 기준이에요.\n\n스텐 수저: O 가능 · 손잡이가 아래로 가게\n유리컵: O 가능 · 윗칸에 닿지 않게\n실리콘 주걱: O 가능 · 내열 표시 확인\n내열 반찬통: O 윗칸 · 열선과 먼 윗칸에\n나무 도마: X 불가 · 갈라지고 휘어요\n주방칼: X 불가 · 날이 무뎌져요\n무쇠 팬: X 불가 · 기름막이 벗겨져 녹슬어요\n코팅 팬: X 비추천 · 코팅이 빨리 닳아요\n보온병: X 불가 · 보온력이 떨어져요\n금테 그릇: X 불가 · 장식이 벗겨져요\n\n그릇 바닥의 식세기 사용 표시를 먼저 보고, 애매하면 손설거지가 안전해요.\n여러분은 식세기에 넣었다가 망가뜨린 물건 있으세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#식기세척기",
+    "#식세기",
+    "#식세기꿀팁",
+    "#식기세척기사용법",
+    "#설거지꿀팁",
+    "#주방살림",
+    "#살림노하우",
+    "#자취꿀팁",
+    "#맞벌이살림",
+    "#주방정리"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 422,
+    "has_photo": false
+  }
+}
