@@ -2,7 +2,7 @@
   "id": "20261104-0700",
   "created_at": "2026-11-03T17:01:23.905314+09:00",
   "publish_at": "2026-11-04T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "반찬통 김치 냄새·얼룩 없이 쓰는 밀폐용기 관리법",
@@ -121,5 +121,8 @@
   "message": {
     "message_id": 434,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18090657650312135",
+  "permalink": "https://www.instagram.com/p/DfS6bESElWS/",
+  "published_at": "2026-11-04T07:04:57.247780+09:00"
 }
