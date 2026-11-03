@@ -1,0 +1,125 @@
+{
+  "id": "20261104-0700",
+  "created_at": "2026-11-03T17:01:23.905314+09:00",
+  "publish_at": "2026-11-04T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "반찬통 김치 냄새·얼룩 없이 쓰는 밀폐용기 관리법",
+  "kind": "주방 꿀팁",
+  "angle": "김장철 김치를 나눠 담을 밀폐용기가 늘어나는 때, 기사 속 '반찬통 김치 냄새' 고민을 용기 관리 요령으로 묶었어요",
+  "title": [
+    "김치 냄새 싹 빼는",
+    "밀폐용기 관리법 8"
+  ],
+  "highlight": "김치 냄새",
+  "subtitle": "씻어도 김치 냄새 그대로죠?",
+  "scene": "A clean, bright Korean home kitchen in the morning: a light beige quartz countertop by a window with warm sunlight streaming in, several clear plastic and glass food storage containers with lids as the hero items, a white sink edge and a small potted herb in the soft-focus background, simple uncluttered lower third of the frame",
+  "cover_image_prompt": "A neat row of clear plastic and glass food storage containers with open lids on the sunlit beige countertop, one container lightly stained orange from kimchi in front, warm morning light, no text, no faces",
+  "tips": [
+    {
+      "title": "쓰고 바로 헹구기",
+      "lines": [
+        "다 먹으면 바로 찬물로 헹궈요",
+        "양념이 마르기 전이라 얼룩이 덜 배요"
+      ],
+      "note": "",
+      "image_prompt": "Hands rinsing an empty kimchi-stained plastic container under cold running water at the sink edge"
+    },
+    {
+      "title": "쌀뜨물에 담그기",
+      "lines": [
+        "쌀뜨물을 채워 반나절 두세요",
+        "냄새 성분을 흡착해 잡내가 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "A plastic container filled with cloudy rice water sitting on the countertop, a bowl of rice nearby"
+    },
+    {
+      "title": "베이킹소다 불리기",
+      "lines": [
+        "미지근한 물에 1큰술 풀어 30분",
+        "약알칼리라 기름진 양념이 잘 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "A spoon of baking soda being stirred into warm water inside a clear container"
+    },
+    {
+      "title": "햇볕에 말리기",
+      "lines": [
+        "씻은 뒤 햇볕에 반나절 말려요",
+        "빨간 김치 얼룩이 옅어져요"
+      ],
+      "note": "뚜껑 패킹은 빼서 따로 말리세요",
+      "image_prompt": "Washed containers and lids drying upside down on the sunny windowsill area of the countertop"
+    },
+    {
+      "title": "뚜껑 패킹 분리",
+      "lines": [
+        "실리콘 패킹을 빼서 따로 씻어요",
+        "냄새와 곰팡이가 숨는 곳이에요"
+      ],
+      "note": "",
+      "image_prompt": "Hands pulling a silicone gasket out of a container lid with a small brush beside it"
+    },
+    {
+      "title": "신문지 넣어 보관",
+      "lines": [
+        "마른 용기에 신문지 넣고 하루",
+        "남은 냄새와 습기를 빨아들여요"
+      ],
+      "note": "",
+      "image_prompt": "Crumpled newspaper placed inside an empty dry clear container with lid beside it"
+    },
+    {
+      "title": "김치는 전용통",
+      "lines": [
+        "김치는 김치 전용 용기에 담아요",
+        "다른 반찬에 냄새가 안 옮겨요"
+      ],
+      "note": "",
+      "image_prompt": "One glass container filled with kimchi next to separate containers with other side dishes"
+    },
+    {
+      "title": "유리용기 활용",
+      "lines": [
+        "오래 둘 김치는 유리용기에 담아요",
+        "유리는 냄새·색이 잘 안 배요"
+      ],
+      "note": "",
+      "image_prompt": "A glass food container filled with kimchi with its lid being closed on the countertop"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스와 식초를 섞어 담그지 마세요",
+      "유독가스가 나와 매우 위험해요",
+      "플라스틱 통은 철수세미 대신 부드러운 솔로"
+    ],
+    "image_prompt": "A bleach bottle and a vinegar bottle placed apart beside a plastic container and a steel wool pad, warm light, no labels or text"
+  },
+  "save_line": "저장해두고 김치통 씻을 때 꺼내보세요",
+  "caption": "김치통 씻고 또 씻어도 냄새가 남아서 몇 개를 그냥 버렸어요 😅\n김장철엔 반찬통이 김치 냄새와 빨간 얼룩으로 금방 지쳐요.\n다 먹으면 바로 찬물로 헹구고, 쌀뜨물이나 베이킹소다에 불려 보세요.\n씻은 뒤엔 햇볕에 말리고 패킹은 꼭 따로 빼서 씻어요.\n오래 둘 김치는 유리용기에 담으면 관리가 훨씬 편해요.\n여러분은 김치 담을 때 플라스틱통 쓰세요, 유리통 쓰세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#살림노하우",
+    "#밀폐용기",
+    "#반찬통",
+    "#김치통냄새",
+    "#김치통세척",
+    "#김장철",
+    "#주방정리",
+    "#베이킹소다활용",
+    "#쌀뜨물",
+    "#살림템",
+    "#주부일상"
+  ],
+  "photo_query": "food storage containers",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 434,
+    "has_photo": false
+  }
+}
