@@ -1,0 +1,116 @@
+{
+  "id": "20261105-0700",
+  "created_at": "2026-11-04T17:01:32.494419+09:00",
+  "publish_at": "2026-11-05T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "손 베임 없이 오래 쓰는 주방 칼 보관·관리법",
+  "kind": "주방 꿀팁",
+  "angle": "서랍 속 칼날 손 베임 기사에 맞춰, 김장철 칼질이 많아지는 지금 칼 보관·관리 요령을 묶음",
+  "title": [
+    "손 안 베이고 오래 쓰는",
+    "주방 칼 관리법 7"
+  ],
+  "highlight": "손 안 베이고",
+  "subtitle": "칼, 서랍에 그냥 넣어두셨죠?",
+  "scene": "A bright Korean home kitchen in morning light: a set of stainless steel kitchen knives on a light oak wooden countertop, a wooden cutting board, a small potted herb and white tiles, warm sunlight from a window on the left, simple clean countertop in the lower third",
+  "cover_image_prompt": "Same kitchen set, a neat row of kitchen knives resting in a wooden knife block on the oak countertop, sunlight glinting softly on the blades, no text, no faces",
+  "tips": [
+    {
+      "title": "쓰고 바로 씻기",
+      "lines": [
+        "사용 후 5분 안에 씻어 말려요",
+        "산성 음식에 녹 생기는 걸 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Hands rinsing a kitchen knife under the faucet right after slicing a tomato, tomato slices on the board, no faces"
+    },
+    {
+      "title": "칼등 쪽으로 닦기",
+      "lines": [
+        "행주는 칼등에서 날 방향으로 닦아요",
+        "날을 쥐고 닦으면 손이 베여요"
+      ],
+      "note": "칼날을 손가락으로 감싸 닦지 마세요",
+      "image_prompt": "Hand wiping a knife with a cloth from the spine side, blade facing away, on the oak counter"
+    },
+    {
+      "title": "물기 완전히 말리기",
+      "lines": [
+        "마른 행주로 닦고 10분 세워 말려요",
+        "손잡이 틈 물기가 녹·곰팡이 원인이에요"
+      ],
+      "note": "",
+      "image_prompt": "Knives standing upright to dry in a dish rack beside a folded dry towel in sunlight"
+    },
+    {
+      "title": "칼집 끼워 보관",
+      "lines": [
+        "서랍엔 칼날 커버를 꼭 씌워요",
+        "날도 보호되고 손 베임도 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Hands sliding a plastic blade guard onto a chef's knife above an open drawer"
+    },
+    {
+      "title": "칼꽂이 날 아래로",
+      "lines": [
+        "칼꽂이엔 날이 아래로 가게 꽂아요",
+        "꺼낼 때 손이 날에 닿지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "Knife block on the counter with a hand inserting a knife blade-down"
+    },
+    {
+      "title": "도마는 나무·고무",
+      "lines": [
+        "유리·대리석 도마 대신 나무를 써요",
+        "칼날이 덜 상해 오래 잘 들어요"
+      ],
+      "note": "",
+      "image_prompt": "Wooden cutting board with chopped scallions and a knife beside a set-aside glass board"
+    },
+    {
+      "title": "숫돌은 물에 불려",
+      "lines": [
+        "숫돌을 물에 10~15분 담갔다 갈아요",
+        "마찰이 줄어 날이 고르게 서요"
+      ],
+      "note": "갈 땐 칼날을 몸 반대쪽으로 향해요",
+      "image_prompt": "Whetstone soaking in a shallow bowl of water next to a knife on a towel"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "칼을 설거지통에 담가두지 마세요",
+      "물속에 안 보여 손을 크게 베여요",
+      "떨어지는 칼은 잡지 말고 피하세요"
+    ],
+    "image_prompt": "Same counter with a sink basin full of soapy water and dishes, a knife handle barely visible among them, no faces"
+  },
+  "save_line": "저장해두고 김장 칼질 전에 꺼내보세요",
+  "caption": "칼을 서랍에 그냥 넣었다가 손 베인 적 있어요 😣\n칼은 쓰고 바로 씻어 칼등 쪽으로 닦아요.\n물기는 손잡이 틈까지 말려야 녹이 안 생겨요.\n서랍엔 칼날 커버, 칼꽂이엔 날을 아래로!\n설거지통에 칼 담가두는 건 꼭 피하세요.\n여러분은 칼을 어디에 보관하세요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#주방칼",
+    "#칼관리",
+    "#칼보관",
+    "#주방정리",
+    "#주방수납",
+    "#김장준비",
+    "#살림노하우",
+    "#주방안전",
+    "#숫돌",
+    "#도마관리",
+    "#자취꿀팁"
+  ],
+  "photo_query": "kitchen knife storage",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 449,
+    "has_photo": false
+  }
+}
