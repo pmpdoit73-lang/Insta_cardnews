@@ -2,7 +2,7 @@
   "id": "20261105-0700",
   "created_at": "2026-11-04T17:01:32.494419+09:00",
   "publish_at": "2026-11-05T07:00:00+09:00",
-  "status": "pending",
+  "status": "failed",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "손 베임 없이 오래 쓰는 주방 칼 보관·관리법",
@@ -112,5 +112,6 @@
   "message": {
     "message_id": 449,
     "has_photo": false
-  }
+  },
+  "error": "[Errno 2] No such file or directory: 'ffmpeg'"
 }
