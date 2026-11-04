@@ -9,9 +9,9 @@ API = "https://api.telegram.org/bot{token}/{method}"
 CAPTION_LIMIT = 1024
 
 
-def _call(method, **kwargs):
+def _call(method, timeout=30, **kwargs):
     url = API.format(token=os.environ["TELEGRAM_BOT_TOKEN"].strip(), method=method)
-    resp = requests.post(url, timeout=30, **kwargs)
+    resp = requests.post(url, timeout=timeout, **kwargs)
     body = resp.json()
     if not body.get("ok"):
         raise RuntimeError(f"텔레그램 {method} 실패: {body.get('description')}")
@@ -95,3 +95,10 @@ def send_album(photos, caption=""):
         files[key] = (name, data)
     data = {"chat_id": _chat_id(), "media": json.dumps(media), "disable_notification": "true"}
     return _call("sendMediaGroup", data=data, files=files)
+
+
+def send_video(video, caption=""):
+    """영상(MP4 바이트)을 보낸다. 릴스 미리보기용."""
+    data = {"chat_id": _chat_id(), "caption": caption[:CAPTION_LIMIT], "supports_streaming": "true",
+            "width": "1080", "height": "1920", "disable_notification": "true"}
+    return _call("sendVideo", data=data, files={"video": ("reel.mp4", video, "video/mp4")}, timeout=120)

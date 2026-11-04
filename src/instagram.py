@@ -1,6 +1,7 @@
-"""인스타그램 캐러셀(여러 장 넘기기) 게시.
+"""인스타그램 게시: 캐러셀(여러 장 넘기기)과 릴스(영상).
 
-순서: 사진마다 '카드 컨테이너' 만들기 → 묶음(CAROUSEL) 컨테이너 → 준비 끝나면 게시.
+캐러셀 순서: 사진마다 '카드 컨테이너' 만들기 → 묶음(CAROUSEL) 컨테이너 → 준비 끝나면 게시.
+릴스 순서: 영상 주소로 REELS 컨테이너 → 인스타가 영상 처리 끝낼 때까지 기다림 → 게시.
 인스타 API는 사진 파일을 직접 받지 않고 공개 인터넷 주소(URL)만 받는다.
 
 필요한 값 (GitHub Secrets):
@@ -60,17 +61,18 @@ def username():
     return _call("GET", _user(), fields="username")["username"]
 
 
-def _wait_ready(container_id, tries=20):
-    """컨테이너 준비가 끝날 때까지 기다린다 (보통 몇 초). 첫 확인 전에 조금 쉬어서 호출 횟수를 줄인다."""
-    time.sleep(3)
+def _wait_ready(container_id, tries=20, first=3, every=5):
+    """컨테이너 준비가 끝날 때까지 기다린다 (사진은 몇 초, 영상은 30초~몇 분).
+    첫 확인 전에 조금 쉬어서 호출 횟수를 줄인다."""
+    time.sleep(first)
     for _ in range(tries):
         status = _call("GET", container_id, fields="status_code").get("status_code")
         if status == "FINISHED":
             return
         if status in ("ERROR", "EXPIRED"):
-            raise RuntimeError(f"인스타가 사진을 처리하지 못했어요 (상태: {status})")
-        time.sleep(5)
-    raise RuntimeError("인스타 사진 처리가 너무 오래 걸려요")
+            raise RuntimeError(f"인스타가 사진·영상을 처리하지 못했어요 (상태: {status})")
+        time.sleep(every)
+    raise RuntimeError("인스타 사진·영상 처리가 너무 오래 걸려요")
 
 
 def _key(caption):
@@ -120,8 +122,26 @@ def post_carousel(image_urls, caption):
     album = _call("POST", f"{_user()}/media", media_type="CAROUSEL",
                   children=",".join(children), caption=caption)
     _wait_ready(album["id"])
+    return _publish(album["id"], caption)
+
+
+def post_reel(video_url, caption):
+    """MP4 영상 주소로 릴스를 올리고 (게시물 id, 링크)를 돌려준다. 피드(프로필 격자)에도 보이게 올린다."""
+    existing = _find_existing(caption)
+    if existing:
+        print("[instagram] 같은 게시물이 이미 올라가 있어서 다시 올리지 않음")
+        return existing
+    reel = _call("POST", f"{_user()}/media", media_type="REELS", video_url=video_url,
+                 caption=caption, share_to_feed="true")
+    # 영상 처리는 오래 걸려서 15초마다 최대 약 6분 확인 (호출 횟수를 줄이려고 간격을 넓힘)
+    _wait_ready(reel["id"], tries=24, first=20, every=15)
+    return _publish(reel["id"], caption)
+
+
+def _publish(container_id, caption):
+    """준비된 컨테이너를 게시하고 (게시물 id, 링크)를 돌려준다."""
     try:
-        media_id = _call("POST", f"{_user()}/media_publish", creation_id=album["id"])["id"]
+        media_id = _call("POST", f"{_user()}/media_publish", creation_id=container_id)["id"]
     except RuntimeError as e:
         # 인스타가 "요청 한도 초과" 오류를 내면서도 실제로는 올리는 경우가 있다 (2026-10-28~).
         # 컨테이너 상태는 늦게 바뀌기도 해서, 최근 게시물에 같은 캡션이 생겼는지 1분 동안 확인한다
@@ -132,7 +152,7 @@ def post_carousel(image_urls, caption):
             if existing:
                 print("[instagram] 오류가 났지만 실제로는 올라감")
                 return existing
-        _diagnose(album["id"])
+        _diagnose(container_id)
         raise e
     try:
         link = _call("GET", media_id, fields="permalink").get("permalink", "")
