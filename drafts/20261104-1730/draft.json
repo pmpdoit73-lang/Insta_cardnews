@@ -2,7 +2,7 @@
   "id": "20261104-1730",
   "created_at": "2026-11-04T06:36:07.276802+09:00",
   "publish_at": "2026-11-04T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "김장철·겨울 제철 채소 실온 vs 냉장 보관법 총정리",
@@ -130,5 +130,8 @@
   "message": {
     "message_id": 438,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17917043142549376",
+  "permalink": "https://www.instagram.com/p/DfUCLTylnxP/",
+  "published_at": "2026-11-04T17:31:55.428481+09:00"
 }
