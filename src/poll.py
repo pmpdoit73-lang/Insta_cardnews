@@ -1,4 +1,5 @@
 """10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
+07:00 목록형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
 
@@ -35,8 +36,13 @@ def write_offset(value):
 # ---------- 게시 ----------
 
 def publish(d):
-    urls = [hosting.upload_temp(p.read_bytes(), f"{d['id']}-{p.name}") for p in draft.card_paths(d)]
-    media_id, link = instagram.post_carousel(urls, draft.ig_caption(d))
+    if draft.is_reel(d):  # 목록형: 카드를 영상으로 만들어 릴스로 (2026-11-04 gil 요청, 음악 없음)
+        path = draft.make_reel(d)
+        url = hosting.upload_temp(path.read_bytes(), f"{d['id']}-reel.mp4")
+        media_id, link = instagram.post_reel(url, draft.ig_caption(d))
+    else:
+        urls = [hosting.upload_temp(p.read_bytes(), f"{d['id']}-{p.name}") for p in draft.card_paths(d)]
+        media_id, link = instagram.post_carousel(urls, draft.ig_caption(d))
     d["instagram_id"] = media_id
     d["permalink"] = link
     d["status"] = "published"

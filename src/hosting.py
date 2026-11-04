@@ -9,7 +9,10 @@
 import requests
 
 def _mime(filename):
-    return "image/jpeg" if filename.lower().endswith((".jpg", ".jpeg")) else "image/png"
+    name = filename.lower()
+    if name.endswith(".mp4"):
+        return "video/mp4"
+    return "image/jpeg" if name.endswith((".jpg", ".jpeg")) else "image/png"
 
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (insta-cardnews)"}

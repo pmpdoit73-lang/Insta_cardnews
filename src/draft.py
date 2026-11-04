@@ -5,6 +5,7 @@
   bg1~N.jpg       목록형: 제미나이 배경 사진 (표지 + 팁 6~8장 + 마무리, 같은 세트장)
   icon1~N.jpg     인포그래픽형: 칸마다 들어갈 만화풍 그림 (7개 또는 10개)
   card1~N.jpg     글씨까지 얹은 완성 카드 (목록형 8~10장, 인포그래픽형 2장)
+  reel.mp4        목록형 릴스 영상 (카드로 그때그때 다시 만들 수 있어서 저장소에는 안 올림)
 format: list(목록형) 또는 info(인포그래픽형 총정리표). 회차별로 SLOT_FORMAT에서 정함
 status: pending(승인 대기) → approved(승인) → published(게시 완료)
         또는 skipped(건너뜀·승인 없음) / failed(게시 실패)
@@ -20,6 +21,7 @@ import instagram
 import render
 import telegram
 import trends
+import video
 import writer
 
 KST = timezone(timedelta(hours=9))
@@ -107,6 +109,16 @@ def format_for(slot):
 
 def is_info(d):
     return d.get("format") == "info"
+
+
+def is_reel(d):
+    """목록형은 릴스(영상)로 올린다. 2026-11-04 gil 요청. 인포그래픽형은 캐러셀 그대로."""
+    return not is_info(d)
+
+
+def make_reel(d):
+    """카드로 릴스 영상(reel.mp4)을 만든다. 카드가 바뀌어도 늘 최신 카드로 다시 만든다."""
+    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4")
 
 
 def slot_id(slot):
@@ -281,7 +293,7 @@ def summary(d):
         "",
         f"🔥 이슈: {d.get('issue', '')} ({d.get('kind', '')})",
         f"📌 표지: {' / '.join(d.get('title', []))}",
-        f"🧩 형식: {'인포그래픽 총정리표' if is_info(d) else '목록형'}",
+        f"🧩 형식: {'인포그래픽 총정리표 (사진 넘기기)' if is_info(d) else '목록형 (릴스 영상, 음악 없음)'}",
         f"🗂 카드: {len(card_paths(d))}장" + (f" (항목 {len(d['items'])}개)" if is_info(d) and d.get("items")
                                            else f" (팁 {len(d['tips'])}개)" if d.get("tips") else ""),
         f"🖼 사진: {d.get('image_note', '')}",
@@ -318,7 +330,7 @@ def keyboard(d):
 
 
 def send(d):
-    """카드 묶음(최대 10장) + 버튼 달린 설명 메시지를 새로 보낸다."""
+    """카드 묶음(최대 10장) + (목록형이면) 릴스 영상 + 버튼 달린 설명 메시지를 새로 보낸다."""
     old = d.get("message")
     if old:
         try:
@@ -326,6 +338,11 @@ def send(d):
         except RuntimeError as e:
             print(f"[draft] 옛 메시지 정리 실패: {e}")
     telegram.send_album([(p.name, p.read_bytes()) for p in card_paths(d)])
+    if is_reel(d):  # 실제로 올라갈 릴스 영상도 미리 보여 준다. 실패해도 초안은 그대로 보냄
+        try:
+            telegram.send_video(make_reel(d).read_bytes(), "▶️ 이 영상이 릴스로 올라가요 (음악 없음)")
+        except Exception as e:
+            print(f"[draft] 릴스 미리보기 실패: {e}")
     msg = telegram.send_text(summary(d), keyboard(d))
     d["message"] = {"message_id": msg["message_id"], "has_photo": False}
     save(d)
