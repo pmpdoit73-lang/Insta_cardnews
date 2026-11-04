@@ -1,0 +1,133 @@
+{
+  "id": "20261105-1730",
+  "created_at": "2026-11-05T06:31:28.203024+09:00",
+  "publish_at": "2026-11-05T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "김장철 김치냉장고 식재료별 보관 온도·기간 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "미니 김치냉장고 출시·보상판매 소식이 많은 김장철이라, 김치냉장고에 김치 말고 뭘 얼마나 넣어도 되는지 궁금한 때예요",
+  "top_badge": "김장 전 저장하세요!",
+  "title": [
+    "김치만 넣긴 아까운",
+    "김치냉장고 보관법 10"
+  ],
+  "highlight": "김치냉장고",
+  "basis": "일반 보관 권장 기준 · 김치냉장고 냉장 모드",
+  "items": [
+    {
+      "name": "배추김치",
+      "badge": "-1~0도",
+      "detail": "영하 가까이 두면 천천히 익어요",
+      "emoji": "🥬",
+      "icon_prompt": "a bowl of napa cabbage kimchi"
+    },
+    {
+      "name": "깍두기",
+      "badge": "-1~0도",
+      "detail": "무가 물러지지 않게 낮게 두세요",
+      "emoji": "🥗",
+      "icon_prompt": "a bowl of cubed radish kimchi"
+    },
+    {
+      "name": "사과",
+      "badge": "0~2도",
+      "detail": "하나씩 싸서 넣으면 덜 말라요",
+      "emoji": "🍎",
+      "icon_prompt": "a fresh red apple"
+    },
+    {
+      "name": "배",
+      "badge": "0~2도",
+      "detail": "신문지로 싸면 수분이 지켜져요",
+      "emoji": "🍐",
+      "icon_prompt": "a fresh asian pear"
+    },
+    {
+      "name": "생고기",
+      "badge": "0~2도",
+      "detail": "밀폐해 따로 칸에 두세요",
+      "emoji": "🥩",
+      "icon_prompt": "a raw beef steak on a tray"
+    },
+    {
+      "name": "생선",
+      "badge": "0~2도",
+      "detail": "손질 후 밀폐, 빨리 드세요",
+      "emoji": "🐟",
+      "icon_prompt": "a fresh whole fish"
+    },
+    {
+      "name": "쌀",
+      "badge": "4~10도",
+      "detail": "밀폐통에 담으면 벌레가 안 생겨요",
+      "emoji": "🍚",
+      "icon_prompt": "a sealed container of white rice"
+    },
+    {
+      "name": "감자",
+      "badge": "7~10도",
+      "detail": "너무 차면 단맛 나니 피하세요",
+      "emoji": "🥔",
+      "icon_prompt": "a few potatoes"
+    },
+    {
+      "name": "고구마",
+      "badge": "12~15도",
+      "detail": "김치냉장고 말고 실온 서늘하게",
+      "emoji": "🍠",
+      "icon_prompt": "a sweet potato"
+    },
+    {
+      "name": "바나나",
+      "badge": "13도 이상",
+      "detail": "차면 껍질이 까매져요, 실온에",
+      "emoji": "🍌",
+      "icon_prompt": "a bunch of bananas"
+    }
+  ],
+  "save_tile": [
+    "김장할 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "넣기 전 체크",
+    "lines": [
+      "밀폐용기에 담기",
+      "칸 모드 확인"
+    ]
+  },
+  "footer_line": "저장해두고 김치냉장고 정리할 때 보세요",
+  "footer_highlight": "김치냉장고",
+  "warning": {
+    "title": "이건 꼭 피하세요",
+    "lines": [
+      "고구마·바나나는 넣지 마세요, 냉해 입어요",
+      "김치와 과일 한 칸에 두면 냄새가 배요",
+      "뚜껑 없이 넣으면 냄새·성에가 생겨요"
+    ]
+  },
+  "save_line": "저장해두고 김장 때 꺼내보세요",
+  "caption": "김치냉장고에 김치만 넣고 반은 비워뒀던 세월이 아깝더라고요 😅\n\n김치냉장고 칸에 맞는 식재료 보관 온도를 정리했어요\n무엇을 넣고 무엇을 빼야 하는지 한눈에 보세요\n\n배추김치: -1~0도 · 영하 가까이 두면 천천히 익어요\n깍두기: -1~0도 · 무가 물러지지 않게 낮게 두세요\n사과: 0~2도 · 하나씩 싸서 넣으면 덜 말라요\n배: 0~2도 · 신문지로 싸면 수분이 지켜져요\n생고기: 0~2도 · 밀폐해 따로 칸에 두세요\n생선: 0~2도 · 손질 후 밀폐, 빨리 드세요\n쌀: 4~10도 · 밀폐통에 담으면 벌레가 안 생겨요\n감자: 7~10도 · 너무 차면 단맛 나니 피하세요\n고구마: 12~15도 · 김치냉장고 말고 실온 서늘하게\n바나나: 13도 이상 · 차면 껍질이 까매져요, 실온에\n\n일반 보관 권장 기준이고, 제품마다 모드 온도가 달라 설명서를 꼭 확인하세요\n여러분 김치냉장고엔 김치 말고 뭐가 들어 있어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#김치냉장고",
+    "#김치냉장고활용",
+    "#김장",
+    "#김장철",
+    "#식재료보관",
+    "#보관온도",
+    "#살림정보",
+    "#주부꿀팁",
+    "#자취꿀팁",
+    "#냉장고정리"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 453,
+    "has_photo": false
+  }
+}
