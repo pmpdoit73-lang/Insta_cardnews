@@ -1,0 +1,117 @@
+{
+  "id": "20261106-0700",
+  "created_at": "2026-11-05T17:01:31.644890+09:00",
+  "publish_at": "2026-11-06T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "냄새 없이 오래 쓰는 식기세척기 필터·내부 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "세제·린스, O/X는 다뤘지만 필터·패킹·분사 날개 관리는 아직 안 다뤘어요. 김장철 설거지가 몰리고 창문을 닫아 습기가 차는 11월, 식세기 냄새가 늘 때라 골랐어요.",
+  "title": [
+    "냄새 없이 오래 쓰는",
+    "식기세척기 관리법 7"
+  ],
+  "highlight": "냄새 없이",
+  "subtitle": "식세기에서 쉰내 난 적 있죠?",
+  "scene": "A bright, warm Korean home kitchen in morning light. A white built-in dishwasher with its door open, under a light beige quartz countertop. Small props: a white ceramic bowl, a soft brush, a folded linen dish towel, a small potted herb. Soft sunlight from a window on the left. The bottom third of the frame is a plain, uncluttered countertop and floor area. No text, no logos, no faces.",
+  "cover_image_prompt": "Same kitchen set. The dishwasher door is fully open, showing clean empty racks glowing in warm morning sunlight. Clean white plates are stacked neatly on the countertop beside it. Bottom third stays simple. No text, no faces.",
+  "tips": [
+    {
+      "title": "필터 주 1회 세척",
+      "lines": [
+        "필터를 빼서 주 1회 물로 헹궈요",
+        "음식 찌꺼기가 쌓이면 냄새가 나요"
+      ],
+      "note": "필터는 부드러운 솔로만 닦아요",
+      "image_prompt": "Same set. Hands hold a cylindrical dishwasher filter under running water at the sink, a soft brush beside it. No faces, no text."
+    },
+    {
+      "title": "문 패킹 닦기",
+      "lines": [
+        "문 고무 패킹, 주 1회 닦아요",
+        "젖은 행주면 끼인 때가 잘 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "Same set. A hand wipes the rubber door gasket of the open dishwasher with a damp linen towel. No faces, no text."
+    },
+    {
+      "title": "빈 통 고온 코스",
+      "lines": [
+        "한 달 1번, 빈 통 고온 코스로",
+        "안쪽 기름막과 냄새가 정리돼요"
+      ],
+      "note": "전용 세척제는 제품 설명서대로 써요",
+      "image_prompt": "Same set. The dishwasher is empty with racks pulled out, a hand closing the door to start a cycle. No faces, no text."
+    },
+    {
+      "title": "큰 찌꺼기만 털기",
+      "lines": [
+        "큰 찌꺼기만 털고 바로 넣어요",
+        "필터 막힘이 줄고 물도 아껴요"
+      ],
+      "note": "",
+      "image_prompt": "Same set. A hand scrapes leftover food from a plate into a small bin above the open dishwasher rack. No faces, no text."
+    },
+    {
+      "title": "분사 날개 점검",
+      "lines": [
+        "한 달 1번, 분사 날개 구멍 점검",
+        "막힌 곳 뚫으면 세척력이 살아요"
+      ],
+      "note": "",
+      "image_prompt": "Same set. Hands hold a dishwasher spray arm and gently clear a small hole with a wooden toothpick. No faces, no text."
+    },
+    {
+      "title": "끝나면 문 열기",
+      "lines": [
+        "끝나고 문 열어 1~2시간 말려요",
+        "안쪽 습기가 빠져 곰팡이를 막아요"
+      ],
+      "note": "아이·반려동물 있으면 문 열림 주의",
+      "image_prompt": "Same set. The dishwasher door is slightly ajar with gentle steam rising, clean dishes inside. No faces, no text."
+    },
+    {
+      "title": "세제 투입구 닦기",
+      "lines": [
+        "세제 투입구는 주 1회 닦아요",
+        "굳은 세제가 남으면 잘 안 풀려요"
+      ],
+      "note": "",
+      "image_prompt": "Same set. A finger with a damp cloth wipes the detergent dispenser on the inside of the open dishwasher door. No faces, no text."
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "필터를 빼둔 채 돌리지 마세요",
+      "찌꺼기가 펌프로 들어가 고장 나요",
+      "주방세제를 넣으면 거품이 넘쳐요"
+    ],
+    "image_prompt": "Same set. On the countertop next to the open dishwasher sit a removed filter left aside and a bottle of hand dish soap, shown as items to avoid. No text, no faces."
+  },
+  "save_line": "저장해두고 식세기 냄새날 때 보세요",
+  "caption": "식세기 필터, 산 지 1년 만에 처음 빼봤어요 😅\n식기세척기가 그릇은 씻어줘도 자기 몸은 못 씻더라고요.\n필터는 주 1회 헹구고, 문 패킹도 같이 닦아요.\n한 달에 한 번은 빈 통으로 고온 코스, 분사 날개 구멍도 살펴보세요.\n다 돌면 문을 살짝 열어 말리는 것만으로도 냄새가 확 줄어요.\n여러분은 식세기 필터 마지막으로 언제 빼보셨어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#식기세척기",
+    "#식세기",
+    "#식기세척기청소",
+    "#식세기관리",
+    "#식세기냄새",
+    "#식세기필터",
+    "#주방살림",
+    "#살림노하우",
+    "#김장철",
+    "#설거지",
+    "#주방가전"
+  ],
+  "photo_query": "dishwasher kitchen cleaning",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 463,
+    "has_photo": false
+  }
+}
