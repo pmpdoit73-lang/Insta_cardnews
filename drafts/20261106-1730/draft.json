@@ -1,0 +1,133 @@
+{
+  "id": "20261106-1730",
+  "created_at": "2026-11-06T06:30:51.016109+09:00",
+  "publish_at": "2026-11-06T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "김장철 양념·조미료 보관 장소 총정리 (실온 vs 냉장)",
+  "kind": "주방 꿀팁",
+  "angle": "김장철 양념을 대량으로 사는 시기, 양파 보관 기사처럼 '어디에 두나' 궁금증이 커서 조미료별 보관 장소를 한 장으로 정리",
+  "top_badge": "양념 사기 전 저장하세요!",
+  "title": [
+    "아무 데나 두던 양념",
+    "조미료 보관 장소 10"
+  ],
+  "highlight": "보관 장소",
+  "basis": "제품 표시 보관법 기준 · 개봉 후",
+  "items": [
+    {
+      "name": "고춧가루",
+      "badge": "냉동",
+      "detail": "습기·벌레 막게 밀봉해 냉동 보관해요",
+      "emoji": "🌶️",
+      "icon_prompt": "a bag of red chili powder"
+    },
+    {
+      "name": "고추장",
+      "badge": "냉장",
+      "detail": "개봉 후 곰팡이 막게 냉장 보관해요",
+      "emoji": "🥫",
+      "icon_prompt": "a tub of red pepper paste"
+    },
+    {
+      "name": "된장",
+      "badge": "냉장",
+      "detail": "개봉 후 냉장, 표면을 평평하게 눌러요",
+      "emoji": "🫕",
+      "icon_prompt": "a tub of soybean paste"
+    },
+    {
+      "name": "참기름",
+      "badge": "실온",
+      "detail": "냉장하면 굳어요, 서늘한 곳에 두세요",
+      "emoji": "🫙",
+      "icon_prompt": "a glass bottle of sesame oil"
+    },
+    {
+      "name": "들기름",
+      "badge": "냉장",
+      "detail": "산패가 빨라 개봉 후 냉장이 좋아요",
+      "emoji": "🍶",
+      "icon_prompt": "a glass bottle of perilla oil"
+    },
+    {
+      "name": "간장",
+      "badge": "실온",
+      "detail": "직사광선 피해 서늘한 곳, 여름엔 냉장",
+      "emoji": "🧴",
+      "icon_prompt": "a bottle of soy sauce"
+    },
+    {
+      "name": "액젓",
+      "badge": "실온",
+      "detail": "뚜껑 꼭 닫아 서늘한 곳에 두세요",
+      "emoji": "🐟",
+      "icon_prompt": "a bottle of fish sauce"
+    },
+    {
+      "name": "다진 마늘",
+      "badge": "냉동",
+      "detail": "얇게 펴 얼려 칸칠해 쓰면 편해요",
+      "emoji": "🧄",
+      "icon_prompt": "a bowl of minced garlic"
+    },
+    {
+      "name": "설탕·소금",
+      "badge": "실온",
+      "detail": "냉장하면 습기로 굳어요, 밀폐해 두세요",
+      "emoji": "🧂",
+      "icon_prompt": "a jar of white salt"
+    },
+    {
+      "name": "통깨",
+      "badge": "냉동",
+      "detail": "기름이 많아 밀봉 냉동하면 고소함 유지",
+      "emoji": "🌾",
+      "icon_prompt": "a small jar of roasted sesame seeds"
+    }
+  ],
+  "save_tile": [
+    "장보고 와서",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "보관 전 체크",
+    "lines": [
+      "라벨 보관법 확인",
+      "젖은 숟가락 금지"
+    ]
+  },
+  "footer_line": "저장해두고 양념 정리할 때 꺼내보세요",
+  "footer_highlight": "양념 정리",
+  "warning": {
+    "title": "이건 꼭 피하세요",
+    "lines": [
+      "가스레인지 옆 양념 선반은 열기로 빨리 상해요",
+      "젖은 숟가락으로 뜨면 곰팡이가 금방 펴요",
+      "곰팡이 핀 장은 걷어내지 말고 상태를 꼭 확인해요"
+    ]
+  },
+  "save_line": "저장해두고 김장 때 꺼내보세요",
+  "caption": "고춧가루를 찬장에 뒀다가 벌레 본 적 있어요 😅\n\n김장철 앞두고 양념 많이 사시죠?\n개봉 후 어디에 둬야 오래 가는지 정리했어요.\n\n고춧가루: 냉동 · 습기·벌레 막게 밀봉해 냉동\n고추장: 냉장 · 개봉 후 곰팡이 막게 냉장\n된장: 냉장 · 개봉 후 냉장, 표면 평평하게\n참기름: 실온 · 냉장하면 굳어요, 서늘한 곳\n들기름: 냉장 · 산패가 빨라 개봉 후 냉장\n간장: 실온 · 직사광선 피해 서늘한 곳, 여름엔 냉장\n액젓: 실온 · 뚜껑 꼭 닫아 서늘한 곳\n다진 마늘: 냉동 · 얇게 펴 얼려 칸칠해 쓰기\n설탕·소금: 실온 · 냉장하면 굳어요, 밀폐 보관\n통깨: 냉동 · 밀봉 냉동하면 고소함 유지\n\n제품마다 표시된 보관법이 먼저예요. 가스레인지 옆 선반은 피하세요.\n여러분 집 참기름은 냉장고에 있어요, 찬장에 있어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#살림정보",
+    "#양념보관",
+    "#조미료보관",
+    "#고춧가루보관",
+    "#참기름보관",
+    "#들기름보관",
+    "#김장준비",
+    "#김장철",
+    "#냉장고정리",
+    "#주방정리",
+    "#자취꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 467,
+    "has_photo": false
+  }
+}
