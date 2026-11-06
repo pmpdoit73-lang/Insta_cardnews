@@ -10,6 +10,10 @@ on:
         description: "다음 회차 초안을 다른 이슈로 새로 만들기"
         type: boolean
         default: false
+      test_at:
+        description: "시험용: 이 시각 게시용 초안을 따로 만들기 (예: 2026-11-06T20:00, 비우면 평소대로)"
+        type: string
+        default: ""
 
 permissions:
   contents: write  # 초안 상태(drafts/, state/)를 저장소에 저장
@@ -38,6 +42,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          THREADS_PROMO_TOKEN: ${{ secrets.THREADS_PROMO_TOKEN }}  # 쓰레드 홍보 글 (없으면 건너뜀)
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           INSTAGRAM_API_HOST: ${{ secrets.INSTAGRAM_API_HOST }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -48,6 +53,7 @@ jobs:
         run: python src/make_draft.py
         env:
           FORCE: ${{ inputs.force && '1' || '' }}
+          TEST_AT: ${{ inputs.test_at }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}

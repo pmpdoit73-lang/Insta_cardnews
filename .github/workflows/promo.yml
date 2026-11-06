@@ -1,0 +1,43 @@
+name: 쓰레드 홍보 글 지금 올리기
+
+# 평소엔 월·수·금 17:30 총정리표가 올라갈 때 자동. 시험하거나 다른 날 올리고 싶을 때 직접 실행
+on:
+  workflow_dispatch:
+    inputs:
+      draft_id:
+        description: "홍보할 게시물의 초안 id (예: 20261106-1730)"
+        required: true
+        type: string
+
+permissions:
+  contents: write  # 홍보 글 id를 초안에 기록
+
+concurrency:
+  group: insta-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 쓰레드 홍보 글
+        run: python src/threads_promo.py "${{ inputs.draft_id }}"
+        env:
+          THREADS_PROMO_TOKEN: ${{ secrets.THREADS_PROMO_TOKEN }}
+      - name: 상태 저장
+        if: always()
+        run: |
+          git config user.name "insta-cardnews-bot"
+          git config user.email "insta-cardnews-bot@users.noreply.github.com"
+          git add -A drafts/ 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "쓰레드 홍보 글 ${{ inputs.draft_id }}"
+          git pull --rebase origin main
+          git push origin HEAD:main

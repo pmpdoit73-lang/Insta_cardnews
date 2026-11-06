@@ -8,6 +8,7 @@
 """
 
 import os
+import sys
 import time
 
 import requests
@@ -55,3 +56,19 @@ def post(image_url, text):
     c = _call("POST", "me/threads", media_type="IMAGE", image_url=image_url, text=text)
     time.sleep(10)  # 쓰레드가 사진을 받아 갈 시간
     return _call("POST", "me/threads_publish", creation_id=c["id"])["id"]
+
+
+if __name__ == "__main__":
+    # 시험·수동용: python src/threads_promo.py <초안 id>  → 요일과 상관없이 그 게시물 홍보 글을 지금 올림
+    import draft
+    import hosting
+    d = draft.load(sys.argv[1])
+    if not d or not d.get("permalink"):
+        sys.exit(f"게시된 초안이 아니에요: {sys.argv[1]}")
+    if d.get("threads_promo_id"):
+        sys.exit("이미 홍보 글을 올린 게시물이에요")
+    first = draft.card_paths(d)[0]
+    url = hosting.upload_temp(first.read_bytes(), f"{d['id']}-threads.jpg")
+    d["threads_promo_id"] = post(url, text_for(d))
+    draft.save(d)
+    print(f"쓰레드 홍보 글 완료: {d['threads_promo_id']}")
