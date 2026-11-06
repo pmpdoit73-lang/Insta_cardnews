@@ -1,4 +1,4 @@
-"""인스타그램 게시: 캐러셀(여러 장 넘기기)과 릴스(영상).
+"""인스타그램 게시: 캐러셀(여러 장 넘기기)과 릴스(영상). 댓글 읽기·답글 달기도 여기서.
 
 캐러셀 순서: 사진마다 '카드 컨테이너' 만들기 → 묶음(CAROUSEL) 컨테이너 → 준비 끝나면 게시.
 릴스 순서: 영상 주소로 REELS 컨테이너 → 인스타가 영상 처리 끝낼 때까지 기다림 → 게시.
@@ -159,6 +159,24 @@ def _publish(container_id, caption):
     except RuntimeError:
         link = ""
     return media_id, link
+
+
+# ---------- 댓글 (comments.py가 씀) ----------
+
+def recent_media(limit=10):
+    """최근 게시물 [{id, caption, comments_count, permalink}] (최신순)."""
+    return _call("GET", f"{_user()}/media", fields="id,caption,comments_count,permalink",
+                 limit=limit).get("data", [])
+
+
+def comments(media_id, limit=50):
+    """게시물의 댓글 [{id, text, username, timestamp, replies}] (답글 단 사람 이름 포함)."""
+    return _call("GET", f"{media_id}/comments", fields="id,text,username,timestamp,replies{username}",
+                 limit=limit).get("data", [])
+
+
+def reply_comment(comment_id, message):
+    return _call("POST", f"{comment_id}/replies", message=message)["id"]
 
 
 def refresh_token():
