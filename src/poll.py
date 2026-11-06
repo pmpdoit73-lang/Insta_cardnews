@@ -1,4 +1,5 @@
 """10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
+새 댓글에는 자동으로 답글을 단다 (comments.py).
 07:00 목록형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
@@ -10,6 +11,7 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
+import comments
 import draft
 import hosting
 import instagram
@@ -140,13 +142,20 @@ def process_schedule():
 
 
 if __name__ == "__main__":
+    failed = False
     try:
         process_buttons()
         process_schedule()
     except Exception as e:
+        failed = True
         print(f"[poll] 실패: {e}")
         try:
             telegram.send_text(f"⚠️ 버튼 처리 중 오류: {e}")
         except Exception:
             pass
+    try:  # 댓글 답글은 게시와 따로: 실패해도 게시 쪽엔 영향 없게, 알림 없이 로그만
+        comments.process()
+    except Exception as e:
+        print(f"[poll] 댓글 답글 실패: {e}")
+    if failed:
         sys.exit(1)
