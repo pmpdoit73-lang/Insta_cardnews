@@ -21,7 +21,7 @@ import requests
 
 MUSIC_DIR = Path(__file__).resolve().parent.parent / "music"
 SITE = "https://freepd.com/"
-PAGES = ["upbeat.php", "comedy.php"]  # 밝고 경쾌한 곡 (살림 꿀팁 분위기)
+MAX_PAGES = 15    # 둘러볼 페이지 수
 WANT = 12          # 받을 곡 수
 CLIP_SEC = 20      # 잘라 둘 길이 (릴스는 12~15초)
 HEADERS = {"User-Agent": "Mozilla/5.0 (insta-cardnews music fetch)"}
@@ -43,27 +43,35 @@ def title(path):
     return path.stem.replace("_", " ") if path else ""
 
 
+def _get(url):
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=30)
+        print(f"[music] {url} 응답 {resp.status_code}, {len(resp.text)}자")
+        return resp.text if resp.ok else ""
+    except requests.RequestException as e:
+        print(f"[music] {url} 못 읽음: {e}")
+        return ""
+
+
 def _links():
-    found = []
-    for page in PAGES:
-        try:
-            resp = requests.get(urljoin(SITE, page), headers=HEADERS, timeout=30)
-            html = resp.text
-        except requests.RequestException as e:
-            print(f"[music] {page} 못 읽음: {e}")
+    """사이트 첫 화면에서 시작해 같은 사이트 안 페이지를 최대 MAX_PAGES개 돌며 mp3 주소를 모은다."""
+    queue, seen, found = [SITE], set(), []
+    while queue and len(seen) < MAX_PAGES:
+        url = queue.pop(0)
+        if url in seen:
             continue
-        print(f"[music] {page} 응답 {resp.status_code}, {len(html)}자")
-        if "-v" in sys.argv:  # 페이지 구조 확인용
-            for m in re.finditer(r"(?i)mp3|download|audio|\.ogg", html):
-                print("   ", html[max(0, m.start() - 120):m.end() + 60].replace("\n", " "))
-                if m.start() > 20000:
-                    break
-            print(html[:1500])
-        for href in re.findall(r"""["']([^"']+?\.mp3)["']""", html, flags=re.I):
-            url = urljoin(urljoin(SITE, page), href.strip())
-            if url not in found:
-                found.append(url)
-        print(f"[music] {page}: 지금까지 {len(found)}곡")
+        seen.add(url)
+        html = _get(url)
+        if "-v" in sys.argv and url == SITE:  # 페이지 구조 확인용
+            print(html[:3000])
+        for href in re.findall(r"""(?:href|src|data-src|data-url)\s*=\s*["']([^"'#]+)["']""", html, flags=re.I):
+            full = urljoin(url, href.strip())
+            if full.lower().split("?")[0].endswith(".mp3"):
+                if full not in found:
+                    found.append(full)
+            elif full.startswith(SITE) and not re.search(r"\.(css|js|png|jpe?g|gif|svg|ico|zip|pdf)$", full, re.I):
+                queue.append(full)
+        print(f"[music] 지금까지 {len(found)}곡")
     return found
 
 
