@@ -2,7 +2,7 @@
   "id": "20261107-0700",
   "created_at": "2026-11-06T17:00:59.290862+09:00",
   "publish_at": "2026-11-07T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "기름때·냄새 없이 오래 쓰는 에어프라이어 관리법",
@@ -112,5 +112,9 @@
   "message": {
     "message_id": 480,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18110571587195422",
+  "permalink": "https://www.instagram.com/reel/DfaocY5kSpU/",
+  "published_at": "2026-11-07T07:02:14.890411+09:00",
+  "story_id": "18094224587663072"
 }
