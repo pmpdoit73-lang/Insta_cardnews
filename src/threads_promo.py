@@ -34,6 +34,11 @@ def _call(method, path, **params):
     return body
 
 
+def whoami():
+    """토큰 확인용: 이 토큰의 쓰레드 계정 이름 (글은 올리지 않음)."""
+    return _call("GET", "me", fields="username").get("username", "")
+
+
 def text_for(d):
     issue = (d.get("issue") or "").strip()
     return (f"{issue}, 한 장으로 정리했어요 📌\n\n"
