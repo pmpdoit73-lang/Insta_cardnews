@@ -6,10 +6,12 @@
 - 소리: 무음 트랙만 넣음 (소리 트랙이 아예 없으면 거절하는 기기·앱이 있어서)
 - 첫 장면이 표지 그대로라 릴스 썸네일도 표지가 됨
 
-ffmpeg가 필요하다 (GitHub Actions 서버에는 기본으로 깔려 있음).
+ffmpeg는 서버에 깔린 게 있으면 쓰고, 없으면 imageio-ffmpeg 패키지에 든 것을 쓴다
+(GitHub Actions 서버에 ffmpeg가 없어 11/05·11/06 릴스가 실패함).
 실행: python src/video.py drafts/20261105-0700  → 그 폴더에 reel.mp4 생성
 """
 
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -18,6 +20,14 @@ W, H, FPS = 1080, 1920, 30
 FADE = 0.4  # 장 사이 넘어가는 시간(초)
 TOP = 150   # 카드 윗변 위치(px). 가운데(285)보다 위로 올려 릴스 아래쪽 캡션 영역을 피함
 COVER_SEC, TIP_SEC, LAST_SEC = 2.5, 3.5, 4.0
+
+
+def ffmpeg():
+    exe = shutil.which("ffmpeg")
+    if exe:
+        return exe
+    import imageio_ffmpeg  # pip 패키지에 든 ffmpeg
+    return imageio_ffmpeg.get_ffmpeg_exe()
 
 
 def durations(n):
@@ -37,7 +47,7 @@ def make_reel(card_paths, out_path):
     lens = [s + (FADE if i < len(cards) - 1 else 0) for i, s in enumerate(secs)]
     total = sum(secs)
 
-    cmd = ["ffmpeg", "-y", "-loglevel", "error"]
+    cmd = [ffmpeg(), "-y", "-loglevel", "error"]
     for path, length in zip(cards, lens):
         cmd += ["-loop", "1", "-framerate", str(FPS), "-t", f"{length:.2f}", "-i", path]
     cmd += ["-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=48000:cl=stereo"]
