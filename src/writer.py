@@ -186,12 +186,12 @@ def _checked(user_msg, schema, check=None):
     return post
 
 
-def _ask(user_msg, schema):
+def _ask(user_msg, schema, system=None):
     client = anthropic.Anthropic()
     response = client.beta.messages.create(
         model=MODEL,
         max_tokens=16000,
-        system=PERSONA,
+        system=system or PERSONA,
         messages=[{"role": "user", "content": user_msg}],
         output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}},
         betas=["server-side-fallback-2026-07-01"],

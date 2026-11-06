@@ -31,6 +31,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          ISSUEPURI_INSTAGRAM_ACCESS_TOKEN: ${{ secrets.ISSUEPURI_INSTAGRAM_ACCESS_TOKEN }}  # 이슈풀이 댓글 자동 답글 (없으면 건너뜀)
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           INSTAGRAM_API_HOST: ${{ secrets.INSTAGRAM_API_HOST }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
