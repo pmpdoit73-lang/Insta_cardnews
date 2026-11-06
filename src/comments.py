@@ -92,8 +92,14 @@ def process():
         count = m.get("comments_count", 0)
         if count == state["counts"].get(m["id"]):
             continue
+        found = instagram.comments(m["id"])
+        if count and not found:
+            # 댓글 수는 늘었는데 내용이 안 읽힘: 앱이 개발 모드라 남의 댓글이 안 보이거나, 인스타가 숨긴 댓글.
+            # 수를 저장하지 않고 다음 실행 때 다시 본다
+            print(f"[comments] {m['id']}: 댓글 {count}개인데 읽힌 댓글 0개 (앱 개발 모드·숨긴 댓글 확인)")
+            continue
         finished = True
-        for c in instagram.comments(m["id"]):
+        for c in found:
             if c["id"] in handled:
                 continue
             if c.get("username") == me or _answered(c, me) or now - _when(c["timestamp"]) > MAX_AGE:
