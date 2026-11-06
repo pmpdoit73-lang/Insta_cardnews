@@ -1,0 +1,95 @@
+{
+  "last": "2026-11-06",
+  "history": {
+    "살림 꿀팁": {
+      "2026-11-06": {
+        "followers": 12,
+        "reach7": 43,
+        "non_follower_pct": 84,
+        "posts": {
+          "17979273134932330": {
+            "views": 0,
+            "reach": 0,
+            "saved": 0,
+            "shares": 0
+          },
+          "18064012352557901": {
+            "views": 0,
+            "reach": 0,
+            "saved": 0,
+            "shares": 0
+          },
+          "18149687716563396": {
+            "views": 2,
+            "reach": 1,
+            "saved": 0,
+            "shares": 0
+          },
+          "18018274166978163": {
+            "views": 4,
+            "reach": 1,
+            "saved": 0,
+            "shares": 0
+          },
+          "17917043142549376": {
+            "views": 3,
+            "reach": 2,
+            "saved": 0,
+            "shares": 0
+          },
+          "18090657650312135": {
+            "views": 13,
+            "reach": 6,
+            "saved": 0,
+            "shares": 0
+          }
+        }
+      }
+    },
+    "이슈풀이": {
+      "2026-11-06": {
+        "followers": 5,
+        "reach7": 1482,
+        "non_follower_pct": 100,
+        "posts": {
+          "18129382336903099": {
+            "views": 119,
+            "reach": 112,
+            "saved": 0,
+            "shares": 0
+          },
+          "18416012254080808": {
+            "views": 108,
+            "reach": 103,
+            "saved": 0,
+            "shares": 0
+          },
+          "18107625386237568": {
+            "views": 114,
+            "reach": 106,
+            "saved": 0,
+            "shares": 0
+          },
+          "18133204837834253": {
+            "views": 109,
+            "reach": 104,
+            "saved": 0,
+            "shares": 0
+          },
+          "18120073297997579": {
+            "views": 120,
+            "reach": 113,
+            "saved": 0,
+            "shares": 0
+          },
+          "17987401167089092": {
+            "views": 127,
+            "reach": 112,
+            "saved": 0,
+            "shares": 0
+          }
+        }
+      }
+    }
+  }
+}
