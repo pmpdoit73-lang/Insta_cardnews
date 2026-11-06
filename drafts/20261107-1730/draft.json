@@ -1,0 +1,125 @@
+{
+  "id": "20261107-1730",
+  "created_at": "2026-11-07T06:31:04.306143+09:00",
+  "publish_at": "2026-11-07T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "주방 얼룩별 맞는 세정제 총정리 (베이킹소다·구연산·과탄산·식초)",
+  "kind": "주방 꿀팁",
+  "angle": "김장 뒤 기름때·물때·착색이 쌓이는 시기라, 연말 대청소 전에 얼룩별로 맞는 세정제를 한눈에 정리했어요",
+  "top_badge": "대청소 전 저장하세요!",
+  "title": [
+    "박박 닦아도 안 지는 때",
+    "주방 얼룩별 세정제 10"
+  ],
+  "highlight": "얼룩별 세정제",
+  "basis": "산성 때는 알칼리로, 알칼리 때는 산성으로",
+  "items": [
+    {
+      "name": "가스레인지",
+      "badge": "베이킹소다",
+      "detail": "기름때에 뿌리고 물 적셔 불린 뒤 닦기",
+      "emoji": "🔥",
+      "icon_prompt": "a kitchen gas stove burner"
+    },
+    {
+      "name": "수전 물때",
+      "badge": "구연산",
+      "detail": "하얀 석회 물때는 구연산수 적신 휴지로 덮기",
+      "emoji": "🚰",
+      "icon_prompt": "a chrome kitchen faucet"
+    },
+    {
+      "name": "냄비 탄자국",
+      "badge": "베이킹소다",
+      "detail": "물에 풀어 끓인 뒤 식혀서 부드럽게 닦기",
+      "emoji": "🍲",
+      "icon_prompt": "a stainless steel cooking pot"
+    },
+    {
+      "name": "플라스틱도마",
+      "badge": "과탄산소다",
+      "detail": "따뜻한 물에 풀어 담가 김치 물 빼기",
+      "emoji": "🔪",
+      "icon_prompt": "a white plastic cutting board"
+    },
+    {
+      "name": "누런 행주",
+      "badge": "과탄산소다",
+      "detail": "따뜻한 물에 풀어 담근 뒤 헹궈 말리기",
+      "emoji": "🧽",
+      "icon_prompt": "a folded kitchen dish towel"
+    },
+    {
+      "name": "스텐 얼룩",
+      "badge": "식초",
+      "detail": "무지개 얼룩은 식초물로 닦고 물로 헹구기",
+      "emoji": "🥘",
+      "icon_prompt": "a stainless steel frying pan"
+    },
+    {
+      "name": "컵 커피때",
+      "badge": "베이킹소다",
+      "detail": "젖은 컵 안에 문질러 갈색 착색 지우기",
+      "emoji": "☕",
+      "icon_prompt": "a white ceramic coffee mug"
+    },
+    {
+      "name": "유리 물얼룩",
+      "badge": "구연산",
+      "detail": "구연산수 뿌려 닦으면 뿌연 자국이 빠져요",
+      "emoji": "🥛",
+      "icon_prompt": "a clear drinking glass"
+    },
+    {
+      "name": "실리콘곰팡이",
+      "badge": "염소계표백제",
+      "detail": "희석해 휴지로 덮고 환기, 다른 세제와 따로",
+      "emoji": "🧴",
+      "icon_prompt": "a white silicone sealant line by a sink"
+    },
+    {
+      "name": "배수구 거름망",
+      "badge": "과탄산소다",
+      "detail": "뜨거운 물에 풀어 담가 미끈한 때 불리기",
+      "emoji": "🕳️",
+      "icon_prompt": "a stainless steel sink drain strainer"
+    }
+  ],
+  "save_tile": [
+    "대청소 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "닦기 전 체크",
+    "lines": [
+      "고무장갑 끼기",
+      "창문 열고 환기"
+    ]
+  },
+  "footer_line": "저장해두고 연말 대청소 때 꺼내보세요",
+  "footer_highlight": "연말 대청소",
+  "warning": {
+    "title": "이건 절대 섞지 마세요",
+    "lines": [
+      "락스에 식초·구연산 섞기 ✗ 유독가스가 나와요",
+      "알루미늄 냄비에 베이킹소다 끓이기 ✗ 검게 변해요",
+      "대리석 상판에 식초·구연산 ✗ 표면이 상해요"
+    ]
+  },
+  "save_line": "저장해두고 얼룩 보일 때 꺼내보세요",
+  "caption": "주방 얼룩, 30년 동안 세정제 하나로만 박박 닦던 때가 있었어요 😅\n\n얼룩 종류마다 맞는 세정제를 한 장에 정리했어요.\n기름때는 알칼리, 물때는 산성, 이것만 기억해도 반은 끝나요.\n\n가스레인지: 베이킹소다 · 기름때에 뿌리고 물 적셔 불린 뒤 닦기\n수전 물때: 구연산 · 하얀 석회 물때는 구연산수 적신 휴지로 덮기\n냄비 탄자국: 베이킹소다 · 물에 풀어 끓인 뒤 식혀서 부드럽게 닦기\n플라스틱도마: 과탄산소다 · 따뜻한 물에 풀어 담가 김치 물 빼기\n누런 행주: 과탄산소다 · 따뜻한 물에 풀어 담근 뒤 헹궈 말리기\n스텐 얼룩: 식초 · 무지개 얼룩은 식초물로 닦고 물로 헹구기\n컵 커피때: 베이킹소다 · 젖은 컵 안에 문질러 갈색 착색 지우기\n유리 물얼룩: 구연산 · 구연산수 뿌려 닦으면 뿌연 자국이 빠져요\n실리콘곰팡이: 염소계표백제 · 희석해 휴지로 덮고 환기, 다른 세제와 따로\n배수구 거름망: 과탄산소다 · 뜨거운 물에 풀어 담가 미끈한 때 불리기\n\n락스에 식초·구연산은 절대 섞지 말고, 고무장갑 끼고 환기하면서 쓰세요.\n저장해두고 연말 대청소 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 주방에서 어떤 얼룩이 제일 안 지워지세요?",
+  "hashtags": [
+    "#주방청소",
+    "#베이킹소다활용",
+    "#구연산청소",
+    "#과탄산소다",
+    "#주방꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 501,
+    "has_photo": false
+  }
+}
