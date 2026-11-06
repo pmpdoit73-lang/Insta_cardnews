@@ -1,0 +1,109 @@
+{
+  "id": "20261106-2000",
+  "created_at": "2026-11-06T18:01:52.084616+09:00",
+  "publish_at": "2026-11-06T20:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "작은 정수기 유행 속, 정수기 물맛·위생 지키는 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "초소형 정수기 출시 소식으로 정수기 관심이 커진 지금, 겨울 앞두고 소홀해지기 쉬운 출수구·물받이 관리 요령을 묶음",
+  "title": [
+    "물맛 깔끔하게 지키는",
+    "정수기 관리법 7"
+  ],
+  "highlight": "물맛 깔끔하게",
+  "subtitle": "출수구 닦은 게 언제였더라?",
+  "scene": "A bright Korean home kitchen in morning light, a compact white countertop water purifier on a light beige quartz countertop, a glass cup and a small potted herb nearby, window on the left with warm sunlight, clean simple lower third of the frame",
+  "cover_image_prompt": "The compact white water purifier stands as the hero in the center of the countertop, clear water pouring into a glass cup, sunlight glowing on the water",
+  "tips": [
+    {
+      "title": "출수구 매주 닦기",
+      "lines": [
+        "주 1회 면봉으로 출수구를 닦아요",
+        "입이 닿는 곳이라 물때가 잘 껴요"
+      ],
+      "note": "이쑤시개 등 뾰족한 건 넣지 마세요",
+      "image_prompt": "A hand gently wiping the purifier's water outlet nozzle with a cotton swab"
+    },
+    {
+      "title": "물받이 비우기",
+      "lines": [
+        "물받이는 2~3일마다 비워 헹궈요",
+        "고인 물은 물때·냄새의 시작이에요"
+      ],
+      "note": "",
+      "image_prompt": "Hands sliding out the drip tray from the purifier, a little water inside"
+    },
+    {
+      "title": "첫 물은 흘려보내기",
+      "lines": [
+        "며칠 안 썼으면 첫 물 한 컵 버려요",
+        "고여 있던 물을 빼면 물맛이 나아요"
+      ],
+      "note": "",
+      "image_prompt": "Water pouring from the purifier into a glass held over the sink edge"
+    },
+    {
+      "title": "햇빛 안 드는 자리",
+      "lines": [
+        "직사광선 없는 곳에 두세요",
+        "햇빛은 물속 이끼·세균을 키워요"
+      ],
+      "note": "",
+      "image_prompt": "Purifier placed in shade beside the window, sunlight falling only on the counter edge"
+    },
+    {
+      "title": "겉면은 마른 행주로",
+      "lines": [
+        "겉면은 마른 행주로 주 1회 닦아요",
+        "물 튐 자국 없이 깔끔하게 유지돼요"
+      ],
+      "note": "전원부엔 물 묻히지 마세요",
+      "image_prompt": "A hand wiping the purifier's white side panel with a dry cotton cloth"
+    },
+    {
+      "title": "필터 교체 주기 확인",
+      "lines": [
+        "설명서의 교체 주기를 달력에 적어요",
+        "제때 갈아야 정수 성능이 유지돼요"
+      ],
+      "note": "",
+      "image_prompt": "A small paper calendar next to the purifier, a hand marking it with a pen, no readable text"
+    },
+    {
+      "title": "뒤쪽 공간 띄우기",
+      "lines": [
+        "벽과 뒷면 사이 10cm쯤 띄워요",
+        "열이 빠져야 냉각 부품이 오래가요"
+      ],
+      "note": "",
+      "image_prompt": "Side view showing gap between the purifier back and the wall"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "출수구에 락스 원액 넣지 마세요",
+      "잔여물이 남아 마시는 물에 섞여요",
+      "전원 켠 채 분해·청소는 금물이에요"
+    ],
+    "image_prompt": "A bleach bottle and a metal pick placed next to the purifier with a crossed-out feel, unused"
+  },
+  "save_line": "저장해두고 정수기 닦을 때 꺼내보세요",
+  "caption": "정수기 관리법, 필터만 갈면 끝인 줄 알았어요 😅\n출수구는 입이 닿는 곳이라 매주 닦아 주세요.\n물받이는 2~3일마다 비우고, 며칠 안 썼으면 첫 물은 흘려보내요.\n햇빛 없는 자리, 벽과 띄운 자리에 두면 오래 써요.\n저장해두고 정수기 닦을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 정수기 출수구 마지막으로 언제 닦으셨어요?",
+  "hook": "정수기 출수구, 닦아보셨어요?",
+  "hashtags": [
+    "#정수기관리",
+    "#정수기청소",
+    "#가전꿀팁",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "water purifier kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 494,
+    "has_photo": false
+  }
+}
