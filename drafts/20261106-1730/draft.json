@@ -2,7 +2,7 @@
   "id": "20261106-1730",
   "created_at": "2026-11-06T06:30:51.016109+09:00",
   "publish_at": "2026-11-06T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "김장철 양념·조미료 보관 장소 총정리 (실온 vs 냉장)",
@@ -129,5 +129,8 @@
   "message": {
     "message_id": 467,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17979273134932330",
+  "permalink": "https://www.instagram.com/p/DfZLs7uG3Wk/",
+  "published_at": "2026-11-06T17:31:22.429214+09:00"
 }
