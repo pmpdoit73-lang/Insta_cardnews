@@ -13,6 +13,10 @@ on:
         required: false
         type: string
         default: ""
+      preview:
+        description: "올리지 않고 텔레그램으로 미리보기만"
+        type: boolean
+        default: false
 
 permissions:
   contents: write  # 홍보 글 id를 초안에 기록
@@ -38,6 +42,9 @@ jobs:
           THREADS_PROMO_TOKEN: ${{ secrets.THREADS_PROMO_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PROMO_TEXT: ${{ inputs.text }}
+          PREVIEW: ${{ inputs.preview && '1' || '' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: 상태 저장
         if: always()
         run: |
