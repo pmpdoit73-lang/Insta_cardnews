@@ -2,7 +2,7 @@
 (2026-11-06 gil 요청, 조회수 개선 6단계: 조회가 잘 나오는 쓰레드에서 인스타로 사람 데려오기).
 
 - 주 3회(월·수·금)만. 매일 올리면 쓰레드 팔로워가 광고로 느낄 수 있어서
-- 총정리표 사진 1장 + "저장용 정리표 인스타에 올려뒀어요" + 인스타 게시물 링크
+- 총정리표 사진 1장 + 쓰레드 말투(반말) 짧은 글 + 댓글을 부르는 질문 + 인스타 게시물 링크 (Claude가 씀)
 - 시크릿 THREADS_PROMO_TOKEN(홍보 글을 올릴 쓰레드 계정 토큰)이 없으면 아무것도 안 함
 - 실패해도 인스타 게시는 성공으로 둔다
 """
@@ -40,11 +40,40 @@ def whoami():
     return _call("GET", "me", fields="username").get("username", "")
 
 
+THREADS_PERSONA = (
+    "너는 쓰레드에서 살림 이야기를 하는 살림 30년 차 50대야. 말투는 편한 반말 트렌드체 "
+    "(~함, ~임, ~더라, ~인 듯, ~해봐). 존댓말·광고 말투는 쓰지 않아."
+)
+TEXT = {
+    "type": "object",
+    "properties": {"lines": {"type": "array", "items": {"type": "string"},
+                             "description": "쓰레드 글 2~4줄 (링크 제외)"}},
+    "required": ["lines"],
+    "additionalProperties": False,
+}
+
+
 def text_for(d):
+    """쓰레드 말투(반말)로 짧게, 끝은 누구나 답할 질문으로 댓글을 부른다 (2026-11-06 gil 요청).
+    Claude가 못 쓰면 정해 둔 문장으로."""
+    link = d.get("permalink", "")
+    try:
+        import writer
+        msg = (f"인스타에 올린 총정리표 주제: {d.get('issue', '')}\n"
+               f"표 내용 일부:\n{(d.get('caption') or '')[:500]}\n\n"
+               "이 표를 쓰레드에서 소개하는 짧은 글을 써 줘.\n"
+               "- 2~4줄, 모두 합쳐 90자 이내. 링크는 쓰지 마 (코드가 맨 끝에 붙임)\n"
+               "- 첫 줄: 표에서 '나만 몰랐네' 싶은 사실 하나로 시작 (주제 이름 그대로 나열 금지)\n"
+               "- 중간: 인스타에 한 장 표로 정리해 뒀다는 말 (예: '인스타에 표로 정리해둠')\n"
+               "- 마지막 줄: 누구나 바로 답할 수 있는 짧은 질문 (예: '너네 집 참기름은 냉장고임 찬장임?')\n"
+               "- '댓글 달아줘', '팔로우' 같은 부탁, 해시태그, 광고 말투 금지")
+        lines = [ln.strip() for ln in writer._ask(msg, TEXT, system=THREADS_PERSONA)["lines"] if ln.strip()]
+        if lines:
+            return "\n".join(lines) + f"\n\n👉 {link}"
+    except Exception as e:
+        print(f"[threads_promo] 글쓰기 실패, 기본 문장 사용: {e}")
     issue = (d.get("issue") or "").strip()
-    return (f"{issue}, 한 장으로 정리했어요 📌\n\n"
-            "저장해 두고 필요할 때 꺼내 보세요.\n"
-            f"전체 표는 인스타에 올려뒀어요 👉 {d.get('permalink', '')}")
+    return f"{issue}, 표 한 장으로 정리해둠 📌\n저장해두고 필요할 때 꺼내 봐\n\n👉 {link}"
 
 
 def should_post(d, now):
@@ -69,6 +98,9 @@ if __name__ == "__main__":
         sys.exit("이미 홍보 글을 올린 게시물이에요")
     first = draft.card_paths(d)[0]
     url = hosting.upload_temp(first.read_bytes(), f"{d['id']}-threads.jpg")
-    d["threads_promo_id"] = post(url, text_for(d))
+    text = os.environ.get("PROMO_TEXT", "").strip().replace("\\n", "\n")  # 미리 확인한 글이 있으면 그대로
+    if text and "{link}" in text:
+        text = text.replace("{link}", d["permalink"])
+    d["threads_promo_id"] = post(url, text or text_for(d))
     draft.save(d)
     print(f"쓰레드 홍보 글 완료: {d['threads_promo_id']}")
