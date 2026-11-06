@@ -1,8 +1,8 @@
 {
   "id": "20261106-0700",
   "created_at": "2026-11-05T17:01:31.644890+09:00",
-  "publish_at": "2026-11-06T07:00:00+09:00",
-  "status": "failed",
+  "publish_at": "2026-11-06T16:25:38+09:00",
+  "status": "approved",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "냄새 없이 오래 쓰는 식기세척기 필터·내부 관리법",
@@ -114,5 +114,5 @@
     "message_id": 463,
     "has_photo": false
   },
-  "error": "[Errno 2] No such file or directory: 'ffmpeg'"
+  "original_publish_at": "2026-11-06T07:00:00+09:00"
 }
