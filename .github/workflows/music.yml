@@ -4,9 +4,6 @@ name: 배경음악 받기
 # 곡을 바꾸고 싶을 때만 Actions 탭에서 직접 실행 (Run workflow). 받은 곡 목록: music/LIST.md
 on:
   workflow_dispatch:
-  push:
-    branches: ["claude/**"]
-    paths: [".github/workflows/music.yml"]
 
 permissions:
   contents: write
