@@ -33,6 +33,7 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           ISSUEPURI_INSTAGRAM_ACCESS_TOKEN: ${{ secrets.ISSUEPURI_INSTAGRAM_ACCESS_TOKEN }}  # 이슈풀이 댓글 자동 답글 (없으면 건너뜀)
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          THREADS_PROMO_TOKEN: ${{ secrets.THREADS_PROMO_TOKEN }}  # 쓰레드 홍보 글 (없으면 건너뜀)
           INSTAGRAM_API_HOST: ${{ secrets.INSTAGRAM_API_HOST }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}

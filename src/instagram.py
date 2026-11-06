@@ -174,8 +174,9 @@ def _publish(container_id, caption):
 # ---------- 댓글 (comments.py가 씀) ----------
 
 def recent_media(limit=10):
-    """최근 게시물 [{id, caption, comments_count, permalink}] (최신순)."""
-    return _call("GET", f"{_user()}/media", fields="id,caption,comments_count,permalink",
+    """최근 게시물 [{id, caption, comments_count, permalink, media_product_type, timestamp}] (최신순)."""
+    return _call("GET", f"{_user()}/media",
+                 fields="id,caption,comments_count,permalink,media_product_type,timestamp",
                  limit=limit).get("data", [])
 
 
@@ -187,6 +188,49 @@ def comments(media_id, limit=50):
 
 def reply_comment(comment_id, message):
     return _call("POST", f"{comment_id}/replies", message=message)["id"]
+
+
+# ---------- 통계 (insights.py가 씀, 권한 instagram_business_manage_insights) ----------
+
+def account_info():
+    return _call("GET", _user(), fields="username,followers_count,media_count")
+
+
+def _metric_values(body):
+    out = {}
+    for m in body.get("data", []):
+        if "total_value" in m:
+            out[m["name"]] = m["total_value"].get("value", 0)
+        elif m.get("values"):
+            out[m["name"]] = m["values"][-1].get("value", 0)
+    return out
+
+
+def media_insights(media_id, reel=False):
+    """게시물 하나의 조회·도달·저장·공유·좋아요·댓글 (+릴스 평균 시청 시간 ms)."""
+    metrics = "views,reach,saved,shares,likes,comments"
+    if reel:
+        metrics += ",ig_reels_avg_watch_time"
+    return _metric_values(_call("GET", f"{media_id}/insights", metric=metrics))
+
+
+def reach_by_follow_type(since, until):
+    """기간(유닉스 초) 동안 계정 도달을 팔로워/비팔로워로 나눠 {"FOLLOWER": n, "NON_FOLLOWER": n}."""
+    body = _call("GET", f"{_user()}/insights", metric="reach", period="day", metric_type="total_value",
+                 breakdown="follow_type", since=int(since), until=int(until))
+    out = {}
+    for m in body.get("data", []):
+        for b in m.get("total_value", {}).get("breakdowns", []):
+            for r in b.get("results", []):
+                out[r["dimension_values"][0]] = r.get("value", 0)
+    return out
+
+
+def post_story(image_url):
+    """사진 한 장을 스토리로 올리고 스토리 id를 돌려준다."""
+    story = _call("POST", f"{_user()}/media", media_type="STORIES", image_url=image_url)
+    _wait_ready(story["id"])
+    return _call("POST", f"{_user()}/media_publish", creation_id=story["id"])["id"]
 
 
 def refresh_token():

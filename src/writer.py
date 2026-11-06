@@ -61,14 +61,19 @@ SCRIPT = {
         "warning": WARNING_CARD,
         "save_line": {"type": "string", "description": "저장 유도 한 줄 20자 이내 (예: '저장해두고 청소할 때 꺼내보세요')"},
         "caption": {"type": "string",
-                    "description": "인스타 캡션. 첫 줄은 1인칭 고백·공감 한 문장 + 이모지 1개 "
-                                   "(예: '에어프라이어 바스켓, 1년 동안 물로만 헹궜어요 😅'), 이어서 3~5줄 요약, "
+                    "description": "인스타 캡션. 첫 줄은 사람들이 검색할 키워드(예: '에어프라이어 청소법')를 "
+                                   "글자 그대로 넣은 1인칭 고백·공감 한 문장 + 이모지 1개 "
+                                   "(예: '에어프라이어 청소법, 1년 동안 물로만 헹궜어요 😅'), 이어서 3~5줄 요약, "
+                                   "'저장해두고 ~할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요' 같은 저장·공유 한 줄, "
                                    "마지막에 누구나 답할 질문 한 줄. 해시태그 제외"},
-        "hashtags": {**LINES, "description": "해시태그 10~15개, # 포함"},
+        "hook": {"type": "string",
+                 "description": "릴스 첫 화면 맨 위에 크게 뜰 질문형·손해 회피형 한 줄 16자 이내 "
+                                "(예: '에어프라이어, 이거 모르면 손해', '밥솥 청소 아직도 물로만?')"},
+        "hashtags": {**LINES, "description": "해시태그 3~5개, # 포함. 주제에 딱 맞는 것만 (예: #에어프라이어 #에어프라이어청소 #살림꿀팁). 너무 넓은 태그(#일상 #좋아요)는 쓰지 마"},
         "photo_query": {"type": "string", "description": "무료 사진 검색용 영어 키워드 2~3단어"},
     },
     "required": ["title", "highlight", "subtitle", "scene", "cover_image_prompt", "tips", "warning",
-                 "save_line", "caption", "hashtags", "photo_query"],
+                 "save_line", "caption", "hook", "hashtags", "photo_query"],
     "additionalProperties": False,
 }
 SCHEMA = {
@@ -266,10 +271,12 @@ INFO_SCRIPT = {
         },
         "save_line": {"type": "string", "description": "둘째 장 저장 유도 한 줄 20자 이내"},
         "caption": {"type": "string",
-                    "description": "인스타 캡션. 첫 줄은 1인칭 공감 한 문장 + 이모지 1개, 빈 줄, "
+                    "description": "인스타 캡션. 첫 줄은 사람들이 검색할 키워드(예: '식재료 보관기한')를 글자 그대로 넣은 "
+                                   "1인칭 공감 한 문장 + 이모지 1개, 빈 줄, "
                                    "'~ 정리했어요' 한두 줄, 빈 줄, 항목을 한 줄에 하나씩 '이름: 핵심(badge) · 한 줄 설명' 으로 "
-                                   "전부 다시 적기, 빈 줄, 기준·주의 한 줄, 마지막에 누구나 답할 질문 한 줄. 해시태그 제외"},
-        "hashtags": {**LINES, "description": "해시태그 10~15개, # 포함"},
+                                   "전부 다시 적기, 빈 줄, 기준·주의 한 줄, '저장해두고 ~할 때 꺼내보세요, 필요한 가족·친구에게 "
+                                   "공유해 주세요' 같은 저장·공유 한 줄, 마지막에 누구나 답할 질문 한 줄. 해시태그 제외"},
+        "hashtags": {**LINES, "description": "해시태그 3~5개, # 포함. 주제에 딱 맞는 것만 (예: #에어프라이어 #에어프라이어청소 #살림꿀팁). 너무 넓은 태그(#일상 #좋아요)는 쓰지 마"},
     },
     "required": ["top_badge", "title", "highlight", "basis", "items", "save_tile", "check", "footer_line",
                  "footer_highlight", "warning", "save_line", "caption", "hashtags"],
