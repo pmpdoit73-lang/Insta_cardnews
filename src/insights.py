@@ -21,6 +21,7 @@ import comments
 import draft
 import instagram
 import telegram
+import threads_promo
 
 STATE_FILE = comments.STATE_DIR / "insights.json"
 REPORT_HOUR = 21     # 한국 시각 21시 이후 첫 실행 때 보냄
@@ -121,6 +122,11 @@ def report():
             instagram.use_token(None)
     if not blocks:
         return ""
+    if threads_promo.enabled():  # 쓰레드 홍보 토큰이 살아 있는지 같이 확인 (글은 안 올림)
+        try:
+            blocks.append(f"🧵 쓰레드 홍보 계정: @{threads_promo.whoami()} (월·수·금 17:30 총정리표 홍보)")
+        except Exception as e:
+            blocks.append(f"🧵 쓰레드 홍보 토큰 확인 실패: {str(e)[:150]}")
     text = f"🗓 {today} 인스타 숫자 보고서\n\n" + "\n\n".join(blocks)
     telegram.send_text(text)
     state["last"] = today
