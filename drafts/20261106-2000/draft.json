@@ -2,7 +2,7 @@
   "id": "20261106-2000",
   "created_at": "2026-11-06T18:01:52.084616+09:00",
   "publish_at": "2026-11-06T18:45:00+09:00",
-  "status": "approved",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "작은 정수기 유행 속, 정수기 물맛·위생 지키는 관리법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 494,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18085885094686492",
+  "permalink": "https://www.instagram.com/reel/DfZUVJfmapB/",
+  "published_at": "2026-11-06T18:47:15.421993+09:00",
+  "story_id": "18009985358786213"
 }
