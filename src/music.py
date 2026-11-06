@@ -47,10 +47,18 @@ def _links():
     found = []
     for page in PAGES:
         try:
-            html = requests.get(urljoin(SITE, page), headers=HEADERS, timeout=30).text
+            resp = requests.get(urljoin(SITE, page), headers=HEADERS, timeout=30)
+            html = resp.text
         except requests.RequestException as e:
             print(f"[music] {page} 못 읽음: {e}")
             continue
+        print(f"[music] {page} 응답 {resp.status_code}, {len(html)}자")
+        if "-v" in sys.argv:  # 페이지 구조 확인용
+            for m in re.finditer(r"(?i)mp3|download|audio|\.ogg", html):
+                print("   ", html[max(0, m.start() - 120):m.end() + 60].replace("\n", " "))
+                if m.start() > 20000:
+                    break
+            print(html[:1500])
         for href in re.findall(r"""["']([^"']+?\.mp3)["']""", html, flags=re.I):
             url = urljoin(urljoin(SITE, page), href.strip())
             if url not in found:
@@ -112,7 +120,7 @@ def fetch():
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] == ["fetch"]:
+    if sys.argv[1:2] == ["fetch"]:
         fetch()
     else:
         print("\n".join(str(p) for p in tracks()) or "음악 없음")

@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python src/music.py fetch
+      - run: python src/music.py fetch -v
       - name: 저장
         run: |
           git config user.name "insta-cardnews-bot"
