@@ -42,26 +42,25 @@ def title(path):
     return path.stem.replace("_", " ") if path else ""
 
 
-SEARCHES = [  # 인터넷 아카이브(archive.org) 검색어. 퍼블릭 도메인(CC0) 곡만 받는다
-    'freepd AND mediatype:audio',
-    'mediatype:audio AND licenseurl:*publicdomain/zero* AND (subject:upbeat OR subject:happy OR subject:ukulele)',
-    'mediatype:audio AND licenseurl:*publicdomain/zero* AND subject:"background music"',
-]
-PER_ITEM = 3  # 한 묶음에서 최대 몇 곡 (여러 분위기를 섞으려고)
+SEARCHES = ["freepd AND mediatype:audio"]  # 인터넷 아카이브(archive.org)에 남은 FreePD 곡 묶음
+# 살림 꿀팁 분위기(밝고 가벼움)에 맞는 곡 이름 낱말. 이런 곡을 먼저 고른다
+BRIGHT = re.compile(r"happy|ukulele|cheer|bright|sunny|sunday|picnic|morning|kawaii|cute|fun|bounc|whistl|joy|"
+                    r"light|breez|summer|walk|coffee|cafe|swing|smile|sweet|play|carefree|positive|upbeat|kitchen",
+                    re.I)
+BLOCK = re.compile(r"bbc|disney|official|remix|cover|trailer|horror|scary|sad|dark|epic|battle|funeral", re.I)
 
 
 def _links():
-    """인터넷 아카이브에서 CC0 음악 묶음을 찾아 mp3 주소를 모은다. [(url, 묶음 이름, 라이선스)]"""
+    """FreePD 곡 묶음(CC0)에서 mp3 주소를 모은다. 밝은 분위기 이름을 앞에. [(url, 곡 이름, 묶음, 라이선스)]"""
     found, seen = [], set()
     for q in SEARCHES:
         try:
             docs = requests.get("https://archive.org/advancedsearch.php", headers=HEADERS, timeout=30,
-                                params={"q": q, "fl[]": ["identifier", "title", "licenseurl"], "rows": 40,
+                                params={"q": q, "fl[]": ["identifier", "title"], "rows": 40,
                                         "output": "json"}).json()["response"]["docs"]
         except (requests.RequestException, ValueError, KeyError) as e:
             print(f"[music] 검색 실패 {q}: {e}")
             continue
-        print(f"[music] 검색 '{q}': 묶음 {len(docs)}개")
         for doc in docs:
             ident = doc["identifier"]
             if ident in seen:
@@ -72,64 +71,77 @@ def _links():
             except (requests.RequestException, ValueError) as e:
                 print(f"[music] {ident} 정보 실패: {e}")
                 continue
-            lic = str(meta.get("metadata", {}).get("licenseurl", ""))
-            if "publicdomain" not in lic and "freepd" not in ident.lower():
+            md = meta.get("metadata", {})
+            text = f"{ident} {md.get('title', '')} {md.get('description', '')}".lower()
+            lic = str(md.get("licenseurl", ""))
+            if "freepd" not in text and "publicdomain" not in lic:
                 continue
             n = 0
             for f in meta.get("files", []):
                 name = f.get("name", "")
                 size = int(f.get("size", 0) or 0)
-                if name.lower().endswith(".mp3") and 300_000 < size < 12_000_000 and n < PER_ITEM:
-                    found.append((f"https://archive.org/download/{ident}/{quote(name)}",
-                                  str(meta.get("metadata", {}).get("title", ident)), lic or "FreePD(CC0)"))
+                stem = name.rsplit("/", 1)[-1].rsplit(".", 1)[0]
+                if name.lower().endswith(".mp3") and 300_000 < size < 15_000_000 and not BLOCK.search(stem):
+                    found.append((f"https://archive.org/download/{ident}/{quote(name)}", stem,
+                                  str(md.get("title", ident)), lic or "FreePD (CC0)"))
                     n += 1
-            if n:
-                print(f"[music]   {ident}: {n}곡 ({lic})")
-    print(f"[music] 후보 {len(found)}곡")
-    return found
+            print(f"[music] {ident}: {n}곡 ({lic or 'FreePD'})")
+    bright = [x for x in found if BRIGHT.search(x[1])]
+    print(f"[music] 후보 {len(found)}곡, 밝은 이름 {len(bright)}곡")
+    return found, bright
 
 
 def _name(url):
-    stem = unquote(url.rsplit("/", 1)[-1]).rsplit(".", 1)[0]
+    stem = unquote(url)
     return re.sub(r"[^0-9A-Za-z]+", "_", stem).strip("_")
 
 
 def fetch():
     import video  # ffmpeg 위치
     MUSIC_DIR.mkdir(exist_ok=True)
-    links = _links()
-    random.Random(20261106).shuffle(links)
+    found, bright = _links()
+    rng = random.Random(20261106)
+    rng.shuffle(bright)
+    rest = [x for x in found if x not in bright]
+    rng.shuffle(rest)
+    for old in tracks():  # 새 곡 묶음으로 바꿈
+        old.unlink()
     done = []
-    for url, item, lic in links:
+    for url, stem, item, lic in bright + rest:
         if len(done) >= WANT:
             break
-        name = _name(url)
+        name = _name(stem)
         out = MUSIC_DIR / f"{name}.m4a"
-        try:
-            data = requests.get(url, headers=HEADERS, timeout=90).content
-        except requests.RequestException as e:
-            print(f"[music] 받기 실패 {url}: {e}")
+        if out.exists():
             continue
-        if len(data) < 100_000:
-            print(f"[music] 너무 작음, 건너뜀: {url}")
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=90)
+        except requests.RequestException as e:
+            print(f"[music] 받기 실패 {stem}: {e}")
+            continue
+        if not resp.ok or len(resp.content) < 200_000:
+            print(f"[music] 못 받음 {stem}: 응답 {resp.status_code}, {len(resp.content)}바이트")
             continue
         src = MUSIC_DIR / "_tmp.mp3"
-        src.write_bytes(data)
-        # 앞 3초(조용한 도입부)를 건너뛰고 20초, 소리 크기를 일정하게, 끝은 부드럽게 줄임
-        cmd = [video.ffmpeg(), "-y", "-loglevel", "error", "-ss", "3", "-t", str(CLIP_SEC), "-i", str(src),
+        src.write_bytes(resp.content)
+        # 앞 3초(조용한 도입부)를 건너뛰고 20초, 소리 크기를 일정하게, 끝은 부드럽게 줄임.
+        # -vn: mp3 안에 든 앨범 그림은 버림 (그림이 있으면 m4a 만들기가 실패함)
+        cmd = [video.ffmpeg(), "-y", "-loglevel", "error", "-i", str(src), "-ss", "3", "-t", str(CLIP_SEC), "-vn",
                "-af", f"loudnorm=I=-16:TP=-1.5:LRA=11,afade=t=out:st={CLIP_SEC - 2}:d=2",
                "-ar", "48000", "-ac", "2", "-c:a", "aac", "-b:a", "128k", str(out)]
         r = subprocess.run(cmd, capture_output=True, text=True)
         src.unlink(missing_ok=True)
-        if r.returncode != 0:
-            print(f"[music] 자르기 실패 {name}: {r.stderr[-200:]}")
+        if r.returncode != 0 or not out.exists() or out.stat().st_size < 100_000:
+            out.unlink(missing_ok=True)
+            print(f"[music] 자르기 실패 {stem}: {r.stderr[-200:]}")
             continue
         done.append((name, url, item, lic))
-        print(f"[music] 받음: {name} ({out.stat().st_size // 1000}KB)")
+        print(f"[music] 받음: {stem} ({out.stat().st_size // 1000}KB)")
     lines = ["# 릴스 배경음악", "",
-             "출처: 인터넷 아카이브(archive.org)의 퍼블릭 도메인(CC0) 음악. 상업 이용 가능, 출처 표기 불필요.",
-             "각 곡은 앞 3초를 빼고 20초로 잘라 소리 크기를 맞췄어요. 빼고 싶은 곡은 파일을 지우면 돼요.", ""]
-    lines += [f"- {n}.m4a ← {item} ({lic}) {u}" for n, u, item, lic in done]
+             "출처: FreePD.com 곡 (모두 퍼블릭 도메인 CC0, 상업 이용 가능, 출처 표기 불필요).",
+             "FreePD 사이트는 문을 닫아서 인터넷 아카이브(archive.org)에 보관된 사본에서 받았어요.",
+             "각 곡은 앞 3초를 빼고 20초로 잘라 소리 크기를 맞췄어요. 마음에 안 드는 곡은 파일을 지우면 돼요.", ""]
+    lines += [f"- {n}.m4a ← {u}" for n, u, item, lic in done]
     (MUSIC_DIR / "LIST.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"[music] 총 {len(done)}곡")
     if not done:

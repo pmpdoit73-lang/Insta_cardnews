@@ -28,6 +28,6 @@ jobs:
           git config user.email "insta-cardnews-bot@users.noreply.github.com"
           git add -A music/
           git diff --cached --quiet && exit 0
-          git commit -m "릴스 배경음악 받기 (FreePD, CC0)"
+          git commit -m "릴스 배경음악 받기 (CC0)"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
