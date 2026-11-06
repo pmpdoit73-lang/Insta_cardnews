@@ -94,13 +94,19 @@ if __name__ == "__main__":
     d = draft.load(sys.argv[1])
     if not d or not d.get("permalink"):
         sys.exit(f"게시된 초안이 아니에요: {sys.argv[1]}")
-    if d.get("threads_promo_id"):
-        sys.exit("이미 홍보 글을 올린 게시물이에요")
     first = draft.card_paths(d)[0]
-    url = hosting.upload_temp(first.read_bytes(), f"{d['id']}-threads.jpg")
     text = os.environ.get("PROMO_TEXT", "").strip().replace("\\n", "\n")  # 미리 확인한 글이 있으면 그대로
     if text and "{link}" in text:
         text = text.replace("{link}", d["permalink"])
-    d["threads_promo_id"] = post(url, text or text_for(d))
+    text = text or text_for(d)
+    if os.environ.get("PREVIEW") == "1":  # 올리지 않고 텔레그램으로 미리보기만
+        import telegram
+        telegram.send_draft("🧵 쓰레드 홍보 글 미리보기 (아직 안 올림)\n\n" + text, first.read_bytes())
+        print("미리보기 보냄:\n" + text)
+        sys.exit(0)
+    if d.get("threads_promo_id"):
+        sys.exit("이미 홍보 글을 올린 게시물이에요")
+    url = hosting.upload_temp(first.read_bytes(), f"{d['id']}-threads.jpg")
+    d["threads_promo_id"] = post(url, text)
     draft.save(d)
     print(f"쓰레드 홍보 글 완료: {d['threads_promo_id']}")
