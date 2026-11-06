@@ -25,8 +25,18 @@ def _base():
     return f"https://{host}/{VERSION}"
 
 
+_token_override = None  # 다른 계정(이슈풀이) 댓글을 볼 때만 잠깐 바꿔 씀
+
+
 def _token():
-    return os.environ["INSTAGRAM_ACCESS_TOKEN"].strip()
+    return _token_override or os.environ["INSTAGRAM_ACCESS_TOKEN"].strip()
+
+
+def use_token(token):
+    """다른 계정 토큰으로 바꾼다. None이면 원래 계정(살림 꿀팁)으로."""
+    global _token_override, _user_id
+    _token_override = token
+    _user_id = None
 
 
 _user_id = None
@@ -37,7 +47,7 @@ def _user():
     global _user_id
     if _user_id:
         return _user_id
-    value = os.environ.get("INSTAGRAM_USER_ID", "").strip()
+    value = "" if _token_override else os.environ.get("INSTAGRAM_USER_ID", "").strip()
     if value.isdigit():
         _user_id = value
     else:
