@@ -2,7 +2,7 @@
   "id": "20261106-0700",
   "created_at": "2026-11-05T17:01:31.644890+09:00",
   "publish_at": "2026-11-06T16:25:38+09:00",
-  "status": "approved",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "냄새 없이 오래 쓰는 식기세척기 필터·내부 관리법",
@@ -114,5 +114,8 @@
     "message_id": 463,
     "has_photo": false
   },
-  "original_publish_at": "2026-11-06T07:00:00+09:00"
+  "original_publish_at": "2026-11-06T07:00:00+09:00",
+  "instagram_id": "18064012352557901",
+  "permalink": "https://www.instagram.com/reel/DfZEhTQAdvs/",
+  "published_at": "2026-11-06T16:28:59.595489+09:00"
 }
