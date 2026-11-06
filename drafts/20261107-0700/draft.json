@@ -1,0 +1,116 @@
+{
+  "id": "20261107-0700",
+  "created_at": "2026-11-06T17:00:59.290862+09:00",
+  "publish_at": "2026-11-07T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "기름때·냄새 없이 오래 쓰는 에어프라이어 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "1만원대 에어프라이어 기사처럼 저렴한 제품도 흔해진 지금, 겨울 군고구마·귤 철에 더 자주 돌리는 에어프라이어 관리 요령을 골랐어요",
+  "title": [
+    "기름때 확 줄이는",
+    "에어프라이어 관리법 7"
+  ],
+  "highlight": "기름때 확 줄이는",
+  "subtitle": "굽기만 하고 청소는 미루셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, one compact matte white basket-type air fryer on a light beige quartz countertop, a wooden cutting board and a small green plant nearby, warm sunlight streaming from a window on the left, soft natural tones, lower third of the frame is clean empty countertop",
+  "cover_image_prompt": "The white basket air fryer stands in the center of the sunny kitchen countertop, basket slightly pulled out showing a clean shiny interior, a few roasted sweet potatoes on a plate beside it, warm morning light, no text, no faces",
+  "tips": [
+    {
+      "title": "식으면 바로 닦기",
+      "lines": [
+        "다 쓰고 식으면 그날 바로 닦아요",
+        "기름이 굳기 전이라 쉽게 지워져요"
+      ],
+      "note": "뜨거울 때 찬물을 붓지 마세요",
+      "image_prompt": "Hands pulling out the cooled air fryer basket and wiping it with a soft dish cloth, light grease visible, same kitchen set, no faces"
+    },
+    {
+      "title": "바스켓 불리기",
+      "lines": [
+        "뜨거운 물에 세제 한 방울, 10분",
+        "문지르지 않아도 돼 코팅이 오래가요"
+      ],
+      "note": "",
+      "image_prompt": "The air fryer basket soaking in a sink basin of warm soapy water with gentle bubbles, same sunny kitchen, no faces"
+    },
+    {
+      "title": "베이킹소다 활용",
+      "lines": [
+        "찌든 때엔 베이킹소다 1큰술 넣어요",
+        "따뜻한 물에 30분 두면 잘 풀려요"
+      ],
+      "note": "",
+      "image_prompt": "A hand sprinkling a spoonful of baking soda into the air fryer basket filled with warm water on the countertop, no faces"
+    },
+    {
+      "title": "열선 위 먼지 털기",
+      "lines": [
+        "플러그 뽑고 식힌 뒤 부드러운 솔로",
+        "쌓인 기름 먼지가 연기·냄새를 줄여요"
+      ],
+      "note": "전원 연결된 채로는 절대 손대지 마세요",
+      "image_prompt": "The unplugged air fryer gently tipped on its side on the countertop, a hand using a soft brush near the inner top area, power cord clearly unplugged and coiled, no faces"
+    },
+    {
+      "title": "종이호일 눌러 쓰기",
+      "lines": [
+        "종이호일은 음식을 올린 뒤 넣어요",
+        "예열 때 날려 열선에 닿는 걸 막아요"
+      ],
+      "note": "빈 종이호일만 넣고 예열하지 마세요",
+      "image_prompt": "Hands placing sweet potatoes on a parchment liner inside the air fryer basket so the paper is weighed down, same kitchen, no faces"
+    },
+    {
+      "title": "벽에서 띄우기",
+      "lines": [
+        "뒤쪽 배기구는 벽과 10cm 이상 띄워요",
+        "열이 잘 빠져 기기에 무리가 덜 가요"
+      ],
+      "note": "",
+      "image_prompt": "The air fryer placed with clear space between its back vent and the tiled wall, a hand pushing it slightly forward on the countertop, no faces"
+    },
+    {
+      "title": "완전히 말려 조립",
+      "lines": [
+        "씻은 바스켓은 1시간 이상 말려요",
+        "물기가 남으면 냄새와 얼룩이 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "The washed air fryer basket and tray drying upside down on a dish rack in the sunlight next to the air fryer, no faces"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "철수세미·연마제로 바스켓 문지르기",
+      "코팅이 벗겨져 음식이 더 눌어붙어요",
+      "본체를 물에 담그거나 직접 헹구기"
+    ],
+    "image_prompt": "On the same countertop, a steel wool scrubber and an abrasive cleaner placed next to the air fryer basket, and the air fryer body near a full sink of water, slightly cautionary mood, no faces"
+  },
+  "save_line": "저장해두고 청소할 때 꺼내보세요",
+  "caption": "에어프라이어 바스켓, 1년 동안 물로만 헹궜어요 😅\n쓰고 식으면 그날 바로 닦는 게 제일 쉬워요.\n찌든 때는 뜨거운 물+세제나 베이킹소다로 불려 주세요.\n열선 위 먼지는 꼭 플러그 뽑고 식힌 뒤 털어요.\n종이호일은 음식을 올려 눌러 쓰고, 뒤쪽은 벽과 띄워 두세요.\n여러분 집 에어프라이어는 몇 년 됐어요?",
+  "hashtags": [
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#에어프라이어",
+    "#에어프라이어청소",
+    "#에어프라이어관리",
+    "#에어프라이어꿀팁",
+    "#주방청소",
+    "#기름때제거",
+    "#베이킹소다활용",
+    "#살림노하우",
+    "#자취꿀팁",
+    "#주방가전"
+  ],
+  "photo_query": "air fryer kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 480,
+    "has_photo": false
+  }
+}
