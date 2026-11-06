@@ -1,7 +1,8 @@
 """릴스 배경음악 (2026-11-06 gil 요청: 무료 사이트에서 받아 쓰기).
 
-음악은 FreePD(https://freepd.com)에서 받는다. FreePD 곡은 전부 퍼블릭 도메인(CC0)이라
-상업 이용·수정이 자유롭고 출처 표기도 필요 없다 (인스타 음악 저작권 걱정 없음).
+음악은 인터넷 아카이브(archive.org)에서 퍼블릭 도메인(CC0) 표시가 된 곡만 받는다.
+CC0 곡은 상업 이용·수정이 자유롭고 출처 표기도 필요 없다 (인스타 음악 저작권 걱정 없음).
+(처음엔 FreePD를 쓰려 했는데 2026-11 기준 사이트가 문을 닫음)
 
 - music/*.m4a: 릴스에 맞게 20초로 잘라 소리 크기를 맞춘 곡들 (저장소에 넣어 둠)
 - music/LIST.md: 곡 이름과 원본 주소
@@ -15,13 +16,11 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from urllib.parse import quote, unquote, urljoin, urlsplit, urlunsplit
+from urllib.parse import quote, unquote
 
 import requests
 
 MUSIC_DIR = Path(__file__).resolve().parent.parent / "music"
-SITE = "https://freepd.com/"
-MAX_PAGES = 15    # 둘러볼 페이지 수
 WANT = 12          # 받을 곡 수
 CLIP_SEC = 20      # 잘라 둘 길이 (릴스는 12~15초)
 HEADERS = {"User-Agent": "Mozilla/5.0 (insta-cardnews music fetch)"}
@@ -43,41 +42,51 @@ def title(path):
     return path.stem.replace("_", " ") if path else ""
 
 
-def _get(url):
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=30)
-        print(f"[music] {url} 응답 {resp.status_code}, {len(resp.text)}자")
-        return resp.text if resp.ok else ""
-    except requests.RequestException as e:
-        print(f"[music] {url} 못 읽음: {e}")
-        return ""
+SEARCHES = [  # 인터넷 아카이브(archive.org) 검색어. 퍼블릭 도메인(CC0) 곡만 받는다
+    'freepd AND mediatype:audio',
+    'mediatype:audio AND licenseurl:*publicdomain/zero* AND (subject:upbeat OR subject:happy OR subject:ukulele)',
+    'mediatype:audio AND licenseurl:*publicdomain/zero* AND subject:"background music"',
+]
+PER_ITEM = 3  # 한 묶음에서 최대 몇 곡 (여러 분위기를 섞으려고)
 
 
 def _links():
-    """사이트 첫 화면에서 시작해 같은 사이트 안 페이지를 최대 MAX_PAGES개 돌며 mp3 주소를 모은다."""
-    queue, seen, found = [SITE], set(), []
-    while queue and len(seen) < MAX_PAGES:
-        url = queue.pop(0)
-        if url in seen:
+    """인터넷 아카이브에서 CC0 음악 묶음을 찾아 mp3 주소를 모은다. [(url, 묶음 이름, 라이선스)]"""
+    found, seen = [], set()
+    for q in SEARCHES:
+        try:
+            docs = requests.get("https://archive.org/advancedsearch.php", headers=HEADERS, timeout=30,
+                                params={"q": q, "fl[]": ["identifier", "title", "licenseurl"], "rows": 40,
+                                        "output": "json"}).json()["response"]["docs"]
+        except (requests.RequestException, ValueError, KeyError) as e:
+            print(f"[music] 검색 실패 {q}: {e}")
             continue
-        seen.add(url)
-        html = _get(url)
-        if "-v" in sys.argv and url == SITE:  # 페이지 구조 확인용
-            print(html[:3000])
-        for href in re.findall(r"""(?:href|src|data-src|data-url)\s*=\s*["']([^"'#]+)["']""", html, flags=re.I):
-            full = urljoin(url, href.strip())
-            if full.lower().split("?")[0].endswith(".mp3"):
-                if full not in found:
-                    found.append(full)
-            elif full.startswith(SITE) and not re.search(r"\.(css|js|png|jpe?g|gif|svg|ico|zip|pdf)$", full, re.I):
-                queue.append(full)
-        print(f"[music] 지금까지 {len(found)}곡")
+        print(f"[music] 검색 '{q}': 묶음 {len(docs)}개")
+        for doc in docs:
+            ident = doc["identifier"]
+            if ident in seen:
+                continue
+            seen.add(ident)
+            try:
+                meta = requests.get(f"https://archive.org/metadata/{ident}", headers=HEADERS, timeout=30).json()
+            except (requests.RequestException, ValueError) as e:
+                print(f"[music] {ident} 정보 실패: {e}")
+                continue
+            lic = str(meta.get("metadata", {}).get("licenseurl", ""))
+            if "publicdomain" not in lic and "freepd" not in ident.lower():
+                continue
+            n = 0
+            for f in meta.get("files", []):
+                name = f.get("name", "")
+                size = int(f.get("size", 0) or 0)
+                if name.lower().endswith(".mp3") and 300_000 < size < 12_000_000 and n < PER_ITEM:
+                    found.append((f"https://archive.org/download/{ident}/{quote(name)}",
+                                  str(meta.get("metadata", {}).get("title", ident)), lic or "FreePD(CC0)"))
+                    n += 1
+            if n:
+                print(f"[music]   {ident}: {n}곡 ({lic})")
+    print(f"[music] 후보 {len(found)}곡")
     return found
-
-
-def _quoted(url):
-    s = urlsplit(url)
-    return urlunsplit((s.scheme, s.netloc, quote(unquote(s.path)), s.query, s.fragment))
 
 
 def _name(url):
@@ -91,13 +100,13 @@ def fetch():
     links = _links()
     random.Random(20261106).shuffle(links)
     done = []
-    for url in links:
+    for url, item, lic in links:
         if len(done) >= WANT:
             break
         name = _name(url)
         out = MUSIC_DIR / f"{name}.m4a"
         try:
-            data = requests.get(_quoted(url), headers=HEADERS, timeout=60).content
+            data = requests.get(url, headers=HEADERS, timeout=90).content
         except requests.RequestException as e:
             print(f"[music] 받기 실패 {url}: {e}")
             continue
@@ -115,12 +124,12 @@ def fetch():
         if r.returncode != 0:
             print(f"[music] 자르기 실패 {name}: {r.stderr[-200:]}")
             continue
-        done.append((name, url))
+        done.append((name, url, item, lic))
         print(f"[music] 받음: {name} ({out.stat().st_size // 1000}KB)")
     lines = ["# 릴스 배경음악", "",
-             "출처: FreePD (https://freepd.com) — 모든 곡 퍼블릭 도메인(CC0). 상업 이용 가능, 출처 표기 불필요.",
+             "출처: 인터넷 아카이브(archive.org)의 퍼블릭 도메인(CC0) 음악. 상업 이용 가능, 출처 표기 불필요.",
              "각 곡은 앞 3초를 빼고 20초로 잘라 소리 크기를 맞췄어요. 빼고 싶은 곡은 파일을 지우면 돼요.", ""]
-    lines += [f"- {n}.m4a ← {u}" for n, u in done]
+    lines += [f"- {n}.m4a ← {item} ({lic}) {u}" for n, u, item, lic in done]
     (MUSIC_DIR / "LIST.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"[music] 총 {len(done)}곡")
     if not done:
