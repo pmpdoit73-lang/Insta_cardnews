@@ -1,0 +1,30 @@
+name: 배경음악 받기
+
+# 인터넷 아카이브의 퍼블릭 도메인(CC0) 무료 음악에서 릴스 배경음악을 받아 music/ 폴더에 저장한다.
+# 곡을 바꾸고 싶을 때만 Actions 탭에서 직접 실행 (Run workflow). 받은 곡 목록: music/LIST.md
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python src/music.py fetch
+      - name: 저장
+        run: |
+          git config user.name "insta-cardnews-bot"
+          git config user.email "insta-cardnews-bot@users.noreply.github.com"
+          git add -A music/
+          git diff --cached --quiet && exit 0
+          git commit -m "릴스 배경음악 받기 (CC0)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

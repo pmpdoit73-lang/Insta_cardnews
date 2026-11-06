@@ -17,6 +17,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import images
+import music
 import instagram
 import render
 import telegram
@@ -116,9 +117,15 @@ def is_reel(d):
     return not is_info(d)
 
 
+def reel_hook(d):
+    """릴스 맨 위에 띄울 질문형 문구. 예전 초안처럼 hook이 없으면 표지 제목으로."""
+    return (d.get("hook") or " ".join(d.get("title", []))).strip()
+
+
 def make_reel(d):
-    """카드로 릴스 영상(reel.mp4)을 만든다. 카드가 바뀌어도 늘 최신 카드로 다시 만든다."""
-    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4")
+    """카드로 릴스 영상(reel.mp4)을 만든다. 카드가 바뀌어도 늘 최신 카드로 다시 만든다.
+    배경음악은 초안 id로 고르므로 미리보기와 실제 게시 영상이 같은 곡 (2026-11-06 gil 요청)."""
+    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4", reel_hook(d), music.pick(d["id"]))
 
 
 def slot_id(slot):
@@ -279,8 +286,11 @@ def new_photos(d):
     save(d)
 
 
+MAX_TAGS = 5  # 2026-11-06: 해시태그 10~15개 → 3~5개 (요즘 인스타는 캡션 키워드를 더 봄)
+
+
 def ig_caption(d):
-    return (d["caption"].strip() + "\n\n" + " ".join(d.get("hashtags", []))).strip()
+    return (d["caption"].strip() + "\n\n" + " ".join(d.get("hashtags", [])[:MAX_TAGS])).strip()
 
 
 # ---------- 텔레그램 표시 ----------
@@ -293,10 +303,15 @@ def summary(d):
         "",
         f"🔥 이슈: {d.get('issue', '')} ({d.get('kind', '')})",
         f"📌 표지: {' / '.join(d.get('title', []))}",
-        f"🧩 형식: {'인포그래픽 총정리표 (사진 넘기기)' if is_info(d) else '목록형 (릴스 영상, 음악 없음)'}",
+        f"🧩 형식: {'인포그래픽 총정리표 (사진 넘기기)' if is_info(d) else '목록형 (릴스 약 15초)'}",
         f"🗂 카드: {len(card_paths(d))}장" + (f" (항목 {len(d['items'])}개)" if is_info(d) and d.get("items")
                                            else f" (팁 {len(d['tips'])}개)" if d.get("tips") else ""),
         f"🖼 사진: {d.get('image_note', '')}",
+    ]
+    if is_reel(d):
+        song = music.pick(d["id"])
+        lines += [f"💬 첫 화면 문구: {reel_hook(d)}", f"🎵 배경음악: {music.title(song) if song else '없음'}"]
+    lines += [
         "",
         "✍️ 캡션",
         ig_caption(d),
@@ -340,7 +355,7 @@ def send(d):
     telegram.send_album([(p.name, p.read_bytes()) for p in card_paths(d)])
     if is_reel(d):  # 실제로 올라갈 릴스 영상도 미리 보여 준다. 실패해도 초안은 그대로 보냄
         try:
-            telegram.send_video(make_reel(d).read_bytes(), "▶️ 이 영상이 릴스로 올라가요 (음악 없음)")
+            telegram.send_video(make_reel(d).read_bytes(), "▶️ 이 영상이 릴스로 올라가요")
         except Exception as e:
             print(f"[draft] 릴스 미리보기 실패: {e}")
     msg = telegram.send_text(summary(d), keyboard(d))

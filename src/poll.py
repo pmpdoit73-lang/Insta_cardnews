@@ -1,5 +1,5 @@
 """10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
-새 댓글에는 자동으로 답글을 단다 (comments.py).
+새 댓글에는 자동으로 답글을 단다 (comments.py). 밤 9시 이후엔 하루 한 번 숫자 보고서 (insights.py).
 07:00 목록형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
@@ -14,8 +14,11 @@ from pathlib import Path
 import comments
 import draft
 import hosting
+import insights
 import instagram
 import telegram
+import threads_promo
+import video
 
 OFFSET_FILE = Path(__file__).resolve().parent.parent / "state" / "telegram_offset.txt"
 LATE_LIMIT = timedelta(hours=2)  # 게시 시각보다 이만큼 넘게 늦으면 올리지 않음
@@ -38,7 +41,7 @@ def write_offset(value):
 # ---------- 게시 ----------
 
 def publish(d):
-    if draft.is_reel(d):  # 목록형: 카드를 영상으로 만들어 릴스로 (2026-11-04 gil 요청, 음악 없음)
+    if draft.is_reel(d):  # 목록형: 카드를 15초 릴스로 (2026-11-04 gil 요청, 11-06부터 배경음악·첫 화면 문구)
         path = draft.make_reel(d)
         url = hosting.upload_temp(path.read_bytes(), f"{d['id']}-reel.mp4")
         media_id, link = instagram.post_reel(url, draft.ig_caption(d))
@@ -49,6 +52,38 @@ def publish(d):
     d["permalink"] = link
     d["status"] = "published"
     d["published_at"] = datetime.now(draft.KST).isoformat()
+    share_story(d)
+    promote_on_threads(d)
+
+
+def promote_on_threads(d):
+    """총정리표는 주 3회 쓰레드에도 홍보 글 (threads_promo.py). 실패해도 게시는 성공으로 둔다."""
+    if not threads_promo.should_post(d, datetime.now(draft.KST)):
+        return
+    try:
+        first = draft.card_paths(d)[0]
+        url = hosting.upload_temp(first.read_bytes(), f"{d['id']}-threads.jpg")
+        d["threads_promo_id"] = threads_promo.post(url, threads_promo.text_for(d))
+        print(f"[poll] {d['id']} 쓰레드 홍보 글 완료")
+    except Exception as e:
+        d["threads_promo_error"] = str(e)[:300]
+        print(f"[poll] {d['id']} 쓰레드 홍보 글 실패: {e}")
+
+
+def share_story(d):
+    """새 게시물 표지를 스토리에도 올린다 (2026-11-06 gil 요청, 조회수 개선 4단계).
+    팔로워 화면 맨 위에 떠서 첫 반응을 늘린다. 실패해도 게시는 성공으로 둔다."""
+    if d.get("story_id"):
+        return
+    try:
+        path = video.story_image(draft.card_paths(d)[0], draft.folder(d["id"]) / "story.jpg")
+        url = hosting.upload_temp(path.read_bytes(), f"{d['id']}-story.jpg")
+        d["story_id"] = instagram.post_story(url)
+        d.pop("story_error", None)
+        print(f"[poll] {d['id']} 스토리 공유 완료")
+    except Exception as e:
+        d["story_error"] = str(e)[:300]
+        print(f"[poll] {d['id']} 스토리 공유 실패: {e}")
 
 
 def try_publish(d):
@@ -63,7 +98,10 @@ def try_publish(d):
     draft.save(d)
     draft.refresh(d)
     if d["status"] == "published":
-        telegram.send_text(f"🎉 인스타에 올렸어요\n{d.get('permalink', '')}")
+        story = "📲 스토리에도 공유했어요" if d.get("story_id") else "⚠️ 스토리 공유는 실패했어요 (게시물은 정상)"
+        if d.get("threads_promo_id"):
+            story += "\n🧵 쓰레드에도 홍보 글을 올렸어요"
+        telegram.send_text(f"🎉 인스타에 올렸어요\n{d.get('permalink', '')}\n{story}")
 
 
 # ---------- 버튼 처리 ----------
@@ -157,5 +195,9 @@ if __name__ == "__main__":
         comments.process()
     except Exception as e:
         print(f"[poll] 댓글 답글 실패: {e}")
+    try:  # 하루 한 번 숫자 보고서 (21시 이후 첫 실행)
+        insights.maybe_report()
+    except Exception as e:
+        print(f"[poll] 숫자 보고서 실패: {e}")
     if failed:
         sys.exit(1)
