@@ -1,0 +1,125 @@
+{
+  "id": "20261108-1730",
+  "created_at": "2026-11-08T06:31:05.619483+09:00",
+  "publish_at": "2026-11-08T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "단감·사과·귤 등 가을겨울 제철 과일 보관법·보관기간 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "단감 상자 보관 기사가 화제인 지금, 과일 상자 많이 받는 늦가을에 맞춰 과일별 보관 장소·기간을 한 장으로 정리",
+  "top_badge": "과일 상자 전에 저장!",
+  "title": [
+    "상자째 받은 제철 과일",
+    "오래 먹는 보관법 10"
+  ],
+  "highlight": "제철 과일",
+  "basis": "농진청·식약처 안내 참고 · 일반 가정 기준",
+  "items": [
+    {
+      "name": "단감",
+      "badge": "냉장 2~3주",
+      "detail": "하나씩 랩·비닐에 싸서 꼭지 아래로 넣어요",
+      "emoji": "🍊",
+      "icon_prompt": "a single ripe persimmon with green calyx"
+    },
+    {
+      "name": "사과",
+      "badge": "냉장 1~2달",
+      "detail": "에틸렌이 나와 다른 과일과 따로 봉지에 담아요",
+      "emoji": "🍎",
+      "icon_prompt": "a single red apple"
+    },
+    {
+      "name": "배",
+      "badge": "냉장 1~2달",
+      "detail": "신문지나 랩으로 하나씩 싸면 수분이 덜 빠져요",
+      "emoji": "🍐",
+      "icon_prompt": "a single Korean pear"
+    },
+    {
+      "name": "귤",
+      "badge": "실온 1~2주",
+      "detail": "서늘한 곳에 펼쳐 두고 무른 건 바로 골라내요",
+      "emoji": "🍊",
+      "icon_prompt": "a small pile of tangerines"
+    },
+    {
+      "name": "홍시",
+      "badge": "냉동 2~3달",
+      "detail": "익은 건 바로 먹고 남으면 얼려 아이스홍시로",
+      "emoji": "🧊",
+      "icon_prompt": "a soft ripe red persimmon"
+    },
+    {
+      "name": "키위",
+      "badge": "냉장 2~4주",
+      "detail": "덜 익은 건 실온 후숙, 말랑해지면 냉장해요",
+      "emoji": "🥝",
+      "icon_prompt": "a whole brown kiwi fruit"
+    },
+    {
+      "name": "바나나",
+      "badge": "실온 3~5일",
+      "detail": "걸어 두면 덜 눌려요, 냉장하면 껍질이 검어져요",
+      "emoji": "🍌",
+      "icon_prompt": "a bunch of yellow bananas"
+    },
+    {
+      "name": "포도",
+      "badge": "냉장 1주",
+      "detail": "씻지 말고 봉지에, 먹기 직전에 씻어요",
+      "emoji": "🍇",
+      "icon_prompt": "a bunch of purple grapes"
+    },
+    {
+      "name": "석류",
+      "badge": "냉장 1~2달",
+      "detail": "통째로 두면 오래가고 알만 빼면 빨리 먹어요",
+      "emoji": "❤️",
+      "icon_prompt": "a whole red pomegranate"
+    },
+    {
+      "name": "대추",
+      "badge": "냉장 1~2주",
+      "detail": "생대추는 비닐에 담아 냉장, 오래 두려면 말려요",
+      "emoji": "🟤",
+      "icon_prompt": "a small pile of fresh jujubes"
+    }
+  ],
+  "save_tile": [
+    "과일 상자",
+    "받을 때 보는 표"
+  ],
+  "check": {
+    "title": "보관 전 체크",
+    "lines": [
+      "무른 과일 먼저 골라",
+      "씻지 말고 보관"
+    ]
+  },
+  "footer_line": "저장해두고 과일 상자 받으면 꺼내보세요",
+  "footer_highlight": "과일 상자",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "상자째 냉장고에 넣지 마세요, 습기로 금방 물러요",
+      "사과와 다른 과일을 한 봉지에 담지 마세요",
+      "씻어서 물기 있는 채로 보관하면 곰팡이가 펴요"
+    ]
+  },
+  "save_line": "저장해두고 장볼 때 꺼내보세요",
+  "caption": "과일 보관법 몰라서 단감 반 상자를 물러 버린 적 있어요 😅\n\n요즘 제철 과일 상자 많이 받으시죠\n과일별 보관 장소와 기간을 한 장에 정리했어요\n\n단감: 냉장 2~3주 · 하나씩 랩에 싸서 꼭지 아래로\n사과: 냉장 1~2달 · 다른 과일과 따로 봉지에\n배: 냉장 1~2달 · 신문지나 랩으로 하나씩\n귤: 실온 1~2주 · 서늘한 곳에 펼쳐 두기\n홍시: 냉동 2~3달 · 남으면 얼려 아이스홍시로\n키위: 냉장 2~4주 · 덜 익은 건 실온 후숙 후 냉장\n바나나: 실온 3~5일 · 걸어 두면 덜 눌려요\n포도: 냉장 1주 · 먹기 직전에 씻기\n석류: 냉장 1~2달 · 통째로 두면 오래가요\n대추: 냉장 1~2주 · 오래 두려면 말리기\n\n농진청·식약처 안내 참고, 과일 상태와 집 환경에 따라 달라질 수 있어요\n저장해두고 과일 상자 받을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n요즘 여러분 집엔 어떤 과일이 제일 많아요?",
+  "hashtags": [
+    "#과일보관법",
+    "#단감보관",
+    "#제철과일",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 520,
+    "has_photo": false
+  }
+}
