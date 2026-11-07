@@ -2,7 +2,7 @@
   "id": "20261107-1730",
   "created_at": "2026-11-07T06:31:04.306143+09:00",
   "publish_at": "2026-11-07T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "주방 얼룩별 맞는 세정제 총정리 (베이킹소다·구연산·과탄산·식초)",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 501,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18158189359523562",
+  "permalink": "https://www.instagram.com/p/Dfbwg5aFdA1/",
+  "published_at": "2026-11-07T17:31:28.867368+09:00",
+  "story_id": "18393547855230556"
 }
