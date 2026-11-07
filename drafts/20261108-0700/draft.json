@@ -1,0 +1,118 @@
+{
+  "id": "20261108-0700",
+  "created_at": "2026-11-07T17:01:06.417130+09:00",
+  "publish_at": "2026-11-08T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "겨울 앞두고 꺼내는 가습기 세척·관리법",
+  "kind": "가전 꿀팁",
+  "angle": "11월 초, 난방 시작과 함께 창고에서 가습기를 꺼내는 시기라 첫 세척과 매일 관리 요령이 가장 필요할 때",
+  "title": [
+    "세균 걱정 없는",
+    "가습기 세척법 8"
+  ],
+  "highlight": "세균 걱정",
+  "subtitle": "물만 채워 쓰고 계셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a white compact ultrasonic humidifier with a clear water tank standing on a light beige quartz countertop, a small potted herb and a ceramic mug nearby, soft warm sunlight streaming through a window on the left, clean minimal background, lower third of the frame is plain countertop",
+  "cover_image_prompt": "The white humidifier on the beige countertop releasing a gentle soft mist into the warm morning sunlight, tank filled with clear water, cozy and clean mood, no text, no faces",
+  "tips": [
+    {
+      "title": "물은 매일 새로",
+      "lines": [
+        "남은 물은 버리고 매일 새로 채워요",
+        "고인 물은 하루만 지나도 세균이 늘어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pouring leftover water from the humidifier tank into the sink-side bowl, tank tilted, water stream visible"
+    },
+    {
+      "title": "수조 매일 헹구기",
+      "lines": [
+        "흐르는 물로 수조를 1번씩 헹궈요",
+        "물때가 쌓이기 전에 막아 줘요"
+      ],
+      "note": "",
+      "image_prompt": "Hands rinsing the clear humidifier tank under running tap water, water droplets sparkling in sunlight"
+    },
+    {
+      "title": "주 1회 구연산",
+      "lines": [
+        "물 1L에 구연산 1큰술, 30분 불려요",
+        "하얀 물때가 문지르지 않아도 녹아요"
+      ],
+      "note": "구연산 외 다른 세제와 섞지 마세요",
+      "image_prompt": "The humidifier tank filled with water beside a small bowl of white citric acid powder and a measuring spoon on the countertop"
+    },
+    {
+      "title": "진동자는 살살",
+      "lines": [
+        "진동자는 면봉으로 부드럽게 닦아요",
+        "세게 문지르면 고장 날 수 있어요"
+      ],
+      "note": "반드시 전원 코드를 뽑고 닦으세요",
+      "image_prompt": "A hand gently cleaning the small round metal ultrasonic disc in the humidifier base with a cotton swab, unplugged cord visible"
+    },
+    {
+      "title": "물은 수돗물로",
+      "lines": [
+        "정수 물보다 수돗물을 넣어 써요",
+        "수돗물 염소가 세균 번식을 줄여요"
+      ],
+      "note": "",
+      "image_prompt": "A hand filling the humidifier tank directly from a kitchen faucet, clear water flowing"
+    },
+    {
+      "title": "다 쓰면 바짝 건조",
+      "lines": [
+        "안 쓸 땐 분해해 반나절 말려요",
+        "젖은 채 두면 곰팡이가 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "Disassembled humidifier parts, tank, cap and base, laid upside down on a dish towel drying in the sunlight"
+    },
+    {
+      "title": "벽에서 1m 띄우기",
+      "lines": [
+        "벽·가구에서 1m 이상 떨어뜨려요",
+        "습기로 벽지 곰팡이가 안 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "The humidifier placed in the open middle of the countertop with clear space around it, mist rising freely"
+    },
+    {
+      "title": "필터는 제때 교체",
+      "lines": [
+        "필터는 설명서 주기대로 갈아요",
+        "오래 쓰면 냄새·세균이 남아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding a new humidifier filter next to an old discolored one on the countertop"
+    }
+  ],
+  "warning": {
+    "title": "살균제는 절대 넣지 마세요",
+    "lines": [
+      "물에 살균제·세제·락스 넣지 마세요",
+      "분무되면 그대로 들이마시게 돼요",
+      "향 오일도 넣지 마세요, 고장 원인이에요"
+    ],
+    "image_prompt": "The humidifier on the countertop with unlabeled plain bottles of disinfectant, bleach and essential oil set aside with a crossed-out feeling, no text"
+  },
+  "save_line": "저장해두고 가습기 꺼낼 때 보세요",
+  "caption": "가습기 세척, 몇 년 동안 물만 채워서 썼어요 😅\n가습기는 매일 물을 새로 갈고 수조를 헹구는 게 기본이에요.\n하얀 물때는 일주일에 한 번 구연산 물에 불리면 쉽게 빠져요.\n진동자는 전원을 뽑고 면봉으로 살살, 안 쓸 땐 바짝 말려 주세요.\n그리고 살균제·향 오일은 절대 물에 넣지 마세요.\n저장해두고 가습기 꺼낼 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 가습기 몇 월부터 켜세요?",
+  "hook": "가습기, 아직 물만 채워요?",
+  "hashtags": [
+    "#가습기",
+    "#가습기세척",
+    "#가습기청소",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "humidifier kitchen morning",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 514,
+    "has_photo": false
+  }
+}
