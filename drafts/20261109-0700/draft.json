@@ -2,7 +2,7 @@
   "id": "20261109-0700",
   "created_at": "2026-11-08T17:01:13.415373+09:00",
   "publish_at": "2026-11-09T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "김장철·겨울 전기밥솥 숨은 활용법과 관리법",
@@ -114,5 +114,9 @@
   "message": {
     "message_id": 534,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18116527184330956",
+  "permalink": "https://www.instagram.com/reel/DffyC5AFW7h/",
+  "published_at": "2026-11-09T07:02:22.505320+09:00",
+  "story_id": "18102707639639647"
 }
