@@ -1,0 +1,118 @@
+{
+  "id": "20261109-0700",
+  "created_at": "2026-11-08T17:01:13.415373+09:00",
+  "publish_at": "2026-11-09T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "김장철·겨울 전기밥솥 숨은 활용법과 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "1인 가구·작은 가전 기사 흐름에 맞춰, 아직 안 다룬 전기밥솥을 김장철 겨울 집밥에 맞게 관리·활용하는 요령으로 묶음",
+  "title": [
+    "밥맛 살리고 오래 쓰는",
+    "전기밥솥 관리법 8"
+  ],
+  "highlight": "밥맛 살리고",
+  "subtitle": "밥만 하고 뚜껑 안은 못 보셨죠?",
+  "scene": "A white electric rice cooker sitting on a light beige quartz countertop in a bright Korean home kitchen, wooden cutting board and small ceramic bowls nearby, soft morning sunlight streaming through a window on the left, warm cozy tones, lower third of the frame is plain countertop",
+  "cover_image_prompt": "The white electric rice cooker with lid open, gentle steam rising from freshly cooked white rice, morning sunlight glowing on the steam, clean countertop in the lower third",
+  "tips": [
+    {
+      "title": "내솥 불려 닦기",
+      "lines": [
+        "따뜻한 물 담아 10분 불리세요",
+        "말라붙은 밥알이 쉽게 떨어져요"
+      ],
+      "note": "철수세미는 코팅을 긁어요",
+      "image_prompt": "The inner pot removed and placed on the counter filled with warm water, a soft sponge beside it"
+    },
+    {
+      "title": "속뚜껑 분리 세척",
+      "lines": [
+        "속뚜껑 떼서 주 1회 씻으세요",
+        "밥 냄새·누런 얼룩을 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Hands detaching the inner lid of the rice cooker, the removable lid plate resting on a dish towel"
+    },
+    {
+      "title": "증기캡 청소",
+      "lines": [
+        "증기캡 빼서 밥할 때마다 헹궈요",
+        "전분 찌꺼기가 쌓이지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "Small steam vent cap removed and held under a running faucet by a hand"
+    },
+    {
+      "title": "물받이 비우기",
+      "lines": [
+        "물받이는 밥할 때마다 비우세요",
+        "고인 물 냄새를 막아줘요"
+      ],
+      "note": "",
+      "image_prompt": "Hand pulling out the small water collection tray from the back of the rice cooker"
+    },
+    {
+      "title": "자동세척 기능",
+      "lines": [
+        "눈금까지 물 붓고 자동세척 돌려요",
+        "증기로 안쪽 냄새가 빠져요"
+      ],
+      "note": "기능은 설명서에서 꼭 확인하세요",
+      "image_prompt": "Inner pot filled with clean water up to the line, rice cooker lid closed with steam coming from the vent"
+    },
+    {
+      "title": "보온은 짧게",
+      "lines": [
+        "보온은 12시간 안에 끝내세요",
+        "오래 두면 누렇게 변하고 말라요"
+      ],
+      "note": "",
+      "image_prompt": "Freshly cooked rice being scooped with a rice paddle into small glass containers"
+    },
+    {
+      "title": "남은 밥 냉동",
+      "lines": [
+        "한 공기씩 담아 식혀 냉동해요",
+        "보온보다 전기도 덜 들어요"
+      ],
+      "note": "",
+      "image_prompt": "Portioned rice in small containers lined up on the counter next to the rice cooker"
+    },
+    {
+      "title": "찜 기능 활용",
+      "lines": [
+        "찜판에 고구마 올려 만능찜 써요",
+        "겨울 간식이 한 번에 끝나요"
+      ],
+      "note": "",
+      "image_prompt": "Steaming basket inside the rice cooker holding sweet potatoes and corn"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "본체를 물에 담그지 마세요",
+      "전원 꽂은 채 닦으면 감전 위험",
+      "내솥으로 쌀 씻으면 코팅이 상해요"
+    ],
+    "image_prompt": "The rice cooker unplugged with cord neatly coiled, a separate bowl for washing rice beside the inner pot"
+  },
+  "save_line": "저장해두고 밥솥 닦을 때 꺼내보세요",
+  "caption": "전기밥솥 청소, 내솥만 씻고 속뚜껑은 몇 달째 몰랐어요 😅\n밥 냄새가 남는다면 속뚜껑·증기캡부터 보세요.\n내솥은 불려 닦고, 물받이는 매번 비워요.\n보온은 12시간 안에, 남은 밥은 냉동이 더 맛있어요.\n찜 기능으로 겨울 고구마도 쉽게 쪄요.\n저장해두고 밥솥 닦을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 밥솥은 몇 년 됐어요?",
+  "hook": "밥솥 냄새, 여기 때문이에요",
+  "hashtags": [
+    "#전기밥솥",
+    "#전기밥솥청소",
+    "#밥솥관리",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "electric rice cooker kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 534,
+    "has_photo": false
+  }
+}
