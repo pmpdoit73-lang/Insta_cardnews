@@ -1,0 +1,125 @@
+{
+  "id": "20261109-1730",
+  "created_at": "2026-11-09T06:31:10.317971+09:00",
+  "publish_at": "2026-11-09T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "실온 해동은 그만, 냉동 식재료별 안전한 해동법 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "김장철·연말 장보기로 냉동실이 꽉 차는 때라, 보관기한 다음 단계인 '어떻게 녹이나'를 한 장에 정리했어요",
+  "top_badge": "냉동실 문에 붙여두세요",
+  "title": [
+    "아직 실온에 녹이세요?",
+    "식재료별 해동법 10"
+  ],
+  "highlight": "해동법",
+  "basis": "식약처 안전 해동 권고 참고 · 실온 해동 제외",
+  "items": [
+    {
+      "name": "소고기",
+      "badge": "냉장 해동",
+      "detail": "전날 밤 냉장실로 옮기면 육즙이 덜 빠져요",
+      "emoji": "🥩",
+      "icon_prompt": "a raw beef steak on a plate"
+    },
+    {
+      "name": "돼지고기",
+      "badge": "냉장 해동",
+      "detail": "쟁반 받쳐 냉장실 아래 칸에서 천천히 녹여요",
+      "emoji": "🐖",
+      "icon_prompt": "sliced raw pork belly on a tray"
+    },
+    {
+      "name": "닭고기",
+      "badge": "냉장 해동",
+      "detail": "핏물이 다른 식재료에 닿지 않게 용기에 담아요",
+      "emoji": "🍗",
+      "icon_prompt": "a raw whole chicken in a container"
+    },
+    {
+      "name": "생선",
+      "badge": "냉장 해동",
+      "detail": "반쯤 녹았을 때 손질하면 살이 덜 부서져요",
+      "emoji": "🐟",
+      "icon_prompt": "a frozen fish fillet on a plate"
+    },
+    {
+      "name": "냉동새우",
+      "badge": "흐르는 찬물",
+      "detail": "봉지째 찬물에 담그면 빨리, 고르게 녹아요",
+      "emoji": "🦐",
+      "icon_prompt": "a bowl of frozen shrimp"
+    },
+    {
+      "name": "냉동만두",
+      "badge": "바로 조리",
+      "detail": "녹이면 피가 터져요, 언 채로 찌거나 구워요",
+      "emoji": "🥟",
+      "icon_prompt": "frozen dumplings on a plate"
+    },
+    {
+      "name": "냉동밥",
+      "badge": "전자레인지",
+      "detail": "뚜껑 살짝 열고 데우면 갓 지은 밥처럼 돼요",
+      "emoji": "🍚",
+      "icon_prompt": "a portion of frozen rice in a container"
+    },
+    {
+      "name": "식빵",
+      "badge": "바로 굽기",
+      "detail": "언 채로 토스터에 구우면 눅눅하지 않아요",
+      "emoji": "🍞",
+      "icon_prompt": "a slice of bread"
+    },
+    {
+      "name": "냉동채소",
+      "badge": "바로 조리",
+      "detail": "해동하면 물러져요, 언 채로 볶거나 끓여요",
+      "emoji": "🥦",
+      "icon_prompt": "a bag of frozen mixed vegetables"
+    },
+    {
+      "name": "국·찌개",
+      "badge": "바로 가열",
+      "detail": "언 덩어리째 냄비에 넣고 약불로 데워요",
+      "emoji": "🍲",
+      "icon_prompt": "a frozen block of soup in a pot"
+    }
+  ],
+  "save_tile": [
+    "장볼 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "해동 전 체크",
+    "lines": [
+      "녹인 건 다시 얼리지 않기",
+      "해동 후 바로 조리"
+    ]
+  },
+  "footer_line": "저장해두고 저녁 메뉴 정할 때 꺼내보세요",
+  "footer_highlight": "저장해두고",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "싱크대 실온 해동: 겉부터 세균이 늘어요",
+      "뜨거운 물 해동: 겉만 익고 속은 얼어요",
+      "녹인 고기 재냉동: 맛도 위생도 떨어져요"
+    ]
+  },
+  "save_line": "냉동실 정리할 때 다시 보세요",
+  "caption": "냉동 고기 해동법, 저도 오래도록 싱크대에 그냥 올려두고 녹였어요 😅\n\n고기·생선은 냉장실에서 천천히, 만두·채소는 언 채로 바로 조리하는 게 맞더라고요.\n식재료별로 한 장에 정리했어요.\n\n소고기: 냉장 해동 · 전날 밤 냉장실로 옮기면 육즙이 덜 빠져요\n돼지고기: 냉장 해동 · 쟁반 받쳐 냉장실 아래 칸에서 녹여요\n닭고기: 냉장 해동 · 핏물이 닿지 않게 용기에 담아요\n생선: 냉장 해동 · 반쯤 녹았을 때 손질하면 덜 부서져요\n냉동새우: 흐르는 찬물 · 봉지째 찬물에 담그면 고르게 녹아요\n냉동만두: 바로 조리 · 녹이면 피가 터져요\n냉동밥: 전자레인지 · 뚜껑 살짝 열고 데워요\n식빵: 바로 굽기 · 언 채로 토스터에 구워요\n냉동채소: 바로 조리 · 해동하면 물러져요\n국·찌개: 바로 가열 · 언 덩어리째 약불로 데워요\n\n식약처 안전 해동 권고를 참고했어요. 실온·뜨거운 물 해동, 녹인 고기 재냉동은 피해 주세요.\n저장해두고 저녁 메뉴 정할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 냉동 고기 주로 어떻게 녹이세요?",
+  "hashtags": [
+    "#해동방법",
+    "#냉동고기해동",
+    "#냉동실정리",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 540,
+    "has_photo": false
+  }
+}
