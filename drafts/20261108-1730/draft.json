@@ -2,7 +2,7 @@
   "id": "20261108-1730",
   "created_at": "2026-11-08T06:31:05.619483+09:00",
   "publish_at": "2026-11-08T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "단감·사과·귤 등 가을겨울 제철 과일 보관법·보관기간 총정리",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 520,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17868204372680565",
+  "permalink": "https://www.instagram.com/p/DfeVVSJm0Fr/",
+  "published_at": "2026-11-08T17:31:42.007125+09:00",
+  "story_id": "18123593105930975"
 }
