@@ -2,7 +2,7 @@
   "id": "20261110-0700",
   "created_at": "2026-11-09T17:01:22.278276+09:00",
   "publish_at": "2026-11-10T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "김장철 김치냉장고 냄새·성에 없이 쓰는 청소·관리법은 다뤘으니, 대신 겨울 앞두고 커피머신 석회 제거·세척 관리법",
@@ -114,5 +114,9 @@
   "message": {
     "message_id": 553,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17938720266401020",
+  "permalink": "https://www.instagram.com/reel/DfiW3bxDHLG/",
+  "published_at": "2026-11-10T07:02:34.674368+09:00",
+  "story_id": "18117870752035908"
 }
