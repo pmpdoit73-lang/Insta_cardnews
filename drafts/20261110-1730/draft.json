@@ -1,0 +1,125 @@
+{
+  "id": "20261110-1730",
+  "created_at": "2026-11-10T06:31:29.955381+09:00",
+  "publish_at": "2026-11-10T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "겨울 대청소 전 주방·생활가전 청소 주기 총정리",
+  "kind": "살림 꿀팁",
+  "angle": "연말 대청소와 난방 시작 전, 가전마다 언제 닦아야 하는지 한 장으로 확인하는 표",
+  "top_badge": "대청소 전 저장하세요!",
+  "title": [
+    "언제 닦았는지 가물가물",
+    "가전 청소 주기 10"
+  ],
+  "highlight": "청소 주기",
+  "basis": "제조사 사용설명서 일반 권장 기준",
+  "items": [
+    {
+      "name": "건조기 필터",
+      "badge": "매번",
+      "detail": "쓸 때마다 먼지 털어야 건조가 빨라요",
+      "emoji": "🌀",
+      "icon_prompt": "a clothes dryer lint filter"
+    },
+    {
+      "name": "에어프라이어",
+      "badge": "매번",
+      "detail": "바스켓은 식은 뒤 바로 씻어야 기름때 안 껴요",
+      "emoji": "🍟",
+      "icon_prompt": "an air fryer basket"
+    },
+    {
+      "name": "청소기 먼지통",
+      "badge": "매번",
+      "detail": "가득 차면 흡입력이 확 떨어져요",
+      "emoji": "🧹",
+      "icon_prompt": "a cordless vacuum dust bin"
+    },
+    {
+      "name": "전자레인지",
+      "badge": "주 1회",
+      "detail": "튄 음식은 바로 닦고 내부는 주 1회",
+      "emoji": "📦",
+      "icon_prompt": "a microwave oven"
+    },
+    {
+      "name": "식세기 필터",
+      "badge": "주 1회",
+      "detail": "찌꺼기 빼고 헹궈야 냄새가 안 나요",
+      "emoji": "🍽️",
+      "icon_prompt": "a dishwasher drain filter"
+    },
+    {
+      "name": "공기청정기",
+      "badge": "2주 1회",
+      "detail": "프리필터 먼지만 털어도 효율이 올라가요",
+      "emoji": "🌬️",
+      "icon_prompt": "an air purifier pre filter"
+    },
+    {
+      "name": "레인지후드",
+      "badge": "월 1회",
+      "detail": "필터 기름때 불려 닦으면 흡입이 살아나요",
+      "emoji": "🔥",
+      "icon_prompt": "a kitchen range hood grease filter"
+    },
+    {
+      "name": "세탁기 통",
+      "badge": "월 1회",
+      "detail": "통세척 코스로 곰팡이 냄새를 막아요",
+      "emoji": "🧺",
+      "icon_prompt": "a front loading washing machine"
+    },
+    {
+      "name": "전기포트",
+      "badge": "월 1회",
+      "detail": "구연산 물 끓여 헹구면 물때가 빠져요",
+      "emoji": "🫖",
+      "icon_prompt": "an electric kettle"
+    },
+    {
+      "name": "냉장고 선반",
+      "badge": "월 1회",
+      "detail": "유통기한 정리하며 선반을 닦아요",
+      "emoji": "🧊",
+      "icon_prompt": "a refrigerator glass shelf"
+    }
+  ],
+  "save_tile": [
+    "대청소 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "청소 전 체크",
+    "lines": [
+      "전원 플러그 뽑기",
+      "완전히 식힌 뒤"
+    ]
+  },
+  "footer_line": "저장해두고 대청소 날 꺼내보세요",
+  "footer_highlight": "대청소 날",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "전원 꽂은 채 분해·물청소 하지 마세요",
+      "락스와 식초·산성세제는 섞지 마세요",
+      "필터는 완전히 말린 뒤 끼워야 해요"
+    ]
+  },
+  "save_line": "저장해두고 달력처럼 쓰세요",
+  "caption": "가전 청소 주기, 저도 냄새 나야 닦던 사람이었어요 😅\n\n연말 대청소 앞두고 가전별로 언제 닦으면 되는지 정리했어요\n설명서 권장 기준이라 달력처럼 쓰기 좋아요\n\n건조기 필터: 매번 · 쓸 때마다 먼지 털기\n에어프라이어: 매번 · 식은 뒤 바스켓 세척\n청소기 먼지통: 매번 · 차면 흡입력 저하\n전자레인지: 주 1회 · 튄 음식은 바로 닦기\n식세기 필터: 주 1회 · 찌꺼기 빼고 헹구기\n공기청정기: 2주 1회 · 프리필터 먼지 털기\n레인지후드: 월 1회 · 필터 기름때 불려 닦기\n세탁기 통: 월 1회 · 통세척 코스\n전기포트: 월 1회 · 구연산 물 끓여 헹구기\n냉장고 선반: 월 1회 · 정리하며 닦기\n\n청소 전엔 꼭 플러그 뽑고, 세제는 섞지 마세요\n저장해두고 대청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n여러분은 어떤 가전 청소를 제일 미루세요?",
+  "hashtags": [
+    "#가전청소",
+    "#가전청소주기",
+    "#대청소",
+    "#살림꿀팁",
+    "#주방꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 559,
+    "has_photo": false
+  }
+}
