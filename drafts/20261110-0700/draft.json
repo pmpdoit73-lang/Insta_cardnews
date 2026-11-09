@@ -1,0 +1,118 @@
+{
+  "id": "20261110-0700",
+  "created_at": "2026-11-09T17:01:22.278276+09:00",
+  "publish_at": "2026-11-10T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "김장철 김치냉장고 냄새·성에 없이 쓰는 청소·관리법은 다뤘으니, 대신 겨울 앞두고 커피머신 석회 제거·세척 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "추워지면 따뜻한 커피를 더 자주 내리는데, 커피머신 물통·추출구 관리는 이전에 다룬 적 없어 겨울 초입에 딱 맞음",
+  "title": [
+    "커피 맛 되살리는",
+    "커피머신 관리법 8"
+  ],
+  "highlight": "커피 맛 되살리는",
+  "subtitle": "요즘 커피가 좀 쓰다 싶으셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a compact espresso capsule coffee machine on a light beige quartz countertop, a white ceramic mug, a small potted herb and a wooden tray nearby, warm sunlight streaming through a window on the left, soft cozy atmosphere, lower third of the frame is plain clean countertop",
+  "cover_image_prompt": "The compact espresso coffee machine stands centered on the beige quartz countertop, freshly brewed coffee pouring into a white ceramic mug with gentle steam rising, warm morning window light highlighting the machine, plain countertop in lower third, no text, no faces",
+  "tips": [
+    {
+      "title": "물통 물 매일 갈기",
+      "lines": [
+        "물통 물은 하루 한 번 새로 채워요",
+        "고인 물은 물때·냄새의 시작이에요"
+      ],
+      "note": "",
+      "image_prompt": "Hands lifting the removable water tank from the coffee machine and pouring old water into the sink-side, clear water droplets, same kitchen set, no text, no faces"
+    },
+    {
+      "title": "물통 주 1회 세척",
+      "lines": [
+        "주방세제 한 방울로 주 1회 씻어요",
+        "미끈한 물때가 끼지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "The water tank lying on the countertop beside a soft sponge with light soap foam, hands gently washing inside, same set, no text, no faces"
+    },
+    {
+      "title": "캡슐통 바로 비우기",
+      "lines": [
+        "쓴 캡슐은 그날 바로 비워요",
+        "눅눅한 찌꺼기에 곰팡이가 잘 펴요"
+      ],
+      "note": "",
+      "image_prompt": "Hands pulling out the used capsule container from the coffee machine, a few used capsules visible, small trash bin nearby, same set, no text, no faces"
+    },
+    {
+      "title": "물받이 자주 비우기",
+      "lines": [
+        "물받이는 2~3일에 한 번 비워요",
+        "고인 커피물이 쉰내를 만들어요"
+      ],
+      "note": "",
+      "image_prompt": "Hands sliding out the drip tray of the coffee machine with a little brown coffee water, same countertop and morning light, no text, no faces"
+    },
+    {
+      "title": "빈 추출로 헹구기",
+      "lines": [
+        "첫 커피 전 물만 한 번 내려요",
+        "기계 속 묵은 물이 빠져 맛이 깔끔해요"
+      ],
+      "note": "",
+      "image_prompt": "The coffee machine dispensing clear hot water into the white mug with no capsule, light steam, same set, no text, no faces"
+    },
+    {
+      "title": "석회 제거 정기적으로",
+      "lines": [
+        "석회 제거는 설명서대로 1~3개월마다",
+        "물이 느려지고 미지근해지는 걸 막아요"
+      ],
+      "note": "제품 전용 세정제·설명서 방법만 쓰세요",
+      "image_prompt": "A small bottle of plain descaling solution without label and a measuring cup next to the coffee machine, hands pouring into the water tank, same set, no text, no faces"
+    },
+    {
+      "title": "추출구 닦아주기",
+      "lines": [
+        "추출구는 마른 행주로 매일 닦아요",
+        "커피 기름이 쌓이면 쓴맛이 나요"
+      ],
+      "note": "전원 끄고 식은 뒤 닦으세요",
+      "image_prompt": "Hands wiping the coffee outlet nozzle of the machine with a clean cotton cloth, machine powered off, same set, no text, no faces"
+    },
+    {
+      "title": "정수 물 쓰기",
+      "lines": [
+        "물통엔 정수된 물을 채워요",
+        "석회가 덜 끼어 관리가 쉬워져요"
+      ],
+      "note": "",
+      "image_prompt": "A glass pitcher of clear filtered water being poured into the coffee machine water tank, sunlight sparkling on water, same set, no text, no faces"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "물통을 식기세척기에 넣지 마세요",
+      "설명서 확인 전엔 변형될 수 있어요",
+      "전원 켠 채 내부를 분해하지 마세요"
+    ],
+    "image_prompt": "The coffee machine with its water tank placed beside an open dishwasher rack and an unplugged power cord coiled on the countertop, same kitchen set, cautionary mood but bright, no text, no faces"
+  },
+  "save_line": "저장해두고 커피 맛 변할 때 꺼내보세요",
+  "caption": "커피머신 관리법, 저는 물통만 헹구고 몇 달을 그냥 썼어요 😅\n요즘 커피가 유독 쓰고 물이 느리게 나온다면 관리 신호예요.\n물통 물은 매일 갈고, 주 1회 세척해 주세요.\n캡슐통·물받이는 미루지 말고 바로 비우기.\n석회 제거는 설명서 주기대로, 전용 세정제로 해요.\n저장해두고 커피 맛이 변할 때 꺼내보세요, 커피 좋아하는 가족·친구에게도 공유해 주세요.\n여러분은 하루에 커피 몇 잔 내려 드세요?",
+  "hook": "커피머신, 이거 모르면 손해",
+  "hashtags": [
+    "#커피머신",
+    "#커피머신청소",
+    "#캡슐커피머신",
+    "#가전꿀팁",
+    "#주방꿀팁"
+  ],
+  "photo_query": "coffee machine kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 553,
+    "has_photo": false
+  }
+}
