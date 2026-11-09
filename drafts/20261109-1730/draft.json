@@ -2,7 +2,7 @@
   "id": "20261109-1730",
   "created_at": "2026-11-09T06:31:10.317971+09:00",
   "publish_at": "2026-11-09T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "실온 해동은 그만, 냉동 식재료별 안전한 해동법 총정리",
@@ -121,5 +121,10 @@
   "message": {
     "message_id": 540,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18138773653642010",
+  "permalink": "https://www.instagram.com/p/Dfg6IdSFhVI/",
+  "published_at": "2026-11-09T17:31:44.567775+09:00",
+  "story_id": "18489213139116406",
+  "threads_promo_id": "18111865226228050"
 }
