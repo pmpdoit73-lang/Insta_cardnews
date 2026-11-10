@@ -2,7 +2,7 @@
   "id": "20261110-1730",
   "created_at": "2026-11-10T06:31:29.955381+09:00",
   "publish_at": "2026-11-10T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "겨울 대청소 전 주방·생활가전 청소 주기 총정리",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 559,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18037005299665295",
+  "permalink": "https://www.instagram.com/p/Dfje-dxm9QP/",
+  "published_at": "2026-11-10T17:32:10.346003+09:00",
+  "story_id": "18135553822855586"
 }
