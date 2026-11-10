@@ -1,0 +1,125 @@
+{
+  "id": "20261111-1730",
+  "created_at": "2026-11-11T06:31:18.875141+09:00",
+  "publish_at": "2026-11-11T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "김장철 집밥 반찬 에어프라이어 식재료별 온도·시간 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "에어프라이어 종이호일 검색이 많은 요즘, 관리법은 다뤘으니 매번 검색하는 굽는 온도·시간을 한 장 표로 정리했어요",
+  "top_badge": "굽기 전 저장하세요!",
+  "title": [
+    "매번 검색하던 그 숫자",
+    "에어프라이어 온도 10"
+  ],
+  "highlight": "에어프라이어",
+  "basis": "가정용 바스켓형 기준 · 중간에 한 번 뒤집기",
+  "items": [
+    {
+      "name": "냉동만두",
+      "badge": "180도10분",
+      "detail": "기름 살짝 바르고 중간에 뒤집어요",
+      "emoji": "🥟",
+      "icon_prompt": "a few golden fried dumplings"
+    },
+    {
+      "name": "감자튀김",
+      "badge": "200도15분",
+      "detail": "겹치지 않게 펴고 중간에 흔들어요",
+      "emoji": "🍟",
+      "icon_prompt": "a pile of french fries"
+    },
+    {
+      "name": "치킨너겟",
+      "badge": "180도10분",
+      "detail": "냉동 그대로 넣고 한 번 뒤집어요",
+      "emoji": "🍗",
+      "icon_prompt": "a few chicken nuggets"
+    },
+    {
+      "name": "삼겹살",
+      "badge": "180도20분",
+      "detail": "15분 뒤 뒤집고 5분 더 구워요",
+      "emoji": "🥓",
+      "icon_prompt": "grilled pork belly slices"
+    },
+    {
+      "name": "닭다리",
+      "badge": "180도25분",
+      "detail": "껍질 쪽 아래로, 중간에 뒤집어요",
+      "emoji": "🍗",
+      "icon_prompt": "roasted chicken drumsticks"
+    },
+    {
+      "name": "고구마",
+      "badge": "200도30분",
+      "detail": "크기 따라 10분씩 더 확인해요",
+      "emoji": "🍠",
+      "icon_prompt": "a roasted sweet potato"
+    },
+    {
+      "name": "생선구이",
+      "badge": "180도12분",
+      "detail": "껍질에 칼집 내면 덜 튀어요",
+      "emoji": "🐟",
+      "icon_prompt": "a grilled mackerel fillet"
+    },
+    {
+      "name": "식은 피자",
+      "badge": "160도5분",
+      "detail": "눅눅함 없이 바삭하게 살아나요",
+      "emoji": "🍕",
+      "icon_prompt": "a slice of pizza"
+    },
+    {
+      "name": "구운 계란",
+      "badge": "160도15분",
+      "detail": "찬 계란은 실온에 잠시 두세요",
+      "emoji": "🥚",
+      "icon_prompt": "a few brown roasted eggs"
+    },
+    {
+      "name": "말랑 떡",
+      "badge": "180도5분",
+      "detail": "굳은 떡도 겉바속촉이 돼요",
+      "emoji": "🍡",
+      "icon_prompt": "grilled rice cakes"
+    }
+  ],
+  "save_tile": [
+    "굽기 전",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "굽기 전 체크",
+    "lines": [
+      "양 많으면 시간 더",
+      "기종마다 조금 달라요"
+    ]
+  },
+  "footer_line": "저장해두고 굽기 전에 꺼내보세요",
+  "footer_highlight": "굽기 전에",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "종이호일만 넣고 예열하지 마세요",
+      "호일이 날려 열선에 닿으면 불이 나요",
+      "바스켓 꽉 채우면 덜 익고 눅눅해요"
+    ]
+  },
+  "save_line": "저장해두고 굽기 전 확인!",
+  "caption": "에어프라이어 온도 시간, 굽을 때마다 검색했어요 😅\n\n자주 굽는 식재료 10가지를 한 장에 정리했어요\n가정용 바스켓형 기준이고, 중간에 한 번 뒤집는 기준이에요\n\n냉동만두: 180도10분 · 기름 살짝 바르고 중간에 뒤집어요\n감자튀김: 200도15분 · 겹치지 않게 펴고 중간에 흔들어요\n치킨너겟: 180도10분 · 냉동 그대로 넣고 한 번 뒤집어요\n삼겹살: 180도20분 · 15분 뒤 뒤집고 5분 더 구워요\n닭다리: 180도25분 · 껍질 쪽 아래로, 중간에 뒤집어요\n고구마: 200도30분 · 크기 따라 10분씩 더 확인해요\n생선구이: 180도12분 · 껍질에 칼집 내면 덜 튀어요\n식은 피자: 160도5분 · 눅눅함 없이 바삭하게 살아나요\n구운 계란: 160도15분 · 찬 계란은 실온에 잠시 두세요\n말랑 떡: 180도5분 · 굳은 떡도 겉바속촉이 돼요\n\n기종·양에 따라 다르니 마지막 몇 분은 열어서 확인하세요. 종이호일만 넣고 예열은 절대 금지예요\n저장해두고 굽기 전에 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n여러분은 에어프라이어로 뭘 제일 자주 구워요?",
+  "hashtags": [
+    "#에어프라이어",
+    "#에어프라이어요리",
+    "#에어프라이어온도",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 578,
+    "has_photo": false
+  }
+}
