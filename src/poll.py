@@ -1,5 +1,6 @@
 """10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
 새 댓글에는 자동으로 답글을 단다 (comments.py). 밤 9시 이후엔 하루 한 번 숫자 보고서 (insights.py).
+아침 8시 이후엔 하루 한 번 소통 안내, gil이 게시물 캡처를 보내면 맞춤 댓글 초안 (engage.py).
 07:00 목록형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
@@ -13,6 +14,7 @@ from pathlib import Path
 
 import comments
 import draft
+import engage
 import hosting
 import insights
 import instagram
@@ -149,6 +151,15 @@ def process_buttons():
     allowed = str(telegram._chat_id())
     for u in telegram.get_updates(offset):
         offset = max(offset, u["update_id"] + 1)
+        msg = u.get("message")
+        if msg and str(msg.get("chat", {}).get("id")) == allowed and engage.wants_reply(msg):
+            try:  # gil이 보낸 게시물 캡처·캡션 → 맞춤 댓글 초안 (engage.py)
+                engage.reply_to(msg)
+            except Exception as e:
+                print(f"[poll] 맞춤 댓글 실패: {e}")
+                telegram.send_text(f"⚠️ 맞춤 댓글을 못 만들었어요: {str(e)[:150]}")
+            write_offset(offset)
+            continue
         cb = u.get("callback_query")
         if not cb or str(cb.get("from", {}).get("id")) != allowed:  # 다른 사람이 누른 버튼·일반 대화는 무시
             write_offset(offset)
@@ -195,6 +206,10 @@ if __name__ == "__main__":
         comments.process()
     except Exception as e:
         print(f"[poll] 댓글 답글 실패: {e}")
+    try:  # 하루 한 번 아침 소통 안내 (8시 이후 첫 실행, engage.py)
+        engage.maybe_send()
+    except Exception as e:
+        print(f"[poll] 소통 안내 실패: {e}")
     try:  # 하루 한 번 숫자 보고서 (21시 이후 첫 실행)
         insights.maybe_report()
     except Exception as e:

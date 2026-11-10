@@ -27,9 +27,14 @@ def _chat_id():
     return os.environ["TELEGRAM_CHAT_ID"].strip()
 
 
-def send_text(text, keyboard=None, silent=False):
+def send_text(text, keyboard=None, silent=False, html=False, reply_to=None):
+    """html=True면 <b>굵게</b>, <code>누르면 복사</code> 같은 표시를 쓸 수 있다."""
     data = {"chat_id": _chat_id(), "text": text, "disable_web_page_preview": "true",
             "disable_notification": str(silent).lower()}
+    if html:
+        data["parse_mode"] = "HTML"
+    if reply_to:
+        data["reply_to_message_id"] = str(reply_to)
     if keyboard:
         data["reply_markup"] = json.dumps({"inline_keyboard": keyboard})
     return _call("sendMessage", data=data)

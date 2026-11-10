@@ -233,6 +233,24 @@ def post_story(image_url):
     return _call("POST", f"{_user()}/media_publish", creation_id=story["id"])["id"]
 
 
+# ---------- 해시태그 검색 (engage.py가 씀) ----------
+
+def can_search_hashtags():
+    """해시태그 검색은 페이스북 페이지 연결 방식(graph.facebook.com)에서만 된다.
+    인스타 로그인 방식(graph.instagram.com) API엔 이 기능이 없다."""
+    return "facebook" in _base()
+
+
+def hashtag_top_media(tag, limit=10):
+    """해시태그 인기 게시물 [{caption, permalink, timestamp, like_count, comments_count}].
+    권한 instagram_basic, 7일 동안 해시태그 30개까지."""
+    found = _call("GET", "ig_hashtag_search", user_id=_user(), q=tag).get("data", [])
+    if not found:
+        return []
+    return _call("GET", f"{found[0]['id']}/top_media", user_id=_user(), limit=limit,
+                 fields="caption,permalink,timestamp,like_count,comments_count").get("data", [])
+
+
 def refresh_token():
     """인스타 로그인 방식 토큰(60일)을 새 60일짜리로 바꿔 돌려준다. (페이스북 방식은 해당 없음)"""
     resp = requests.get("https://graph.instagram.com/refresh_access_token",
