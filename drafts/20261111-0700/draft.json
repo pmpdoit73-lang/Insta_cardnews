@@ -1,0 +1,118 @@
+{
+  "id": "20261111-0700",
+  "created_at": "2026-11-10T17:01:26.048822+09:00",
+  "publish_at": "2026-11-11T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "김장철 대용량 조리 전 꺼내는 믹서기(블렌더) 세척·관리법",
+  "kind": "가전 꿀팁",
+  "angle": "김장 양념 갈기로 믹서기를 많이 쓰는 철인데, 마늘·고춧가루 냄새와 붉은 착색, 칼날 틈 찌꺼기 관리법은 아직 다루지 않아 골랐어요",
+  "title": [
+    "냄새·착색 없이 쓰는",
+    "믹서기 관리법 8"
+  ],
+  "highlight": "냄새·착색",
+  "subtitle": "양념 갈고 나면 빨갛게 물들었죠?",
+  "scene": "A single white high-speed countertop blender with a clear plastic jar, placed on a light beige quartz kitchen countertop in a bright Korean home kitchen, wooden cutting board and small ceramic bowls nearby, soft morning sunlight from a window on the left, warm cozy tone, lower third of the frame is plain empty countertop",
+  "cover_image_prompt": "The blender stands center on the countertop, its clear jar sparkling clean in the morning sunlight, a few garlic cloves and a small bowl of red pepper flakes beside it, no text, no faces",
+  "tips": [
+    {
+      "title": "쓰고 바로 헹구기",
+      "lines": [
+        "쓰자마자 미지근한 물로 바로 헹궈요",
+        "양념이 마르기 전이라 쉽게 떨어져요"
+      ],
+      "note": "",
+      "image_prompt": "Hands rinsing the empty blender jar under warm water just after use, traces of red seasoning washing away"
+    },
+    {
+      "title": "물+세제로 자동세척",
+      "lines": [
+        "따뜻한 물 반, 세제 한 방울 넣고 30초",
+        "칼날 틈까지 손 안 대고 닦여요"
+      ],
+      "note": "뜨거운 물은 넘칠 수 있어 미지근하게",
+      "image_prompt": "The blender jar half filled with soapy foamy water, lid closed, appearing to spin, bubbles inside"
+    },
+    {
+      "title": "붉은 착색 지우기",
+      "lines": [
+        "베이킹소다 1큰술 넣고 물에 30분 불려요",
+        "고춧가루 물든 용기가 한결 맑아져요"
+      ],
+      "note": "",
+      "image_prompt": "The blender jar soaking with cloudy water and a spoon of baking soda nearby on the counter"
+    },
+    {
+      "title": "마늘 냄새 빼기",
+      "lines": [
+        "식초 1큰술 섞은 물로 돌린 뒤 헹궈요",
+        "패킹에 밴 마늘 냄새가 줄어요"
+      ],
+      "note": "베이킹소다와 한 번에 섞지 마세요",
+      "image_prompt": "A small cup of clear vinegar being poured into the blender jar with water, garlic cloves set aside"
+    },
+    {
+      "title": "고무 패킹 분리 세척",
+      "lines": [
+        "칼날 아래 패킹은 주 1회 빼서 닦아요",
+        "곰팡이·냄새가 숨는 곳이에요"
+      ],
+      "note": "칼날은 손으로 잡지 말고 솔로 닦기",
+      "image_prompt": "A removed blade assembly and a rubber gasket ring on a towel, a small brush cleaning the gasket"
+    },
+    {
+      "title": "완전히 말리기",
+      "lines": [
+        "뚜껑 열고 거꾸로 세워 반나절 말려요",
+        "습기가 남으면 냄새가 다시 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "The blender jar placed upside down on a drying rack beside the base, lid laid open next to it"
+    },
+    {
+      "title": "본체는 마른행주로",
+      "lines": [
+        "전원 뽑고 젖은 행주 꼭 짜서 닦아요",
+        "모터에 물이 들어가면 고장 나요"
+      ],
+      "note": "본체는 절대 물에 담그지 마세요",
+      "image_prompt": "Unplugged blender base being wiped with a tightly wrung cloth, power cord neatly coiled aside"
+    },
+    {
+      "title": "양념은 나눠 갈기",
+      "lines": [
+        "용기 3분의 2 이하로, 끊어서 갈아요",
+        "모터 과열 없이 오래 써요"
+      ],
+      "note": "",
+      "image_prompt": "Garlic, ginger and onion pieces filling only about two thirds of the blender jar, ready to blend"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "본체째 물에 담그거나 수돗물에 대지 마세요",
+      "전원 꽂은 채 칼날에 손대면 위험해요",
+      "철수세미는 용기에 흠집을 내요"
+    ],
+    "image_prompt": "Blender base sitting next to a sink full of water and a steel wool scrubber on the counter, plug still in outlet, cautionary mood, no text"
+  },
+  "save_line": "저장해두고 김장 양념 갈 때 꺼내보세요",
+  "caption": "믹서기 세척법, 저도 김장 끝나면 빨간 용기 보고 한숨만 쉬었어요 😅\n김장철엔 마늘·생강·고춧가루 양념 가느라 믹서기가 쉴 틈이 없죠.\n쓰자마자 헹구고, 세제 물로 30초 돌리면 칼날 틈까지 깨끗해요.\n붉은 착색은 베이킹소다, 마늘 냄새는 식초 물로 따로 잡아 주세요.\n칼날 밑 고무 패킹은 꼭 빼서 닦고, 거꾸로 세워 바짝 말리는 게 핵심이에요.\n저장해두고 김장 양념 갈 때 꺼내보세요, 김장 준비하는 가족·친구에게도 공유해 주세요.\n여러분은 김장 양념, 믹서기로 가세요 손으로 다지세요?",
+  "hook": "믹서기 빨간 물, 아직 그대로?",
+  "hashtags": [
+    "#믹서기세척",
+    "#블렌더청소",
+    "#김장준비",
+    "#주방꿀팁",
+    "#가전꿀팁"
+  ],
+  "photo_query": "blender kitchen countertop",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 572,
+    "has_photo": false
+  }
+}
