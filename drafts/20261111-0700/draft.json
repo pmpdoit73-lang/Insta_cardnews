@@ -2,7 +2,7 @@
   "id": "20261111-0700",
   "created_at": "2026-11-10T17:01:26.048822+09:00",
   "publish_at": "2026-11-11T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "김장철 대용량 조리 전 꺼내는 믹서기(블렌더) 세척·관리법",
@@ -114,5 +114,9 @@
   "message": {
     "message_id": 572,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17997270311843755",
+  "permalink": "https://www.instagram.com/reel/Dfk7q3QAXWB/",
+  "published_at": "2026-11-11T07:02:38.348496+09:00",
+  "story_id": "17981032127915572"
 }
