@@ -1,0 +1,109 @@
+{
+  "id": "20261112-0700",
+  "created_at": "2026-11-11T17:01:45.853647+09:00",
+  "publish_at": "2026-11-12T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "탄 냄비·눌어붙은 냄비 안전하게 되살리는 세척법",
+  "kind": "주방 꿀팁",
+  "angle": "김장·국물 요리 많은 겨울, 탄 냄비 케첩 세척 기사가 화제라 냄비 재질별로 안전한 탄 자국 제거 요령을 묶었어요",
+  "title": [
+    "버리기 전에 해보는",
+    "탄 냄비 살리는 법 7"
+  ],
+  "highlight": "탄 냄비",
+  "subtitle": "국 졸이다 태운 냄비, 그냥 버리셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a stainless steel pot with a dark burnt bottom sitting on a light beige stone countertop, a wooden cutting board and a small bowl of baking soda nearby, a folded linen dish towel, warm sunlight streaming through a window on the left, soft shadows, clean simple countertop in the lower third",
+  "cover_image_prompt": "The stainless steel pot with a visibly burnt dark bottom stands in the center of the countertop, slightly angled to show the inside, warm morning sunlight highlighting it, clean empty countertop below",
+  "tips": [
+    {
+      "title": "물 붓고 바로 불리기",
+      "lines": [
+        "태운 직후 따뜻한 물 붓고 30분",
+        "탄 찌꺼기가 불어 쉽게 떨어져요"
+      ],
+      "note": "뜨거운 냄비에 찬물은 붓지 마세요",
+      "image_prompt": "A hand pouring warm water from a kettle into the burnt pot, steam rising gently"
+    },
+    {
+      "title": "베이킹소다 끓이기",
+      "lines": [
+        "물에 베이킹소다 2큰술, 10분 끓이기",
+        "탄 자국이 들뜨며 부드럽게 벗겨져요"
+      ],
+      "note": "",
+      "image_prompt": "The pot filled with water on a stove burner, a spoon adding white baking soda powder"
+    },
+    {
+      "title": "케첩 바르고 두기",
+      "lines": [
+        "탄 부분에 케첩 얇게 펴 30분 두기",
+        "토마토 산 성분이 그을음을 녹여요"
+      ],
+      "note": "",
+      "image_prompt": "A hand spreading red ketchup over the burnt bottom of the pot with a spoon"
+    },
+    {
+      "title": "식초로 누런 얼룩",
+      "lines": [
+        "물과 식초 1:1, 끓인 뒤 식히기",
+        "스테인리스 무지개 얼룩이 빠져요"
+      ],
+      "note": "락스 등 다른 세제와 섞지 마세요",
+      "image_prompt": "A small glass bottle of clear vinegar being poured into the pot with water"
+    },
+    {
+      "title": "나무주걱으로 긁기",
+      "lines": [
+        "불린 뒤 나무주걱으로 살살 밀기",
+        "냄비 바닥에 흠집이 덜 나요"
+      ],
+      "note": "",
+      "image_prompt": "A hand gently scraping softened residue in the pot with a wooden spatula"
+    },
+    {
+      "title": "코팅 냄비는 부드럽게",
+      "lines": [
+        "물에 주방세제 한 방울, 끓여서 불리기",
+        "코팅이 상하지 않게 지켜줘요"
+      ],
+      "note": "코팅 냄비엔 철수세미 금지예요",
+      "image_prompt": "A nonstick coated pot next to the steel pot, a soft sponge resting beside it"
+    },
+    {
+      "title": "마무리는 바짝 말리기",
+      "lines": [
+        "세척 후 약불에 1분 올려 물기 날리기",
+        "물 얼룩과 녹이 덜 생겨요"
+      ],
+      "note": "빈 냄비를 오래 가열하지 마세요",
+      "image_prompt": "The clean shiny pot upside down on the linen dish towel, drying in sunlight"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스와 식초 섞기는 유독가스가 나와요",
+      "코팅 냄비 철수세미는 코팅이 벗겨져요",
+      "뜨거운 냄비에 찬물은 변형될 수 있어요"
+    ],
+    "image_prompt": "On the same countertop, a bleach bottle and vinegar bottle side by side, a steel wool scrubber next to a nonstick pot, cautionary mood"
+  },
+  "save_line": "저장해두고 냄비 태웠을 때 꺼내보세요",
+  "caption": "탄 냄비 세척법 몰라서, 멀쩡한 냄비를 두 개나 버렸어요 😅\n김장·국물 요리 많은 겨울엔 냄비 태우기 딱 좋죠.\n태운 직후 따뜻한 물에 불리고, 베이킹소다 넣고 끓이면 반은 해결돼요.\n케첩이나 식초도 탄 자국·누런 얼룩에 쓸 만해요.\n코팅 냄비는 세제 한 방울로 부드럽게, 철수세미는 금지예요.\n저장해두고 냄비 태웠을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 냄비 제일 많이 태운 요리가 뭐예요?",
+  "hook": "탄 냄비, 버리면 손해예요",
+  "hashtags": [
+    "#탄냄비",
+    "#탄냄비세척",
+    "#냄비세척",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "burnt pot cleaning",
+  "image_note": "9장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 591,
+    "has_photo": false
+  }
+}
