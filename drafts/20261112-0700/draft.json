@@ -2,7 +2,7 @@
   "id": "20261112-0700",
   "created_at": "2026-11-11T17:01:45.853647+09:00",
   "publish_at": "2026-11-12T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "탄 냄비·눌어붙은 냄비 안전하게 되살리는 세척법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 591,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18033576806682209",
+  "permalink": "https://www.instagram.com/reel/Dfngg4zpYFz/",
+  "published_at": "2026-11-12T07:03:02.735396+09:00",
+  "story_id": "17991901008117833"
 }
