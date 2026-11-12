@@ -6,8 +6,9 @@
 - 첫 화면 문구: 영상 맨 위에 노란 띠로 질문형 한 줄(hook)을 처음부터 끝까지 띄움
 - 배경음악: music/ 폴더의 무료(CC0) 곡을 초안마다 하나 골라 넣음 (music.py). 곡이 없으면 무음
 
-- 화면: 1080×1920 (9:16). 카드는 조금 줄여(950×1188) 문구 띠 아래에 두고,
-  나머지 빈 곳은 같은 카드를 흐리게 키워서 채움. 아래쪽 캡션·버튼 영역은 비워 둠
+- 화면: 2026-11-12 gil 요청으로 카드 사진 크기 그대로 1080×1350 (4:5).
+  예전엔 1080×1920(9:16)에 카드를 줄여 넣고 빈 곳을 흐린 배경으로 채웠는데, 이제는 카드가 화면 전체를 채움.
+  문구 띠는 카드 위쪽(계정 이름 아래, 사진 부분)에 얹음. 글씨는 카드 아래쪽이라 가리지 않음
 - 첫 장면이 표지 그대로라 릴스 썸네일도 표지가 됨
 
 ffmpeg는 서버에 깔린 게 있으면 쓰고, 없으면 imageio-ffmpeg 패키지에 든 것을 쓴다.
@@ -19,11 +20,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-W, H, FPS = 1080, 1920, 30
+W, H, FPS = 1080, 1350, 30  # 릴스 화면 = 카드 사진 크기(4:5)
+STORY_H = 1920  # 스토리 사진은 세로 꽉 찬 9:16 그대로
 FADE = 0.25  # 장 사이 넘어가는 시간(초)
-CARD_W = 950  # 카드 너비(px). 1080×1350 카드를 줄여 위에 문구 띠 자리를 만듦
-TOP = 300     # 카드 윗변 위치(px). 카드 아래 끝 ≈ 1488, 그 아래는 릴스 캡션·버튼 영역
-HOOK_Y = 140  # 문구 띠 윗변 (맨 위 "릴스" 글자 영역은 피함)
+CARD_W = 950  # 스토리 사진 안에 넣는 카드 너비(px)
+HOOK_Y = 150  # 문구 띠 윗변 (카드 맨 위 계정 이름·쪽번호 아래)
 TARGET = 15.0                      # 목표 길이(초)
 COVER_SEC, LAST_SEC = 2.0, 2.2
 TIP_MIN, TIP_MAX = 1.2, 1.6
@@ -82,6 +83,7 @@ def hook_image(text, out_path):
 def story_image(card_path, out_path, text="새 게시물이 올라왔어요"):
     """새 게시물 알림용 스토리 사진(1080×1920 JPG): 흐린 배경 + 카드 + 위쪽 노란 띠 문구."""
     from PIL import Image, ImageEnhance, ImageFilter
+    H = STORY_H
     card = Image.open(card_path).convert("RGB")
     scale = max(W / card.width, H / card.height)
     bg = card.resize((round(card.width * scale), round(card.height * scale)))
@@ -123,10 +125,8 @@ def make_reel(card_paths, out_path, hook="", music=None):
     parts = []
     for i in range(len(cards)):
         parts.append(
-            f"[{i}:v]scale={CARD_W}:-2,setsar=1,split[c{i}][b{i}];"
-            f"[b{i}]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-            f"boxblur=40:2,eq=brightness=-0.06[g{i}];"
-            f"[g{i}][c{i}]overlay=(W-w)/2:{TOP},fps={FPS},format=yuv420p,setsar=1,setpts=PTS-STARTPTS[v{i}]"
+            f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+            f"fps={FPS},format=yuv420p,setsar=1,setpts=PTS-STARTPTS[v{i}]"
         )
     last = "v0"
     elapsed = 0.0
