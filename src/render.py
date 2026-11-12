@@ -630,13 +630,7 @@ def info_sheet(c, icons):
         else:
             i_item(im, d, box, what + 1, items[what], icons[what])
     i_footer(d, c["footer_line"], c.get("footer_highlight", ""), c.get("handle", ""))
-    i_page(d, 1)
     return im
-
-
-def i_page(d, n, total=2):
-    """오른쪽 아래 쪽번호 (2026-11-12: 끝이 보이면 끝까지 넘김)."""
-    d.text((W - 44, H - 42), f"{n}/{total}", font=font("Bold", 26), fill=I_GRAY, anchor="rm")
 
 
 def info_end(c):
@@ -666,7 +660,6 @@ def info_end(c):
     d.text((W / 2, H - 150), c["slogan"], font=font("Medium", 32), fill=I_GRAY, anchor="mm")
     if c.get("handle"):
         d.text((W / 2, H - 95), c["handle"], font=font("SemiBold", 30), fill=I_GRAY, anchor="mm")
-    i_page(d, 2)
     return im
 
 

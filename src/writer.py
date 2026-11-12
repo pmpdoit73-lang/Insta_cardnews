@@ -1,15 +1,12 @@
 """Claude로 가전·주방 살림 주제를 고르고 카드뉴스 대본·캡션·해시태그·그림 프롬프트를 쓴다.
 
 형식 두 가지:
-- 목록형 (write_cards): 표지 + 왜 중요한지(stake) + 팁 5~6장 + 한눈에 정리 + 경고·저장 유도
-
-2026-11-12 gil 요청: 공개 인스타 스킬(Jakeschincariol/instagram-agent-skill)의 규칙 반영
-- 표지는 2줄 합쳐 6어절 이내 (결과의 80%가 표지에서 갈림)
-- 2번 카드 = '이게 왜 중요한지' 한 장 (stake). 넘기지 않은 사람에게 2번 카드부터 다시 보여 주기도 함
-- 끝에서 두 번째 '한눈에 정리' 카드 (캡처·공유용, 코드가 팁 제목으로 만듦)
-- 캡션 첫 125자(더보기 전에 보이는 부분) 안에 키워드 + 숫자
-- 릴스 마지막 화면 문구(loop_line)가 첫 화면 문구(hook)의 낱말을 다시 말해 반복 재생을 부름
+- 목록형 (write_cards): 표지 + 팁 6~8장 + 경고·저장 유도
 - 인포그래픽형 (write_info, 2026-10-30~): 한 장짜리 총정리표(번호 칸 7개 또는 10개) + 저장·주의 카드
+- 스킬형 (write_cards(skill=True), 2026-11-12~ 12:00 회차만): 목록형 + 공개 인스타 스킬
+  (Jakeschincariol/instagram-agent-skill, MIT) 규칙. 07:00·17:30은 예전 그대로 (gil 요청).
+  표지 → 2번 '왜 알아야 할까요'(stake) → 팁 5~6 → 한눈에 정리 → 경고·저장, 표지 6어절,
+  캡션 첫 125자에 키워드+숫자, 훅 공식 26개로 첫 화면 문구 3개 → 점수 최고, 마지막 화면 문구(loop_line)
 """
 
 import json
@@ -21,14 +18,12 @@ import anthropic
 MODEL = "claude-opus-5-5"
 ROOT = Path(__file__).resolve().parent.parent
 PERSONA = (ROOT / "prompts" / "persona.md").read_text(encoding="utf-8")
-HOOK_FORMULAS = (ROOT / "prompts" / "hook_formulas.md").read_text(encoding="utf-8")  # 2026-11-12, /ig-reel
+HOOK_FORMULAS = (ROOT / "prompts" / "hook_formulas.md").read_text(encoding="utf-8")  # 스킬형, /ig-reel
 SWIPE_FILE = ROOT / "state" / "swipe.json"  # viral.py가 쓰는 '참고 계정에서 터진 게시물' 기록 (/ig-viral)
 
 KINDS = ["가전 꿀팁", "주방 꿀팁", "살림 꿀팁", "가전 소식"]
 TITLE_MAX, TIP_TITLE_MAX, LINE_MAX = 12, 10, 20  # 한 줄 최대 글자 수 (넘으면 render가 글씨를 줄임)
-TIPS_MIN, TIPS_MAX = 5, 6  # 팁 카드 수. 표지 + 왜 + 팁 + 정리 + 마무리 = 9~10장 (텔레그램 묶음 한도 10장)
-COVER_WORDS = 6            # 표지 제목 2줄 합쳐 최대 어절 수 (개수 숫자 빼고)
-PEEK = 125                 # 인스타 피드에서 "더보기" 전에 보이는 캡션 글자 수
+TIPS_MIN, TIPS_MAX = 6, 8  # 팁 카드 수. 표지 + 팁 + 마무리 = 8~10장 (인스타·텔레그램 한도 10장)
 N_MARK = "{N}"             # 표지 제목의 팁 개수 자리. 코드가 실제 개수로 바꿔 넣는다
 
 LINES = {"type": "array", "items": {"type": "string"}}
@@ -77,49 +72,15 @@ SCRIPT = {
                                    "글자 그대로 넣은 1인칭 고백·공감 한 문장 + 이모지 1개 "
                                    "(예: '에어프라이어 청소법, 1년 동안 물로만 헹궜어요 😅'), 이어서 3~5줄 요약, "
                                    "'저장해두고 ~할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요' 같은 저장·공유 한 줄, "
-                                   "마지막에 누구나 답할 질문 한 줄. 해시태그 제외. "
-                                   "첫 125자(더보기 전에 보이는 부분) 안에 키워드와 숫자(개수·시간·양)가 들어가야 함"},
-        "stake": {
-            "type": "object",
-            "properties": {
-                "title": {"type": "string",
-                          "description": f"2번 카드 큰 제목 {TITLE_MAX}자 이내: 이걸 모르면 생기는 손해 "
-                                         "(예: '이거 모르면 손해예요', '냄새의 진짜 원인')"},
-                "lines": {**LINES, "description": "왜 중요한지 1~2줄, 한 줄 22자 이내. 구체적 손해·숫자 "
-                                                  "(예: '기름때가 쌓이면 연기·냄새가 나고' / '열선 수명까지 줄어요')"},
-            },
-            "required": ["title", "lines"],
-            "additionalProperties": False,
-        },
-        "loop_line": {"type": "string",
-                      "description": "릴스 마지막 화면 맨 위에 뜰 한 줄 16자 이내. hook의 핵심 낱말을 그대로 다시 써서 "
-                                     "처음으로 돌아가게 (hook '에어프라이어, 이거 모르면 손해' → "
-                                     "'이제 에어프라이어 손해 끝')"},
-        "hook_options": {
-            "type": "array",
-            "description": "릴스 첫 화면 문구 후보 정확히 3개. 훅 공식 목록에서 서로 다른 공식 3개로",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "formula": {"type": "integer", "description": "훅 공식 번호 1~26"},
-                    "text": {"type": "string", "description": "화면 문구 16자 이내"},
-                    "score": {"type": "integer",
-                              "description": "0~100. 구체성(숫자·가전 이름)·손해/이득의 크기·첫 2초에 읽히는지로 매긴 점수"},
-                },
-                "required": ["formula", "text", "score"],
-                "additionalProperties": False,
-            },
-        },
+                                   "마지막에 누구나 답할 질문 한 줄. 해시태그 제외"},
         "hook": {"type": "string",
-                 "description": "hook_options 중 점수가 가장 높은 것의 text를 글자 그대로. 릴스 첫 화면 맨 위에 "
-                                "처음부터 크게 뜸 (예: '에어프라이어, 이거 모르면 손해', '밥솥 청소 아직도 물로만?')"},
-        "hook_formula": {"type": "integer", "description": "고른 hook의 공식 번호"},
+                 "description": "릴스 첫 화면 맨 위에 크게 뜰 질문형·손해 회피형 한 줄 16자 이내 "
+                                "(예: '에어프라이어, 이거 모르면 손해', '밥솥 청소 아직도 물로만?')"},
         "hashtags": {**LINES, "description": "해시태그 3~5개, # 포함. 주제에 딱 맞는 것만 (예: #에어프라이어 #에어프라이어청소 #살림꿀팁). 너무 넓은 태그(#일상 #좋아요)는 쓰지 마"},
         "photo_query": {"type": "string", "description": "무료 사진 검색용 영어 키워드 2~3단어"},
     },
     "required": ["title", "highlight", "subtitle", "scene", "cover_image_prompt", "tips", "warning",
-                 "save_line", "caption", "stake", "loop_line", "hook_options", "hook", "hook_formula",
-                 "hashtags", "photo_query"],
+                 "save_line", "caption", "hook", "hashtags", "photo_query"],
     "additionalProperties": False,
 }
 SCHEMA = {
@@ -149,14 +110,6 @@ RULES = (
     "## 형식: 목록형 카드뉴스 (가전·도구 하나 × 활용법·관리법 여러 개)\n"
     f"- 표지 title은 정확히 2줄, 한 줄 {TITLE_MAX}자 이내. 공식: [이득] + [가전 이름] + [활용법·관리법 {N_MARK}].\n"
     f"  개수 숫자는 직접 쓰지 말고 {N_MARK}로 둬 (코드가 실제 팁 개수로 바꿈).\n"
-    f"- 표지는 짧고 크게: title 2줄을 합쳐 {COVER_WORDS}어절 이내, 개수 숫자 빼고 (표지가 결과의 80%를 정해).\n"
-    "- stake는 2번 카드. 표지 다음에 '이걸 왜 알아야 하는지'를 구체적인 손해·숫자로. "
-    "이 카드만 봐도 이해되게 써 (인스타가 2번 카드부터 다시 보여 주기도 해).\n"
-    "- 끝에서 두 번째 '한눈에 정리' 카드는 코드가 팁 제목으로 만들어. 그래서 팁 제목은 따로 읽어도 뜻이 통하게.\n"
-    "- 릴스 첫 화면 문구(hook): 아래 훅 공식 중 이 주제에 맞는 서로 다른 공식 3개로 hook_options를 쓰고 "
-    "점수를 매긴 뒤, 가장 높은 것을 hook에 글자 그대로 넣어. 첫 화면은 2초 안에 읽혀야 해.\n"
-    "- loop_line은 hook의 핵심 낱말을 그대로 다시 써서, 영상이 처음으로 돌아갈 때 자연스럽게 이어지게.\n"
-    "- 캡션 첫 줄은 짧게(40자 이내). 첫 125자 안에 검색 키워드와 숫자가 보여야 해 (그 뒤는 '더보기'로 숨겨짐).\n"
     "- subtitle은 보는 사람이 '내 얘기네' 할 공감 한 줄.\n"
     f"- 팁은 {TIPS_MIN}~{TIPS_MAX}개. 제목은 짧게, 설명은 정확히 2줄(한 줄 {LINE_MAX}자 이내):\n"
     "  1줄 = 방법 + 구체적인 숫자(2분, 20초, 1큰술), 2줄 = 왜 좋은지·효과. 위험할 수 있으면 note에 주의 한 줄.\n"
@@ -170,28 +123,6 @@ RULES = (
 )
 
 
-def _hook_text():
-    """훅 공식 목록 + (있으면) 참고 계정에서 요즘 터진 공식 (/ig-viral 결과)."""
-    text = "\n\n## 훅 공식 (hook_options에 쓸 번호)\n" + HOOK_FORMULAS
-    try:
-        swipe = json.loads(SWIPE_FILE.read_text(encoding="utf-8"))
-    except (FileNotFoundError, ValueError):
-        return text
-    hits = [x for x in swipe.get("reels", []) if x.get("multiple", 0) >= 3][-30:]
-    if not hits:
-        return text
-    counts = {}
-    for x in hits:
-        if x.get("formula"):
-            counts[x["formula"]] = counts.get(x["formula"], 0) + 1
-    top = sorted(counts.items(), key=lambda kv: -kv[1])[:3]
-    lines = [f"- 공식 {f}번: 터진 게시물 {n}개" for f, n in top]
-    lines += [f"- 예: '{x.get('cover_text', '')}' ({x.get('multiple')}배, 공식 {x.get('formula')}번)"
-              for x in sorted(hits, key=lambda x: -x.get("multiple", 0))[:4]]
-    return (text + "\n\n## 요즘 참고 계정에서 평소보다 3배 이상 터진 게시물 (gil이 모은 증거, 기본값보다 우선)\n"
-            + "\n".join(lines) + "\n이 공식을 우선 고려하되, 문장은 절대 베끼지 말고 우리 주제·숫자로 새로 써.")
-
-
 def fill_count(post):
     """표지 제목의 {N}을 실제 팁(인포그래픽형은 항목) 개수로 바꾼다 (제목 숫자와 개수가 어긋나지 않게)."""
     n = str(len(post.get("tips") or post.get("items") or []))
@@ -199,8 +130,9 @@ def fill_count(post):
     return post
 
 
-def write_cards(trends, recent_issues=(), external=None):
-    """trends: {출처: [제목...]}, recent_issues: 최근에 다룬·거절한 이슈(중복 방지)."""
+def write_cards(trends, recent_issues=(), external=None, skill=False):
+    """trends: {출처: [제목...]}, recent_issues: 최근에 다룬·거절한 이슈(중복 방지).
+    skill=True면 스킬형(12:00 회차) 규칙·형식으로 쓴다."""
     recent = "\n".join(f"- {r}" for r in recent_issues) or "(없음)"
     today = datetime.now(timezone(timedelta(hours=9)))
     user_msg = (
@@ -214,45 +146,24 @@ def write_cards(trends, recent_issues=(), external=None):
         "   - 누구나 아는 뻔한 얘기보다 '나만 몰랐네' 싶은 구체적인 요령을 골라. kind에 종류를 적어.\n"
         "   - 가전·도구 하나를 정해 '활용법'·'관리법'·'청소법'처럼 여러 요령을 묶을 수 있는 주제가 좋아.\n"
         "2. 그 주제로 목록형 카드뉴스 대본, 캡션, 해시태그, 사진 프롬프트를 만들어.\n"
-        + RULES + _hook_text() + _external_text(external)
+        + (SKILL_RULES + _hook_text() if skill else RULES) + _external_text(external)
     )
+    if skill:
+        return fill_count(_checked(user_msg, SKILL_SCHEMA, skill_problems))
     return fill_count(_checked(user_msg, SCHEMA))
 
 
-def rewrite_cards(d):
+def rewrite_cards(d, skill=False):
     """같은 주제로 대본만 새로 쓴다."""
     user_msg = (
         f"주제: {d['issue']}\n종류: {d['kind']}\n시선: {d.get('angle', '')}\n\n"
         f"지난번 표지 제목: {' / '.join(d['title'])}\n\n"
-        "같은 주제로 목록형 카드뉴스 대본을 다시 써 줘. 지난번 표지와 다른 각도로 시작해.\n" + RULES + _hook_text()
+        "같은 주제로 목록형 카드뉴스 대본을 다시 써 줘. 지난번 표지와 다른 각도로 시작해.\n"
+        + (SKILL_RULES + _hook_text() if skill else RULES)
     )
+    if skill:
+        return fill_count(_checked(user_msg, SKILL_SCRIPT, skill_problems))
     return fill_count(_checked(user_msg, SCRIPT))
-
-
-def _words(title):
-    """표지 제목 어절 수 (개수 숫자 {N}은 빼고 셈)."""
-    return len(" ".join(ln.replace(N_MARK, "") for ln in title).split())
-
-
-def _shared_problems(post):
-    """두 형식 공통: 표지 어절 수, 캡션 첫 125자."""
-    errs = []
-    if _words(post.get("title", [])) > COVER_WORDS:
-        errs.append(f"표지 제목이 {COVER_WORDS}어절을 넘음 ({_words(post['title'])}어절)")
-    cap = (post.get("caption") or "").strip()
-    if cap and not any(ch.isdigit() for ch in cap[:PEEK]):
-        errs.append(f"캡션 첫 {PEEK}자 안에 숫자가 없음")
-    if cap and len(cap.split("\n")[0]) > 45:
-        errs.append("캡션 첫 줄이 45자를 넘음")
-    return errs
-
-
-def _shares_word(a, b):
-    """두 문구가 2글자 이상 낱말을 하나라도 같이 쓰는지 (쉼표·물음표 등은 떼고)."""
-    strip = lambda t: {w.strip(",.?!~·'\"") for w in t.split()}
-    words = {w for w in strip(a) if len(w) >= 2}
-    other = strip(b)
-    return any(w in o or o in w for w in words for o in other if len(o) >= 2)
 
 
 def problems(post):
@@ -277,17 +188,7 @@ def problems(post):
     long += [ln for t in tips for ln in t.get("lines", []) if len(ln) > LINE_MAX + 3]
     if long:
         errs.append("너무 긴 줄: " + ", ".join(long))
-    stake = post.get("stake") or {}
-    if not stake.get("title") or not 1 <= len(stake.get("lines", [])) <= 2:
-        errs.append("stake(2번 카드)가 제목 + 1~2줄이 아님")
-    opts = post.get("hook_options") or []
-    if len(opts) != 3 or len({o.get("formula") for o in opts}) != 3:
-        errs.append("hook_options가 서로 다른 공식 3개가 아님")
-    elif post.get("hook") not in [o.get("text") for o in opts]:
-        errs.append("hook이 hook_options 중 하나와 글자 그대로 같지 않음")
-    if post.get("hook") and post.get("loop_line") and not _shares_word(post["hook"], post["loop_line"]):
-        errs.append("loop_line이 hook의 낱말을 다시 쓰지 않음")
-    return errs + _shared_problems(post)
+    return errs
 
 
 def _checked(user_msg, schema, check=None):
@@ -418,9 +319,7 @@ INFO_RULES = (
     "- 숫자는 널리 알려진 값만. 모르는 값은 지어내지 말고 그 항목을 빼고 다른 항목을 골라.\n"
     "- 위험한 방법(전자레인지에 금속, 세제 섞기)은 절대 권하지 마.\n"
     "- icon_prompt는 물건 하나만 영어로 짧게 (그림 스타일은 코드가 정함). 글자·얼굴이 나오지 않게.\n"
-    "- highlight는 title 안에, footer_highlight는 footer_line 안에 글자 그대로 들어 있어야 해.\n"
-    f"- 제목은 짧고 크게: title 2줄을 합쳐 {COVER_WORDS}어절 이내 (개수 숫자 빼고).\n"
-    "- 캡션 첫 줄은 짧게(40자 이내). 첫 125자 안에 검색 키워드와 숫자가 보여야 해 (그 뒤는 '더보기'로 숨겨짐)."
+    "- highlight는 title 안에, footer_highlight는 footer_line 안에 글자 그대로 들어 있어야 해."
 )
 
 
@@ -456,7 +355,7 @@ def info_problems(post):
     long += [x["badge"] for x in items if len(x.get("badge", "")) > INFO_BADGE_MAX + 2]
     if long:
         errs.append("너무 긴 글: " + ", ".join(long))
-    return errs + _shared_problems(post)
+    return errs
 
 
 def write_info(trends, recent_issues=()):
@@ -483,3 +382,134 @@ def rewrite_info(d):
         "같은 주제로 총정리표 대본을 다시 써 줘. 제목은 다른 각도로.\n" + INFO_RULES
     )
     return normalize_info(_checked(user_msg, INFO_SCRIPT, info_problems))
+
+
+# ---------- 스킬형 (2026-11-12 gil 요청, 12:00 회차만) ----------
+# 공개 스킬 Jakeschincariol/instagram-agent-skill (MIT)의 ig-carousel·ig-reel·ig-caption 규칙을 옮김.
+# 목록형 대본에 필드 몇 개를 더하고(stake, loop_line, hook_options, hook_formula) 규칙 검사를 더한다.
+
+SKILL_TIPS_MIN, SKILL_TIPS_MAX = 5, 6  # 표지 + 왜 + 팁 + 정리 + 마무리 = 9~10장 (텔레그램 묶음 한도 10장)
+COVER_WORDS = 6                        # 표지 제목 2줄 합쳐 최대 어절 수 (개수 숫자 빼고)
+PEEK = 125                             # 인스타 피드에서 '더보기' 전에 보이는 캡션 글자 수
+
+SKILL_FIELDS = {
+    "stake": {
+        "type": "object",
+        "description": "2번 카드: 이걸 모르면 생기는 손해. 이 카드만 봐도 이해되게",
+        "properties": {
+            "title": {"type": "string", "description": f"큰 제목 {TITLE_MAX}자 이내 (예: '이거 모르면 손해예요')"},
+            "lines": {**LINES, "description": "왜 중요한지 1~2줄, 한 줄 22자 이내. 구체적 손해·숫자"},
+        },
+        "required": ["title", "lines"],
+        "additionalProperties": False,
+    },
+    "hook_options": {
+        "type": "array",
+        "description": "릴스 첫 화면 문구 후보 정확히 3개. 훅 공식 목록에서 서로 다른 공식 3개로",
+        "items": {
+            "type": "object",
+            "properties": {
+                "formula": {"type": "integer", "description": "훅 공식 번호 1~26"},
+                "text": {"type": "string", "description": "화면 문구 16자 이내"},
+                "score": {"type": "integer",
+                          "description": "0~100. 구체성(숫자·가전 이름)·손해/이득의 크기·2초 안에 읽히는지로 매긴 점수"},
+            },
+            "required": ["formula", "text", "score"],
+            "additionalProperties": False,
+        },
+    },
+    "hook_formula": {"type": "integer", "description": "고른 hook의 공식 번호"},
+    "loop_line": {"type": "string",
+                  "description": "릴스 마지막 화면 맨 위 문구 16자 이내. hook의 핵심 낱말을 그대로 다시 써서 "
+                                 "처음으로 돌아가게 (hook '에어프라이어, 이거 모르면 손해' → '이제 에어프라이어 손해 끝')"},
+}
+
+
+def _skill_schema(base):
+    props = dict(base["properties"])
+    props.update(SKILL_FIELDS)
+    props["hook"] = {"type": "string",
+                     "description": "hook_options 중 점수가 가장 높은 것의 text를 글자 그대로 (릴스 첫 화면 맨 위)"}
+    props["tips"] = {**props["tips"], "description": f"팁 카드 {SKILL_TIPS_MIN}~{SKILL_TIPS_MAX}장. 서로 다른 활용법·관리법"}
+    props["caption"] = {**props["caption"],
+                        "description": props["caption"]["description"]
+                        + f". 첫 줄은 40자 이내, 첫 {PEEK}자(더보기 전) 안에 키워드와 숫자(개수·시간·양)"}
+    return {**base, "properties": props, "required": [*base["required"], *SKILL_FIELDS]}
+
+
+SKILL_SCRIPT = _skill_schema(SCRIPT)
+SKILL_SCHEMA = _skill_schema(SCHEMA)
+
+SKILL_RULES = (
+    RULES.replace(f"- 팁은 {TIPS_MIN}~{TIPS_MAX}개.", f"- 팁은 {SKILL_TIPS_MIN}~{SKILL_TIPS_MAX}개.")
+    + "\n\n## 추가 규칙 (인스타 스킬형)\n"
+    f"- 표지는 짧고 크게: title 2줄을 합쳐 {COVER_WORDS}어절 이내, 개수 숫자 빼고 (표지가 결과의 80%를 정해).\n"
+    "- stake는 2번 카드. 표지 다음에 '이걸 왜 알아야 하는지'를 구체적인 손해·숫자로. "
+    "이 카드만 봐도 이해되게 써 (인스타가 2번 카드부터 다시 보여 주기도 해).\n"
+    "- 끝에서 두 번째 '한눈에 정리' 카드는 코드가 팁 제목으로 만들어. 그래서 팁 제목은 따로 읽어도 뜻이 통하게.\n"
+    "- 릴스 첫 화면 문구(hook): 아래 훅 공식 중 이 주제에 맞는 서로 다른 공식 3개로 hook_options를 쓰고 "
+    "점수를 매긴 뒤, 가장 높은 것을 hook에 글자 그대로 넣어. 첫 화면은 2초 안에 읽혀야 해.\n"
+    "- loop_line은 hook의 핵심 낱말을 그대로 다시 써서, 영상이 처음으로 돌아갈 때 자연스럽게 이어지게.\n"
+    f"- 캡션 첫 줄은 짧게(40자 이내). 첫 {PEEK}자 안에 검색 키워드와 숫자가 보여야 해 (그 뒤는 '더보기'로 숨겨짐)."
+)
+
+
+def _hook_text():
+    """훅 공식 목록 + (있으면) 참고 계정에서 요즘 터진 공식 (/ig-viral 결과)."""
+    text = "\n\n## 훅 공식 (hook_options에 쓸 번호)\n" + HOOK_FORMULAS
+    try:
+        swipe = json.loads(SWIPE_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        return text
+    hits = [x for x in swipe.get("reels", []) if x.get("multiple", 0) >= 3][-30:]
+    if not hits:
+        return text
+    counts = {}
+    for x in hits:
+        if x.get("formula"):
+            counts[x["formula"]] = counts.get(x["formula"], 0) + 1
+    top = sorted(counts.items(), key=lambda kv: -kv[1])[:3]
+    lines = [f"- 공식 {f}번: 터진 게시물 {n}개" for f, n in top]
+    lines += [f"- 예: '{x.get('cover_text', '')}' ({x.get('multiple')}배, 공식 {x.get('formula')}번)"
+              for x in sorted(hits, key=lambda x: -x.get("multiple", 0))[:4]]
+    return (text + "\n\n## 요즘 참고 계정에서 평소보다 3배 이상 터진 게시물 (gil이 모은 증거, 기본값보다 우선)\n"
+            + "\n".join(lines) + "\n이 공식을 우선 고려하되, 문장은 절대 베끼지 말고 우리 주제·숫자로 새로 써.")
+
+
+def _words(title):
+    """표지 제목 어절 수 (개수 숫자 {N}은 빼고 셈)."""
+    return len(" ".join(ln.replace(N_MARK, "") for ln in title).split())
+
+
+def _shares_word(a, b):
+    """두 문구가 2글자 이상 낱말을 하나라도 같이 쓰는지 (쉼표·물음표 등은 떼고)."""
+    strip = lambda t: {w.strip(",.?!~·'\"") for w in t.split()}
+    words = {w for w in strip(a) if len(w) >= 2}
+    other = strip(b)
+    return any(w in o or o in w for w in words for o in other if len(o) >= 2)
+
+
+def skill_problems(post):
+    """스킬형 규칙 검사: 목록형 검사(팁 개수만 5~6개로) + 추가 규칙."""
+    errs = [e for e in problems(post) if not e.startswith("팁이 ")]
+    tips = post.get("tips", [])
+    if not SKILL_TIPS_MIN <= len(tips) <= SKILL_TIPS_MAX:
+        errs.append(f"팁이 {SKILL_TIPS_MIN}~{SKILL_TIPS_MAX}개가 아님 ({len(tips)}개)")
+    if _words(post.get("title", [])) > COVER_WORDS:
+        errs.append(f"표지 제목이 {COVER_WORDS}어절을 넘음 ({_words(post['title'])}어절)")
+    cap = (post.get("caption") or "").strip()
+    if cap and not any(ch.isdigit() for ch in cap[:PEEK]):
+        errs.append(f"캡션 첫 {PEEK}자 안에 숫자가 없음")
+    if cap and len(cap.split("\n")[0]) > 45:
+        errs.append("캡션 첫 줄이 45자를 넘음")
+    stake = post.get("stake") or {}
+    if not stake.get("title") or not 1 <= len(stake.get("lines", [])) <= 2:
+        errs.append("stake(2번 카드)가 제목 + 1~2줄이 아님")
+    opts = post.get("hook_options") or []
+    if len(opts) != 3 or len({o.get("formula") for o in opts}) != 3:
+        errs.append("hook_options가 서로 다른 공식 3개가 아님")
+    elif post.get("hook") not in [o.get("text") for o in opts]:
+        errs.append("hook이 hook_options 중 하나와 글자 그대로 같지 않음")
+    if post.get("hook") and post.get("loop_line") and not _shares_word(post["hook"], post["loop_line"]):
+        errs.append("loop_line이 hook의 낱말을 다시 쓰지 않음")
+    return errs
