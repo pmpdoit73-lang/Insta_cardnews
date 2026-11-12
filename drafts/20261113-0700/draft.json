@@ -1,0 +1,118 @@
+{
+  "id": "20261113-0700",
+  "created_at": "2026-11-12T17:01:25.546638+09:00",
+  "publish_at": "2026-11-13T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "겨울 차 시즌, 물때·냄새 없이 쓰는 전기포트 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "날이 추워지며 전기포트 쓰는 횟수가 늘어나는 때예요. 아직 다루지 않은 가전이고, 물때 제거와 전기 아끼는 요령을 함께 묶었어요.",
+  "title": [
+    "물때 없이 오래 쓰는",
+    "전기포트 관리법 8"
+  ],
+  "highlight": "물때 없이",
+  "subtitle": "바닥 하얀 얼룩, 그냥 두셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a stainless steel electric kettle on its power base sitting on a light beige quartz countertop, a small ceramic mug and a white tea towel nearby, a potted herb on the windowsill, warm sunlight streaming through the window from the left, clean and simple bottom third of the frame showing empty countertop",
+  "cover_image_prompt": "The stainless steel electric kettle on its base in the center of the sunlit countertop, gentle steam rising from the spout, a ceramic mug of tea beside it, warm cozy winter morning mood, no text, no faces",
+  "tips": [
+    {
+      "title": "구연산으로 물때 제거",
+      "lines": [
+        "물 가득에 구연산 1큰술 넣고 끓여요",
+        "1시간 두면 하얀 물때가 녹아 나와요"
+      ],
+      "note": "끓인 뒤 맹물로 1~2번 더 끓여 헹구세요",
+      "image_prompt": "A hand pouring a spoonful of white citric acid powder into the open electric kettle filled with water"
+    },
+    {
+      "title": "남은 물은 바로 버리기",
+      "lines": [
+        "끓인 물은 다 쓰고 매번 새 물을 받아요",
+        "다시 끓이면 물때가 더 빨리 쌓여요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pouring leftover water from the kettle into the sink, kettle tilted"
+    },
+    {
+      "title": "뚜껑 열어 말리기",
+      "lines": [
+        "다 쓰면 물 비우고 뚜껑 연 채로 둬요",
+        "습기가 빠져 냄새·곰팡이가 안 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "The electric kettle with its lid open, empty and drying on the countertop in sunlight"
+    },
+    {
+      "title": "눈금 지켜 물 붓기",
+      "lines": [
+        "최소·최대 눈금 사이로만 물을 부어요",
+        "넘치거나 헛끓음 없이 안전해요"
+      ],
+      "note": "빈 포트는 절대 작동하지 마세요",
+      "image_prompt": "Close-up of water being poured into the kettle, water level visible at the side window gauge"
+    },
+    {
+      "title": "필요한 만큼만 끓이기",
+      "lines": [
+        "라면 1개면 물 500ml만 끓여요",
+        "양이 줄면 시간·전기도 함께 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "A measuring cup with a small amount of water next to the kettle, hand holding the cup"
+    },
+    {
+      "title": "새 포트 첫 세척",
+      "lines": [
+        "처음엔 물 끓여 버리기를 2~3번 해요",
+        "새 제품 특유의 냄새가 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "A brand new kettle on the counter with its packaging box beside it, hand lifting the kettle"
+    },
+    {
+      "title": "겉면은 부드러운 천으로",
+      "lines": [
+        "주방세제 한 방울 묻힌 천으로 닦아요",
+        "스테인리스 흠집 없이 반짝여요"
+      ],
+      "note": "전원 뽑고 식은 뒤에 닦으세요",
+      "image_prompt": "A hand wiping the outside of the kettle with a soft cloth, power cord unplugged on the counter"
+    },
+    {
+      "title": "받침대는 마른 행주로",
+      "lines": [
+        "받침대는 꼭 짠 행주로 가볍게 닦아요",
+        "전원부에 물이 닿지 않아 안전해요"
+      ],
+      "note": "",
+      "image_prompt": "A hand gently wiping the kettle's power base with a dry white towel, kettle set aside"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "본체를 물에 담그거나 물을 끼얹지 마세요",
+      "전원부가 젖으면 고장·감전 위험이 있어요",
+      "철수세미로 안쪽을 긁지 마세요"
+    ],
+    "image_prompt": "The kettle sitting in a sink basin full of water next to a steel wool scrubber, on the same sunlit countertop, cautionary mood"
+  },
+  "save_line": "저장해두고 물때 보일 때 꺼내보세요",
+  "caption": "전기포트 물때 제거, 몇 년을 그냥 끓이기만 했어요 😅\n바닥에 하얗게 낀 건 물속 미네랄이 쌓인 물때예요.\n구연산 1큰술 넣고 끓여 1시간 두면 깨끗해져요.\n남은 물은 버리고, 쓰고 나면 뚜껑 열어 말려 주세요.\n필요한 만큼만 끓이면 겨울 전기도 아낄 수 있어요.\n저장해두고 물때 보일 때 꺼내보세요, 차 자주 드시는 가족·친구에게 공유해 주세요.\n여러분은 전기포트로 주로 뭘 끓이세요?",
+  "hook": "전기포트 물때, 아직 그냥 둬요?",
+  "hashtags": [
+    "#전기포트",
+    "#전기포트세척",
+    "#물때제거",
+    "#구연산세척",
+    "#가전꿀팁"
+  ],
+  "photo_query": "electric kettle kitchen",
+  "image_note": "10장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 612,
+    "has_photo": false
+  }
+}
