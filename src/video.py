@@ -10,6 +10,11 @@
   나머지 빈 곳은 같은 카드를 흐리게 키워서 채움. 아래쪽 캡션·버튼 영역은 비워 둠
 - 첫 장면이 표지 그대로라 릴스 썸네일도 표지가 됨
 
+2026-11-12 gil 요청 (공개 인스타 스킬 규칙 반영):
+- 2번 '왜 알아야 할까요' 카드 1.6초, 끝에서 두 번째 '한눈에 정리' 카드 2.2초 (extra=True일 때)
+- 마지막 카드 동안은 맨 위 문구가 hook 대신 loop 문구로 바뀜. hook 낱말을 다시 말해서
+  영상이 처음으로 돌아갈 때 자연스럽게 이어지고 한 번 더 보게 됨
+
 ffmpeg는 서버에 깔린 게 있으면 쓰고, 없으면 imageio-ffmpeg 패키지에 든 것을 쓴다.
 실행: python src/video.py drafts/20261105-0700 ["첫 화면 문구"]  → 그 폴더에 reel.mp4 생성
 """
@@ -27,6 +32,8 @@ HOOK_Y = 140  # 문구 띠 윗변 (맨 위 "릴스" 글자 영역은 피함)
 TARGET = 15.0                      # 목표 길이(초)
 COVER_SEC, LAST_SEC = 2.0, 2.2
 TIP_MIN, TIP_MAX = 1.2, 1.6
+STAKE_SEC, RECAP_SEC = 1.6, 2.2    # extra 카드 (2번 '왜', 끝에서 두 번째 '정리')
+TARGET_EXTRA = 16.5                # extra 카드가 있을 때 목표 길이
 
 
 def ffmpeg():
@@ -37,10 +44,16 @@ def ffmpeg():
     return imageio_ffmpeg.get_ffmpeg_exe()
 
 
-def durations(n):
-    """카드 n장의 화면 시간(초). 팁 카드는 전체가 약 15초가 되게 1.2~1.6초 사이로 맞춘다."""
+def durations(n, extra=False):
+    """카드 n장의 화면 시간(초). 팁 카드는 전체가 약 15초가 되게 1.2~1.6초 사이로 맞춘다.
+    extra: 표지 다음 '왜' 카드와 마지막 앞 '정리' 카드가 있는 새 구성(2026-11-12~)."""
     if n == 1:
         return [LAST_SEC]
+    if extra and n >= 5:
+        tips = n - 4
+        fixed = COVER_SEC + STAKE_SEC + RECAP_SEC + LAST_SEC
+        tip = min(TIP_MAX, max(TIP_MIN, (TARGET_EXTRA - fixed) / tips))
+        return [COVER_SEC, STAKE_SEC] + [round(tip, 2)] * tips + [RECAP_SEC, LAST_SEC]
     tips = n - 2
     tip = min(TIP_MAX, max(TIP_MIN, (TARGET - COVER_SEC - LAST_SEC) / tips)) if tips else 0
     return [COVER_SEC] + [round(tip, 2)] * tips + [LAST_SEC]
@@ -96,13 +109,14 @@ def story_image(card_path, out_path, text="새 게시물이 올라왔어요"):
     return Path(out_path)
 
 
-def make_reel(card_paths, out_path, hook="", music=None):
-    """카드 사진 경로 목록 → 릴스 MP4. hook: 맨 위 문구(없으면 생략), music: 배경음악 파일(없으면 무음).
+def make_reel(card_paths, out_path, hook="", music=None, loop="", extra=False):
+    """카드 사진 경로 목록 → 릴스 MP4. hook: 맨 위 문구(없으면 생략), music: 배경음악 파일(없으면 무음),
+    loop: 마지막 카드 동안 hook 대신 띄울 문구(없으면 hook 그대로), extra: durations 참고.
     만든 파일 경로를 돌려준다."""
     cards = [str(p) for p in card_paths]
     if not cards:
         raise RuntimeError("영상으로 만들 카드가 없어요")
-    secs = durations(len(cards))
+    secs = durations(len(cards), extra)
     # 넘어가는 동안 겹치는 시간만큼 앞뒤 장면을 조금 더 길게 둔다
     lens = [s + (FADE if i < len(cards) - 1 else 0) for i, s in enumerate(secs)]
     total = sum(secs)
@@ -119,6 +133,11 @@ def make_reel(card_paths, out_path, hook="", music=None):
     if hook:
         hook_in = len(cards) + 1
         cmd += ["-i", str(hook_image(hook, Path(out_path).with_name("hook.png")))]
+    loop_in = None
+    if hook and loop and len(cards) > 1:
+        loop_in = len(cards) + 2
+        cmd += ["-i", str(hook_image(loop, Path(out_path).with_name("loop.png")))]
+    last_start = total - secs[-1]
 
     parts = []
     for i in range(len(cards)):
@@ -136,8 +155,13 @@ def make_reel(card_paths, out_path, hook="", music=None):
         parts.append(f"[{last}][v{i}]xfade=transition=fade:duration={FADE}:offset={elapsed:.2f}[{out}]")
         last = out
     if hook_in is not None:
-        parts.append(f"[{last}][{hook_in}:v]overlay=0:{HOOK_Y}:format=auto,format=yuv420p,setsar=1[hk]")
+        until = f":enable='lt(t,{last_start:.2f})'" if loop_in is not None else ""
+        parts.append(f"[{last}][{hook_in}:v]overlay=0:{HOOK_Y}:format=auto{until},format=yuv420p,setsar=1[hk]")
         last = "hk"
+    if loop_in is not None:
+        parts.append(f"[{last}][{loop_in}:v]overlay=0:{HOOK_Y}:format=auto:enable='gte(t,{last_start:.2f})',"
+                     f"format=yuv420p,setsar=1[lp]")
+        last = "lp"
     if music:  # 처음은 살짝 키우고, 끝 1초는 줄여서 다시 처음으로 돌 때 어색하지 않게
         parts.append(f"[{audio}:a]atrim=0:{total:.2f},asetpts=PTS-STARTPTS,volume=0.85,"
                      f"afade=t=in:d=0.2,afade=t=out:st={max(0, total - 1):.2f}:d=1[au]")
@@ -161,4 +185,4 @@ if __name__ == "__main__":
     paths = sorted(folder.glob("card*.jpg"), key=lambda p: int(p.stem[4:]))
     out = make_reel(paths, folder / "reel.mp4", sys.argv[2] if len(sys.argv) > 2 else "",
                     music_lib.pick(folder.name))
-    print(f"{out} ({out.stat().st_size / 1e6:.1f}MB, 카드 {len(paths)}장, {sum(durations(len(paths))):.1f}초)")
+    print(f"{out} ({out.stat().st_size / 1e6:.1f}MB, 카드 {len(paths)}장, {sum(durations(len(paths), len(paths) >= 9)):.1f}초)")

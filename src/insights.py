@@ -7,6 +7,8 @@ poll.py가 10분마다 부르지만 실제로는 하루 한 번(REPORT_HOUR시 �
 - 팔로워 수 (어제 대비)
 - 최근 7일 도달 중 비팔로워 비율 (추천으로 퍼지고 있는지 보는 숫자)
 - 최근 게시물별 조회·도달·저장·공유 (릴스는 평균 시청 초)
+- 일요일엔 '이번 주 성적표': 지난 7일 게시물을 (공유+저장)÷도달 비율로 줄 세움 (2026-11-12, /ig-audit 반영).
+  조회수보다 '공유·저장'이 추천을 더 끌어오는 신호라서. 릴스(07:00)와 총정리표(17:30) 평균도 비교
 
 필요한 권한: instagram_business_manage_insights. 없으면 보고서에 '통계 권한 없음'이라고 나온다.
 지금 바로 받기: python src/insights.py  (Actions의 '통계 보고서 지금 받기')
@@ -26,6 +28,8 @@ import threads_promo
 STATE_FILE = comments.STATE_DIR / "insights.json"
 REPORT_HOUR = 21     # 한국 시각 21시 이후 첫 실행 때 보냄
 POSTS = 6            # 보고서에 넣을 최근 게시물 수
+WEEK_POSTS = 16      # 일요일 주간 성적표용으로 가져올 게시물 수 (하루 2개 × 7일 + 여유)
+WEEKLY_DAY = 6       # 일요일 (월=0)
 KEEP_DAYS = 60
 
 
@@ -81,7 +85,9 @@ def _account_report(acc, history, today):
     lines.append("")
     lines.append("최근 게시물 (조회 · 도달 · 저장 · 공유)")
     posts = {}
-    for m in instagram.recent_media(POSTS):
+    weekly = now.weekday() == WEEKLY_DAY
+    week = []
+    for k, m in enumerate(instagram.recent_media(WEEK_POSTS if weekly else POSTS)):
         reel = m.get("media_product_type") == "REELS"
         try:
             v = instagram.media_insights(m["id"], reel)
@@ -90,6 +96,9 @@ def _account_report(acc, history, today):
             if "permission" in str(e).lower() or "권한" in str(e):
                 lines.append("⚠️ 통계 권한이 없어요 (instagram_business_manage_insights)")
                 break
+            continue
+        week.append((m, reel, v))
+        if k >= POSTS:  # 매일 목록엔 최근 6개만
             continue
         watch = v.get("ig_reels_avg_watch_time")
         extra = f" · 평균 {watch / 1000:.1f}초 시청" if watch else ""
@@ -100,6 +109,42 @@ def _account_report(acc, history, today):
         posts[m["id"]] = {k: v.get(k, 0) for k in ("views", "reach", "saved", "shares")}
     record["posts"] = posts
     history[today] = record
+    if weekly:
+        lines += [""] + weekly_lines(week, now)
+    return lines
+
+
+def _posted(m):
+    try:
+        return datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
+    except (KeyError, ValueError):
+        return None
+
+
+def weekly_lines(week, now):
+    """이번 주 성적표: 지난 7일 게시물을 (공유+저장)÷도달 로 줄 세운다."""
+    rows = []
+    for m, reel, v in week:
+        t = _posted(m)
+        reach = v.get("reach", 0)
+        if not t or now - t > timedelta(days=7) or not reach:
+            continue
+        rate = (v.get("shares", 0) + v.get("saved", 0)) * 100 / reach
+        rows.append((rate, m, reel, v))
+    if not rows:
+        return ["📅 이번 주 성적표: 지난 7일 게시물이 없어요"]
+    rows.sort(key=lambda r: -r[0])
+    lines = ["📅 이번 주 성적표 ((공유+저장) ÷ 도달, 높을수록 추천이 잘 붙어요)"]
+    for rate, m, reel, v in rows[:3]:
+        lines.append(f"🏆 {rate:.1f}% {'🎬' if reel else '🖼'} {_when(m)} {_title(m)}")
+    if len(rows) > 3:
+        rate, m, reel, v = rows[-1]
+        lines.append(f"🔻 {rate:.1f}% {'🎬' if reel else '🖼'} {_when(m)} {_title(m)}")
+    for label, want in (("🎬 릴스", True), ("🖼 총정리표", False)):
+        part = [r[0] for r in rows if r[2] == want]
+        if part:
+            lines.append(f"{label} 평균 {sum(part) / len(part):.1f}% ({len(part)}개)")
+    lines.append("→ 1위 게시물의 주제·첫 문구를 다음 주에 비슷한 각도로 한 번 더 써 보세요")
     return lines
 
 

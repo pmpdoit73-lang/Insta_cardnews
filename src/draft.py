@@ -125,7 +125,8 @@ def reel_hook(d):
 def make_reel(d):
     """카드로 릴스 영상(reel.mp4)을 만든다. 카드가 바뀌어도 늘 최신 카드로 다시 만든다.
     배경음악은 초안 id로 고르므로 미리보기와 실제 게시 영상이 같은 곡 (2026-11-06 gil 요청)."""
-    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4", reel_hook(d), music.pick(d["id"]))
+    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4", reel_hook(d), music.pick(d["id"]),
+                           loop=d.get("loop_line", ""), extra=bool(d.get("stake")))
 
 
 def slot_id(slot):
@@ -217,8 +218,9 @@ def render_cards(d):
         "save_line": d["save_line"],
         "slogan": SLOGAN,
         "handle": d.get("handle", ""),
+        "stake": d.get("stake"),  # 2026-11-12~ 2번 '왜' 카드 + 정리 카드 (예전 초안은 없음 → 그대로)
     }
-    total = len(d["tips"]) + 2
+    total = len(d["tips"]) + 2  # 사진 수 (표지 + 팁 + 마무리). 추가 카드 2장은 이 사진을 다시 씀
     bgs = [folder(d["id"]) / f"bg{i}.jpg" for i in range(1, total + 1)]
     render.render_list(card, [str(p) if p.exists() else None for p in bgs], folder(d["id"]))
 
@@ -310,7 +312,13 @@ def summary(d):
     ]
     if is_reel(d):
         song = music.pick(d["id"])
-        lines += [f"💬 첫 화면 문구: {reel_hook(d)}", f"🎵 배경음악: {music.title(song) if song else '없음'}"]
+        lines += [f"💬 첫 화면 문구: {reel_hook(d)}"]
+        others = [o for o in d.get("hook_options", []) if o.get("text") != d.get("hook")]
+        if others:  # 2026-11-12: 훅 공식 3개로 써 보고 점수 높은 것을 고름 (/ig-reel)
+            lines += ["   다른 후보: " + " / ".join(f"{o['text']}({o.get('score', '')})" for o in others)]
+        if d.get("loop_line"):
+            lines += [f"🔁 마지막 화면 문구: {d['loop_line']}"]
+        lines += [f"🎵 배경음악: {music.title(song) if song else '없음'}"]
     lines += [
         "",
         "✍️ 캡션",
