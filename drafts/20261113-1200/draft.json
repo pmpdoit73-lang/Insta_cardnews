@@ -1,0 +1,126 @@
+{
+  "id": "20261113-1200",
+  "created_at": "2026-11-13T01:05:34.539925+09:00",
+  "publish_at": "2026-11-13T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "전기요금 줄이는 냉장고 사용법",
+  "kind": "가전 꿀팁",
+  "angle": "전기요금 절약 기사가 이어지고 겨울 누진제 걱정이 커지는 때라, 24시간 켜 두는 냉장고 습관부터 바꾸는 요령으로 골랐어요",
+  "title": [
+    "전기요금 확 줄이는",
+    "냉장고 사용법 6"
+  ],
+  "highlight": "전기요금",
+  "subtitle": "냉장고는 그냥 두면 되는 줄 아셨죠?",
+  "scene": "A bright Korean home kitchen with a white two-door refrigerator as the hero appliance, light beige quartz countertop in the lower third, a few simple props (glass containers, a wooden tray, a small plant), warm morning sunlight coming through a window on the left, soft cozy atmosphere, clean minimal composition",
+  "cover_image_prompt": "Same kitchen set, the white two-door refrigerator stands out in warm morning light, doors closed, neatly arranged glass containers on the countertop, no text, no people",
+  "tips": [
+    {
+      "title": "냉장실 60%만",
+      "lines": [
+        "냉장실은 60~70%만 채워 두세요",
+        "찬 공기가 돌아야 덜 돌아가요"
+      ],
+      "note": "",
+      "image_prompt": "Refrigerator door open showing a fridge compartment loosely filled with space between containers, a hand placing one glass container on a shelf"
+    },
+    {
+      "title": "냉동실은 꽉",
+      "lines": [
+        "냉동실은 빈틈없이 채워 두세요",
+        "언 음식끼리 냉기를 지켜줘요"
+      ],
+      "note": "",
+      "image_prompt": "Freezer drawer open, tightly packed with frozen food bags and containers, a hand sliding in one more frozen pack"
+    },
+    {
+      "title": "식혀서 넣기",
+      "lines": [
+        "뜨거운 음식은 실온에서 식혀요",
+        "내부 온도 오르는 걸 막아줘요"
+      ],
+      "note": "실온에 2시간 넘게 두진 마세요",
+      "image_prompt": "A pot of steaming soup cooling on the countertop next to the closed refrigerator, a glass container waiting beside it"
+    },
+    {
+      "title": "문은 짧게",
+      "lines": [
+        "꺼낼 것 정하고 한 번에 닫아요",
+        "문 열 때마다 냉기가 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "A hand quickly taking out a carton of eggs from a slightly open refrigerator door"
+    },
+    {
+      "title": "벽과 간격 두기",
+      "lines": [
+        "뒤·옆 벽과 10cm쯤 띄워 두세요",
+        "열이 빠져야 모터가 덜 일해요"
+      ],
+      "note": "",
+      "image_prompt": "Side view of the refrigerator with a visible gap between its side and the wall, sunlight falling on the floor"
+    },
+    {
+      "title": "고무패킹 점검",
+      "lines": [
+        "문 패킹에 종이 끼워 당겨봐요",
+        "쑥 빠지면 냉기가 새는 중이에요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pulling a sheet of plain white paper caught in the closed refrigerator door gasket"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "아끼려고 냉장고 전원 끄지 마세요",
+      "다시 식히느라 전기를 더 써요",
+      "뒤판 먼지 청소는 플러그 뽑고 해요"
+    ],
+    "image_prompt": "Same kitchen set, the refrigerator back area with a dusty coil and an unplugged power cord resting on the floor, a soft brush beside it"
+  },
+  "save_line": "저장해두고 요금 고지서 볼 때 꺼내요",
+  "caption": "냉장고 전기요금, 꽉 채우면 아끼는 줄 알았어요 😅\n냉장실은 60~70%만, 냉동실은 빈틈없이 채우는 게 맞아요.\n뜨거운 음식은 식혀 넣고, 문은 짧게 여닫아요.\n벽과 10cm쯤 띄우고 고무패킹도 한 번 점검해 보세요.\n24시간 켜 두는 가전이라 작은 습관이 1년 내내 쌓여요.\n저장해두고 요금 고지서 볼 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 냉장고는 지금 몇 % 차 있어요?",
+  "hook": "냉장고 이렇게 쓰면 전기 손해",
+  "hashtags": [
+    "#냉장고",
+    "#냉장고정리",
+    "#전기요금절약",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "refrigerator kitchen morning",
+  "stake": {
+    "title": "이거 모르면 손해예요",
+    "lines": [
+      "냉장고는 24시간 쉬지 않는 가전이에요",
+      "작은 습관이 1년 내내 요금에 쌓여요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 7,
+      "text": "냉장고 이렇게 쓰면 전기 손해",
+      "score": 86
+    },
+    {
+      "formula": 22,
+      "text": "냉장고 꽉 채우기, 반만 정답",
+      "score": 80
+    },
+    {
+      "formula": 19,
+      "text": "겨울 요금 전에 냉장고 이것부터",
+      "score": 74
+    }
+  ],
+  "hook_formula": 7,
+  "loop_line": "이제 냉장고 전기 손해 끝",
+  "image_note": "8장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 627,
+    "has_photo": false
+  }
+}
