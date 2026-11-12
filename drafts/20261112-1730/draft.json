@@ -2,7 +2,7 @@
   "id": "20261112-1730",
   "created_at": "2026-11-12T06:36:27.528789+09:00",
   "publish_at": "2026-11-12T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "겨울 전기요금 대비, 주방가전별 소비전력 한눈에 총정리",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 597,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17882601105543180",
+  "permalink": "https://www.instagram.com/p/DfoohZbFhq7/",
+  "published_at": "2026-11-12T17:31:46.649948+09:00",
+  "story_id": "17971545581963590"
 }
