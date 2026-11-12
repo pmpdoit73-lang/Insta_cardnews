@@ -290,7 +290,11 @@ L_GRAY = (215, 215, 215)
 
 def l_frame(photo, seed, n, total, handle):
     """사진 + 아래 그라데이션 + 위쪽 계정·쪽번호 알약."""
-    im = bottom_gradient(load_photo(photo, W, H, seed), 480, 250)
+    return l_pills(bottom_gradient(load_photo(photo, W, H, seed), 480, 250), n, total, handle)
+
+
+def l_pills(im, n, total, handle):
+    """위쪽 왼쪽 @계정, 오른쪽 '2/10' 쪽번호 알약을 얹는다."""
     ov = Image.new("RGBA", im.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(ov)
     pf = font("Bold", 34)
@@ -303,7 +307,7 @@ def l_frame(photo, seed, n, total, handle):
         hw = d.textlength(handle, font=hf)
         d.rounded_rectangle([MARGIN, MARGIN, MARGIN + hw + 50, MARGIN + 70], 35, fill=(255, 255, 255, 215))
         d.text((MARGIN + 25, MARGIN + 35), handle, font=hf, fill=(30, 30, 30), anchor="lm")
-    return Image.alpha_composite(im, ov)
+    return Image.alpha_composite(im.convert("RGBA"), ov)
 
 
 def stack(d, blocks, bottom):
@@ -367,20 +371,75 @@ def l_end(c, w, n, photo, total):
     return im
 
 
+def l_stake(c, photo, n, total):
+    """2번 카드: '이게 왜 중요한지' (2026-11-12). 사진을 더 어둡게 깔고 가운데에 크게."""
+    base = load_photo(photo, int(W * 1.35), int(H * 1.35), n)  # 같은 사진을 당겨 찍은 듯 확대
+    left, top = (base.width - W) // 2, (base.height - H) // 3
+    base = bottom_gradient(base.crop((left, top, left + W, top + H)), 380, 250)
+    im = l_pills(darken(base, 80), n, total, c["handle"])
+    d = ImageDraw.Draw(im)
+    width = W - 2 * MARGIN
+    s = c["stake"]
+    blocks = [
+        (["왜 알아야 할까요?"], font("Bold", 40), A_YELLOW, 1.3, 30, ""),
+        ([s["title"]], fit(d, [s["title"]], "Black", 96, width), "white", 1.25, 35, ""),
+        (s["lines"], fit(d, s["lines"], "Medium", 50, width), "white", 1.5, 0, ""),
+    ]
+    stack(d, blocks, H - 160)
+    return im
+
+
+def l_recap(c, photo, n, total):
+    """끝에서 두 번째 '한눈에 정리' 카드 (2026-11-12). 팁 제목을 번호와 함께 한 장에.
+    사람들이 캡처해서 보내는 카드라 이것만 봐도 뜻이 통하게."""
+    pad = 60  # 가장자리가 회색으로 번지지 않게 크게 흐린 뒤 잘라 냄
+    base = load_photo(photo, W + 2 * pad, H + 2 * pad, n).filter(ImageFilter.GaussianBlur(18))
+    base = darken(base.crop((pad, pad, pad + W, pad + H)), 150)
+    im = l_pills(base, n, total, c["handle"]).convert("RGB")
+    d = ImageDraw.Draw(im, "RGBA")
+    width = W - 2 * MARGIN
+    tf = font("Black", 84)
+    d.text((W / 2, 200), "한눈에 정리", font=tf, fill="white", anchor="ma")
+    sub = " ".join(c["title"])
+    d.text((W / 2, 310), sub, font=fit(d, [sub], "Medium", 40, width), fill=A_YELLOW, anchor="ma")
+    tips = c["tips"]
+    box_top, box_bottom = 400, H - 190
+    row = (box_bottom - box_top) / max(len(tips), 1)
+    nf = font("Black", 52)
+    names = [t["title"] for t in tips]
+    lf = fit(d, names, "Bold", 54, width - 200)
+    for i, name in enumerate(names, 1):
+        y = box_top + (i - 1) * row + row / 2
+        d.rounded_rectangle([MARGIN, y - row / 2 + 8, W - MARGIN, y + row / 2 - 8], 24,
+                            fill=(255, 255, 255, 40), outline=(255, 255, 255, 90), width=2)
+        d.text((MARGIN + 50, y), f"{i:02d}", font=nf, fill=A_YELLOW, anchor="lm")
+        d.text((MARGIN + 160, y), name, font=lf, fill="white", anchor="lm")
+    d.text((W / 2, H - 120), "캡처해두면 다음에 바로 써먹어요", font=font("SemiBold", 38),
+           fill=L_GRAY, anchor="mm")
+    return im
+
+
 def render_list(card, photos, out_dir):
     """목록형 카드(표지 + 팁 N장 + 마무리)를 out_dir/card1.jpg ~ 로 저장하고 경로 목록을 돌려준다.
 
     card: {"label", "title", "highlight", "subtitle", "tips": [{"title", "lines", "note"}],
-           "warning": {"title", "lines"}, "save_line", "slogan", "handle"}
-    photos: 장마다 배경 사진 경로 (None이면 시험용 흐린 배경).
+           "warning": {"title", "lines"}, "save_line", "slogan", "handle", "stake"(선택): {"title", "lines"}}
+    photos: [표지, 팁1..팁N, 마무리] 배경 사진 경로 (None이면 시험용 흐린 배경).
+            stake 카드는 표지 사진을 확대해서, 정리 카드는 표지 사진을 흐리게 다시 쓴다 (사진 생성 비용 그대로).
     """
     tips = card["tips"]
-    total = len(tips) + 2
-    photos = list(photos) + [None] * (total - len(photos))
+    extra = bool(card.get("stake"))  # 2026-11-12~: 2번 '왜' 카드 + '한눈에 정리' 카드 (예전 초안엔 없음)
+    total = len(tips) + 2 + (2 if extra else 0)
+    photos = list(photos) + [None] * (len(tips) + 2 - len(photos))
     images = [l_cover(card, photos[0], total)]
+    if extra:
+        images.append(l_stake(card, photos[0], 2, total))
     for i, t in enumerate(tips, 1):
-        images.append(l_tip(card, t, i, i + 1, photos[i], total))
-    images.append(l_end(card, card["warning"], total, photos[-1], total))
+        n = len(images) + 1
+        images.append(l_tip(card, t, i, n, photos[i], total))
+    if extra:
+        images.append(l_recap(card, photos[0], total - 1, total))
+    images.append(l_end(card, card["warning"], total, photos[len(tips) + 1], total))
 
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -399,6 +458,7 @@ LIST_SAMPLE = {
     "title": ["기름때 확 줄이는", "에어프라이어 관리법 6"],
     "highlight": "기름때",
     "subtitle": "굽기만 하고 청소는 미루셨죠?",
+    "stake": {"title": "이거 모르면 손해예요", "lines": ["기름때가 쌓이면 연기·냄새가 나고", "열선 수명까지 줄어요"]},
     "tips": [
         {"title": "바스켓 불리기", "lines": ["뜨거운 물에 주방세제 한 방울, 10분", "박박 문지르지 않아도 기름이 녹아요"],
          "note": "철수세미는 코팅이 벗겨져요"},
@@ -407,14 +467,13 @@ LIST_SAMPLE = {
         {"title": "열선 닦기", "lines": ["전원 뽑고 식힌 뒤 마른 솔로", "탄 냄새가 확 줄어요"], "note": ""},
         {"title": "냄새 빼기", "lines": ["물 1컵 + 식초 2큰술, 180도 5분", "생선 냄새가 남지 않아요"], "note": ""},
         {"title": "겉면 닦기", "lines": ["물기 꽉 짠 행주로 한 번", "손때가 쌓이지 않아요"], "note": ""},
-        {"title": "말려서 넣기", "lines": ["씻은 바스켓은 30분 말리기", "녹과 곰팡이를 막아요"], "note": ""},
     ],
     "warning": {"title": "이건 절대 하지 마세요",
                 "lines": ["바스켓 없이 돌리기, 본체 물에 담그기는 고장 나요",
                           "알루미늄 호일은 열선에 닿지 않게 깔아 주세요"]},
     "save_line": "저장해두고 청소할 때 꺼내보세요",
     "slogan": "주방의 질을 높이는 살림 꿀팁",
-    "handle": "@kingreview0669",
+    "handle": "@salim.kkultip",
 }
 
 

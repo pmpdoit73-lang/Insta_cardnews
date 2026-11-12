@@ -6,7 +6,8 @@
   icon1~N.jpg     인포그래픽형: 칸마다 들어갈 만화풍 그림 (7개 또는 10개)
   card1~N.jpg     글씨까지 얹은 완성 카드 (목록형 8~10장, 인포그래픽형 2장)
   reel.mp4        목록형 릴스 영상 (카드로 그때그때 다시 만들 수 있어서 저장소에는 안 올림)
-format: list(목록형) 또는 info(인포그래픽형 총정리표). 회차별로 SLOT_FORMAT에서 정함
+format: list(목록형), info(인포그래픽형 총정리표), skill(스킬형: 목록형 + 공개 인스타 스킬 규칙, 2026-11-12~).
+회차별로 SLOT_FORMAT에서 정함
 status: pending(승인 대기) → approved(승인) → published(게시 완료)
         또는 skipped(건너뜀·승인 없음) / failed(게시 실패)
 """
@@ -27,8 +28,11 @@ import writer
 
 KST = timezone(timedelta(hours=9))
 DRAFT_DIR = Path(__file__).resolve().parent.parent / "drafts"
-SLOTS = [(7, 0), (17, 30)]  # 하루 두 번 게시 시각 (시, 분), 2026-10-23 gil 요청으로 3번 → 2번
-SLOT_FORMAT = {(17, 30): "info"}  # 회차별 형식, 없으면 목록형. 2026-10-30 gil 요청으로 17:30은 인포그래픽형
+# 하루 게시 시각 (시, 분). 2026-10-23 gil 요청으로 3번 → 2번, 2026-11-12 gil 요청으로 12:00 스킬형 하나 추가.
+# 초안 알람(08·14·21시)은 그대로: 08시 알람이 12:00, 14시가 17:30, 21시가 다음 날 07:00 초안을 만든다.
+SLOTS = [(7, 0), (12, 0), (17, 30)]
+# 회차별 형식, 없으면 목록형. 17:30 인포그래픽형(2026-10-30), 12:00 스킬형(2026-11-12, 기존 두 회차는 그대로)
+SLOT_FORMAT = {(12, 0): "skill", (17, 30): "info"}
 DRAFT_LEAD = timedelta(minutes=30)    # 게시 시각이 이보다 가까우면 그다음 회차 초안을 만든다
 SLOGAN = "주방의 질을 높이는 살림 꿀팁"  # 마지막 장 브랜드 한 줄
 
@@ -112,6 +116,11 @@ def is_info(d):
     return d.get("format") == "info"
 
 
+def is_skill(d):
+    """스킬형(12:00): 목록형 + 2번 '왜' 카드·정리 카드·훅 공식·마지막 화면 문구."""
+    return d.get("format") == "skill"
+
+
 def is_reel(d):
     """목록형은 릴스(영상)로 올린다. 2026-11-04 gil 요청. 인포그래픽형은 캐러셀 그대로."""
     return not is_info(d)
@@ -125,7 +134,8 @@ def reel_hook(d):
 def make_reel(d):
     """카드로 릴스 영상(reel.mp4)을 만든다. 카드가 바뀌어도 늘 최신 카드로 다시 만든다.
     배경음악은 초안 id로 고르므로 미리보기와 실제 게시 영상이 같은 곡 (2026-11-06 gil 요청)."""
-    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4", reel_hook(d), music.pick(d["id"]))
+    return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4", reel_hook(d), music.pick(d["id"]),
+                           loop=d.get("loop_line", "") if is_skill(d) else "", extra=is_skill(d) and bool(d.get("stake")))
 
 
 def slot_id(slot):
@@ -156,7 +166,10 @@ def _fill_script(d, avoid=()):
     collected = trends.collect()
     print(f"[draft] 이슈 수집: { {k: len(v) for k, v in collected.items()} }")
     avoid = list(recent_issues()) + list(avoid)
-    post = writer.write_info(collected, avoid) if is_info(d) else writer.write_cards(collected, avoid)
+    if is_info(d):
+        post = writer.write_info(collected, avoid)
+    else:
+        post = writer.write_cards(collected, avoid, skill=is_skill(d))
     print(f"[draft] 이슈: {post['issue']} / 표지: {post['title']}")
     d.update(post)
 
@@ -217,8 +230,9 @@ def render_cards(d):
         "save_line": d["save_line"],
         "slogan": SLOGAN,
         "handle": d.get("handle", ""),
+        "stake": d.get("stake") if is_skill(d) else None,  # 스킬형만 2번 '왜' 카드 + 정리 카드
     }
-    total = len(d["tips"]) + 2
+    total = len(d["tips"]) + 2  # 사진 수 (표지 + 팁 + 마무리). 추가 카드 2장은 이 사진을 다시 씀
     bgs = [folder(d["id"]) / f"bg{i}.jpg" for i in range(1, total + 1)]
     render.render_list(card, [str(p) if p.exists() else None for p in bgs], folder(d["id"]))
 
@@ -244,7 +258,7 @@ def rewrite(d):
     """다른 이슈로 처음부터 다시 만든다."""
     d["rejected_issues"] = [x for x in d.get("rejected_issues", []) + [d.get("issue", "")] if x][-10:]
     d["format"] = format_for(publish_time(d))  # 형식 정하기 전에 만든 회차도 지금 규칙대로
-    for key in ("body", "cta", "tips", "items"):  # 예전 형식 흔적 지우기
+    for key in ("body", "cta", "tips", "items", "stake", "loop_line", "hook_options", "hook_formula"):  # 예전 흔적 지우기
         d.pop(key, None)
     _fill_script(d, avoid=d["rejected_issues"])
     _fill_photos(d)
@@ -260,7 +274,7 @@ def retext(d):
         render_cards(d)
         save(d)
         return
-    post = writer.rewrite_cards(d)
+    post = writer.rewrite_cards(d, skill=is_skill(d))
     same_count = len(post["tips"]) == len(d.get("tips", []))  # 예전 5장 초안은 tips가 없어 사진도 새로
     if same_count:  # 사진은 그대로 쓰므로 프롬프트도 유지
         for t_new, t_old in zip(post["tips"], d["tips"]):
@@ -303,14 +317,21 @@ def summary(d):
         "",
         f"🔥 이슈: {d.get('issue', '')} ({d.get('kind', '')})",
         f"📌 표지: {' / '.join(d.get('title', []))}",
-        f"🧩 형식: {'인포그래픽 총정리표 (사진 넘기기)' if is_info(d) else '목록형 (릴스 약 15초)'}",
+        "🧩 형식: " + ('인포그래픽 총정리표 (사진 넘기기)' if is_info(d) else
+                      '🧪 스킬형 목록 (릴스 약 16초, 왜·정리 카드 + 훅 공식)' if is_skill(d) else '목록형 (릴스 약 15초)'),
         f"🗂 카드: {len(card_paths(d))}장" + (f" (항목 {len(d['items'])}개)" if is_info(d) and d.get("items")
                                            else f" (팁 {len(d['tips'])}개)" if d.get("tips") else ""),
         f"🖼 사진: {d.get('image_note', '')}",
     ]
     if is_reel(d):
         song = music.pick(d["id"])
-        lines += [f"💬 첫 화면 문구: {reel_hook(d)}", f"🎵 배경음악: {music.title(song) if song else '없음'}"]
+        lines += [f"💬 첫 화면 문구: {reel_hook(d)}"]
+        others = [o for o in d.get("hook_options", []) if o.get("text") != d.get("hook")]
+        if others:  # 2026-11-12: 훅 공식 3개로 써 보고 점수 높은 것을 고름 (/ig-reel)
+            lines += ["   다른 후보: " + " / ".join(f"{o['text']}({o.get('score', '')})" for o in others)]
+        if d.get("loop_line"):
+            lines += [f"🔁 마지막 화면 문구: {d['loop_line']}"]
+        lines += [f"🎵 배경음악: {music.title(song) if song else '없음'}"]
     lines += [
         "",
         "✍️ 캡션",

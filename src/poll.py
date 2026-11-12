@@ -1,7 +1,8 @@
-"""10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
+"""10분마다 실행: 텔레그램 버튼 눌림을 반영하고, 게시 시각(07:00·12:00·17:30)이 되면 카드뉴스를 인스타에 올린다.
 새 댓글에는 자동으로 답글을 단다 (comments.py). 밤 9시 이후엔 하루 한 번 숫자 보고서 (insights.py).
 아침 8시 이후엔 하루 한 번 소통 안내, gil이 게시물 캡처를 보내면 맞춤 댓글 초안 (engage.py).
-07:00 목록형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
+'벤치'라고 적어 보낸 참고 계정 릴스 탭 캡처는 터진 릴스·훅 공식 분석 (viral.py).
+07:00 목록형·12:00 스킬형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
 
@@ -15,6 +16,7 @@ from pathlib import Path
 import comments
 import draft
 import engage
+import viral
 import hosting
 import insights
 import instagram
@@ -152,6 +154,14 @@ def process_buttons():
     for u in telegram.get_updates(offset):
         offset = max(offset, u["update_id"] + 1)
         msg = u.get("message")
+        if msg and str(msg.get("chat", {}).get("id")) == allowed and viral.wants(msg):
+            try:  # '벤치'라고 적어 보낸 참고 계정 릴스 탭 캡처 → 터진 릴스·공식 분석 (viral.py)
+                viral.analyze(msg)
+            except Exception as e:
+                print(f"[poll] 터진 릴스 분석 실패: {e}")
+                telegram.send_text(f"⚠️ 터진 릴스 분석을 못 했어요: {str(e)[:150]}")
+            write_offset(offset)
+            continue
         if msg and str(msg.get("chat", {}).get("id")) == allowed and engage.wants_reply(msg):
             try:  # gil이 보낸 게시물 캡처·캡션 → 맞춤 댓글 초안 (engage.py)
                 engage.reply_to(msg)

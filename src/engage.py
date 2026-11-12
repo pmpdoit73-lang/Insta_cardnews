@@ -185,7 +185,9 @@ def build_message(today, day):
     for i, d in enumerate(_general_drafts(tags), 1):
         lines += [f"{i}. {html.escape(d['situation'])}", _code(d["comment"])]
     lines += ["", "📸 <b>맞춤 댓글</b>: 마음에 드는 게시물을 캡처하거나 캡션을 복사해서 이 봇에 보내 주세요. "
-                  "10분 안에 그 글에 딱 맞는 댓글 3개를 써 드려요."]
+                  "10분 안에 그 글에 딱 맞는 댓글 3개를 써 드려요.",
+              "📈 <b>터진 릴스 분석</b>: 참고 계정의 릴스 탭(조회수 보이는 화면)을 캡처해서 설명에 <b>벤치</b>라고 "
+              "적어 보내 주세요. 평소보다 몇 배 터졌는지, 어떤 첫 문구 공식인지 알려 드려요."]
     return "\n".join(lines)
 
 
