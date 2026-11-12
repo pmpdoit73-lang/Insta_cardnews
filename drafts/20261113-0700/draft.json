@@ -2,7 +2,7 @@
   "id": "20261113-0700",
   "created_at": "2026-11-12T17:01:25.546638+09:00",
   "publish_at": "2026-11-13T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "겨울 차 시즌, 물때·냄새 없이 쓰는 전기포트 관리법",
@@ -114,5 +114,9 @@
   "message": {
     "message_id": 612,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17955789006270327",
+  "permalink": "https://www.instagram.com/reel/DfqSWVcD1YT/",
+  "published_at": "2026-11-13T08:57:03.165441+09:00",
+  "story_id": "17913578703578732"
 }
