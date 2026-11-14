@@ -1,5 +1,5 @@
 {
-  "last": "2026-11-13",
+  "last": "2026-11-14",
   "history": {
     "살림 꿀팁": {
       "2026-11-06": {
@@ -307,6 +307,49 @@
         "followers": 33,
         "reach7": 685,
         "non_follower_pct": 98,
+        "posts": {
+          "18119524982069870": {
+            "views": 53,
+            "reach": 44,
+            "saved": 0,
+            "shares": 0
+          },
+          "17955789006270327": {
+            "views": 111,
+            "reach": 103,
+            "saved": 0,
+            "shares": 0
+          },
+          "17882601105543180": {
+            "views": 9,
+            "reach": 6,
+            "saved": 0,
+            "shares": 0
+          },
+          "18033576806682209": {
+            "views": 114,
+            "reach": 111,
+            "saved": 0,
+            "shares": 0
+          },
+          "18103732460381686": {
+            "views": 8,
+            "reach": 6,
+            "saved": 0,
+            "shares": 0
+          },
+          "17997270311843755": {
+            "views": 106,
+            "reach": 97,
+            "saved": 0,
+            "shares": 0
+          }
+        }
+      },
+      "2026-11-14": {
+        "followers": 36,
+        "reach7": 588,
+        "non_follower_pct": 97,
         "posts": {
           "18119524982069870": {
             "views": 53,
