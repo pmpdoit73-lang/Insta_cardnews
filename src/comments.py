@@ -91,7 +91,7 @@ def write_reply(caption, comment, persona=None):
     head = "\n".join((caption or "").strip().split("\n")[:6])
     user_msg = (f"내 게시물 캡션 앞부분:\n{head}\n\n이 게시물에 달린 댓글:\n{comment}\n\n"
                 "이 댓글에 계정 주인으로서 답글을 써 줘.\n" + RULES)
-    post = writer._ask(user_msg, REPLY, system=persona)
+    post = writer._ask(user_msg, REPLY, system=persona, model=writer.LIGHT_MODEL)
     return post["action"], post["reply"].strip()
 
 

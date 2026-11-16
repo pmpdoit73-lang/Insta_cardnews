@@ -15,7 +15,8 @@ from pathlib import Path
 
 import anthropic
 
-MODEL = "claude-opus-5-5"
+MODEL = "claude-sonnet-5-5"       # 카드뉴스 대본 (2026-11-16 gil: 요금 절감, Opus → Sonnet)
+LIGHT_MODEL = "claude-haiku-5-5"  # 댓글 답글·소통 초안·벤치 분석·쓰레드 홍보글 같은 짧은 글
 ROOT = Path(__file__).resolve().parent.parent
 PERSONA = (ROOT / "prompts" / "persona.md").read_text(encoding="utf-8")
 HOOK_FORMULAS = (ROOT / "prompts" / "hook_formulas.md").read_text(encoding="utf-8")  # 스킬형, /ig-reel
@@ -204,16 +205,19 @@ def _checked(user_msg, schema, check=None):
     return post
 
 
-def _ask(user_msg, schema, system=None):
+def _ask(user_msg, schema, system=None, model=None):
+    model = model or MODEL
+    extra = {}
+    if model != LIGHT_MODEL:  # Haiku는 서버 쪽 대체 모델(fallbacks)을 지원하지 않음
+        extra = {"betas": ["server-side-fallback-2026-07-01"], "fallbacks": "default"}
     client = anthropic.Anthropic()
     response = client.beta.messages.create(
-        model=MODEL,
+        model=model,
         max_tokens=16000,
         system=system or PERSONA,
         messages=[{"role": "user", "content": user_msg}],
         output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}},
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
+        **extra,
     )
     if response.stop_reason == "refusal":
         raise RuntimeError("Claude가 이번 글쓰기를 거절했어요.")

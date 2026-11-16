@@ -134,7 +134,7 @@ def _general_drafts(tags):
            "이런 살림·주방·가전 글에 바로 붙여넣을 수 있는 댓글 초안 5개를 써 줘. "
            "5개는 서로 다른 상황(예: 정리수납 글, 청소 요령 글, 가전 사용법 글, 살림템 소개 글, 요리·보관 글)에 맞춰.\n"
            "글마다 한두 단어만 바꿔 쓰면 되도록 너무 특정하지 않게, 그래도 흔한 인사말은 아니게.\n\n" + RULES)
-    return writer._ask(msg, DRAFTS, system=writer.PERSONA)["drafts"][:5]
+    return writer._ask(msg, DRAFTS, system=writer.PERSONA, model=writer.LIGHT_MODEL)["drafts"][:5]
 
 
 def _post_drafts(posts):
@@ -142,7 +142,7 @@ def _post_drafts(posts):
     listing = "\n\n".join(f"[{i + 1}] {(p.get('caption') or '')[:400]}" for i, p in enumerate(posts))
     msg = (f"아래는 다른 살림 계정의 인스타 게시물 캡션 {len(posts)}개야. 순서대로 하나씩, 그 글에 다는 댓글을 써 줘. "
            "situation엔 그 글이 무슨 내용인지 짧게.\n\n" + listing + "\n\n" + RULES)
-    return writer._ask(msg, DRAFTS, system=writer.PERSONA)["drafts"][:len(posts)]
+    return writer._ask(msg, DRAFTS, system=writer.PERSONA, model=writer.LIGHT_MODEL)["drafts"][:len(posts)]
 
 
 def _find_posts(tags):
@@ -229,7 +229,7 @@ def reply_to(message):
         "다른 살림 계정의 인스타 게시물이야 (캡처 화면이나 캡션 글). "
         "이 글에 내가 남길 댓글 초안 3개를 써 줘. 캡처에 보이는 계정 이름·댓글은 무시하고 게시물 내용에만 반응해.\n"
         + (f"\n함께 보낸 글:\n{note[:1500]}\n" if note else "") + "\n" + RULES)})
-    out = writer._ask(content, REPLY, system=writer.PERSONA)
+    out = writer._ask(content, REPLY, system=writer.PERSONA, model=writer.LIGHT_MODEL)
     lines = [f"💬 맞춤 댓글 초안 · {html.escape(out['summary'])}", "(글씨를 누르면 복사돼요)", ""]
     for i, c in enumerate(out["comments"][:3], 1):
         lines += [f"{i}.", _code(c)]
