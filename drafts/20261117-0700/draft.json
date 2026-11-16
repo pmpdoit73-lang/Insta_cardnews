@@ -1,0 +1,108 @@
+{
+  "id": "20261117-0700",
+  "created_at": "2026-11-16T21:01:43.518849+09:00",
+  "publish_at": "2026-11-17T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "겨울 건조기 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "빨래 건조가 늘어나는 겨울, 먼지필터와 배수통만 챙겨도 건조 시간과 전기를 아낄 수 있는데 의외로 놓치기 쉬워서 골랐어요.",
+  "title": [
+    "건조 시간 확 줄이는",
+    "건조기 관리법 7"
+  ],
+  "highlight": "건조 시간",
+  "subtitle": "필터는 가끔만 비우고 계셨죠?",
+  "scene": "Bright Korean home kitchen and laundry nook, a white front-load clothes dryer standing beside a light wood countertop, soft warm morning sunlight from a window on the left, a small woven basket and folded cream towels nearby, clean simple countertop in the lower third of the frame, no people, no text",
+  "cover_image_prompt": "The white clothes dryer with its door open and a pile of fluffy folded cream towels on the light wood countertop in front, warm morning window light, cozy and clean, lower third plain countertop",
+  "tips": [
+    {
+      "title": "먼지필터 매번 비우기",
+      "lines": [
+        "건조가 끝나면 필터 먼지를 매번 떼요",
+        "바람길이 뚫려 건조 시간이 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pulling the lint filter out of the dryer, a soft gray lint layer visible on the mesh, towels in the background"
+    },
+    {
+      "title": "필터 물세척",
+      "lines": [
+        "한 달에 한 번 미온수로 헹궈요",
+        "망 틈이 풀려 열풍이 잘 통해요"
+      ],
+      "note": "완전히 말린 뒤 끼우세요",
+      "image_prompt": "A lint filter held under a gentle stream of lukewarm water over a clean sink next to the countertop, small soft brush beside it"
+    },
+    {
+      "title": "배수통 바로 비우기",
+      "lines": [
+        "배수통 물은 사용 후 바로 비워요",
+        "넘침 정지와 물 냄새를 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand carrying the removable water tank of the dryer, clear water inside, placed on the countertop near a sink"
+    },
+    {
+      "title": "70%만 채우기",
+      "lines": [
+        "빨래는 용량의 70%만 채워요",
+        "공기가 돌아야 골고루 말라요"
+      ],
+      "note": "",
+      "image_prompt": "The dryer drum loosely filled with folded cotton clothes, about two thirds full, door open, warm sunlight"
+    },
+    {
+      "title": "탈수 한 번 더",
+      "lines": [
+        "세탁 때 탈수를 한 번 더 해요",
+        "물기가 줄어 전기도 덜 써요"
+      ],
+      "note": "",
+      "image_prompt": "A hand lifting a freshly washed, wrung-out towel from a laundry basket onto the countertop, drum of the dryer behind"
+    },
+    {
+      "title": "뭉친 빨래 털기",
+      "lines": [
+        "수건과 옷은 털어서 넣어요",
+        "엉킴이 풀려 열이 고루 닿아요"
+      ],
+      "note": "",
+      "image_prompt": "Two hands shaking out a cream-colored towel above the open dryer door, a few loose folds in the air"
+    },
+    {
+      "title": "문 열어 말리기",
+      "lines": [
+        "다 쓴 뒤 문을 열어 내부를 말려요",
+        "습기와 곰팡이 냄새를 막아요"
+      ],
+      "note": "",
+      "image_prompt": "The dryer door left wide open with an empty clean drum, sunlight falling on the inside, a dry cloth hanging nearby"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "필터를 빼고 돌리지 마세요",
+      "먼지가 내부로 들어가 고장 나요",
+      "건조 불가 표시 옷은 넣지 마세요"
+    ],
+    "image_prompt": "The countertop with a wool knit sweater, a pair of sneakers and a lint filter set aside, next to the closed dryer, no text"
+  },
+  "save_line": "저장해두고 빨래 말릴 때 꺼내보세요",
+  "caption": "건조기 관리법, 필터만 비우면 끝인 줄 알았어요 😅\n건조기 필터와 배수통만 챙겨도 건조 시간이 달라져요.\n필터는 매번 비우고 한 달에 한 번 물로 헹궈요.\n빨래는 70%만 채우고, 탈수를 충분히 해 주세요.\n다 쓰고 나면 문을 열어 말려 주세요.\n저장해두고 빨래 말릴 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 건조기 필터를 얼마나 자주 비우세요?",
+  "hook": "건조기 필터 안 비웠다면?",
+  "hashtags": [
+    "#건조기관리",
+    "#건조기청소",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "clothes dryer laundry",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 665,
+    "has_photo": false
+  }
+}
