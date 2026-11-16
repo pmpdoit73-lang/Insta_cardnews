@@ -128,7 +128,7 @@ def analyze(message):
             "그 글씨가 아래 훅 공식 중 몇 번인지 골라. 그리고 같은 공식으로 우리 계정에 맞는 문구를 새로 써.\n"
             "숫자는 보이는 그대로만 읽고 지어내지 마. 안 보이는 건 빼.\n\n" + writer.HOOK_FORMULAS)},
     ]
-    out = writer._ask(content, SCHEMA, system=writer.PERSONA)
+    out = writer._ask(content, SCHEMA, system=writer.PERSONA, model=writer.LIGHT_MODEL)
     account = (out.get("account") or "").lstrip("@") or "알 수 없음"
     median, ranked = rank(out.get("reels", []))
     if not ranked:

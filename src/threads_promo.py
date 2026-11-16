@@ -67,7 +67,7 @@ def text_for(d):
                "- 중간: 인스타에 한 장 표로 정리해 뒀다는 말 (예: '인스타에 표로 정리해둠')\n"
                "- 마지막 줄: 누구나 바로 답할 수 있는 짧은 질문 (예: '너네 집 참기름은 냉장고임 찬장임?')\n"
                "- '댓글 달아줘', '팔로우' 같은 부탁, 해시태그, 광고 말투 금지")
-        lines = [ln.strip() for ln in writer._ask(msg, TEXT, system=THREADS_PERSONA)["lines"] if ln.strip()]
+        lines = [ln.strip() for ln in writer._ask(msg, TEXT, system=THREADS_PERSONA, model=writer.LIGHT_MODEL)["lines"] if ln.strip()]
         if lines:
             return "\n".join(lines) + f"\n\n👉 {link}"
     except Exception as e:
