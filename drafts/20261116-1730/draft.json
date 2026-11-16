@@ -1,0 +1,125 @@
+{
+  "id": "20261116-1730",
+  "created_at": "2026-11-16T12:50:50.619755+09:00",
+  "publish_at": "2026-11-16T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "고기·달걀·남은 음식 냉장 보관기한 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "김장철 수육·찌개가 넉넉히 남는 때라 '이거 며칠까지 먹어도 되나' 궁금증이 커지는 시기, 냉동 보관기한 편과 겹치지 않게 냉장 편으로 골랐어요",
+  "top_badge": "냉장고 열기 전 저장!",
+  "title": [
+    "수육 남으면 며칠 두나",
+    "냉장 보관기한 10"
+  ],
+  "highlight": "냉장 보관기한",
+  "basis": "미국 농무부(USDA) 권장 · 4℃ 이하 냉장",
+  "items": [
+    {
+      "name": "생 다짐육",
+      "badge": "1~2일",
+      "detail": "상하기 가장 쉬워요, 바로 못 쓰면 냉동",
+      "emoji": "🥩",
+      "icon_prompt": "a tray of raw ground meat"
+    },
+    {
+      "name": "생 닭고기",
+      "badge": "1~2일",
+      "detail": "맨 아래 칸에 두어 핏물 번짐 막기",
+      "emoji": "🍗",
+      "icon_prompt": "a raw whole chicken on a plate"
+    },
+    {
+      "name": "생선",
+      "badge": "1~2일",
+      "detail": "내장 빼고 물기 닦아 밀봉 보관",
+      "emoji": "🐟",
+      "icon_prompt": "a fresh raw fish on a plate"
+    },
+    {
+      "name": "고기 덩어리",
+      "badge": "3~5일",
+      "detail": "소·돼지 생 덩어리, 밀봉해 안쪽 칸",
+      "emoji": "🥓",
+      "icon_prompt": "a raw pork belly block"
+    },
+    {
+      "name": "익힌 고기",
+      "badge": "3~4일",
+      "detail": "수육·불고기, 식힌 뒤 2시간 안에 냉장",
+      "emoji": "🍖",
+      "icon_prompt": "sliced boiled pork on a plate"
+    },
+    {
+      "name": "국·찌개",
+      "badge": "3~4일",
+      "detail": "작은 통에 나눠 담으면 빨리 식어요",
+      "emoji": "🍲",
+      "icon_prompt": "a pot of korean stew"
+    },
+    {
+      "name": "개봉한 햄",
+      "badge": "3~5일",
+      "detail": "뜯은 뒤엔 랩으로 꽁꽁 감싸 보관",
+      "emoji": "🌭",
+      "icon_prompt": "a sliced ham on a cutting board"
+    },
+    {
+      "name": "베이컨",
+      "badge": "7일",
+      "detail": "개봉 전 기준, 뜯으면 빨리 드세요",
+      "emoji": "🥓",
+      "icon_prompt": "a pack of raw bacon strips"
+    },
+    {
+      "name": "날달걀",
+      "badge": "3~5주",
+      "detail": "문 칸보다 안쪽 칸이 온도 일정해요",
+      "emoji": "🥚",
+      "icon_prompt": "a carton of fresh eggs"
+    },
+    {
+      "name": "삶은 달걀",
+      "badge": "7일",
+      "detail": "껍질째 보관, 까면 그날 드세요",
+      "emoji": "🍳",
+      "icon_prompt": "a bowl of hard boiled eggs"
+    }
+  ],
+  "save_tile": [
+    "냉장고 앞",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "보관 전 체크",
+    "lines": [
+      "냉장고 4℃ 이하",
+      "식혀서 2시간 안에"
+    ]
+  },
+  "footer_line": "저장해두고 남은 음식 넣을 때 꺼내보세요",
+  "footer_highlight": "남은 음식",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "뜨거운 찌개 냄비째 밤새 실온 방치",
+      "냄새로만 판단하기, 균은 냄새가 없어요",
+      "데운 음식 다시 넣고 또 데우기 반복"
+    ]
+  },
+  "save_line": "저장해두고 냉장고 앞에서 보세요",
+  "caption": "냉장 보관기한 몰라서 수육 남은 거 일주일 넘게 둔 적 있어요 😅\n\n김장하고 남은 고기·찌개, 며칠까지 괜찮은지 정리했어요\n미국 농무부 권장 기준으로 냉장 4℃ 이하일 때예요\n\n생 다짐육: 1~2일 · 상하기 가장 쉬워요, 바로 못 쓰면 냉동\n생 닭고기: 1~2일 · 맨 아래 칸에 두어 핏물 번짐 막기\n생선: 1~2일 · 내장 빼고 물기 닦아 밀봉 보관\n고기 덩어리: 3~5일 · 소·돼지 생 덩어리, 밀봉해 안쪽 칸\n익힌 고기: 3~4일 · 수육·불고기, 식힌 뒤 2시간 안에 냉장\n국·찌개: 3~4일 · 작은 통에 나눠 담으면 빨리 식어요\n개봉한 햄: 3~5일 · 뜯은 뒤엔 랩으로 꽁꽁 감싸 보관\n베이컨: 7일 · 개봉 전 기준, 뜯으면 빨리 드세요\n날달걀: 3~5주 · 문 칸보다 안쪽 칸이 온도 일정해요\n삶은 달걀: 7일 · 껍질째 보관, 까면 그날 드세요\n\n기간 안이라도 냄새·색이 이상하면 아깝더라도 버리세요\n저장해두고 남은 음식 넣을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n여러분은 남은 찌개 보통 며칠 안에 드세요?",
+  "hashtags": [
+    "#냉장보관기한",
+    "#식재료보관법",
+    "#남은음식보관",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 652,
+    "has_photo": false
+  }
+}
