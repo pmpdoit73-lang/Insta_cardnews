@@ -1,0 +1,116 @@
+{
+  "id": "20261117-1200",
+  "created_at": "2026-11-17T08:02:58.986072+09:00",
+  "publish_at": "2026-11-17T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "전자레인지 냄새 청소·숨은 활용법",
+  "kind": "가전 꿀팁",
+  "angle": "국·찌개·김장 음식 데우는 일이 늘어 전자레인지 냄새와 얼룩이 쌓이는 겨울 초입에, 물 한 컵으로 하는 청소와 냄비 대신 쓰는 활용법을 묶었어요.",
+  "title": [
+    "냄새 걱정 끝내는",
+    "전자레인지 활용법 5"
+  ],
+  "highlight": "전자레인지",
+  "subtitle": "데우기만 하고 속은 안 닦으셨죠?",
+  "scene": "A bright Korean home kitchen with a white countertop, a clean white microwave oven on the counter with its door slightly open, soft warm morning sunlight from a window on the left, a small wooden cutting board and a glass bowl nearby, simple empty countertop in the lower third, no people, no text",
+  "cover_image_prompt": "The white microwave on the sunny kitchen counter with the door open, a clear heat-safe glass bowl of water with a lemon half placed inside, warm morning light, clean empty counter in the lower third",
+  "tips": [
+    {
+      "title": "물 한 컵 증기 청소",
+      "lines": [
+        "내열 그릇에 물 1컵, 3분 돌려요",
+        "5분 두면 얼룩이 부드럽게 닦여요"
+      ],
+      "note": "그릇은 뜨거우니 장갑을 끼세요",
+      "image_prompt": "A clear heat-safe glass bowl with water and a lemon slice inside the open microwave, a dry cloth lying on the counter"
+    },
+    {
+      "title": "마늘 껍질 쏙",
+      "lines": [
+        "통마늘 몇 알을 10초만 돌려요",
+        "껍질이 쉽게 벗겨져 손이 편해요"
+      ],
+      "note": "오래 돌리면 마늘이 익어요",
+      "image_prompt": "A few whole garlic bulbs cloves on a small ceramic plate beside the microwave, one hand peeling a clove easily"
+    },
+    {
+      "title": "빵 촉촉하게 데우기",
+      "lines": [
+        "젖은 키친타월 덮어 20초 데워요",
+        "빵이 마르지 않고 말랑해져요"
+      ],
+      "note": "",
+      "image_prompt": "A slice of bread on a ceramic plate covered with a damp paper towel, placed next to the microwave"
+    },
+    {
+      "title": "냉동밥 고슬하게",
+      "lines": [
+        "랩 씌우고 구멍 내 2분 데워요",
+        "수증기가 돌아 밥이 고슬해져요"
+      ],
+      "note": "랩은 전자레인지용을 쓰세요",
+      "image_prompt": "A bowl of frozen rice wrapped in microwave-safe plastic wrap with small holes poked, a spoon beside it"
+    },
+    {
+      "title": "브로콜리 간단 데치기",
+      "lines": [
+        "브로콜리 물 2큰술, 랩 덮어 2분",
+        "냄비 없이 데쳐서 설거지가 줄어요"
+      ],
+      "note": "꺼낼 때 김이 뜨거워요",
+      "image_prompt": "Fresh broccoli florets in a glass bowl with a little water covered with wrap, next to the microwave"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "금속 그릇·호일은 넣지 마세요",
+      "불꽃이 튈 수 있어 위험해요",
+      "뚜껑 꽉 닫은 용기도 피하세요"
+    ],
+    "image_prompt": "On the sunny counter beside the microwave, a metal bowl, a roll of aluminum foil and a tightly sealed lidded container placed apart, nothing inside the microwave"
+  },
+  "save_line": "저장해두고 전자레인지 냄새날 때 꺼내보세요",
+  "caption": "전자레인지 활용법, 속 청소는 늘 미루기만 했어요 😅\n물 1컵 3분이면 찌든 얼룩이 불어서 쓱 닦여요.\n마늘 껍질, 빵 데우기, 냉동밥까지 5가지 요령을 모았어요.\n금속 그릇과 호일은 꼭 피하세요.\n저장해두고 전자레인지 냄새날 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 전자레인지는 얼마나 자주 닦으세요?",
+  "hook": "전자레인지 냄새, 3분이면 끝",
+  "hashtags": [
+    "#전자레인지",
+    "#전자레인지청소",
+    "#주방꿀팁",
+    "#가전꿀팁"
+  ],
+  "photo_query": "microwave kitchen clean",
+  "stake": {
+    "title": "안 닦으면 냄새가 배요",
+    "lines": [
+      "음식 튄 자국이 쌓이면 데울 때마다",
+      "냄새가 음식에 배고 얼룩이 굳어요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 10,
+      "text": "전자레인지 냄새, 3분이면 끝",
+      "score": 88
+    },
+    {
+      "formula": 7,
+      "text": "전자레인지 이렇게 쓰면 손해",
+      "score": 72
+    },
+    {
+      "formula": 19,
+      "text": "겨울 전에 전자레인지 이것부터",
+      "score": 70
+    }
+  ],
+  "hook_formula": 10,
+  "loop_line": "이제 전자레인지 냄새 끝",
+  "image_note": "7장 모두 제미나이",
+  "message": {
+    "message_id": 680,
+    "has_photo": false
+  }
+}
