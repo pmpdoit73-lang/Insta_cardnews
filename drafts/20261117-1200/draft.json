@@ -2,7 +2,7 @@
   "id": "20261117-1200",
   "created_at": "2026-11-17T08:02:58.986072+09:00",
   "publish_at": "2026-11-17T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "전자레인지 냄새 청소·숨은 활용법",
@@ -112,5 +112,9 @@
   "message": {
     "message_id": 680,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18105520817644638",
+  "permalink": "https://www.instagram.com/reel/Df06tblDeYI/",
+  "published_at": "2026-11-17T12:02:05.533207+09:00",
+  "story_id": "17919941142265667"
 }
