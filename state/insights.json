@@ -734,6 +734,49 @@
             "shares": 0
           }
         }
+      },
+      "2026-11-17": {
+        "followers": 11,
+        "reach7": 676,
+        "non_follower_pct": 100,
+        "posts": {
+          "17889981294690102": {
+            "views": 9,
+            "reach": 8,
+            "saved": 0,
+            "shares": 0
+          },
+          "18155101795553712": {
+            "views": 111,
+            "reach": 102,
+            "saved": 0,
+            "shares": 0
+          },
+          "18205043224376852": {
+            "views": 114,
+            "reach": 105,
+            "saved": 0,
+            "shares": 0
+          },
+          "18436150021144720": {
+            "views": 105,
+            "reach": 101,
+            "saved": 0,
+            "shares": 0
+          },
+          "18140243173636234": {
+            "views": 30,
+            "reach": 29,
+            "saved": 0,
+            "shares": 0
+          },
+          "18129585833295921": {
+            "views": 119,
+            "reach": 108,
+            "saved": 0,
+            "shares": 0
+          }
+        }
       }
     }
   }
