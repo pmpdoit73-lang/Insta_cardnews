@@ -1,0 +1,125 @@
+{
+  "id": "20261118-1200",
+  "created_at": "2026-11-18T08:01:57.559627+09:00",
+  "publish_at": "2026-11-18T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "냉장고에 넣으면 오히려 빨리 상하는 식재료 보관법",
+  "kind": "주방 꿀팁",
+  "angle": "'냉장고에 넣었는데 더 빨리 상한다' 기사가 화제. 김장철 냉장고가 꽉 차는 지금, 넣으면 손해인 식재료를 골라 알려 드려요",
+  "title": [
+    "냉장고 넣으면 손해",
+    "식재료 보관법 6"
+  ],
+  "highlight": "냉장고 넣으면",
+  "subtitle": "비싸게 사서 냉장고에서 버리셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a white refrigerator with its door slightly open in the background, light wood countertop, a woven basket and a ceramic plate on the counter, warm sunlight from a window on the left, simple clean empty lower third of the frame",
+  "cover_image_prompt": "In the same bright Korean kitchen by the window, a white refrigerator door open behind, on the wooden counter a tomato, a banana bunch, a whole potato and a bulb of garlic arranged in a woven basket, warm morning sunlight",
+  "tips": [
+    {
+      "title": "토마토 실온 보관",
+      "lines": [
+        "꼭지 아래로 두고 실온 두세요",
+        "차가우면 맛과 식감이 떨어져요"
+      ],
+      "note": "완전히 익으면 냉장 OK",
+      "image_prompt": "Tomatoes placed stem-side down on the wooden counter in a woven basket, a hand adjusting one tomato"
+    },
+    {
+      "title": "바나나 따로 두기",
+      "lines": [
+        "꼭지를 랩으로 감아 걸어 두세요",
+        "냉장하면 껍질이 빨리 검어져요"
+      ],
+      "note": "",
+      "image_prompt": "A banana bunch hanging on a hook with its stems wrapped in plastic wrap, hand holding the wrap"
+    },
+    {
+      "title": "감자 서늘한 곳",
+      "lines": [
+        "신문지에 싸서 어두운 곳에 두세요",
+        "냉장하면 단맛이 늘고 식감이 변해요"
+      ],
+      "note": "싹 난 감자는 드시지 마세요",
+      "image_prompt": "Whole potatoes wrapped in newspaper placed in a paper box on the counter, hand tucking paper around them"
+    },
+    {
+      "title": "마늘·양파 통풍",
+      "lines": [
+        "망에 담아 바람 통하게 두세요",
+        "냉장하면 눅눅해지고 곰팡이 나요"
+      ],
+      "note": "",
+      "image_prompt": "Garlic bulbs and onions in a mesh bag hanging near the window, a hand lifting the bag"
+    },
+    {
+      "title": "꿀은 실온에",
+      "lines": [
+        "뚜껑 꼭 닫고 선반에 두세요",
+        "냉장하면 하얗게 굳어 쓰기 불편해요"
+      ],
+      "note": "",
+      "image_prompt": "A glass honey jar with a wooden dipper on the counter, hand tightening the lid"
+    },
+    {
+      "title": "빵은 냉동 보관",
+      "lines": [
+        "먹을 만큼 썰어 냉동 보관하세요",
+        "냉장하면 빨리 퍽퍽해지기 때문이에요"
+      ],
+      "note": "",
+      "image_prompt": "Sliced bread being placed into a zip freezer bag on the counter, hand pressing the bag closed"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "젖은 채 보관하지 마세요",
+      "습기가 곰팡이를 빨리 키워요",
+      "상한 건 도려내도 드시지 마세요"
+    ],
+    "image_prompt": "On the same wooden counter, a damp sprouted potato, a moldy-looking bread slice and a wet onion placed on a plate, no people"
+  },
+  "save_line": "저장해두고 장보고 온 날 꺼내보세요",
+  "caption": "냉장고 넣으면 손해인 식재료 보관법 6가지, 몰랐어요 😅\n토마토, 바나나, 감자, 마늘·양파, 꿀, 빵까지 보관 장소만 바꿔도 덜 버려요.\n냉장고가 꽉 차는 김장철에 특히 도움돼요.\n식재료마다 맞는 자리가 따로 있어요.\n저장해두고 장보고 온 날 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 어떤 식재료를 냉장고에 넣고 계세요?",
+  "hook": "냉장고 넣으면 더 빨리 상해요",
+  "hashtags": [
+    "#식재료보관법",
+    "#냉장고정리",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "kitchen refrigerator vegetables",
+  "stake": {
+    "title": "넣었다가 버려요",
+    "lines": [
+      "냉장고에 넣어 더 빨리 상하면",
+      "장본 돈이 그대로 버려져요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 22,
+      "text": "냉장고 넣으면 더 빨리 상해요",
+      "score": 88
+    },
+    {
+      "formula": 11,
+      "text": "6가지 중 3번은 아무도 몰라요",
+      "score": 70
+    },
+    {
+      "formula": 1,
+      "text": "멀쩡한 토마토 버렸어요",
+      "score": 76
+    }
+  ],
+  "hook_formula": 22,
+  "loop_line": "이제 냉장고 손해 끝",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 713,
+    "has_photo": false
+  }
+}
