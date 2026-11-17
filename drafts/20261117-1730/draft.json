@@ -1,0 +1,125 @@
+{
+  "id": "20261117-1730",
+  "created_at": "2026-11-17T14:00:59.630142+09:00",
+  "publish_at": "2026-11-17T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "전기밥솥 보온 vs 재가열, 전기 아끼는 밥 보관법 총정리",
+  "kind": "가전 꿀팁",
+  "angle": "뉴스에 나온 '전기밥솥 보온에 전기 더 쓴다' 이야기와 겨울 집밥철에 맞춰, 밥 보관 방식별 시간을 한눈에 정리",
+  "top_badge": "밥솥 보온 전 저장!",
+  "title": [
+    "보온 계속 켜두셨죠?",
+    "밥 보관법 총정리 10"
+  ],
+  "highlight": "밥 보관법",
+  "basis": "식약처·제조사 설명서 일반 권고 · 가정 기준",
+  "items": [
+    {
+      "name": "실온 밥",
+      "badge": "2시간",
+      "detail": "더운 곳은 빨리 상해 바로 소분하세요",
+      "emoji": "🍚",
+      "icon_prompt": "a bowl of cooked rice on a counter"
+    },
+    {
+      "name": "보온 밥",
+      "badge": "12시간",
+      "detail": "길게 두면 마르고 누레져 맛이 떨어져요",
+      "emoji": "♨️",
+      "icon_prompt": "an electric rice cooker with lid closed"
+    },
+    {
+      "name": "냉장 밥",
+      "badge": "1~2일",
+      "detail": "밀폐용기에 담아 빨리 먹는 게 좋아요",
+      "emoji": "🧊",
+      "icon_prompt": "a sealed glass food container with rice"
+    },
+    {
+      "name": "냉동 밥",
+      "badge": "1개월",
+      "detail": "따뜻할 때 소분해 랩에 싸 얼리세요",
+      "emoji": "❄️",
+      "icon_prompt": "rice wrapped in plastic wrap portions"
+    },
+    {
+      "name": "밥 소분량",
+      "badge": "1공기",
+      "detail": "한 번 먹을 양으로 나눠야 재가열 쉬워요",
+      "emoji": "🥣",
+      "icon_prompt": "a single portion of rice in a small bowl"
+    },
+    {
+      "name": "식히는 시간",
+      "badge": "30분",
+      "detail": "김만 빼고 빨리 소분하면 질척이지 않아요",
+      "emoji": "⏱️",
+      "icon_prompt": "a kitchen timer"
+    },
+    {
+      "name": "전자레인지",
+      "badge": "2분",
+      "detail": "냉동밥 한 공기, 랩 느슨하게 덮어 데우세요",
+      "emoji": "📟",
+      "icon_prompt": "a microwave oven with door closed"
+    },
+    {
+      "name": "재가열",
+      "badge": "1회",
+      "detail": "데운 밥을 다시 식혔다 데우는 건 피하세요",
+      "emoji": "🔁",
+      "icon_prompt": "a steaming bowl of rice"
+    },
+    {
+      "name": "주먹밥",
+      "badge": "1일",
+      "detail": "냉장 보관하고 먹기 전에 데워 드세요",
+      "emoji": "🍙",
+      "icon_prompt": "a rice ball on a plate"
+    },
+    {
+      "name": "누룽지",
+      "badge": "1주",
+      "detail": "바싹 말려 밀폐 보관하면 오래 가요",
+      "emoji": "🥘",
+      "icon_prompt": "dried crispy rice crust pieces in a jar"
+    }
+  ],
+  "save_tile": [
+    "밥 남았을 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "보관 전 체크",
+    "lines": [
+      "따뜻할 때 소분",
+      "밀폐해서 보관"
+    ]
+  },
+  "footer_line": "저장해두고 남은 밥 보관할 때 꺼내보세요",
+  "footer_highlight": "남은 밥",
+  "warning": {
+    "title": "이건 하지 마세요",
+    "lines": [
+      "밥솥 안에 밥을 하루 넘게 두지 마요",
+      "상온에 밥을 오래 식히지 마세요",
+      "데운 밥을 여러 번 재가열 마세요"
+    ]
+  },
+  "save_line": "저장해두고 밥 남을 때 보세요",
+  "caption": "남은 밥 보관법, 저도 예전엔 보온에 며칠씩 뒀어요 😅\n\n밥 보관 방식별 시간을 한 장으로 정리했어요\n\n실온 밥: 2시간 · 더운 곳은 빨리 상해 바로 소분하세요\n보온 밥: 12시간 · 길게 두면 마르고 누레져 맛이 떨어져요\n냉장 밥: 1~2일 · 밀폐용기에 담아 빨리 먹는 게 좋아요\n냉동 밥: 1개월 · 따뜻할 때 소분해 랩에 싸 얼리세요\n밥 소분량: 1공기 · 한 번 먹을 양으로 나눠야 재가열 쉬워요\n식히는 시간: 30분 · 김만 빼고 빨리 소분하면 질척이지 않아요\n전자레인지: 2분 · 냉동밥 한 공기, 랩 느슨하게 덮어 데우세요\n재가열: 1회 · 데운 밥을 다시 식혔다 데우는 건 피하세요\n주먹밥: 1일 · 냉장 보관하고 먹기 전에 데워 드세요\n누룽지: 1주 · 바싹 말려 밀폐 보관하면 오래 가요\n\n일반적인 가정 기준이라 제품 설명서도 함께 확인하세요\n\n저장해두고 남은 밥 보관할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n\n여러분은 남은 밥 주로 냉동하세요, 보온하세요?",
+  "hashtags": [
+    "#밥보관법",
+    "#전기밥솥",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#냉동밥"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 684,
+    "has_photo": false
+  }
+}
