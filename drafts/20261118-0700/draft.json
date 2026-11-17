@@ -1,0 +1,109 @@
+{
+  "id": "20261118-0700",
+  "created_at": "2026-11-17T21:01:15.666833+09:00",
+  "publish_at": "2026-11-18T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "겨울철 세탁기 냄새 막는 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "찬 날씨에 빨래가 잘 안 마르고 세탁기 안 습기가 오래 남아 냄새가 나기 쉬운 겨울, 세탁기를 한 번 점검해 보자는 관리법이에요.",
+  "title": [
+    "빨래 냄새 싹 잡는",
+    "세탁기 관리법 7"
+  ],
+  "highlight": "빨래 냄새",
+  "subtitle": "세탁했는데 쿰쿰한 냄새 나셨죠?",
+  "scene": "Bright Korean apartment kitchen with a white front-loading washing machine in the utility nook beside a clean light-wood countertop, warm morning sunlight from a side window, a small plant and a folded white towel nearby, lower third of the frame is a simple empty counter surface, no text, no people",
+  "cover_image_prompt": "The white front-loading washing machine with its door wide open in the sunlit kitchen nook, a clean folded towel on the countertop in front, fresh and bright mood",
+  "tips": [
+    {
+      "title": "고무패킹 닦기",
+      "lines": [
+        "마른 행주로 고무패킹 안쪽을 닦아요",
+        "물때·곰팡이가 자리 못 잡아요"
+      ],
+      "note": "패킹 접힌 틈까지 살살 닦아요",
+      "image_prompt": "A hand wiping the inside of the rubber door gasket of the washing machine with a dry cloth"
+    },
+    {
+      "title": "문 열어 말리기",
+      "lines": [
+        "세탁이 끝나면 문을 활짝 열어요",
+        "통 안 습기가 빠져 냄새가 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "Washing machine door and detergent drawer both left open, sunlight falling into the empty drum"
+    },
+    {
+      "title": "세제 서랍 씻기",
+      "lines": [
+        "서랍을 빼서 미온수로 헹궈요",
+        "굳은 세제 찌꺼기가 줄어요"
+      ],
+      "note": "분리 방법은 설명서를 확인해요",
+      "image_prompt": "A detergent drawer removed from the machine and held under running lukewarm water at the sink beside the counter"
+    },
+    {
+      "title": "배수필터 비우기",
+      "lines": [
+        "한 달에 한 번 배수필터 비워요",
+        "실밥이 쌓여 생기는 냄새를 막아요"
+      ],
+      "note": "물이 나오니 수건을 깔고 열어요",
+      "image_prompt": "A small drain filter cap opened at the bottom of the washing machine with a towel laid underneath and a small tray"
+    },
+    {
+      "title": "세제 적정량",
+      "lines": [
+        "세제는 표기된 양만 넣어요",
+        "남은 세제가 찌꺼기·냄새가 돼요"
+      ],
+      "note": "",
+      "image_prompt": "A measuring cap of liquid laundry detergent held next to the open washing machine drawer"
+    },
+    {
+      "title": "빨래 7~8할만",
+      "lines": [
+        "통의 7~8할만 채워서 돌려요",
+        "헹굼이 잘돼 찌꺼기가 덜 남아요"
+      ],
+      "note": "",
+      "image_prompt": "Washing machine drum loaded with neatly folded clothes about three quarters full, a laundry basket on the counter"
+    },
+    {
+      "title": "통세척 코스",
+      "lines": [
+        "1~2개월에 한 번 통세척 코스",
+        "보이지 않는 때를 씻어내요"
+      ],
+      "note": "세탁조 클리너는 설명서대로 써요",
+      "image_prompt": "A bottle of drum cleaner for washing machines placed beside the open washer door on the counter, product without readable label"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "세탁조 청소제끼리 섞지 마세요",
+      "락스와 산성 세제가 만나면 유독가스",
+      "젖은 빨래를 통에 두지 마세요"
+    ],
+    "image_prompt": "Bottles of cleaning products, a bleach-style bottle and a vinegar bottle, with a damp laundry pile placed apart on the counter beside the washing machine, no readable labels"
+  },
+  "save_line": "저장해두고 세탁기 청소할 때 꺼내보세요",
+  "caption": "세탁기 관리법, 냄새가 나고서야 처음 찾아봤어요 😅\n겨울엔 빨래가 잘 안 마르고 세탁기 안 습기도 오래 남아요.\n고무패킹 닦기, 문 열어 두기, 배수필터 비우기만 해도 달라져요.\n세제는 적당량, 빨래는 7~8할, 통세척은 1~2개월에 한 번이에요.\n세탁조 청소제는 절대 다른 세제와 섞지 마세요.\n저장해두고 세탁기 청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 세탁기는 마지막으로 언제 청소하셨어요?",
+  "hook": "세탁기 냄새, 아직도?",
+  "hashtags": [
+    "#세탁기관리",
+    "#세탁기청소",
+    "#가전꿀팁",
+    "#살림꿀팁",
+    "#세탁기냄새"
+  ],
+  "photo_query": "washing machine laundry kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 697,
+    "has_photo": false
+  }
+}
