@@ -1,0 +1,118 @@
+{
+  "id": "20261119-0700",
+  "created_at": "2026-11-18T21:02:11.334439+09:00",
+  "publish_at": "2026-11-19T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "레인지후드 기름때 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "김장철과 겨울 전 부침·튀김·구이 요리가 늘어 후드 필터에 기름이 쌓이는 때라, 에어프라이어·인덕션 다음으로 놓치기 쉬운 레인지후드 관리 요령을 묶었어요.",
+  "title": [
+    "기름때 확 줄이는",
+    "레인지후드 관리법 8"
+  ],
+  "highlight": "기름때",
+  "subtitle": "필터 청소는 미루셨죠?",
+  "scene": "Bright Korean home kitchen in morning window sunlight, a white range hood mounted above a clean light-colored countertop, simple tidy lower third of the frame, a small ceramic bowl and a folded cloth nearby, warm soft tones, no people, no text",
+  "cover_image_prompt": "A white range hood above a clean countertop in warm morning sunlight, a removed metal mesh filter leaning beside a bowl of warm water, tidy and bright, no text, no faces",
+  "tips": [
+    {
+      "title": "전원 끄고 식히기",
+      "lines": [
+        "후드 전원 끄고 5분 식히기",
+        "뜨거운 필터에 델 수 있어요"
+      ],
+      "note": "전원 끈 상태에서만 만지세요",
+      "image_prompt": "A hand turning off the range hood switch, the hood light dark, empty clean countertop below"
+    },
+    {
+      "title": "필터 담가 불리기",
+      "lines": [
+        "따뜻한 물+소다 2큰술, 10분",
+        "기름이 알아서 녹아 나와요"
+      ],
+      "note": "",
+      "image_prompt": "A metal mesh filter soaking in a large basin of warm water with baking soda powder on a spoon beside it"
+    },
+    {
+      "title": "결 따라 닦기",
+      "lines": [
+        "부드러운 솔로 결 따라 쓱쓱",
+        "망이 눌리거나 찌그러지지 않아요"
+      ],
+      "note": "철수세미는 쓰지 마세요",
+      "image_prompt": "A hand holding a soft brush gently scrubbing a mesh filter over the sink, soapy bubbles"
+    },
+    {
+      "title": "틈새는 칫솔로",
+      "lines": [
+        "낡은 칫솔로 모서리 훑기",
+        "솔이 못 닿는 기름때가 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "An old toothbrush cleaning the corner of a filter frame, a bowl of water beside it"
+    },
+    {
+      "title": "기름받이 비우기",
+      "lines": [
+        "기름받이는 2주에 한 번 비우기",
+        "가득 차면 넘쳐서 바닥에 떨어져요"
+      ],
+      "note": "",
+      "image_prompt": "A small oil collection cup removed from the hood placed on the countertop with paper towels beside it"
+    },
+    {
+      "title": "겉면은 행주로",
+      "lines": [
+        "세제 푼 따뜻한 물 행주로 닦기",
+        "마른 행주로 마무리하면 얼룩 없어요"
+      ],
+      "note": "전원 끈 상태에서만 닦으세요",
+      "image_prompt": "A hand wiping the white hood surface with a damp cloth, a dry folded cloth ready on the countertop"
+    },
+    {
+      "title": "완전 말려 끼우기",
+      "lines": [
+        "물기 닦고 그늘서 충분히 말리기",
+        "젖은 채 끼우면 곰팡이 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "A clean mesh filter standing to dry on a dish rack by the sunny window, a dry towel underneath"
+    },
+    {
+      "title": "요리 전에 켜기",
+      "lines": [
+        "요리 전 켜고 끝나고 10분 더",
+        "연기와 기름이 덜 쌓여요"
+      ],
+      "note": "",
+      "image_prompt": "A frying pan with sizzling vegetables on the stove below the running range hood, steam rising upward"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스와 산성 세제 섞지 마세요",
+      "유독가스가 생길 수 있어요",
+      "철수세미로 문지르지 마세요"
+    ],
+    "image_prompt": "A steel wool pad, a bleach-type bottle and a vinegar bottle placed apart on the countertop beside a mesh filter, no text or labels"
+  },
+  "save_line": "저장해두고 후드 청소할 때 꺼내보세요",
+  "caption": "레인지후드 청소법, 1년 넘게 모른 척했어요 😅\n김장철·겨울엔 부침, 구이 요리가 늘어서 후드 필터에 기름이 금방 쌓여요.\n전원을 끄고 식힌 뒤 필터를 따뜻한 물에 불리면 훨씬 쉬워요.\n부드러운 솔과 칫솔로 닦고 완전히 말려서 끼우는 게 포인트예요.\n기름받이는 2주에 한 번만 비워도 달라져요.\n저장해두고 후드 청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 레인지후드 필터는 언제 마지막으로 닦으셨어요?",
+  "hook": "후드 필터, 언제 닦았어요?",
+  "hashtags": [
+    "#레인지후드청소",
+    "#후드필터",
+    "#주방꿀팁",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "range hood kitchen",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 732,
+    "has_photo": false
+  }
+}
