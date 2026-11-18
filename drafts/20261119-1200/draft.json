@@ -1,0 +1,116 @@
+{
+  "id": "20261119-1200",
+  "created_at": "2026-11-19T08:01:23.971309+09:00",
+  "publish_at": "2026-11-19T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "전기장판 안전하게 쓰는 사용법",
+  "kind": "가전 꿀팁",
+  "angle": "11월 중순 본격 추위가 시작돼 전기장판을 꺼내는 때라, 접힘·세탁·온도 같은 안전 요령을 짚어 줘요",
+  "title": [
+    "화재 걱정 덜어주는",
+    "전기장판 사용법 5"
+  ],
+  "highlight": "전기장판",
+  "subtitle": "작년 그대로 펴서 쓰고 계시죠?",
+  "scene": "A bright Korean home kitchen with a light wooden countertop by a window with soft morning sunlight, a folded electric heating mat in a plain fabric cover resting on the counter next to a small ceramic mug, simple and clean, bottom third of the frame is empty countertop",
+  "cover_image_prompt": "A folded electric heating mat in a plain fabric cover on a bright wooden Korean kitchen countertop, soft morning sunlight from the window, a ceramic mug beside it, warm cozy mood, empty countertop in the bottom third",
+  "tips": [
+    {
+      "title": "꺼내서 먼저 점검",
+      "lines": [
+        "펴서 겉면과 전선을 눈으로 훑어보세요",
+        "끊김·그을림이 있으면 쓰지 않아요"
+      ],
+      "note": "이상이 있으면 사용을 멈추세요",
+      "image_prompt": "A hand lifting the corner of the unfolded heating mat to inspect the cord and surface on the counter, no text, no faces"
+    },
+    {
+      "title": "접지 말고 말아 보관",
+      "lines": [
+        "보관할 땐 둥글게 느슨하게 마세요",
+        "접힌 자국에서 열선이 상해요"
+      ],
+      "note": "",
+      "image_prompt": "A heating mat loosely rolled up and tied with a soft cloth strip on the counter, no text, no faces"
+    },
+    {
+      "title": "처음엔 낮은 온도로",
+      "lines": [
+        "처음 켤 땐 약으로 10분 먼저 데우세요",
+        "한 번에 높이면 과열이 걱정돼요"
+      ],
+      "note": "",
+      "image_prompt": "A hand turning a heating mat controller dial to the lowest setting on the counter, no text, no faces"
+    },
+    {
+      "title": "자기 전엔 전원 끄기",
+      "lines": [
+        "잠들기 30분 전에 미리 데운 뒤 끄세요",
+        "저온 화상과 과열을 막아줘요"
+      ],
+      "note": "전기장판 위에서 장시간 잠들지 마세요",
+      "image_prompt": "A hand switching off the controller of a heating mat beside a small folded blanket on the counter, no text, no faces"
+    },
+    {
+      "title": "사용 설명서대로 세탁",
+      "lines": [
+        "세탁 표시 확인 후 커버만 빨아주세요",
+        "본체를 물에 담그면 고장나요"
+      ],
+      "note": "본체는 물세탁하지 마세요",
+      "image_prompt": "A removable fabric cover of a heating mat being folded next to a laundry basket on the counter, no text, no faces"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "무거운 짐을 장판 위에 올리지 마세요",
+      "열선이 눌려 과열될 수 있어요",
+      "젖은 채 켜는 것도 위험해요"
+    ],
+    "image_prompt": "A heating mat with a heavy bag and a damp towel placed on it on the kitchen counter, bright morning sunlight, no text, no faces"
+  },
+  "save_line": "저장해두고 장판 꺼낼 때 보세요",
+  "caption": "전기장판 사용법, 해마다 대충 폈다가 뒤늦게 놀랐어요 😅\n11월 추위가 시작돼 5가지만 모았어요.\n꺼내서 점검, 말아서 보관, 낮은 온도부터 쓰는 요령이에요.\n자기 전엔 끄고, 세탁은 커버만 해요.\n저장해두고 장판 꺼낼 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 전기장판은 몇 년 됐어요?",
+  "hook": "전기장판 꺼내기 전, 이것부터",
+  "hashtags": [
+    "#전기장판",
+    "#전기장판사용법",
+    "#가전꿀팁",
+    "#겨울가전"
+  ],
+  "photo_query": "electric heating mat kitchen",
+  "stake": {
+    "title": "점검 없이 쓰면 위험해요",
+    "lines": [
+      "접힌 열선은 과열 원인이 돼요",
+      "해마다 꺼낼 때 1분 점검이 필요해요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 19,
+      "text": "전기장판 꺼내기 전, 이것부터",
+      "score": 86
+    },
+    {
+      "formula": 2,
+      "text": "전기장판 접어 보관 그만!",
+      "score": 78
+    },
+    {
+      "formula": 3,
+      "text": "아무도 안 알려주는 장판 진실",
+      "score": 70
+    }
+  ],
+  "hook_formula": 19,
+  "loop_line": "이제 전기장판 걱정 끝",
+  "image_note": "7장 모두 제미나이",
+  "message": {
+    "message_id": 745,
+    "has_photo": false
+  }
+}
