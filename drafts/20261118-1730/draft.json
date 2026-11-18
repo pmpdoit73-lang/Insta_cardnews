@@ -1,0 +1,125 @@
+{
+  "id": "20261118-1730",
+  "created_at": "2026-11-18T14:01:58.738902+09:00",
+  "publish_at": "2026-11-18T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "겨울 앞두고 전기장판·히터 등 난방가전 교체·점검 주기 총정리",
+  "kind": "가전 꿀팁",
+  "angle": "11월 중순 본격 추위가 오기 전, 창고에서 꺼내 쓰는 난방·겨울 가전을 언제 바꿔야 할지 한눈에 정리",
+  "top_badge": "추위 오기 전 저장!",
+  "title": [
+    "꺼내기 전 확인할",
+    "겨울가전 점검 10"
+  ],
+  "highlight": "겨울가전",
+  "basis": "제품 설명서·한국소비자원 안전 안내 기준",
+  "items": [
+    {
+      "name": "전기장판",
+      "badge": "점검 매해",
+      "detail": "꺼낼 때 선·커버 손상부터 확인해요",
+      "emoji": "🛏️",
+      "icon_prompt": "a folded electric heating mat"
+    },
+    {
+      "name": "전기히터",
+      "badge": "점검 매해",
+      "detail": "전선 피복·먼지 제거 후 사용해요",
+      "emoji": "🔥",
+      "icon_prompt": "a small electric space heater"
+    },
+    {
+      "name": "가습기",
+      "badge": "세척 매일",
+      "detail": "물통은 매일 비우고 헹궈요",
+      "emoji": "💧",
+      "icon_prompt": "a tabletop humidifier"
+    },
+    {
+      "name": "전기포트",
+      "badge": "세척 월 1회",
+      "detail": "물때는 구연산으로 불려 닦아요",
+      "emoji": "🫖",
+      "icon_prompt": "an electric kettle"
+    },
+    {
+      "name": "전기밥솥",
+      "badge": "패킹 1~2년",
+      "detail": "고무패킹은 냄새나면 교체해요",
+      "emoji": "🍚",
+      "icon_prompt": "an electric rice cooker"
+    },
+    {
+      "name": "에어프라이어",
+      "badge": "세척 매번",
+      "detail": "바스켓은 쓸 때마다 닦아요",
+      "emoji": "🍟",
+      "icon_prompt": "an air fryer"
+    },
+    {
+      "name": "공기청정기",
+      "badge": "필터 6개월",
+      "detail": "프리필터는 먼지 털고 교체 표시 확인",
+      "emoji": "🌬️",
+      "icon_prompt": "an air purifier"
+    },
+    {
+      "name": "정수기",
+      "badge": "필터 설명서",
+      "detail": "교체 시기는 제품 안내를 따라요",
+      "emoji": "🚰",
+      "icon_prompt": "a countertop water purifier"
+    },
+    {
+      "name": "멀티탭",
+      "badge": "점검 매해",
+      "detail": "그을음·헐거움 있으면 바꿔요",
+      "emoji": "🔌",
+      "icon_prompt": "a power strip"
+    },
+    {
+      "name": "전기요",
+      "badge": "점검 매해",
+      "detail": "접힌 자국·변색 있으면 사용 중단",
+      "emoji": "🧣",
+      "icon_prompt": "a folded electric blanket"
+    }
+  ],
+  "save_tile": [
+    "꺼내 쓰기 전",
+    "점검 주기표"
+  ],
+  "check": {
+    "title": "사용 전 체크",
+    "lines": [
+      "선 손상 확인",
+      "젖은 채 금지"
+    ]
+  },
+  "footer_line": "저장해두고 겨울가전 꺼낼 때 보세요",
+  "footer_highlight": "겨울가전",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "선이 상한 제품 그냥 쓰기",
+      "전기장판 접어서 켜두기",
+      "멀티탭 하나에 히터 몰아 꽂기"
+    ]
+  },
+  "save_line": "저장해두고 점검할 때 꺼내보세요",
+  "caption": "겨울가전 점검 주기, 해마다 감으로 넘겼어요 😅\n\n추워지기 전에 꼭 확인할 겨울가전 점검 주기를 정리했어요\n제품마다 설명서 기준이 다를 수 있어요\n\n전기장판: 점검 매해 · 꺼낼 때 선·커버 손상부터 확인해요\n전기히터: 점검 매해 · 전선 피복·먼지 제거 후 사용해요\n가습기: 세척 매일 · 물통은 매일 비우고 헹궈요\n전기포트: 세척 월 1회 · 물때는 구연산으로 불려 닦아요\n전기밥솥: 패킹 1~2년 · 고무패킹은 냄새나면 교체해요\n에어프라이어: 세척 매번 · 바스켓은 쓸 때마다 닦아요\n공기청정기: 필터 6개월 · 프리필터는 먼지 털고 교체 표시 확인\n정수기: 필터 설명서 · 교체 시기는 제품 안내를 따라요\n멀티탭: 점검 매해 · 그을음·헐거움 있으면 바꿔요\n전기요: 점검 매해 · 접힌 자국·변색 있으면 사용 중단\n\n기준은 제품 설명서와 소비자원 안전 안내예요. 선이 상하면 바로 교체하세요\n저장해두고 겨울가전 꺼낼 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n여러분 집에서 제일 먼저 꺼내는 겨울가전은 뭐예요?",
+  "hashtags": [
+    "#겨울가전",
+    "#가전꿀팁",
+    "#살림꿀팁",
+    "#전기장판",
+    "#가전관리"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 717,
+    "has_photo": false
+  }
+}
