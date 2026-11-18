@@ -2,7 +2,7 @@
   "id": "20261118-1730",
   "created_at": "2026-11-18T14:01:58.738902+09:00",
   "publish_at": "2026-11-18T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "겨울 앞두고 전기장판·히터 등 난방가전 교체·점검 주기 총정리",
@@ -121,5 +121,10 @@
   "message": {
     "message_id": 717,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18207522343376104",
+  "permalink": "https://www.instagram.com/p/Df4FQWfm3rf/",
+  "published_at": "2026-11-18T17:31:29.078575+09:00",
+  "story_id": "18321047128303677",
+  "threads_promo_id": "18115538402335556"
 }
