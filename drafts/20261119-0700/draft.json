@@ -2,7 +2,7 @@
   "id": "20261119-0700",
   "created_at": "2026-11-18T21:02:11.334439+09:00",
   "publish_at": "2026-11-19T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "레인지후드 기름때 관리법",
@@ -114,5 +114,9 @@
   "message": {
     "message_id": 732,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17912525712576982",
+  "permalink": "https://www.instagram.com/reel/Df5h_ToDsU8/",
+  "published_at": "2026-11-19T07:02:02.626457+09:00",
+  "story_id": "18002207424012795"
 }
