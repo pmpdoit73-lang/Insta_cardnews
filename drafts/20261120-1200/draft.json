@@ -1,0 +1,125 @@
+{
+  "id": "20261120-1200",
+  "created_at": "2026-11-20T08:01:52.919897+09:00",
+  "publish_at": "2026-11-20T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "겨울 소형 김치냉장고 활용법",
+  "kind": "가전 꿀팁",
+  "angle": "미닉스 미니 김치냉장고가 15분 만에 1000대 완판될 만큼 소형 김치냉장고가 인기라, 김장철에 좁은 공간에서 알차게 쓰는 요령을 정리",
+  "title": [
+    "좁은 집도 넉넉한",
+    "소형 김치냉장고 활용법 6"
+  ],
+  "highlight": "소형 김치냉장고",
+  "subtitle": "작아서 금방 꽉 찬다고 느끼셨죠?",
+  "scene": "A compact mini kimchi refrigerator with its door slightly open, placed on a bright Korean home kitchen counter made of light wood, with a small ceramic bowl and a clean dish towel nearby, warm morning sunlight coming through the kitchen window, simple empty countertop in the lower third",
+  "cover_image_prompt": "The compact mini kimchi refrigerator on the light wood kitchen counter in warm morning window light, a small airtight kimchi container placed in front of it, empty countertop at the bottom",
+  "tips": [
+    {
+      "title": "김치통 세워 담기",
+      "lines": [
+        "김치는 납작한 통에 담아 세워 두세요",
+        "칸을 덜 차지해 더 많이 들어가요"
+      ],
+      "note": "",
+      "image_prompt": "Flat rectangular airtight kimchi containers standing upright side by side inside the open mini fridge"
+    },
+    {
+      "title": "김치 80%만 채우기",
+      "lines": [
+        "통은 80%만 채우고 꾹 눌러 담으세요",
+        "발효 가스가 차올라도 넘치지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pressing napa cabbage kimchi down into a container filled to about eighty percent, leaving space at the top"
+    },
+    {
+      "title": "문 쪽은 피하기",
+      "lines": [
+        "김치는 안쪽 깊은 곳에 두세요",
+        "문 여닫을 때 온도 변화가 적어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand placing a kimchi container at the back of the mini fridge shelf away from the door"
+    },
+    {
+      "title": "겉잎으로 덮기",
+      "lines": [
+        "김치 위를 배추 겉잎으로 덮어 두세요",
+        "공기가 닿지 않아 맛이 덜 변해요"
+      ],
+      "note": "",
+      "image_prompt": "Large outer napa cabbage leaves laid over the top of kimchi in a container"
+    },
+    {
+      "title": "간격 두고 놓기",
+      "lines": [
+        "벽과 5cm쯤 띄워 두세요",
+        "열이 잘 빠져 전기도 덜 먹어요"
+      ],
+      "note": "제품 설명서의 설치 간격도 확인하세요",
+      "image_prompt": "The mini kimchi fridge placed on the counter with a visible gap between it and the wall, a hand showing the space"
+    },
+    {
+      "title": "가득 채우지 않기",
+      "lines": [
+        "70% 정도만 채워 찬 공기를 돌리세요",
+        "온도가 고르게 유지돼요"
+      ],
+      "note": "",
+      "image_prompt": "Mini kimchi fridge interior with containers neatly arranged leaving some empty space between them"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "김치통을 꽉꽉 채워 닫지 마세요",
+      "발효 가스가 차 넘치거나 터질 수 있어요",
+      "젖은 손으로 전원 코드를 만지지 마세요"
+    ],
+    "image_prompt": "A kimchi container overfilled to the brim with the lid barely closed, next to a wet kitchen towel on the counter"
+  },
+  "save_line": "저장해두고 김장 담글 때 꺼내보세요",
+  "caption": "소형 김치냉장고 활용법 6가지, 몰라서 꽉꽉 채웠어요 😅\n김치통은 세워 담고 80%만 채우기\n안쪽 깊은 곳에 두고 겉잎으로 덮기\n벽과 5cm 띄우고 70%만 채워 찬 공기 돌리기\n저장해두고 김장 담글 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n여러분 집 김치냉장고는 크기가 얼마나 되나요?",
+  "hook": "김장 전에 김치냉장고 이것부터",
+  "hashtags": [
+    "#소형김치냉장고",
+    "#김치냉장고활용법",
+    "#김장꿀팁",
+    "#주방꿀팁"
+  ],
+  "photo_query": "mini kimchi refrigerator kitchen",
+  "stake": {
+    "title": "이거 모르면 손해예요",
+    "lines": [
+      "김치를 꽉 채우면 가스로 넘쳐요",
+      "좁은 칸은 배치만 바꿔도 훨씬 넓어요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 19,
+      "text": "김장 전에 김치냉장고 이것부터",
+      "score": 88
+    },
+    {
+      "formula": 7,
+      "text": "소형 김치냉장고 이렇게 쓰면 손해",
+      "score": 80
+    },
+    {
+      "formula": 10,
+      "text": "냉장고 꽉 찼다면 5분이면 끝",
+      "score": 72
+    }
+  ],
+  "hook_formula": 19,
+  "loop_line": "이제 김치냉장고 걱정 끝",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 778,
+    "has_photo": false
+  }
+}
