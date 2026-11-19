@@ -1,0 +1,125 @@
+{
+  "id": "20261119-1730",
+  "created_at": "2026-11-19T14:01:35.919420+09:00",
+  "publish_at": "2026-11-19T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "전자레인지 용기 소재별 사용 가능 여부 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "김장철·겨울 남은 음식 데워 먹는 일이 늘어, 용기 소재별 전자레인지 가능 여부를 한눈에 정리",
+  "top_badge": "데우기 전 저장하세요!",
+  "title": [
+    "이거 돌려도 되나?",
+    "전자레인지 용기 10"
+  ],
+  "highlight": "전자레인지",
+  "basis": "식약처·제품 표기 기준 · 용기 하단 마크 확인",
+  "items": [
+    {
+      "name": "내열유리",
+      "badge": "O 가능",
+      "detail": "내열 표기 있으면 OK, 급랭은 피하세요",
+      "emoji": "🥣",
+      "icon_prompt": "a clear heat-resistant glass food container"
+    },
+    {
+      "name": "도자기",
+      "badge": "O 가능",
+      "detail": "금테·은테 장식 없는 것만 쓰세요",
+      "emoji": "🍚",
+      "icon_prompt": "a plain white ceramic bowl"
+    },
+    {
+      "name": "PP 용기",
+      "badge": "O 가능",
+      "detail": "전자레인지 표기 확인, 뚜껑은 열어요",
+      "emoji": "🍱",
+      "icon_prompt": "a polypropylene plastic food container"
+    },
+    {
+      "name": "전자레인지용",
+      "badge": "O 가능",
+      "detail": "전용 표기 있는 용기는 안심해요",
+      "emoji": "♨️",
+      "icon_prompt": "a microwave-safe food container with vented lid"
+    },
+    {
+      "name": "종이용기",
+      "badge": "△ 확인",
+      "detail": "전자레인지 표기 있는 것만 쓰세요",
+      "emoji": "🥡",
+      "icon_prompt": "a paper food container"
+    },
+    {
+      "name": "일반 유리",
+      "badge": "△ 확인",
+      "detail": "내열 표시 없으면 깨질 수 있어요",
+      "emoji": "🫙",
+      "icon_prompt": "a regular glass jar"
+    },
+    {
+      "name": "스티로폼",
+      "badge": "X 불가",
+      "detail": "열에 녹을 수 있어 옮겨 담아요",
+      "emoji": "📦",
+      "icon_prompt": "a white styrofoam food tray"
+    },
+    {
+      "name": "알루미늄",
+      "badge": "X 불가",
+      "detail": "금속이라 불꽃이 튈 수 있어요",
+      "emoji": "🥫",
+      "icon_prompt": "an aluminum foil takeout tray"
+    },
+    {
+      "name": "스테인리스",
+      "badge": "X 불가",
+      "detail": "금속 용기는 절대 넣지 마세요",
+      "emoji": "🍲",
+      "icon_prompt": "a stainless steel pot"
+    },
+    {
+      "name": "금속 수저",
+      "badge": "X 불가",
+      "detail": "스파크 위험, 꼭 빼고 돌려요",
+      "emoji": "🥄",
+      "icon_prompt": "a metal spoon and fork"
+    }
+  ],
+  "save_tile": [
+    "데우기 전",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "돌리기 전 체크",
+    "lines": [
+      "용기 바닥 마크 보기",
+      "금속·금테 있으면 X"
+    ]
+  },
+  "footer_line": "저장해두고 데우기 전 꺼내보세요",
+  "footer_highlight": "저장해두고",
+  "warning": {
+    "title": "이건 절대 넣지 마세요",
+    "lines": [
+      "금속 용기·수저·호일 그릇",
+      "불꽃이 튀어 고장·화재 위험",
+      "밀폐 뚜껑은 열고 돌려요"
+    ]
+  },
+  "save_line": "저장해두고 헷갈릴 때 보세요",
+  "caption": "전자레인지 용기, 그냥 감으로 돌린 적 있어요 😅\n\n전자레인지 용기 소재별 사용 가능 여부 정리했어요\n김장철·겨울 남은 음식 데울 때 꺼내 보세요\n\n내열유리: O 가능 · 내열 표기 있으면 OK, 급랭은 피하세요\n도자기: O 가능 · 금테·은테 장식 없는 것만 쓰세요\nPP 용기: O 가능 · 전자레인지 표기 확인, 뚜껑은 열어요\n전자레인지용: O 가능 · 전용 표기 있는 용기는 안심해요\n종이용기: △ 확인 · 전자레인지 표기 있는 것만 쓰세요\n일반 유리: △ 확인 · 내열 표시 없으면 깨질 수 있어요\n스티로폼: X 불가 · 열에 녹을 수 있어 옮겨 담아요\n알루미늄: X 불가 · 금속이라 불꽃이 튈 수 있어요\n스테인리스: X 불가 · 금속 용기는 절대 넣지 마세요\n금속 수저: X 불가 · 스파크 위험, 꼭 빼고 돌려요\n\n식약처·제품 표기 기준이에요, 용기 바닥 마크를 꼭 확인하세요\n저장해두고 데우기 전 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n여러분 집엔 어떤 용기가 제일 많아요?",
+  "hashtags": [
+    "#전자레인지용기",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁",
+    "#밀폐용기"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 750,
+    "has_photo": false
+  }
+}
