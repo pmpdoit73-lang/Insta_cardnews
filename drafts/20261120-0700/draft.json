@@ -2,7 +2,7 @@
   "id": "20261120-0700",
   "created_at": "2026-11-19T21:02:43.544877+09:00",
   "publish_at": "2026-11-20T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "인덕션 사용·관리법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 764,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18050385782829930",
+  "permalink": "https://www.instagram.com/reel/Df8Gz7XHVr3/",
+  "published_at": "2026-11-20T07:02:22.444887+09:00",
+  "story_id": "18019250270975142"
 }
