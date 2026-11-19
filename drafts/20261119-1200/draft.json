@@ -2,7 +2,7 @@
   "id": "20261119-1200",
   "created_at": "2026-11-19T08:01:23.971309+09:00",
   "publish_at": "2026-11-19T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "전기장판 안전하게 쓰는 사용법",
@@ -112,5 +112,9 @@
   "message": {
     "message_id": 745,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18439372750194050",
+  "permalink": "https://www.instagram.com/reel/Df6EUuNgItN/",
+  "published_at": "2026-11-19T12:02:20.466083+09:00",
+  "story_id": "18134295463687109"
 }
