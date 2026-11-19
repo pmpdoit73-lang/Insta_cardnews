@@ -1,0 +1,109 @@
+{
+  "id": "20261120-0700",
+  "created_at": "2026-11-19T21:02:43.544877+09:00",
+  "publish_at": "2026-11-20T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "인덕션 사용·관리법",
+  "kind": "가전 꿀팁",
+  "angle": "밀레 후드 일체형 인덕션 등 빌트인 가전 소식이 나오고 김장철 큰 냄비 조리가 늘어, 인덕션 상판과 냄비를 오래 쓰는 요령을 짚었어요.",
+  "title": [
+    "상판 흠집 막는",
+    "인덕션 사용법 7"
+  ],
+  "highlight": "흠집 막는",
+  "subtitle": "비싼 상판, 그냥 쓰고 계셨죠?",
+  "scene": "A bright Korean home kitchen in the morning with soft sunlight from a window on the left, a clean light wood-look countertop, a black glass induction cooktop at the center with a stainless steel pot on it, a folded white dish cloth and a small ceramic jar of baking soda nearby, simple and tidy, warm tones, no people, no text",
+  "cover_image_prompt": "The induction cooktop in the sunlit Korean kitchen with a shiny clean glass surface and a stainless steel pot with a gentle steam rising, the lower third of the picture is plain countertop",
+  "tips": [
+    {
+      "title": "자석으로 냄비 확인",
+      "lines": [
+        "냄비 바닥에 자석을 대 보세요",
+        "붙으면 인덕션에 쓸 수 있어요"
+      ],
+      "note": "알루미늄·유리 냄비는 안 될 수 있어요",
+      "image_prompt": "A hand holding a small magnet against the bottom of a stainless steel pot above the countertop beside the induction cooktop"
+    },
+    {
+      "title": "화구에 맞는 냄비",
+      "lines": [
+        "화구 원 크기에 맞는 냄비를 쓰세요",
+        "열이 고르게 전달돼 효율이 좋아요"
+      ],
+      "note": "",
+      "image_prompt": "A medium pot placed exactly centered on the circle marking of the induction cooktop, top-down angle"
+    },
+    {
+      "title": "끌지 말고 들기",
+      "lines": [
+        "냄비는 끌지 말고 들어 옮기세요",
+        "유리 상판에 긁힌 자국을 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Two hands lifting a pot straight up from the glass cooktop, no sliding"
+    },
+    {
+      "title": "식은 뒤 닦기",
+      "lines": [
+        "잔열 표시등이 꺼진 뒤 닦으세요",
+        "뜨거울 때 닦으면 화상 위험해요"
+      ],
+      "note": "젖은 행주는 완전히 식은 뒤에만",
+      "image_prompt": "A hand wiping the cooled glass cooktop with a damp white cloth, the surface clean and reflective"
+    },
+    {
+      "title": "눌은 자국 불리기",
+      "lines": [
+        "베이킹소다 반죽 얹고 10분 두세요",
+        "문질러 닦지 않아도 때가 불어요"
+      ],
+      "note": "철수세미는 쓰지 마세요",
+      "image_prompt": "A small spoonful of baking soda paste spread on a dull burnt spot on the glass cooktop, a soft cloth beside it"
+    },
+    {
+      "title": "넘친 국물 바로",
+      "lines": [
+        "국물이 넘치면 불 끄고 닦으세요",
+        "눌어붙기 전에 닦기가 훨씬 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "A hand wiping a small soup spill beside a pot with a dry cloth on the cooktop, the heat off"
+    },
+    {
+      "title": "빈 냄비 가열 금지",
+      "lines": [
+        "빈 냄비는 올려 두고 켜지 마세요",
+        "과열되면 냄비 바닥이 상해요"
+      ],
+      "note": "예열도 재료나 기름을 넣고 하세요",
+      "image_prompt": "A pot with a little cooking oil and sliced onions placed on the cooktop, ready to cook"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "철수세미·거친 수세미로 닦기",
+      "상판 위에 칼·뚜껑 올려 두기",
+      "금이 간 상판은 바로 사용 중단"
+    ],
+    "image_prompt": "A steel wool scrubber, a knife and a pot lid placed on the glass induction cooktop in the sunlit kitchen, no people"
+  },
+  "save_line": "저장해두고 상판 청소할 때 꺼내보세요",
+  "caption": "인덕션 사용법, 상판 긁고 나서야 알았어요 😅\n냄비는 자석으로 확인하고 화구 크기에 맞춰 쓰세요.\n끌지 말고 들어서 옮기면 흠집을 줄일 수 있어요.\n눌은 자국은 베이킹소다 반죽을 10분 얹어 불려 보세요.\n빈 냄비 가열은 꼭 피하세요.\n저장해두고 상판 청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 인덕션은 몇 년 됐어요?",
+  "hook": "인덕션, 이거 모르면 손해",
+  "hashtags": [
+    "#인덕션",
+    "#인덕션사용법",
+    "#인덕션청소",
+    "#가전꿀팁",
+    "#주방꿀팁"
+  ],
+  "photo_query": "induction cooktop kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 764,
+    "has_photo": false
+  }
+}
