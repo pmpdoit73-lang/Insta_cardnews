@@ -2,7 +2,7 @@
   "id": "20261120-1200",
   "created_at": "2026-11-20T08:01:52.919897+09:00",
   "publish_at": "2026-11-20T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "겨울 소형 김치냉장고 활용법",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 778,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18173231917476656",
+  "permalink": "https://www.instagram.com/reel/Df8pJfbj4I2/",
+  "published_at": "2026-11-20T12:02:37.088462+09:00",
+  "story_id": "17999573859101926"
 }
