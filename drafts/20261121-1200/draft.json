@@ -1,0 +1,126 @@
+{
+  "id": "20261121-1200",
+  "created_at": "2026-11-21T08:01:56.985854+09:00",
+  "publish_at": "2026-11-21T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "음식물 쓰레기 냄새 없이 쓰는 주방 배수구 관리법",
+  "kind": "살림 꿀팁",
+  "angle": "겨울 김장철에 배추 손질 찌꺼기가 늘어 배수구가 막히고 냄새가 나기 쉬운 때라, 쓰던 재료로 쉽게 관리하는 요령이에요",
+  "title": [
+    "냄새 확 잡는",
+    "주방 배수구 관리법 6"
+  ],
+  "highlight": "냄새 확",
+  "subtitle": "설거지할 때마다 올라오는 냄새, 참으셨죠?",
+  "scene": "Bright Korean home kitchen, light wood countertop beside a stainless steel sink with a round drain strainer, a small dish brush and a baking soda jar on the counter, soft morning sunlight from a window on the left, warm clean mood, empty simple countertop in the lower third",
+  "cover_image_prompt": "Stainless steel kitchen sink with a clean round drain strainer in focus, a small jar of baking soda and a dish brush on the light wood countertop beside it, soft morning window sunlight, warm and bright",
+  "tips": [
+    {
+      "title": "거름망 매일 비우기",
+      "lines": [
+        "음식물은 설거지 후 바로 버려요",
+        "남은 찌꺼기가 썩어 냄새가 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand lifting the drain strainer basket out of the sink to empty small food scraps into a bin"
+    },
+    {
+      "title": "베이킹소다 구연산",
+      "lines": [
+        "소다 3큰술 뿌리고 식초 1컵 부어요",
+        "거품이 때를 불려 냄새가 줄어요"
+      ],
+      "note": "락스와는 절대 섞지 마세요",
+      "image_prompt": "A hand sprinkling baking soda from a spoon into a sink drain, a small cup of vinegar waiting beside it"
+    },
+    {
+      "title": "뜨거운 물 흘리기",
+      "lines": [
+        "소다 넣고 10분 뒤 뜨거운 물을 부어요",
+        "굳은 기름이 풀려 내려가요"
+      ],
+      "note": "PVC 배관은 끓는 물 대신 따뜻한 물",
+      "image_prompt": "An electric kettle pouring hot water slowly into the sink drain with gentle steam rising"
+    },
+    {
+      "title": "거름망 솔질",
+      "lines": [
+        "주 1회 작은 솔에 세제로 닦아요",
+        "틈새 물때와 끈적임이 사라져요"
+      ],
+      "note": "",
+      "image_prompt": "A hand scrubbing the removed drain strainer with a small brush and dish soap over the sink"
+    },
+    {
+      "title": "배수구 뚜껑 닦기",
+      "lines": [
+        "뚜껑 뒷면을 주 1회 따로 닦아요",
+        "냄새가 숨어 있는 곳이라 효과가 커요"
+      ],
+      "note": "",
+      "image_prompt": "A hand wiping the underside of a stainless drain cover with a sponge, cover held up in the sunlight"
+    },
+    {
+      "title": "물기 말리기",
+      "lines": [
+        "거름망을 뒤집어 하루 한 번 말려요",
+        "축축하지 않으면 세균이 덜 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "A clean drain strainer placed upside down on a dish rack beside the sink in morning light"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스와 식초를 같이 붓지 마세요",
+      "유해 가스가 나와 위험해요",
+      "기름은 그대로 흘려 버리지 마세요"
+    ],
+    "image_prompt": "A kitchen sink counter with a bottle of bleach and a bottle of vinegar placed far apart, a cooking oil pan nearby, no people"
+  },
+  "save_line": "배수구 냄새로 고민하는 친구한테 보내주세요",
+  "caption": "주방 배수구 냄새, 6가지로 잡았어요 😅\n거름망 비우기부터 소다와 식초, 뜨거운 물 흘리기까지 정리했어요.\n주 1회만 솔로 닦아도 냄새가 확 줄어요.\n김장철엔 찌꺼기가 많아서 더 신경 써야 해요.\n락스와 식초는 절대 섞지 마세요.\n저장해두고 배수구 청소할 때 꺼내보세요. 배수구 냄새로 고민하는 가족·친구에게 보내주세요.\n여러분 집 배수구는 얼마나 자주 닦으세요?",
+  "hook": "배수구 냄새, 이거 6개면 끝",
+  "hashtags": [
+    "#주방배수구",
+    "#배수구냄새",
+    "#배수구청소",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "kitchen sink drain",
+  "stake": {
+    "title": "배수구 방치하면 손해",
+    "lines": [
+      "냄새와 막힘으로 업체를 부르게 돼요",
+      "거름망 하루 1번이면 대부분 막아요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 10,
+      "text": "배수구 냄새 나면 10분이면 끝",
+      "score": 78
+    },
+    {
+      "formula": 2,
+      "text": "배수구 락스 그만, 소다 3큰술",
+      "score": 80
+    },
+    {
+      "formula": 19,
+      "text": "김장 전에 배수구 이것부터",
+      "score": 72
+    }
+  ],
+  "hook_formula": 2,
+  "loop_line": "이제 배수구 락스 그만",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 828,
+    "has_photo": false
+  }
+}
