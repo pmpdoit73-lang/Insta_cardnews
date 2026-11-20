@@ -435,6 +435,8 @@ def _skill_schema(base):
     props["hook"] = {"type": "string",
                      "description": "hook_options 중 점수가 가장 높은 것의 text를 글자 그대로 (릴스 첫 화면 맨 위)"}
     props["tips"] = {**props["tips"], "description": f"팁 카드 {SKILL_TIPS_MIN}~{SKILL_TIPS_MAX}장. 서로 다른 활용법·관리법"}
+    props["save_line"] = {"type": "string",
+                          "description": "마지막 카드 보내기 유도 한 줄 20자 이내 (예: '자취 시작한 친구한테 보내주세요')"}
     props["caption"] = {**props["caption"],
                         "description": props["caption"]["description"]
                         + f". 첫 줄은 40자 이내, 첫 {PEEK}자(더보기 전) 안에 키워드와 숫자(개수·시간·양)"}
@@ -454,13 +456,27 @@ SKILL_RULES = (
     "- 릴스 첫 화면 문구(hook): 아래 훅 공식 중 이 주제에 맞는 서로 다른 공식 3개로 hook_options를 쓰고 "
     "점수를 매긴 뒤, 가장 높은 것을 hook에 글자 그대로 넣어. 첫 화면은 2초 안에 읽혀야 해.\n"
     "- loop_line은 hook의 핵심 낱말을 그대로 다시 써서, 영상이 처음으로 돌아갈 때 자연스럽게 이어지게.\n"
-    f"- 캡션 첫 줄은 짧게(40자 이내). 첫 {PEEK}자 안에 검색 키워드와 숫자가 보여야 해 (그 뒤는 '더보기'로 숨겨짐)."
+    f"- 캡션 첫 줄은 짧게(40자 이내). 첫 {PEEK}자 안에 검색 키워드와 숫자가 보여야 해 (그 뒤는 '더보기'로 숨겨짐).\n"
+    "\n## 추가 규칙 (보내기·3초, 2026-11-20 viral-instagram-reels 스킬)\n"
+    "- 새 사람에게 퍼지는 가장 큰 신호는 'DM으로 친구에게 보내기'야 (좋아요보다 몇 배 커). 그래서 (위의 save_line 규칙 대신) save_line은 "
+    "'OO하는 친구한테 보내주세요'처럼 이걸 꼭 봐야 할 한 사람(상황)을 떠올리게 써. '팔로우' 부탁은 쓰지 마.\n"
+    "- 캡션에도 같은 보내기 한 줄을 넣어 ('~하는 가족·친구에게 보내주세요').\n"
+    "- 첫 3초가 갈림길: hook은 인사·소개('안녕하세요', '오늘은') 없이 바로 구체적인 손해·숫자·결과로. "
+    "끝까지 보면 얻는 것(결과)을 미리 살짝 보여 줘.\n"
+    "- 소리를 끄고 봐도 다 통하게: 화면 글씨만으로 이해돼야 해.\n"
+    "- 우리를 처음 보는 사람 기준으로 써. '지난번에', '저번 영상' 같은 말 금지.\n"
+    "- 캡션 첫 줄의 검색 키워드(가전 이름+고민)를 표지 제목에도 같은 낱말로 넣어 (화면 글씨도 검색에 잡힘)."
 )
 
 
 def _hook_text():
     """훅 공식 목록 + (있으면) 참고 계정에서 요즘 터진 공식 (/ig-viral 결과)."""
     text = "\n\n## 훅 공식 (hook_options에 쓸 번호)\n" + HOOK_FORMULAS
+    try:
+        import watch  # 직접 본 참고 릴스 분석 (watch.py). 여기서 불러야 서로 부르는 문제가 없음
+        text += watch.prompt_text()
+    except Exception as e:
+        print(f"[writer] 참고 릴스 분석 못 붙임: {e}")
     try:
         swipe = json.loads(SWIPE_FILE.read_text(encoding="utf-8"))
     except (FileNotFoundError, ValueError):
@@ -514,6 +530,10 @@ def skill_problems(post):
         errs.append("hook_options가 서로 다른 공식 3개가 아님")
     elif post.get("hook") not in [o.get("text") for o in opts]:
         errs.append("hook이 hook_options 중 하나와 글자 그대로 같지 않음")
+    if "보내" not in (post.get("save_line") or "") + cap:
+        errs.append("save_line이나 캡션에 '친구에게 보내주세요' 같은 보내기 유도가 없음")
+    if any(w in (post.get("hook") or "") for w in ("안녕", "오늘은")):
+        errs.append("hook이 인사·소개로 시작함 (바로 손해·숫자·결과로)")
     if post.get("hook") and post.get("loop_line") and not _shares_word(post["hook"], post["loop_line"]):
         errs.append("loop_line이 hook의 낱말을 다시 쓰지 않음")
     return errs

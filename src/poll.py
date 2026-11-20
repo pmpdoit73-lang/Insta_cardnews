@@ -2,6 +2,7 @@
 새 댓글에는 자동으로 답글을 단다 (comments.py). 밤 9시 이후엔 하루 한 번 숫자 보고서 (insights.py).
 아침 8시 이후엔 하루 한 번 소통 안내, gil이 게시물 캡처를 보내면 맞춤 댓글 초안 (engage.py).
 '벤치'라고 적어 보낸 참고 계정 릴스 탭 캡처는 터진 릴스·훅 공식 분석 (viral.py).
+릴스 링크나 '벤치' 영상 파일은 장면으로 잘라 직접 보고 분석 (watch.py).
 07:00 목록형·12:00 스킬형은 릴스(영상), 17:30 인포그래픽형은 캐러셀(사진 넘기기)로 올린다.
 
 승인(✅)을 안 눌러도 게시 시각이 되면 올린다. ⏭ 안 올리기를 누른 회차만 건너뛴다.
@@ -17,6 +18,7 @@ import comments
 import draft
 import engage
 import viral
+import watch
 import hosting
 import insights
 import instagram
@@ -154,6 +156,14 @@ def process_buttons():
     for u in telegram.get_updates(offset):
         offset = max(offset, u["update_id"] + 1)
         msg = u.get("message")
+        if msg and str(msg.get("chat", {}).get("id")) == allowed and watch.wants(msg):
+            try:  # 릴스 링크 또는 '벤치' 영상 파일 → 장면으로 잘라 직접 보고 분석 (watch.py)
+                watch.analyze(msg)
+            except Exception as e:
+                print(f"[poll] 릴스 보기 실패: {e}")
+                telegram.send_text(f"⚠️ 릴스를 보고 분석하지 못했어요: {str(e)[:150]}")
+            write_offset(offset)
+            continue
         if msg and str(msg.get("chat", {}).get("id")) == allowed and viral.wants(msg):
             try:  # '벤치'라고 적어 보낸 참고 계정 릴스 탭 캡처 → 터진 릴스·공식 분석 (viral.py)
                 viral.analyze(msg)
