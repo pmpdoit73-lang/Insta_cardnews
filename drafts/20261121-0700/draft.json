@@ -1,0 +1,109 @@
+{
+  "id": "20261121-0700",
+  "created_at": "2026-11-20T21:01:29.041913+09:00",
+  "publish_at": "2026-11-21T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "행주·수세미 냄새 없는 위생 관리법",
+  "kind": "살림 꿀팁",
+  "angle": "겨울엔 빨래가 덜 마르고 주방 습기가 오래 남아 행주 쿰쿰한 냄새가 쉽게 생기는데, 연말 집밥과 김장 뒤 설거지가 늘어나는 때에 딱 맞는 요령이라 골랐어요.",
+  "title": [
+    "냄새 없이 쓰는",
+    "행주 관리법 7"
+  ],
+  "highlight": "냄새 없이",
+  "subtitle": "행주 쿰쿰한 냄새, 참고 쓰셨죠?",
+  "scene": "A bright Korean home kitchen in morning window sunlight, a clean light-colored countertop with a neatly folded white cotton dishcloth as the main subject, a stainless steel pot and a small ceramic bowl in soft focus, warm cozy mood, lower third of the frame is plain empty countertop",
+  "cover_image_prompt": "A fresh white cotton dishcloth neatly folded in the center of the sunlit countertop in the Korean kitchen, stainless pot softly blurred behind, warm morning light from the window, lower third plain countertop",
+  "tips": [
+    {
+      "title": "쓰고 바로 헹구기",
+      "lines": [
+        "쓴 직후 흐르는 물에 헹궈 꽉 짜세요",
+        "젖은 채 두면 냄새균이 늘어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand wringing out a white dishcloth under running water at the kitchen sink, sunlight on the water"
+    },
+    {
+      "title": "펼쳐서 말리기",
+      "lines": [
+        "접지 말고 펼쳐서 걸어 말리세요",
+        "완전히 말라야 세균이 덜 불어요"
+      ],
+      "note": "",
+      "image_prompt": "A white dishcloth spread flat and hung on a rail by the sunny kitchen window"
+    },
+    {
+      "title": "5분 삶기",
+      "lines": [
+        "물 끓인 뒤 행주 넣고 5분 삶기",
+        "열로 냄새와 세균을 함께 줄여요"
+      ],
+      "note": "삶는 동안 자리 비우지 마세요",
+      "image_prompt": "A stainless steel pot with white dishcloths simmering in water on the counter-side stove, gentle steam, hand holding wooden chopsticks"
+    },
+    {
+      "title": "과탄산 불리기",
+      "lines": [
+        "뜨거운 물 1L에 과탄산 1큰술",
+        "30분 불리면 누런 때가 빠져요"
+      ],
+      "note": "고무장갑 끼고, 식초와 섞지 마세요",
+      "image_prompt": "A plastic basin with warm water and a dishcloth soaking, a tablespoon of white powder beside it, rubber gloves on the counter"
+    },
+    {
+      "title": "용도별로 나누기",
+      "lines": [
+        "식탁·조리대·그릇용 3장 구분",
+        "교차오염을 막아 더 위생적이에요"
+      ],
+      "note": "",
+      "image_prompt": "Three white dishcloths in a row on the countertop, each with a different colored stripe at the edge"
+    },
+    {
+      "title": "수세미 세워 말리기",
+      "lines": [
+        "물기 꽉 짜 세워서 말리세요",
+        "바닥 물기가 없어 냄새가 덜해요"
+      ],
+      "note": "",
+      "image_prompt": "A dish sponge standing upright on a small stainless holder by the sink, sunlight on the counter"
+    },
+    {
+      "title": "제때 교체하기",
+      "lines": [
+        "수세미는 한 달 안에 새것으로",
+        "닳고 냄새나면 세균 걱정이 커져요"
+      ],
+      "note": "",
+      "image_prompt": "An old worn sponge next to a fresh new sponge on the countertop, hand pointing between them"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스와 식초를 같이 쓰지 마세요",
+      "유해 가스가 나와 위험해요",
+      "젖은 행주를 뭉쳐 두지 마세요"
+    ],
+    "image_prompt": "A damp crumpled dishcloth left in a bunch beside the sink next to separate cleaning bottles, no labels visible"
+  },
+  "save_line": "저장해두고 행주 삶는 날 꺼내보세요",
+  "caption": "행주 관리법, 냄새가 나도 그냥 빨아서 또 썼어요 😅\n쓰고 바로 헹궈 꽉 짜고 펼쳐서 말리는 게 기본이에요.\n냄새가 나면 5분 삶거나 과탄산 1큰술로 30분 불려 보세요.\n식탁·조리대·그릇용으로 나누면 더 위생적이에요.\n수세미도 세워 말리고 한 달 안에 바꿔 주세요.\n저장해두고 행주 삶는 날 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 행주를 며칠에 한 번 삶으세요?",
+  "hook": "행주 아직도 그냥 빠세요?",
+  "hashtags": [
+    "#행주관리법",
+    "#행주삶기",
+    "#살림꿀팁",
+    "#주방꿀팁",
+    "#수세미관리"
+  ],
+  "photo_query": "white dishcloth kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 805,
+    "has_photo": false
+  }
+}
