@@ -2,7 +2,7 @@
   "id": "20261120-1730",
   "created_at": "2026-11-20T14:02:21.219313+09:00",
   "publish_at": "2026-11-20T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "세탁기·건조기 세탁물 소재별 건조기 사용 가능 여부 총정리",
@@ -121,5 +121,10 @@
   "message": {
     "message_id": 784,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18099262310131656",
+  "permalink": "https://www.instagram.com/p/Df9O4Hbm1rk/",
+  "published_at": "2026-11-20T17:31:45.770589+09:00",
+  "story_id": "18378337156209605",
+  "threads_promo_id": "17878340598584655"
 }
