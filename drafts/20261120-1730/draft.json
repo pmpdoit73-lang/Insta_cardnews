@@ -1,0 +1,125 @@
+{
+  "id": "20261120-1730",
+  "created_at": "2026-11-20T14:02:21.219313+09:00",
+  "publish_at": "2026-11-20T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "세탁기·건조기 세탁물 소재별 건조기 사용 가능 여부 총정리",
+  "kind": "가전 꿀팁",
+  "angle": "겨울 빨래 말리기 힘든 계절, 건조기에 넣어도 되는 옷과 안 되는 옷을 헷갈리는 사람이 많아서 골랐어요",
+  "top_badge": "빨래 돌리기 전 저장!",
+  "title": [
+    "건조기 돌리다 후회한",
+    "소재별 가능 여부 10"
+  ],
+  "highlight": "가능 여부",
+  "basis": "의류 세탁표시·건조기 설명서 기준",
+  "items": [
+    {
+      "name": "면 티셔츠",
+      "badge": "O 가능",
+      "detail": "저온으로 돌리면 수축을 줄여요",
+      "emoji": "👕",
+      "icon_prompt": "a folded plain cotton t-shirt"
+    },
+    {
+      "name": "수건",
+      "badge": "O 가능",
+      "detail": "보송하고 부드럽게 마릅니다",
+      "emoji": "🧺",
+      "icon_prompt": "a stack of fluffy white towels"
+    },
+    {
+      "name": "양말",
+      "badge": "O 가능",
+      "detail": "망에 넣으면 짝 잃기 방지돼요",
+      "emoji": "🧦",
+      "icon_prompt": "a pair of cotton socks"
+    },
+    {
+      "name": "속옷",
+      "badge": "△ 주의",
+      "detail": "고무줄·와이어는 상할 수 있어요",
+      "emoji": "🩲",
+      "icon_prompt": "a pair of plain cotton underwear"
+    },
+    {
+      "name": "울 니트",
+      "badge": "X 금지",
+      "detail": "열과 회전에 줄고 뭉쳐요",
+      "emoji": "🧶",
+      "icon_prompt": "a knitted wool sweater"
+    },
+    {
+      "name": "실크",
+      "badge": "X 금지",
+      "detail": "열에 손상돼 눕혀서 말려요",
+      "emoji": "🎀",
+      "icon_prompt": "a smooth silk scarf"
+    },
+    {
+      "name": "패딩",
+      "badge": "△ 확인",
+      "detail": "라벨 확인 후 저온·건조볼 사용",
+      "emoji": "🧥",
+      "icon_prompt": "a puffy winter padded jacket"
+    },
+    {
+      "name": "청바지",
+      "badge": "O 가능",
+      "detail": "뒤집어 저온으로, 줄어듦 주의",
+      "emoji": "👖",
+      "icon_prompt": "a pair of folded blue jeans"
+    },
+    {
+      "name": "운동복",
+      "badge": "△ 저온",
+      "detail": "기능성 원단은 고온에 약해요",
+      "emoji": "🏃",
+      "icon_prompt": "a folded sports training shirt"
+    },
+    {
+      "name": "신발",
+      "badge": "X 금지",
+      "detail": "변형·고장 우려, 그늘에 말려요",
+      "emoji": "👟",
+      "icon_prompt": "a pair of sneakers"
+    }
+  ],
+  "save_tile": [
+    "건조기 돌리기",
+    "전에 보는 표"
+  ],
+  "check": {
+    "title": "돌리기 전 체크",
+    "lines": [
+      "세탁표시 먼저 확인",
+      "먼지필터 비우기"
+    ]
+  },
+  "footer_line": "저장해두고 빨래 돌릴 때 꺼내보세요",
+  "footer_highlight": "빨래 돌릴 때",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "울·실크를 건조기에 넣기",
+      "먼지필터 안 비우고 돌리기",
+      "세탁표시 확인 없이 한꺼번에"
+    ]
+  },
+  "save_line": "저장해두고 건조기 쓸 때 보세요",
+  "caption": "건조기에 넣었다가 니트가 아기 옷이 된 적 있어요 😅\n\n건조기에 넣어도 되는 옷과 안 되는 옷, 한 장으로 정리했어요.\n\n면 티셔츠: O 가능 · 저온으로 돌리면 수축을 줄여요\n수건: O 가능 · 보송하고 부드럽게 마릅니다\n양말: O 가능 · 망에 넣으면 짝 잃기 방지돼요\n속옷: △ 주의 · 고무줄·와이어는 상할 수 있어요\n울 니트: X 금지 · 열과 회전에 줄고 뭉쳐요\n실크: X 금지 · 열에 손상돼 눕혀서 말려요\n패딩: △ 확인 · 라벨 확인 후 저온·건조볼 사용\n청바지: O 가능 · 뒤집어 저온으로, 줄어듦 주의\n운동복: △ 저온 · 기능성 원단은 고온에 약해요\n신발: X 금지 · 변형·고장 우려, 그늘에 말려요\n\n의류 세탁표시와 건조기 설명서 기준이에요. 옷마다 라벨을 꼭 먼저 확인하세요.\n\n저장해두고 빨래 돌릴 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n\n여러분은 건조기에 넣었다가 망한 옷 있으세요?",
+  "hashtags": [
+    "#건조기꿀팁",
+    "#건조기사용법",
+    "#빨래꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 784,
+    "has_photo": false
+  }
+}
