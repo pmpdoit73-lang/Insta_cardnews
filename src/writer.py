@@ -198,6 +198,11 @@ def _checked(user_msg, schema, check=None):
     errs = check(post)
     if errs:  # 규칙을 어기면 한 번 더 쓰게 한다
         print(f"[writer] 규칙 위반 → 다시 씀: {errs}")
+        try:  # 자기 규칙 위반도 기록 (주간 '고칠 점'에서 반복되면 코드로 막자고 제안)
+            import observer
+            observer.log("rule", "; ".join(errs))
+        except Exception:
+            pass
         post = _ask(user_msg + "\n\n주의: 지난번 대본은 이 규칙을 어겼어. 고쳐서 다시 써: " + "; ".join(errs), schema)
         errs = check(post)
         if errs:

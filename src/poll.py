@@ -18,6 +18,7 @@ import comments
 import draft
 import engage
 import viral
+import observer
 import watch
 import hosting
 import insights
@@ -101,6 +102,7 @@ def try_publish(d):
         print(f"[poll] {d['id']} 게시 실패: {e}")
         d["status"] = "failed"
         d["error"] = str(e)
+        observer.log("publish_failed", e, d)
     draft.save(d)
     draft.refresh(d)
     if d["status"] == "published":
@@ -132,12 +134,14 @@ def handle(callback):
         d["status"] = "pending"
         msg = "승인 취소"
     elif value == "skip":
+        observer.log("skip", "", d)
         d["status"] = "skipped"
         msg = "오늘은 안 올릴게요"
     elif value == "now":
         try_publish(d)
         return "게시 완료!" if d["status"] == "published" else "게시 실패, 메시지를 확인해 주세요"
     elif value in ("rewrite", "retext", "photo"):
+        observer.log(value, "", d)  # 마음에 안 든 초안 기록 (주간 '고칠 점' 제안용)
         {"rewrite": draft.rewrite, "retext": draft.retext, "photo": draft.new_photos}[value](d)
         draft.send(d)
         return {"rewrite": "새 이슈로 새로 만들었어요", "retext": "같은 이슈로 글만 새로 썼어요",
@@ -156,6 +160,13 @@ def process_buttons():
     for u in telegram.get_updates(offset):
         offset = max(offset, u["update_id"] + 1)
         msg = u.get("message")
+        if msg and str(msg.get("chat", {}).get("id")) == allowed and observer.wants(msg):
+            try:  # '피드백 …' → 기록해 두었다가 일요일 밤 '이번 주 고칠 점'에서 제안 (observer.py)
+                observer.note(msg)
+            except Exception as e:
+                print(f"[poll] 피드백 기록 실패: {e}")
+            write_offset(offset)
+            continue
         if msg and str(msg.get("chat", {}).get("id")) == allowed and watch.wants(msg):
             try:  # 릴스 링크 또는 '벤치' 영상 파일 → 장면으로 잘라 직접 보고 분석 (watch.py)
                 watch.analyze(msg)
@@ -234,5 +245,9 @@ if __name__ == "__main__":
         insights.maybe_report()
     except Exception as e:
         print(f"[poll] 숫자 보고서 실패: {e}")
+    try:  # 일요일 밤 한 번 '이번 주 고칠 점' 제안 (task-observer 방식, observer.py)
+        observer.maybe_review()
+    except Exception as e:
+        print(f"[poll] 고칠 점 제안 실패: {e}")
     if failed:
         sys.exit(1)
