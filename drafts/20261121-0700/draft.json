@@ -2,7 +2,7 @@
   "id": "20261121-0700",
   "created_at": "2026-11-20T21:01:29.041913+09:00",
   "publish_at": "2026-11-21T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "행주·수세미 냄새 없는 위생 관리법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 805,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18381197539213928",
+  "permalink": "https://www.instagram.com/reel/Df-rmqCG_9t/",
+  "published_at": "2026-11-21T07:02:15.755339+09:00",
+  "story_id": "18292982461295540"
 }
