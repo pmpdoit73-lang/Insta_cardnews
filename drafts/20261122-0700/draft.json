@@ -2,7 +2,7 @@
   "id": "20261122-0700",
   "created_at": "2026-11-21T21:02:46.821493+09:00",
   "publish_at": "2026-11-22T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "방충망 청소법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 847,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18189395683420971",
+  "permalink": "https://www.instagram.com/reel/DgBQZUTFfXf/",
+  "published_at": "2026-11-22T07:02:31.734795+09:00",
+  "story_id": "18102080162395050"
 }
