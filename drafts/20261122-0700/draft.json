@@ -1,0 +1,109 @@
+{
+  "id": "20261122-0700",
+  "created_at": "2026-11-21T21:02:46.821493+09:00",
+  "publish_at": "2026-11-22T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "방충망 청소법",
+  "kind": "살림 꿀팁",
+  "angle": "11월 말 겨울 앞두고 창문을 닫기 전, 여름 내내 쌓인 먼지와 기름때를 방충망에서 털어내는 대청소 시기와 맞고, 최근 기사에서 방충망 10분 청소가 화제라 골랐어요.",
+  "title": [
+    "먼지·기름때 싹 잡는",
+    "방충망 청소법 7"
+  ],
+  "highlight": "방충망",
+  "subtitle": "창문 닫기 전에 방충망 닦으셨나요?",
+  "scene": "A bright Korean home kitchen in morning light, a clean white window with a mesh screen in its sliding frame beside a light wood countertop, sunlight streaming through the window, a small bowl and a soft sponge on the counter, warm cozy tone, simple empty counter area at the bottom third",
+  "cover_image_prompt": "In the bright Korean kitchen by the sunny window, a clean mesh window screen glowing in morning light with a soft sponge and a small bowl of soapy water placed on the light wood countertop, warm bright mood",
+  "tips": [
+    {
+      "title": "먼저 마른 솔질",
+      "lines": [
+        "부드러운 솔로 위에서 아래로 쓸어요",
+        "물 묻히기 전 먼지를 털어야 덜 번져요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding a soft dry brush sweeping dust down a mesh window screen by the sunny window"
+    },
+    {
+      "title": "물 뿌리고 닦기",
+      "lines": [
+        "분무기로 물을 뿌리고 1분 두세요",
+        "먼지가 불어서 한결 쉽게 닦여요"
+      ],
+      "note": "창틀 아래 바닥에 수건을 깔아 두세요",
+      "image_prompt": "A hand spraying water from a spray bottle onto a mesh window screen, a folded towel laid on the counter below"
+    },
+    {
+      "title": "젖은 스펀지 쓸기",
+      "lines": [
+        "물 적신 스펀지로 한 방향으로 닦아요",
+        "망이 늘어나지 않고 먼지가 모여요"
+      ],
+      "note": "세게 누르면 망이 늘어나요",
+      "image_prompt": "A hand wiping a mesh window screen in one direction with a damp sponge, a bowl of water on the counter"
+    },
+    {
+      "title": "주방세제 한 방울",
+      "lines": [
+        "미온수 1컵에 주방세제 한 방울 풀어요",
+        "기름기 낀 주방 쪽 방충망이 개운해져요"
+      ],
+      "note": "",
+      "image_prompt": "A small bowl of lightly soapy lukewarm water with a sponge beside it on the light wood counter, window screen behind"
+    },
+    {
+      "title": "양면테이프 활용",
+      "lines": [
+        "넓은 테이프를 붙였다 떼어 먼지를 떼요",
+        "물 없이 구석 먼지까지 깔끔히 잡혀요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pressing wide clear packing tape onto a corner of a window screen and peeling it off, a roll of tape on the counter"
+    },
+    {
+      "title": "창틀 칫솔 청소",
+      "lines": [
+        "오래된 칫솔로 창틀 홈을 쓸어내요",
+        "방충망 닦은 먼지가 다시 쌓이지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "An old toothbrush resting in a clean window track beside a mesh screen, a damp cloth on the counter"
+    },
+    {
+      "title": "그늘에서 마르기",
+      "lines": [
+        "닦은 뒤 창을 열어 20분 말려요",
+        "물기가 남지 않아 곰팡이를 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A window slightly open with a clean mesh screen drying in gentle sunlight, a dry folded cloth on the counter"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "센 물줄기로 쏘지 마세요, 망이 찢어져요",
+      "철수세미는 쓰지 마세요, 망이 상해요",
+      "락스와 세제를 섞지 마세요, 위험해요"
+    ],
+    "image_prompt": "On the light wood countertop beside the sunny window, a steel wool pad, a garden hose nozzle and a bottle of bleach arranged together, mesh screen in the background"
+  },
+  "save_line": "저장해두고 대청소할 때 꺼내보세요",
+  "caption": "방충망 청소법, 여름 내내 한 번도 안 닦고 겨울을 맞을 뻔했어요 😅\n마른 솔질 먼저, 물 뿌려 불리고, 스펀지로 한 방향 닦기만 해도 훨씬 깨끗해져요.\n기름기는 주방세제 한 방울이면 충분하고, 구석 먼지는 테이프로 떼면 돼요.\n닦은 뒤엔 창을 열어 20분 말려 주세요.\n저장해두고 대청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 방충망 얼마나 자주 닦으세요?",
+  "hook": "방충망, 아직도 안 닦으셨죠?",
+  "hashtags": [
+    "#방충망청소",
+    "#대청소",
+    "#살림꿀팁",
+    "#겨울맞이청소",
+    "#창틀청소"
+  ],
+  "photo_query": "window screen cleaning",
+  "image_note": "9장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 847,
+    "has_photo": false
+  }
+}
