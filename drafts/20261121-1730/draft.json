@@ -1,0 +1,125 @@
+{
+  "id": "20261121-1730",
+  "created_at": "2026-11-21T14:02:26.080887+09:00",
+  "publish_at": "2026-11-21T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "식기세척기 사용 가능 주방도구 소재별 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "식기세척기 신제품 소식이 이어지고 연말 모임으로 설거지가 늘어나는 지금, 어떤 그릇과 도구를 넣어도 되는지 헷갈리는 사람이 많아서 골랐어요",
+  "top_badge": "넣기 전 저장하세요!",
+  "title": [
+    "넣었다가 망가질라",
+    "식기세척기 가능 도구 10"
+  ],
+  "highlight": "가능 도구",
+  "basis": "제조사 사용설명서 일반 표기 기준 · 제품별 확인 필수",
+  "items": [
+    {
+      "name": "스테인리스",
+      "badge": "O 가능",
+      "detail": "수저·볼 모두 OK, 물기는 바로 닦기",
+      "emoji": "🥄",
+      "icon_prompt": "a stainless steel spoon"
+    },
+    {
+      "name": "내열유리",
+      "badge": "O 가능",
+      "detail": "급격한 온도차만 피하면 안전해요",
+      "emoji": "🫙",
+      "icon_prompt": "a clear heatproof glass food container"
+    },
+    {
+      "name": "도자기 그릇",
+      "badge": "O 가능",
+      "detail": "금테·금장 장식이 없는 것만 넣기",
+      "emoji": "🍚",
+      "icon_prompt": "a plain white ceramic rice bowl"
+    },
+    {
+      "name": "실리콘 주걱",
+      "badge": "O 가능",
+      "detail": "내열 실리콘은 대체로 문제없어요",
+      "emoji": "🥄",
+      "icon_prompt": "a silicone spatula"
+    },
+    {
+      "name": "플라스틱통",
+      "badge": "△ 확인",
+      "detail": "내열 표시 있는 것만, 윗칸에 두기",
+      "emoji": "🥡",
+      "icon_prompt": "a plastic food storage container"
+    },
+    {
+      "name": "나무 도마",
+      "badge": "X 불가",
+      "detail": "갈라지고 휘어서 손으로 씻어요",
+      "emoji": "🪵",
+      "icon_prompt": "a wooden cutting board"
+    },
+    {
+      "name": "나무 숟가락",
+      "badge": "X 불가",
+      "detail": "열과 습기에 갈라지고 변형돼요",
+      "emoji": "🥄",
+      "icon_prompt": "a wooden spoon"
+    },
+    {
+      "name": "무쇠 팬",
+      "badge": "X 불가",
+      "detail": "녹이 슬고 길들인 막이 벗겨져요",
+      "emoji": "🍳",
+      "icon_prompt": "a cast iron skillet"
+    },
+    {
+      "name": "칼",
+      "badge": "X 불가",
+      "detail": "날이 무뎌지고 손잡이가 상해요",
+      "emoji": "🔪",
+      "icon_prompt": "a kitchen knife"
+    },
+    {
+      "name": "보온병",
+      "badge": "X 불가",
+      "detail": "진공 단열 기능이 손상될 수 있어요",
+      "emoji": "🧴",
+      "icon_prompt": "a stainless steel thermos bottle"
+    }
+  ],
+  "save_tile": [
+    "넣기 전에",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "넣기 전 체크",
+    "lines": [
+      "제품 표기 먼저 확인",
+      "음식물은 가볍게 제거"
+    ]
+  },
+  "footer_line": "저장해두고 설거지 전 꺼내보세요",
+  "footer_highlight": "꺼내보세요",
+  "warning": {
+    "title": "이건 넣지 마세요",
+    "lines": [
+      "나무·무쇠·칼은 손설거지 하세요",
+      "망가지는 건 순식간이에요",
+      "애매하면 설명서부터 확인하세요"
+    ]
+  },
+  "save_line": "저장해두고 헷갈릴 때 보세요",
+  "caption": "식기세척기에 뭘 넣어도 되는지 매번 헷갈려서 나무 숟가락을 망가뜨린 적 있어요 😅\n\n식기세척기 사용 가능 도구를 소재별로 정리했어요\n\n스테인리스: O 가능 · 수저·볼 모두 OK, 물기는 바로 닦기\n내열유리: O 가능 · 급격한 온도차만 피하면 안전해요\n도자기 그릇: O 가능 · 금테·금장 장식이 없는 것만 넣기\n실리콘 주걱: O 가능 · 내열 실리콘은 대체로 문제없어요\n플라스틱통: △ 확인 · 내열 표시 있는 것만, 윗칸에 두기\n나무 도마: X 불가 · 갈라지고 휘어서 손으로 씻어요\n나무 숟가락: X 불가 · 열과 습기에 갈라지고 변형돼요\n무쇠 팬: X 불가 · 녹이 슬고 길들인 막이 벗겨져요\n칼: X 불가 · 날이 무뎌지고 손잡이가 상해요\n보온병: X 불가 · 진공 단열 기능이 손상될 수 있어요\n\n제조사 설명서 일반 표기 기준이라 제품별 확인은 꼭 하세요\n\n저장해두고 설거지 전에 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n\n여러분 집 식기세척기에 절대 안 넣는 건 뭐예요?",
+  "hashtags": [
+    "#식기세척기",
+    "#식기세척기사용법",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#가전꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개",
+  "message": {
+    "message_id": 833,
+    "has_photo": false
+  }
+}
