@@ -9,6 +9,11 @@
       "at": "2026-11-22 08:02",
       "kind": "rule",
       "detail": "너무 긴 줄: 주 1회 중성세제 한 방울로 물받이를 씻어요; hook이 hook_options 중 하나와 글자 그대로 같지 않음"
+    },
+    {
+      "at": "2026-11-23 08:02",
+      "kind": "rule",
+      "detail": "hook이 hook_options 중 하나와 글자 그대로 같지 않음"
     }
   ],
   "last_review": "2026-11-22"

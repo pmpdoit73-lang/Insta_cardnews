@@ -1,0 +1,125 @@
+{
+  "id": "20261123-1200",
+  "created_at": "2026-11-23T08:01:42.471960+09:00",
+  "publish_at": "2026-11-23T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "에어프라이어 종이호일·용기 올바른 사용법",
+  "kind": "가전 꿀팁",
+  "angle": "1만원대 에어프라이어 소식에 올겨울 새로 장만하는 집이 늘 텐데, 처음 쓸 때 놓치기 쉬운 안전한 사용법과 길들이기 요령을 짚었어요",
+  "title": [
+    "고장 없이 오래 쓰는",
+    "에어프라이어 사용법 6"
+  ],
+  "highlight": "오래 쓰는",
+  "subtitle": "새로 샀는데 그냥 쓰고 계셨죠?",
+  "scene": "A bright Korean home kitchen with a light wood countertop, a white compact air fryer with its basket slightly open at the center, a small green plant and a linen cloth beside it, warm morning sunlight coming through the window on the left, simple clean empty countertop in the lower third",
+  "cover_image_prompt": "The white air fryer on the sunny wooden countertop with its basket pulled halfway out, empty and clean, soft morning light, a linen cloth and a small plant nearby, lower third of the counter left plain",
+  "tips": [
+    {
+      "title": "첫 사용 전 세척",
+      "lines": [
+        "바스켓을 미지근한 물에 주방세제로 씻으세요",
+        "제조 때 묻은 기름기와 냄새를 없애요"
+      ],
+      "note": "본체 안쪽은 물에 담그지 마세요",
+      "image_prompt": "A hand washing the removable air fryer basket in a sink with soapy foam, the air fryer body waiting on the counter"
+    },
+    {
+      "title": "빈 통 예열 돌리기",
+      "lines": [
+        "처음엔 180도로 5분 빈 통을 돌려 보세요",
+        "새 제품 특유의 냄새가 빠져요"
+      ],
+      "note": "창문을 열고 환기하세요",
+      "image_prompt": "The air fryer closed and running on the counter with an open window letting morning light in, a small timer dial nearby"
+    },
+    {
+      "title": "기름은 살짝만",
+      "lines": [
+        "식재료에 기름을 1작은술 정도만 바르세요",
+        "기름이 적어도 바삭하고 연기가 덜 나요"
+      ],
+      "note": "",
+      "image_prompt": "A hand brushing a little oil on potato wedges in a bowl beside a small oil bottle and a silicone brush"
+    },
+    {
+      "title": "가득 채우지 않기",
+      "lines": [
+        "바스켓은 절반에서 2/3만 채워 돌리세요",
+        "뜨거운 바람이 골고루 돌아 잘 익어요"
+      ],
+      "note": "",
+      "image_prompt": "The air fryer basket filled loosely with golden chicken wings in a single layer, a pair of tongs resting beside it"
+    },
+    {
+      "title": "중간에 뒤집기",
+      "lines": [
+        "조리 시간 절반쯤 한 번 흔들거나 뒤집으세요",
+        "한쪽만 타는 걸 막고 색이 고르게 나요"
+      ],
+      "note": "바스켓 손잡이는 뜨거우니 장갑을 쓰세요",
+      "image_prompt": "A hand in a cotton oven mitt pulling out the basket to shake fries, steam rising lightly"
+    },
+    {
+      "title": "식힌 뒤 바로 닦기",
+      "lines": [
+        "사용 후 완전히 식으면 바스켓을 바로 씻으세요",
+        "기름이 굳기 전에 닦아야 쉽게 지워져요"
+      ],
+      "note": "철수세미는 코팅이 벗겨져요",
+      "image_prompt": "A soft sponge and dish soap beside the cooled basket on the counter, a dish towel folded nearby"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "종이호일만 깔고 빈 채로 예열하지 마세요",
+      "바람에 날려 열선에 닿을 수 있어요",
+      "금속 수세미로 코팅을 긁지 마세요"
+    ],
+    "image_prompt": "x"
+  },
+  "save_line": "새 에어프라이어 산 친구한테 보내주세요",
+  "caption": "에어프라이어 사용법, 새로 사고 설명서 한 번도 안 읽었어요 😅\n고장 없이 오래 쓰는 에어프라이어 사용법 6가지를 모았어요.\n첫 사용 전 세척, 180도 5분 빈 통 예열, 기름 1작은술, 절반만 채우기까지 정리했어요.\n저장해두고 새 에어프라이어를 꺼낼 때 다시 보세요.\n새로 장만한 가족·친구에게 보내주세요.\n여러분 집 에어프라이어는 몇 년 됐어요?",
+  "hook": "새 에어프라이어, 첫날 이것부터",
+  "hashtags": [
+    "#에어프라이어",
+    "#에어프라이어사용법",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "air fryer kitchen",
+  "stake": {
+    "title": "첫 사용이 수명을 정해요",
+    "lines": [
+      "세척 없이 쓰면 냄새가 음식에 배요",
+      "가득 채우면 한쪽만 타고 덜 익어요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 19,
+      "text": "새 에어프라이어, 첫날 이것부터",
+      "score": 82
+    },
+    {
+      "formula": 7,
+      "text": "에어프라이어 이렇게 쓰면 손해",
+      "score": 74
+    },
+    {
+      "formula": 14,
+      "text": "새로 산 사람이면 꼭 보세요",
+      "score": 70
+    }
+  ],
+  "hook_formula": 19,
+  "loop_line": "이제 새 에어프라이어 걱정 끝",
+  "image_note": "8장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 896,
+    "has_photo": false
+  }
+}
