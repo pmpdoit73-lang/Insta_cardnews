@@ -1,0 +1,126 @@
+{
+  "id": "20261122-1730",
+  "created_at": "2026-11-22T14:01:29.820440+09:00",
+  "publish_at": "2026-11-22T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "제철 박·냉동 보관 기사를 계기로 한 냉동실 식재료별 냉동 보관기간 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "11월 김장철과 제철 식재료를 한꺼번에 사두고 냉동실에 넣어 두는 시기라, 얼마나 두고 먹어도 되는지 한눈에 보는 표가 필요해서 골랐어요.",
+  "top_badge": "냉동실 열기 전 저장!",
+  "title": [
+    "냉동실에 잠든 식재료",
+    "냉동 보관기간 10"
+  ],
+  "highlight": "냉동 보관기간",
+  "basis": "식약처·농촌진흥청 권장 기준 · -18도 이하 냉동",
+  "items": [
+    {
+      "name": "식빵",
+      "badge": "1개월",
+      "detail": "한 장씩 랩에 싸서 밀봉해요",
+      "emoji": "🍞",
+      "icon_prompt": "a loaf of sliced bread"
+    },
+    {
+      "name": "밥",
+      "badge": "1개월",
+      "detail": "따뜻할 때 1인분씩 소분해요",
+      "emoji": "🍚",
+      "icon_prompt": "a bowl of cooked white rice"
+    },
+    {
+      "name": "다진 마늘",
+      "badge": "3개월",
+      "detail": "얇게 펴서 얼려 똑 떼어 써요",
+      "emoji": "🧄",
+      "icon_prompt": "a bulb of garlic"
+    },
+    {
+      "name": "대파",
+      "badge": "3개월",
+      "detail": "송송 썰어 밀폐 용기에 담아요",
+      "emoji": "🌿",
+      "icon_prompt": "a bunch of green onions"
+    },
+    {
+      "name": "생선",
+      "badge": "3개월",
+      "detail": "물기 닦고 한 토막씩 포장해요",
+      "emoji": "🐟",
+      "icon_prompt": "a raw fish fillet"
+    },
+    {
+      "name": "소고기",
+      "badge": "6개월",
+      "detail": "공기 빼고 얇게 펴서 얼려요",
+      "emoji": "🥩",
+      "icon_prompt": "a raw beef steak"
+    },
+    {
+      "name": "돼지고기",
+      "badge": "6개월",
+      "detail": "1회분씩 나눠 밀봉해요",
+      "emoji": "🥓",
+      "icon_prompt": "raw pork slices on a tray"
+    },
+    {
+      "name": "닭고기",
+      "badge": "9개월",
+      "detail": "손질 후 지퍼백에 넣어요",
+      "emoji": "🍗",
+      "icon_prompt": "raw chicken drumsticks"
+    },
+    {
+      "name": "새우",
+      "badge": "6개월",
+      "detail": "껍질째 얼리면 덜 말라요",
+      "emoji": "🦐",
+      "icon_prompt": "raw shrimp"
+    },
+    {
+      "name": "떡",
+      "badge": "3개월",
+      "detail": "식힌 뒤 한 번 먹을 만큼 포장해요",
+      "emoji": "🍡",
+      "icon_prompt": "white rice cakes"
+    }
+  ],
+  "save_tile": [
+    "냉동실 정리할 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "냉동 전 체크",
+    "lines": [
+      "날짜를 꼭 적어요",
+      "공기를 빼고 밀봉",
+      "해동한 건 재냉동 금지"
+    ]
+  },
+  "footer_line": "저장해두고 냉동실 정리할 때 꺼내보세요",
+  "footer_highlight": "냉동실 정리",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "해동한 고기 다시 얼리기",
+      "뜨거운 음식 그대로 넣기",
+      "날짜 없이 넣고 잊어버리기"
+    ]
+  },
+  "save_line": "저장해두고 냉동할 때 꺼내보세요",
+  "caption": "냉동 보관기간, 막연히 오래 둬도 된다고 생각했어요 😅\n\n냉동실에 넣어 둔 식재료, 언제까지 먹어도 되는지 한 장으로 정리했어요.\n\n식빵: 1개월 · 한 장씩 랩에 싸서 밀봉해요\n밥: 1개월 · 따뜻할 때 1인분씩 소분해요\n다진 마늘: 3개월 · 얇게 펴서 얼려 똑 떼어 써요\n대파: 3개월 · 송송 썰어 밀폐 용기에 담아요\n생선: 3개월 · 물기 닦고 한 토막씩 포장해요\n소고기: 6개월 · 공기 빼고 얇게 펴서 얼려요\n돼지고기: 6개월 · 1회분씩 나눠 밀봉해요\n닭고기: 9개월 · 손질 후 지퍼백에 넣어요\n새우: 6개월 · 껍질째 얼리면 덜 말라요\n떡: 3개월 · 식힌 뒤 한 번 먹을 만큼 포장해요\n\n식약처·농촌진흥청 권장 기준이고, -18도 이하 기준이에요. 해동한 음식은 다시 얼리지 마세요.\n\n저장해두고 냉동실 정리할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요 🙌\n\n여러분 냉동실에 제일 오래 묵은 식재료는 뭐예요?",
+  "hashtags": [
+    "#냉동보관",
+    "#냉동실정리",
+    "#식재료보관",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "image_note": "그림 10개 중 제미나이 0개, 이모지 10개",
+  "message": {
+    "message_id": 866,
+    "has_photo": false
+  }
+}
