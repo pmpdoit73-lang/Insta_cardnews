@@ -1,0 +1,109 @@
+{
+  "id": "20261123-0700",
+  "created_at": "2026-11-22T21:01:44.371278+09:00",
+  "publish_at": "2026-11-23T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "도마 관리법",
+  "kind": "주방 꿀팁",
+  "angle": "고기 썬 도마에 과일을 올리지 말고 칼자국이 깊으면 교체하라는 기사가 나와 화제예요. 김장철 도마 쓸 일이 많은 요즘 딱 맞는 위생 팁이에요.",
+  "title": [
+    "세균 걱정 줄이는",
+    "도마 관리법 7"
+  ],
+  "highlight": "세균 걱정",
+  "subtitle": "고기 썰던 도마에 과일도 썰었죠?",
+  "scene": "A bright Korean home kitchen in morning window sunlight, a wooden cutting board with a kitchen knife on a clean light countertop as the main item, simple plain countertop in the lower third, a small dish rack and ceramic jar softly blurred in the background, warm and cozy tone, no text, no people",
+  "cover_image_prompt": "A clean wooden cutting board with fresh sliced cucumber and an apple beside a kitchen knife on the sunlit countertop, warm morning light from the window, plain empty countertop in the lower third",
+  "tips": [
+    {
+      "title": "용도별로 나누기",
+      "lines": [
+        "고기·생선용, 채소·과일용을 나눠요",
+        "날고기 균이 옮는 걸 막아줘요"
+      ],
+      "note": "색이 다른 도마면 헷갈리지 않아요",
+      "image_prompt": "Two cutting boards side by side on the countertop, one with raw chicken slices and one with fresh vegetables, a knife resting between them"
+    },
+    {
+      "title": "쓴 직후 씻기",
+      "lines": [
+        "쓴 직후 세제로 30초 닦아요",
+        "마르기 전에 닦으면 때가 덜 배요"
+      ],
+      "note": "",
+      "image_prompt": "Hands scrubbing a wooden cutting board with a soapy sponge under running water at the sink, sunlight on the faucet"
+    },
+    {
+      "title": "칼자국 깊으면 교체",
+      "lines": [
+        "칼자국이 깊게 패면 교체하세요",
+        "홈에 음식 찌꺼기가 끼기 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "A worn plastic cutting board with deep knife grooves close up on the countertop, a hand running a finger along the surface"
+    },
+    {
+      "title": "굵은소금 문지르기",
+      "lines": [
+        "굵은소금 1큰술로 문질러요",
+        "냄새와 얼룩이 덜 남아요"
+      ],
+      "note": "문지른 뒤 깨끗이 헹궈요",
+      "image_prompt": "Coarse salt sprinkled on a wooden cutting board with a half lemon being rubbed over it by a hand"
+    },
+    {
+      "title": "세워서 말리기",
+      "lines": [
+        "씻은 뒤 세워서 통풍되게 말려요",
+        "물기가 고이지 않아 곰팡이를 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A washed wooden cutting board standing upright on a dish rack by the sunny window, water drops on the board"
+    },
+    {
+      "title": "행주 깔고 썰기",
+      "lines": [
+        "젖은 행주를 도마 밑에 깔아요",
+        "썰다가 미끄러지는 걸 막아줘요"
+      ],
+      "note": "행주는 물기를 꽉 짜세요",
+      "image_prompt": "A damp folded dishcloth under a cutting board with sliced onions and a knife on the countertop"
+    },
+    {
+      "title": "나무도마 기름칠",
+      "lines": [
+        "마른 나무도마에 식용유 얇게 발라요",
+        "갈라짐을 줄여 오래 써요"
+      ],
+      "note": "완전히 마른 뒤에 바르세요",
+      "image_prompt": "A hand wiping a thin layer of cooking oil onto a dry wooden cutting board with a cloth, a small oil bottle nearby"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "나무도마를 물에 오래 담그지 마세요",
+      "갈라지고 곰팡이가 생기기 쉬워요",
+      "고기 썬 도마에 바로 과일 금지"
+    ],
+    "image_prompt": "A wooden cutting board soaking in a sink full of water next to raw meat residue and a cut fruit placed on the same board on the countertop"
+  },
+  "save_line": "저장해두고 도마 바꿀 때 꺼내보세요",
+  "caption": "도마 관리법, 칼자국 깊은 도마를 5년 넘게 썼어요 😅\n고기 썰던 도마에 과일도 썰었던 건 안 비밀이에요.\n용도별로 도마를 나누고, 쓴 직후 바로 씻어요.\n칼자국이 깊게 패면 교체하고, 씻은 뒤엔 세워서 말려요.\n나무도마는 굵은소금 문지르기와 기름칠도 도움이 돼요.\n저장해두고 도마 바꿀 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 도마는 몇 년 됐어요?",
+  "hook": "도마에 과일 올리셨죠?",
+  "hashtags": [
+    "#도마관리법",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#도마교체",
+    "#주방위생"
+  ],
+  "photo_query": "wooden cutting board kitchen",
+  "image_note": "9장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 880,
+    "has_photo": false
+  }
+}
