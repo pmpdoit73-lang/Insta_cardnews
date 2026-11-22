@@ -2,7 +2,7 @@
   "id": "20261122-1730",
   "created_at": "2026-11-22T14:01:29.820440+09:00",
   "publish_at": "2026-11-22T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "제철 박·냉동 보관 기사를 계기로 한 냉동실 식재료별 냉동 보관기간 총정리",
@@ -122,5 +122,9 @@
   "message": {
     "message_id": 866,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17980179468158714",
+  "permalink": "https://www.instagram.com/p/DgCYeiVEejb/",
+  "published_at": "2026-11-22T17:31:50.585569+09:00",
+  "story_id": "18149643805598647"
 }
