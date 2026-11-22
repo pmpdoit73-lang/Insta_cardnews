@@ -2,7 +2,7 @@
   "id": "20261122-1200",
   "created_at": "2026-11-22T08:01:39.598975+09:00",
   "publish_at": "2026-11-22T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "겨울 앞두고 정수기 관리법",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 861,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18214505701366629",
+  "permalink": "https://www.instagram.com/reel/DgByvfeFbX4/",
+  "published_at": "2026-11-22T12:02:22.486098+09:00",
+  "story_id": "18661751653052540"
 }
