@@ -549,9 +549,17 @@ def emoji_icon(ch, size):
 def icon_image(path, emoji, size):
     if path:
         im = Image.open(path).convert("RGB")
-        side = min(im.size)
-        left, top = (im.width - side) // 2, (im.height - side) // 2
-        return im.crop((left, top, left + side, top + side)).resize((size, size), Image.LANCZOS)
+        # 흰 여백을 잘라 캐릭터가 칸을 꽉 채우게 (3D 캐릭터는 작게 나오는 일이 많음, 2026-11-23)
+        from PIL import ImageOps
+        box = ImageOps.invert(im.convert("L")).point(lambda v: 255 if v > 18 else 0).getbbox()
+        if box:
+            cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2
+            side = min(max(box[2] - box[0], box[3] - box[1]) * 1.1, min(im.size))
+        else:
+            cx, cy, side = im.width / 2, im.height / 2, min(im.size)
+        left = min(max(cx - side / 2, 0), im.width - side)
+        top = min(max(cy - side / 2, 0), im.height - side)
+        return im.crop((int(left), int(top), int(left + side), int(top + side))).resize((size, size), Image.LANCZOS)
     return emoji_icon(emoji, size)
 
 
