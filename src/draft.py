@@ -192,6 +192,19 @@ def _fill_icons(d):
         notes.append(note)
     made = notes.count("제미나이")
     d["image_note"] = f"그림 {len(notes)}개 중 제미나이 {made}개" + (f", 이모지 {len(notes) - made}개" if made < len(notes) else "")
+    hero = folder(d["id"]) / "hero.jpg"  # 2번째 카드 큰 3D 캐릭터 (2026-11-23)
+    hero.unlink(missing_ok=True)
+    data, note = images.get_hero(hero_prompt(d), ref)
+    if data:
+        hero.write_bytes(data)
+    d["image_note"] += f", 캐릭터 {note}"
+
+
+def hero_prompt(d):
+    """주인공 물건(제목 강조어, 없으면 주제)을 걱정스러운 얼굴로 한 손을 들어 '멈춰!' 하는 캐릭터로."""
+    subject = d.get("highlight") or d.get("issue", "")
+    return (f"the main kitchen item of this Korean topic '{subject}' (topic: {d.get('issue', '')}), "
+            "with a worried but cute face, one hand raised up like saying 'stop, don't do that!'")
 
 
 def _fill_photos(d):
@@ -228,6 +241,8 @@ def render_cards(d):
         if publish_time(d).day % 2 == 0:  # 2026-11-23 gil: 짝수 날은 남색 표 디자인(B), 홀수 날은 크림 칸 디자인(A)
             card["style"] = "B"
         icons = [folder(d["id"]) / f"icon{i}.jpg" for i in range(1, len(d["items"]) + 1)]
+        hero = folder(d["id"]) / "hero.jpg"
+        card["hero"] = str(hero) if hero.exists() else ""
         render.render_info(card, [str(p) if p.exists() else None for p in icons], folder(d["id"]))
         return
     card = {

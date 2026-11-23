@@ -668,17 +668,40 @@ def info_sheet(c, icons):
     return im
 
 
+def _hero(im, path, top, size, bg, ring):
+    """큰 3D 캐릭터를 노란 테두리 동그라미 안에 넣고, 오른쪽 위에 빨간 '!' 배지."""
+    d = ImageDraw.Draw(im)
+    cx = W / 2
+    d.ellipse([cx - size / 2 - 10, top - 10, cx + size / 2 + 10, top + size + 10], fill=ring)
+    pic = Image.open(path).convert("RGB")
+    side = min(pic.size)
+    pic = pic.crop(((pic.width - side) // 2, (pic.height - side) // 2,
+                    (pic.width + side) // 2, (pic.height + side) // 2)).resize((size, size), Image.LANCZOS)
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, size, size], fill=255)
+    d.ellipse([cx - size / 2, top, cx + size / 2, top + size], fill=bg)
+    im.paste(pic, (int(cx - size / 2), top), mask)
+    r = 46
+    bx, by = cx + size * 0.36, top + size * 0.12
+    d.ellipse([bx - r, by - r, bx + r, by + r], fill=(229, 57, 53), outline="white", width=6)
+    d.text((bx, by), "!", font=font("Black", 60), fill="white", anchor="mm")
+
+
 def info_end(c):
     im = Image.new("RGB", (W, H), I_CREAM)
     d = ImageDraw.Draw(im)
     width = W - 2 * MARGIN
-    bx, by, bw, bh = W / 2 - 70, 230, 140, 190  # 책갈피
-    d.polygon([(bx, by), (bx + bw, by), (bx + bw, by + bh), (bx + bw / 2, by + bh - 50), (bx, by + bh)],
-              fill=I_YELLOW)
-    d.text((W / 2, by + 75), "SAVE", font=font("Black", 40), fill=I_DARK, anchor="mm")
     w = c["warning"]
     tf = fit(d, [w["title"]], "Black", 80, width)
-    y = 510
+    if c.get("hero"):  # 3D 캐릭터 (2026-11-23)
+        _hero(im, c["hero"], 100, 400, "white", I_YELLOW)
+        y = 535
+    else:
+        bx, by, bw, bh = W / 2 - 70, 230, 140, 190  # 책갈피
+        d.polygon([(bx, by), (bx + bw, by), (bx + bw, by + bh), (bx + bw / 2, by + bh - 50), (bx, by + bh)],
+                  fill=I_YELLOW)
+        d.text((W / 2, by + 75), "SAVE", font=font("Black", 40), fill=I_DARK, anchor="mm")
+        y = 510
     d.text((W / 2, y), w["title"], font=tf, fill=I_DARK, anchor="ma")
     y += int(tf.size * 1.5)
     lf = fit(d, w["lines"], "Medium", 40, width - 60)
@@ -745,7 +768,7 @@ def info_sheet_b(c, icons):
     top, bottom = head + 26, H - 250
     gap = 10
     rh = (bottom - top - gap * (len(items) - 1)) / len(items)
-    ic_side = int(min(rh - 8, 120))
+    ic_side = int(min(rh - 2, 120))
     nf = font("Black", int(min(40, rh * 0.5)))
     names = [it["name"] for it in items]
     name_f = fit(d, names, "ExtraBold", int(min(44, rh * 0.56)), 400)
@@ -825,13 +848,16 @@ def info_end_b(c):
     im = Image.new("RGB", (W, H), B_NAVY)
     d = ImageDraw.Draw(im)
     width = W - 2 * MARGIN
-    # 노란 경고 삼각형
-    cx, ty, s = W / 2, 230, 190
-    d.polygon([(cx, ty), (cx + s * 0.58, ty + s), (cx - s * 0.58, ty + s)], fill=I_YELLOW)
-    d.text((cx, ty + s * 0.62), "!", font=font("Black", 110), fill=B_NAVY, anchor="mm")
     w = c["warning"]
     tf = fit(d, [w["title"]], "Black", 84, width)
-    y = ty + s + 60
+    if c.get("hero"):  # 3D 캐릭터 (2026-11-23)
+        _hero(im, c["hero"], 90, 400, "white", I_YELLOW)
+        y = 530
+    else:  # 노란 경고 삼각형
+        cx, ty, s = W / 2, 230, 190
+        d.polygon([(cx, ty), (cx + s * 0.58, ty + s), (cx - s * 0.58, ty + s)], fill=I_YELLOW)
+        d.text((cx, ty + s * 0.62), "!", font=font("Black", 110), fill=B_NAVY, anchor="mm")
+        y = ty + s + 60
     d.text((W / 2, y), w["title"], font=tf, fill="white", anchor="ma")
     y += int(tf.size * 1.45)
     lf = fit(d, w["lines"], "SemiBold", 38, width - 150)
