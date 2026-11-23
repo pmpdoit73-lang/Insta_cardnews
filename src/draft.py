@@ -217,6 +217,8 @@ def render_cards(d):
         keys = ("top_badge", "title", "highlight", "basis", "items", "save_tile", "check",
                 "footer_line", "footer_highlight", "warning", "save_line", "handle")
         card = {k: d.get(k, "") for k in keys} | {"slogan": SLOGAN}
+        if publish_time(d).day % 2 == 0:  # 2026-11-23 gil: 짝수 날은 남색 표 디자인(B), 홀수 날은 크림 칸 디자인(A)
+            card["style"] = "B"
         icons = [folder(d["id"]) / f"icon{i}.jpg" for i in range(1, len(d["items"]) + 1)]
         render.render_info(card, [str(p) if p.exists() else None for p in icons], folder(d["id"]))
         return
