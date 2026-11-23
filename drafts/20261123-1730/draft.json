@@ -1,0 +1,125 @@
+{
+  "id": "20261123-1730",
+  "created_at": "2026-11-23T14:01:49.807692+09:00",
+  "publish_at": "2026-11-23T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "김장철 김장 양념·재료 냉장·냉동 보관기한 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "김장철이라 양념과 속재료가 한꺼번에 쌓이는데, 재료별로 얼마나 두고 먹어도 되는지 헷갈려서 골랐어요",
+  "top_badge": "김장 전 저장하세요!",
+  "title": [
+    "김장하고 남은 재료",
+    "보관기한 총정리 10"
+  ],
+  "highlight": "보관기한",
+  "basis": "식약처·농촌진흥청 보관 안내 · 가정 냉장 기준",
+  "items": [
+    {
+      "name": "다진 마늘",
+      "badge": "냉동 1개월",
+      "detail": "소분해 납작하게 얼리면 덜어 쓰기 편해요",
+      "emoji": "🧄",
+      "icon_prompt": "a small container of minced garlic"
+    },
+    {
+      "name": "깐 마늘",
+      "badge": "냉장 2주",
+      "detail": "밀폐 용기에 키친타월 깔고 보관해요",
+      "emoji": "🧄",
+      "icon_prompt": "peeled garlic cloves in a glass jar"
+    },
+    {
+      "name": "생강",
+      "badge": "냉장 2주",
+      "detail": "껍질째 키친타월로 싸서 밀폐해요",
+      "emoji": "🫚",
+      "icon_prompt": "a piece of fresh ginger root"
+    },
+    {
+      "name": "대파",
+      "badge": "냉장 1주",
+      "detail": "씻지 말고 물기 없이 신문지에 싸요",
+      "emoji": "🌱",
+      "icon_prompt": "a bunch of green onions"
+    },
+    {
+      "name": "쪽파",
+      "badge": "냉장 1주",
+      "detail": "흙 털고 키친타월에 싸 세워 보관해요",
+      "emoji": "🌿",
+      "icon_prompt": "a bundle of fresh scallions"
+    },
+    {
+      "name": "무",
+      "badge": "냉장 2주",
+      "detail": "잎을 자르고 신문지에 싸서 넣어요",
+      "emoji": "🥬",
+      "icon_prompt": "a whole white Korean radish"
+    },
+    {
+      "name": "배추",
+      "badge": "냉장 2주",
+      "detail": "신문지에 싸서 뿌리 쪽을 아래로 둬요",
+      "emoji": "🥬",
+      "icon_prompt": "a whole napa cabbage"
+    },
+    {
+      "name": "고춧가루",
+      "badge": "냉동 1년",
+      "detail": "밀봉해서 냉동하면 색과 향이 유지돼요",
+      "emoji": "🌶️",
+      "icon_prompt": "a jar of red chili powder"
+    },
+    {
+      "name": "새우젓",
+      "badge": "냉장 6개월",
+      "detail": "공기 닿지 않게 밀봉해 두세요",
+      "emoji": "🦐",
+      "icon_prompt": "a jar of salted shrimp"
+    },
+    {
+      "name": "절인 배추",
+      "badge": "냉장 1일",
+      "detail": "절이면 빨리 무르니 그날 바로 버무려요",
+      "emoji": "🥗",
+      "icon_prompt": "a basket of salted napa cabbage"
+    }
+  ],
+  "save_tile": [
+    "김장하고",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "보관 전 체크",
+    "lines": [
+      "물기 꼭 닦기",
+      "날짜 적어두기"
+    ]
+  },
+  "footer_line": "저장해두고 김장 끝나면 꺼내보세요",
+  "footer_highlight": "꺼내보세요",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "상온에 오래 두지 마세요",
+      "냄새나거나 물러지면 버리세요",
+      "재냉동은 피하고 소분해 두세요"
+    ]
+  },
+  "save_line": "저장해두고 김장 때 꺼내보세요",
+  "caption": "김장 재료 보관기한, 매번 검색하게 되더라고요 😅\n\n김장하고 남은 재료 보관기한 정리했어요\n\n다진 마늘: 냉동 1개월 · 소분해 납작하게 얼리면 덜어 쓰기 편해요\n깐 마늘: 냉장 2주 · 밀폐 용기에 키친타월 깔고 보관해요\n생강: 냉장 2주 · 껍질째 키친타월로 싸서 밀폐해요\n대파: 냉장 1주 · 씻지 말고 물기 없이 신문지에 싸요\n쪽파: 냉장 1주 · 흙 털고 키친타월에 싸 세워 보관해요\n무: 냉장 2주 · 잎을 자르고 신문지에 싸서 넣어요\n배추: 냉장 2주 · 신문지에 싸서 뿌리 쪽을 아래로 둬요\n고춧가루: 냉동 1년 · 밀봉해서 냉동하면 색과 향이 유지돼요\n새우젓: 냉장 6개월 · 공기 닿지 않게 밀봉해 두세요\n절인 배추: 냉장 1일 · 절이면 빨리 무르니 그날 바로 버무려요\n\n가정 냉장 기준이라 냄새나 물러짐이 있으면 드시지 마세요.\n\n저장해두고 김장 끝나면 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n\n여러분은 올해 김장 몇 포기 하세요?",
+  "hashtags": [
+    "#김장재료보관",
+    "#김장보관기한",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#김장철"
+  ],
+  "image_note": "그림 10개 중 제미나이 0개, 이모지 10개",
+  "message": {
+    "message_id": 902,
+    "has_photo": false
+  }
+}
