@@ -2,7 +2,7 @@
   "id": "20261123-1200",
   "created_at": "2026-11-23T08:01:42.471960+09:00",
   "publish_at": "2026-11-23T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "에어프라이어 종이호일·용기 올바른 사용법",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 896,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18006691574991802",
+  "permalink": "https://www.instagram.com/reel/DgEXlXzDR5H/",
+  "published_at": "2026-11-23T12:02:56.365416+09:00",
+  "story_id": "18200692192389691"
 }
