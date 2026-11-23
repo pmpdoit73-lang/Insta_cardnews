@@ -1,0 +1,57 @@
+name: 사진 다시 만들기
+
+on:
+  # 텔레그램 '🖼 사진 다시' 버튼과 같은 일. 제미나이 결제를 고친 뒤 확인할 때 Actions에서 실행
+  workflow_dispatch:
+    inputs:
+      draft_id:
+        description: "초안 id (예: 20261124-0700)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: insta-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 사진 다시
+        run: |
+          python - <<'PY'
+          import os, sys
+          sys.path.insert(0, "src")
+          import draft
+          d = draft.load(os.environ["DRAFT_ID"])
+          draft.new_photos(d)
+          draft.send(d)
+          print("[photos]", d["id"], d.get("image_note"))
+          PY
+        env:
+          DRAFT_ID: ${{ inputs.draft_id }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INSTAGRAM_HANDLE: ${{ secrets.INSTAGRAM_HANDLE }}
+      - name: 상태 저장
+        if: always()
+        run: |
+          git config user.name "insta-cardnews-bot"
+          git config user.email "insta-cardnews-bot@users.noreply.github.com"
+          git add -A drafts/ state/ 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "사진 다시 ${{ inputs.draft_id }}"
+          git pull --rebase origin main
+          git push origin HEAD:main
