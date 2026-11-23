@@ -478,10 +478,10 @@ SKILL_RULES = (
     "- hook은 시청자가 댓글로 묻는 말투 (예: '남은 치킨 데우면 왜 눅눅해져요?'). 영상 첫 화면에 흰 말풍선으로 나가.\n"
     "- stake(2번 카드)는 '왜 그런지' 원리를 한 줄로 쉽게 (예: 식으면서 빠진 수분이 튀김옷으로 다시 들어가요).\n"
     "- cover_image_prompt는 주인공 물건(가전·음식·도구)을 귀여운 3D 애니메이션 캐릭터로: 큰 눈, 작은 팔, 표정이 있는 "
-    "Pixar 느낌 캐릭터가 실제 같은 주방 장면 가운데에 있게 영어로 써. 위쪽 1/4은 말풍선 자리라 비워 둬.\n"
+    "Pixar 느낌 캐릭터가 실제 같은 주방 장면에 크게(클로즈업) 있게 영어로 써. 얼굴은 화면 위·가운데, 아래 40%는 제목 글씨 자리라 비워 둬.\n"
     "  (예: 'A cute 3D animated character version of a fried chicken drumstick with big expressive eyes, "
     "worried face and tiny arms, sitting on a plate inside a microwave, realistic warm kitchen lighting, "
-    "Pixar-like render, upper quarter of the frame left empty')"
+    "Pixar-like render, close-up, face in the upper middle, bottom 40% plain counter')"
 )
 
 

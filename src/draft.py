@@ -33,6 +33,10 @@ DRAFT_DIR = Path(__file__).resolve().parent.parent / "drafts"
 SLOTS = [(7, 0), (12, 0), (17, 30)]
 # 회차별 형식, 없으면 목록형. 17:30 인포그래픽형(2026-10-30), 12:00 스킬형(2026-11-12, 기존 두 회차는 그대로)
 SLOT_FORMAT = {(12, 0): "skill", (17, 30): "info"}
+COVER_CHAR_LAYOUT = (". Composition: close-up, the character is LARGE and fills the middle of the frame, "
+                     "its face and eyes between 15% and 50% of the image height from the top, clearly visible; "
+                     "the bottom 40% of the image is a plain, slightly dark countertop with nothing important "
+                     "(title text will cover it). Vertical 4:5.")
 DRAFT_LEAD = timedelta(minutes=30)    # 게시 시각이 이보다 가까우면 그다음 회차 초안을 만든다
 SLOGAN = "주방의 질을 높이는 살림 꿀팁"  # 마지막 장 브랜드 한 줄
 
@@ -197,7 +201,10 @@ def _fill_photos(d):
     if is_info(d):
         _fill_icons(d)
         return
-    prompts = [d["cover_image_prompt"]] + [t["image_prompt"] for t in d["tips"]] + [d["warning"]["image_prompt"]]
+    cover = d["cover_image_prompt"]
+    if is_skill(d):  # 3D 캐릭터 표지: 제목 글씨가 아래쪽을 덮으므로 캐릭터 얼굴은 화면 위·가운데에 크게 (2026-11-23)
+        cover += COVER_CHAR_LAYOUT
+    prompts = [cover] + [t["image_prompt"] for t in d["tips"]] + [d["warning"]["image_prompt"]]
     scene, query = d.get("scene", ""), d.get("photo_query", "")
     ref, notes = None, []
     for i, prompt in enumerate(prompts, 1):
