@@ -185,7 +185,8 @@ def _fill_icons(d):
         old.unlink()
     ref, notes = None, []
     for i, item in enumerate(d["items"], 1):
-        data, note = images.get_icon(item["icon_prompt"], ref)
+        # 3D 캐릭터는 참고 그림을 주면 첫 그림을 그대로 베껴 10개가 똑같아져서 글로만 그림체를 맞춘다 (2026-11-23)
+        data, note = images.get_icon(item["icon_prompt"])
         if data:
             (folder(d["id"]) / f"icon{i}.jpg").write_bytes(data)
             ref = ref or data
