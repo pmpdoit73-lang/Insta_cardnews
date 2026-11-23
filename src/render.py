@@ -698,19 +698,158 @@ def info_end(c):
     return im
 
 
+# ---------- 인포그래픽형 B (2026-11-23 gil 요청: 짝수 날은 다른 디자인) ----------
+# 1장: 흰 바탕 + 위쪽 남색 머리띠(배지·제목·기준) → 한 줄에 하나씩 '표' (번호 | 그림 | 이름·설명 | 배지)
+#      → 아래 '체크' 띠 + 저장 유도. 홀수 날 A(크림 3열 칸)와 피드에서 번갈아 보이게.
+# 2장: 남색 바탕 + 노란 경고 삼각형 + 흰 카드에 ✕ 줄 + 노란 보내기·저장 알약.
+
+B_NAVY, B_NAVY2, B_BG, B_ROW, B_LINE = (28, 42, 74), (44, 62, 104), (246, 247, 250), (255, 255, 255), (222, 226, 235)
+B_RED = (232, 72, 60)
+
+
+def _b_badge_colors(badge):
+    """배지 첫 글자로 색: O/가능 초록, X/불가 빨강, △ 주황, 그 외(숫자·기간) 남색."""
+    b = badge.strip()
+    if b.startswith(("O", "○", "⭕")) or "가능" in b and "불가" not in b:
+        return (225, 245, 230), (30, 140, 70)
+    if b.startswith(("X", "✕", "×")) or "불가" in b or "금지" in b:
+        return (253, 228, 225), B_RED
+    if b.startswith("△") or "확인" in b or "주의" in b:
+        return I_PALE, I_ORANGE
+    return (230, 236, 250), B_NAVY
+
+
+def info_sheet_b(c, icons):
+    im = Image.new("RGB", (W, H), B_BG)
+    d = ImageDraw.Draw(im)
+    side = 40
+    width = W - 2 * side
+    head = 370
+    d.rectangle([0, 0, W, head], fill=B_NAVY)
+    y = pill(d, W / 2, 36, "★ " + c["top_badge"], font("ExtraBold", 30), I_YELLOW, B_NAVY)
+    f = fit(d, c["title"], "Black", 84, width)
+    y += 20
+    hl = c.get("highlight", "")
+    for ln in c["title"]:
+        parts = ln.split(hl, 1) if hl and hl in ln else [ln]
+        segs = [(parts[0], "white")] + ([(hl, I_YELLOW), (parts[1], "white")] if len(parts) == 2 else [])
+        x = (W - d.textlength(ln, font=f)) / 2
+        for text, col in segs:
+            d.text((x, y), text, font=f, fill=col)
+            x += d.textlength(text, font=f)
+        y += int(f.size * 1.16)
+    bf = fit(d, [c["basis"]], "Medium", 28, width)
+    d.text((W / 2, head - 40), c["basis"], font=bf, fill=(190, 200, 225), anchor="mm")
+
+    items = c["items"]
+    top, bottom = head + 26, H - 250
+    gap = 10
+    rh = (bottom - top - gap * (len(items) - 1)) / len(items)
+    ic_side = int(min(rh - 8, 120))
+    nf = font("Black", int(min(40, rh * 0.5)))
+    names = [it["name"] for it in items]
+    name_f = fit(d, names, "ExtraBold", int(min(44, rh * 0.56)), 480)
+    details = [it.get("detail", "") for it in items]
+    det_f = fit(d, [x for x in details if x] or [" "], "Medium", int(min(28, rh * 0.28)), 430)
+    badges = [it["badge"] for it in items]
+    bfont = fit(d, badges, "Black", int(min(40, rh * 0.5)), 230)
+    for k, it in enumerate(items):
+        y0 = top + k * (rh + gap)
+        y1 = y0 + rh
+        cy = (y0 + y1) / 2
+        d.rounded_rectangle([side, y0, W - side, y1], 20, fill=B_ROW, outline=B_LINE, width=2)
+        d.text((side + 48, cy), f"{k + 1:02d}", font=nf, fill=B_NAVY, anchor="mm")
+        x = side + 96
+        icon = icons[k] if k < len(icons) else None
+        if icon is not None:
+            ic = icon.resize((ic_side, ic_side), Image.LANCZOS)
+            im.paste(ic, (int(x), int(cy - ic_side / 2)), ic if ic.mode == "RGBA" else None)
+        x += ic_side + 20
+        det = details[k]
+        if det and rh >= 95:
+            d.text((x, cy - 4), it["name"], font=name_f, fill=I_DARK, anchor="ls")
+            d.text((x, cy + 8), det, font=det_f, fill=I_GRAY, anchor="lt")
+        else:
+            d.text((x, cy), it["name"], font=name_f, fill=I_DARK, anchor="lm")
+        bg, fg = _b_badge_colors(it["badge"])
+        bw = d.textlength(it["badge"], font=bfont) + 44
+        bh = int(bfont.size * 1.6)
+        bx1 = W - side - 20
+        d.rounded_rectangle([bx1 - bw, cy - bh / 2, bx1, cy + bh / 2], bh // 2, fill=bg)
+        d.text((bx1 - bw / 2, cy), it["badge"], font=bfont, fill=fg, anchor="mm")
+
+    # 체크 띠
+    chk = c["check"]
+    y0 = bottom + 16
+    d.rounded_rectangle([side, y0, W - side, y0 + 110], 20, fill=I_PALE, outline=I_YELLOW, width=3)
+    tf = font("ExtraBold", 32)
+    d.text((side + 30, y0 + 55), "✓ " + chk["title"], font=tf, fill=I_ORANGE, anchor="lm")
+    tx = side + 30 + d.textlength("✓ " + chk["title"], font=tf) + 30
+    lf = fit(d, chk["lines"], "Medium", 26, W - side - 30 - tx)
+    lh = int(lf.size * 1.3)
+    yy = y0 + 55 - lh * len(chk["lines"]) / 2
+    for ln in chk["lines"]:
+        d.text((tx, yy), ln, font=lf, fill=I_DARK)
+        yy += lh
+    # 저장 유도 + 계정
+    line = c["footer_line"]
+    ff = fit(d, [line], "ExtraBold", 40, width)
+    d.text((W / 2, H - 82), line, font=ff, fill=B_NAVY, anchor="mm")
+    if c.get("handle"):
+        d.text((W / 2, H - 34), c["handle"], font=font("SemiBold", 26), fill=I_GRAY, anchor="mm")
+    return im
+
+
+def info_end_b(c):
+    im = Image.new("RGB", (W, H), B_NAVY)
+    d = ImageDraw.Draw(im)
+    width = W - 2 * MARGIN
+    # 노란 경고 삼각형
+    cx, ty, s = W / 2, 230, 190
+    d.polygon([(cx, ty), (cx + s * 0.58, ty + s), (cx - s * 0.58, ty + s)], fill=I_YELLOW)
+    d.text((cx, ty + s * 0.62), "!", font=font("Black", 110), fill=B_NAVY, anchor="mm")
+    w = c["warning"]
+    tf = fit(d, [w["title"]], "Black", 84, width)
+    y = ty + s + 60
+    d.text((W / 2, y), w["title"], font=tf, fill="white", anchor="ma")
+    y += int(tf.size * 1.45)
+    lf = fit(d, w["lines"], "SemiBold", 38, width - 150)
+    rh = int(lf.size * 2.3)
+    for ln in w["lines"]:
+        d.rounded_rectangle([MARGIN, y, W - MARGIN, y + rh], 22, fill="white")
+        r = 22
+        d.ellipse([MARGIN + 30, y + rh / 2 - r, MARGIN + 30 + 2 * r, y + rh / 2 + r], fill=B_RED)
+        cx0, cy0, k = MARGIN + 30 + r, y + rh / 2, 9  # ✕ 글자는 글꼴에 없어서 선으로 그림
+        d.line([cx0 - k, cy0 - k, cx0 + k, cy0 + k], fill="white", width=5)
+        d.line([cx0 - k, cy0 + k, cx0 + k, cy0 - k], fill="white", width=5)
+        d.text((MARGIN + 100, y + rh / 2), ln, font=lf, fill=I_DARK, anchor="lm")
+        y += rh + 16
+    y += 50
+    sf = fit(d, [c["save_line"]], "ExtraBold", 48, width)
+    pill(d, W / 2, y, c["save_line"], sf, I_YELLOW, B_NAVY, pad=40)
+    d.text((W / 2, H - 140), c["slogan"], font=font("Medium", 32), fill=(170, 182, 210), anchor="mm")
+    if c.get("handle"):
+        d.text((W / 2, H - 88), c["handle"], font=font("SemiBold", 30), fill=(170, 182, 210), anchor="mm")
+    return im
+
+
 def render_info(card, icons, out_dir):
     """인포그래픽형 2장(총정리표 + 저장·주의)을 out_dir/card1.jpg, card2.jpg로 저장하고 경로 목록을 돌려준다.
 
     card: {"top_badge", "title", "highlight", "basis", "items": [{"name", "badge", "emoji"}],
            "save_tile", "check": {"title", "lines"}, "footer_line", "footer_highlight",
-           "warning": {"title", "lines"}, "save_line", "slogan", "handle"}
+           "warning": {"title", "lines"}, "save_line", "slogan", "handle", "style"(선택): "B"면 남색 표 디자인}
     icons: 항목마다 그림 경로 (None이면 이모지로 대신).
     """
     items = card["items"]
     icons = list(icons) + [None] * (len(items) - len(icons))
     side = 200
     pics = [icon_image(p, it.get("emoji", ""), side) for p, it in zip(icons, items)]
-    images = [info_sheet(card, pics), info_end(card)]
+    if card.get("style") == "B":  # 짝수 날 (2026-11-23~)
+        images = [info_sheet_b(card, [icon_image(p, it.get("emoji", ""), 160) for p, it in zip(icons, items)]),
+                  info_end_b(card)]
+    else:
+        images = [info_sheet(card, pics), info_end(card)]
 
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
