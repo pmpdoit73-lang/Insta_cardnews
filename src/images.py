@@ -30,12 +30,19 @@ SAME_SET = (
     "Change only this: "
 )
 
-ICON_STYLE = (
-    "A cute flat cartoon sticker illustration for a Korean Instagram infographic. "
-    "One single object, centered, filling most of the frame, thick dark outlines, soft warm pastel colors, "
-    "simple shading, friendly and clean like a children's picture book. Pure plain white background, "
+ICON_STYLE = (  # 2026-11-23 gil: 9장 카드뉴스처럼 3D 캐릭터 그림으로
+    "A cute 3D animated character version of the object, Pixar-like 3D render, "
+    "big round expressive eyes and a small friendly face on the object itself, tiny arms, "
+    "soft studio lighting, glossy toy-like materials, warm pastel colors. "
+    "One single character, centered, filling most of the frame. Pure plain white background, "
     "no shadow on the background, no frame, no border. "
-    "Absolutely no text, no letters, no numbers, no labels with writing, no logos, no faces. "
+    "Absolutely no text, no letters, no numbers, no labels with writing, no logos. "
+)
+HERO_STYLE = (
+    "A cute 3D animated character, Pixar-like 3D render, big round expressive eyes, tiny arms, "
+    "soft studio lighting, glossy toy-like materials, warm colors. One single character, centered, "
+    "full body visible, filling about 80% of the frame. Pure plain white background, no frame, "
+    "no text, no letters, no numbers, no logos. Character: "
 )
 ICON_SAME_STYLE = (
     "Use the attached illustration only as the style reference: same drawing style, outline thickness, "
@@ -110,6 +117,18 @@ def get_icon(icon_prompt, ref=None):
         except Exception as e:
             print(f"[images] Gemini 그림 실패: {e}")
     return None, "이모지"
+
+
+def get_hero(prompt, ref=None):
+    """총정리 2번째 카드의 큰 3D 캐릭터 하나 (주인공 가전이 '멈춰!' 하는 모습). 실패하면 (None, 이유)."""
+    for r in ([ref, None] if ref else [None]):
+        try:
+            parts = ([_image_part(r), {"text": "Same 3D character style as the attached image. " + HERO_STYLE + prompt}]
+                     if r else [{"text": HERO_STYLE + prompt}])
+            return _gemini(parts, "1:1"), "제미나이"
+        except Exception as e:
+            print(f"[images] Gemini 캐릭터 실패: {e}")
+    return None, "없음"
 
 
 def get_image(image_prompt, photo_query, scene="", ref=None):
