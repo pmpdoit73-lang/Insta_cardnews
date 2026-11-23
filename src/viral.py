@@ -49,7 +49,7 @@ SCHEMA = {
                     "cover_text": {"type": "string",
                                    "description": "썸네일에 보이는 글씨 그대로 (없으면 빈 문자열)"},
                     "formula": {"type": "integer",
-                                "description": "cover_text가 해당하는 훅 공식 번호 1~26. 글씨가 없거나 어디에도 안 맞으면 0"},
+                                "description": "cover_text가 해당하는 훅 공식 번호 1~27. 글씨가 없거나 어디에도 안 맞으면 0"},
                     "our_hook": {"type": "string",
                                  "description": "같은 공식으로 우리 계정(가전·주방 살림 꿀팁)에 맞게 새로 쓴 첫 화면 문구 "
                                                 "16자 이내. 원래 문장을 베끼지 말 것. 글씨가 없으면 빈 문자열"},

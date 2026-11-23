@@ -414,7 +414,7 @@ def l_stake(c, photo, n, total):
     width = W - 2 * MARGIN
     s = c["stake"]
     blocks = [
-        (["왜 알아야 할까요?"], font("Bold", 40), A_YELLOW, 1.3, 30, ""),
+        ([c.get("stake_label") or "왜 알아야 할까요?"], font("Bold", 40), A_YELLOW, 1.3, 30, ""),
         ([s["title"]], fit(d, [s["title"]], "Black", 96, width), "white", 1.25, 35, ""),
         (s["lines"], fit(d, s["lines"], "Medium", 50, width), "white", 1.5, 0, ""),
     ]
@@ -748,18 +748,39 @@ def info_sheet_b(c, icons):
     ic_side = int(min(rh - 8, 120))
     nf = font("Black", int(min(40, rh * 0.5)))
     names = [it["name"] for it in items]
-    name_f = fit(d, names, "ExtraBold", int(min(44, rh * 0.56)), 480)
+    name_f = fit(d, names, "ExtraBold", int(min(44, rh * 0.56)), 400)
     details = [it.get("detail", "") for it in items]
     det_f = fit(d, [x for x in details if x] or [" "], "Medium", int(min(28, rh * 0.28)), 430)
     badges = [it["badge"] for it in items]
     bfont = fit(d, badges, "Black", int(min(40, rh * 0.5)), 230)
+    # 같은 배지가 이어지는 줄을 왼쪽 색 띠로 묶음 (11/23 @hea_lthyfriends: 우수/양호/보통 띠)
+    groups = []
+    for k, it in enumerate(items):
+        if groups and groups[-1][0] == it["badge"]:
+            groups[-1][2] = k
+        else:
+            groups.append([it["badge"], k, k])
+    banded = 2 <= len(groups) <= 4 and any(g[2] > g[1] for g in groups)
+    left = side + (110 if banded else 0)
+    if banded:
+        for badge, a, b in groups:
+            ya, yb = top + a * (rh + gap), top + b * (rh + gap) + rh
+            bg, fg = _b_badge_colors(badge)
+            d.rounded_rectangle([side, ya, side + 96, yb], 20, fill=bg)
+            label = badge.lstrip("O○XＸ✕×△ ").strip() or badge
+            lf = fit(d, [label], "Black", 34, 84)
+            chars = list(label) if len(label) <= 4 and (yb - ya) > lf.size * 1.2 * len(label) else [label]
+            yy = (ya + yb) / 2 - lf.size * 1.2 * (len(chars) - 1) / 2
+            for ch in chars:
+                d.text((side + 48, yy), ch, font=lf, fill=fg, anchor="mm")
+                yy += lf.size * 1.2
     for k, it in enumerate(items):
         y0 = top + k * (rh + gap)
         y1 = y0 + rh
         cy = (y0 + y1) / 2
-        d.rounded_rectangle([side, y0, W - side, y1], 20, fill=B_ROW, outline=B_LINE, width=2)
-        d.text((side + 48, cy), f"{k + 1:02d}", font=nf, fill=B_NAVY, anchor="mm")
-        x = side + 96
+        d.rounded_rectangle([left, y0, W - side, y1], 20, fill=B_ROW, outline=B_LINE, width=2)
+        d.text((left + 48, cy), f"{k + 1:02d}", font=nf, fill=B_NAVY, anchor="mm")
+        x = left + 96
         icon = icons[k] if k < len(icons) else None
         if icon is not None:
             ic = icon.resize((ic_side, ic_side), Image.LANCZOS)

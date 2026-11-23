@@ -135,7 +135,8 @@ def make_reel(d):
     """카드로 릴스 영상(reel.mp4)을 만든다. 카드가 바뀌어도 늘 최신 카드로 다시 만든다.
     배경음악은 초안 id로 고르므로 미리보기와 실제 게시 영상이 같은 곡 (2026-11-06 gil 요청)."""
     return video.make_reel(card_paths(d), folder(d["id"]) / "reel.mp4", reel_hook(d), music.pick(d["id"]),
-                           loop=d.get("loop_line", "") if is_skill(d) else "", extra=is_skill(d) and bool(d.get("stake")))
+                           loop=d.get("loop_line", "") if is_skill(d) else "", extra=is_skill(d) and bool(d.get("stake")),
+                           bubble=is_skill(d) and reel_hook(d).rstrip().endswith("?"))  # 11/23 질문 말풍선
 
 
 def slot_id(slot):
@@ -233,6 +234,7 @@ def render_cards(d):
         "slogan": SLOGAN,
         "handle": d.get("handle", ""),
         "stake": d.get("stake") if is_skill(d) else None,  # 스킬형만 2번 '왜' 카드 + 정리 카드
+        "stake_label": "왜 그럴까요?" if is_skill(d) and reel_hook(d).rstrip().endswith("?") else "",
         "alt_even": is_skill(d),  # 2026-11-23: 스킬형(12:00)만 홀수·짝수 디자인 번갈아 (07:00과 비교용)
     }
     total = len(d["tips"]) + 2  # 사진 수 (표지 + 팁 + 마무리). 추가 카드 2장은 이 사진을 다시 씀
