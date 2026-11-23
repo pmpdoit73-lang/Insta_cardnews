@@ -2,7 +2,7 @@
   "id": "20261124-0700",
   "created_at": "2026-11-23T18:05:52.671547+09:00",
   "publish_at": "2026-11-24T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "에어프라이어 기름때 관리법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 925,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17974192968186069",
+  "permalink": "https://www.instagram.com/reel/DgGaBgXgFVd/",
+  "published_at": "2026-11-24T07:02:50.129265+09:00",
+  "story_id": "17965151286255298"
 }
