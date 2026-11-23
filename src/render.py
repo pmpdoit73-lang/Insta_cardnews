@@ -549,6 +549,8 @@ def emoji_icon(ch, size):
 def icon_image(path, emoji, size):
     if path:
         im = Image.open(path).convert("RGB")
+        e = int(min(im.size) * 0.04)  # 가장자리 4%는 버림 (제미나이가 가끔 검은 줄을 남김)
+        im = im.crop((e, e, im.width - e, im.height - e))
         # 흰 여백을 잘라 캐릭터가 칸을 꽉 채우게 (3D 캐릭터는 작게 나오는 일이 많음, 2026-11-23)
         from PIL import ImageOps
         box = ImageOps.invert(im.convert("L")).point(lambda v: 255 if v > 18 else 0).getbbox()
