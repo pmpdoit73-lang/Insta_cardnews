@@ -231,6 +231,7 @@ def render_cards(d):
         "slogan": SLOGAN,
         "handle": d.get("handle", ""),
         "stake": d.get("stake") if is_skill(d) else None,  # 스킬형만 2번 '왜' 카드 + 정리 카드
+        "alt_even": is_skill(d),  # 2026-11-23: 스킬형(12:00)만 홀수·짝수 디자인 번갈아 (07:00과 비교용)
     }
     total = len(d["tips"]) + 2  # 사진 수 (표지 + 팁 + 마무리). 추가 카드 2장은 이 사진을 다시 씀
     bgs = [folder(d["id"]) / f"bg{i}.jpg" for i in range(1, total + 1)]

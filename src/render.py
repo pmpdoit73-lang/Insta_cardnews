@@ -357,6 +357,39 @@ def l_tip(c, t, i, n, photo, total):
     return im
 
 
+P_CREAM, P_INK, P_SUB = (255, 248, 232), (28, 26, 24), (95, 88, 80)
+P_NOTE_BG, P_NOTE = (255, 232, 205), (240, 110, 30)
+P_SEAM = 690  # 사진과 크림색 종이가 만나는 높이
+
+
+def l_tip_paper(c, t, i, n, photo, total):
+    """짝수 번호 팁 카드 (2026-11-23 gil 요청 '홀수·짝수 두 가지'): 위 사진 + 아래 크림색 종이.
+    이음매에 노란 번호 동그라미, 진한 글씨. 홀수 번호는 l_tip(사진 전체 + 흰 글씨) 그대로."""
+    im = Image.new("RGB", (W, H), P_CREAM)
+    im.paste(load_photo(photo, W, P_SEAM + 60, n), (0, 0))
+    im = l_pills(im, n, total, c["handle"]).convert("RGB")
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([0, P_SEAM, W, H + 60], 48, fill=P_CREAM)
+    r = 78
+    d.ellipse([W / 2 - r, P_SEAM - r, W / 2 + r, P_SEAM + r], fill=A_YELLOW, outline=P_CREAM, width=10)
+    d.text((W / 2, P_SEAM), f"{i:02d}", font=font("Black", 76), fill=P_INK, anchor="mm")
+    width = W - 2 * MARGIN
+    d.text((W / 2, P_SEAM + 160), t["title"], font=fit(d, [t["title"]], "Black", 92, width), fill=P_INK, anchor="ma")
+    lf = fit(d, t["lines"], "Medium", 46, width)
+    y = P_SEAM + 295
+    for ln in t["lines"]:
+        d.text((W / 2, y), ln, font=lf, fill=P_SUB, anchor="ma")
+        y += int(lf.size * 1.5)
+    if t.get("note"):
+        nf = fit(d, [t["note"]], "SemiBold", 34, width - 60)
+        tw = d.textlength(t["note"], font=nf)
+        y += 20
+        d.rounded_rectangle([(W - tw) / 2 - 30, y, (W + tw) / 2 + 30, y + 64], 32, fill=P_NOTE_BG)
+        d.text((W / 2, y + 32), t["note"], font=nf, fill=P_NOTE, anchor="mm")
+    d.text((W - MARGIN, H - 50), "넘기기 →", font=font("SemiBold", 30), fill=(170, 160, 150), anchor="rm")
+    return im
+
+
 def l_end(c, w, n, photo, total):
     im = l_frame(photo, n, n, total, c["handle"])
     d = ImageDraw.Draw(im)
@@ -423,7 +456,8 @@ def render_list(card, photos, out_dir):
     """목록형 카드(표지 + 팁 N장 + 마무리)를 out_dir/card1.jpg ~ 로 저장하고 경로 목록을 돌려준다.
 
     card: {"label", "title", "highlight", "subtitle", "tips": [{"title", "lines", "note"}],
-           "warning": {"title", "lines"}, "save_line", "slogan", "handle", "stake"(선택): {"title", "lines"}}
+           "warning": {"title", "lines"}, "save_line", "slogan", "handle", "stake"(선택): {"title", "lines"},
+           "alt_even"(선택): True면 짝수 번호 팁은 '사진 + 크림 종이' 디자인}
     photos: [표지, 팁1..팁N, 마무리] 배경 사진 경로 (None이면 시험용 흐린 배경).
             stake 카드는 표지 사진을 확대해서, 정리 카드는 표지 사진을 흐리게 다시 쓴다 (사진 생성 비용 그대로).
     """
@@ -436,7 +470,8 @@ def render_list(card, photos, out_dir):
         images.append(l_stake(card, photos[0], 2, total))
     for i, t in enumerate(tips, 1):
         n = len(images) + 1
-        images.append(l_tip(card, t, i, n, photos[i], total))
+        paper = card.get("alt_even") and i % 2 == 0  # 홀짝 번갈아 (짝수 번호 = 사진 + 크림 종이)
+        images.append((l_tip_paper if paper else l_tip)(card, t, i, n, photos[i], total))
     if extra:
         images.append(l_recap(card, photos[0], total - 1, total))
     images.append(l_end(card, card["warning"], total, photos[len(tips) + 1], total))
