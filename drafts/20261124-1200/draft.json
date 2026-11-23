@@ -1,0 +1,125 @@
+{
+  "id": "20261124-1200",
+  "created_at": "2026-11-23T18:28:33.322092+09:00",
+  "publish_at": "2026-11-24T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "가습기 물 비린내 없애는 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "난방으로 건조해지는 11월 말, 가습기를 다시 꺼냈는데 물을 갈아도 비린내가 나서 다들 궁금해하는 '왜?'를 관리법으로 풀었어요",
+  "title": [
+    "물 비린내 없애는",
+    "가습기 관리법 6"
+  ],
+  "highlight": "물 비린내",
+  "subtitle": "물은 갈았는데 냄새는 그대로죠?",
+  "scene": "A white ultrasonic humidifier sitting on a bright Korean home kitchen counter with a light wood countertop, soft warm morning sunlight from a window on the left, a small ceramic cup and a folded cotton cloth nearby, simple clean empty counter area in the lower third",
+  "cover_image_prompt": "A cute 3D animated character version of a white humidifier with big expressive eyes, a worried face and tiny arms, holding its nose while mist puffs out, standing on a bright Korean kitchen counter by a sunny window, realistic warm kitchen lighting, Pixar-like render, upper quarter of the frame left empty",
+  "tips": [
+    {
+      "title": "물은 매일 갈기",
+      "lines": [
+        "남은 물은 버리고 매일 새 물로 채워요",
+        "고인 물에서 물때가 빨리 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pouring leftover water from the humidifier tank into the kitchen sink, empty tank held beside the humidifier base on the counter"
+    },
+    {
+      "title": "물통 매일 헹구기",
+      "lines": [
+        "물통 안쪽을 미지근한 물로 헹궈요",
+        "물때가 굳기 전에 씻기 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "A hand rinsing the removable water tank under a gentle stream of water, a soft sponge resting on the counter"
+    },
+    {
+      "title": "구연산 불리기",
+      "lines": [
+        "구연산 1큰술 물에 30분 불려요",
+        "굳은 물때가 부드럽게 풀려요"
+      ],
+      "note": "제품 설명서의 세척법도 확인하세요",
+      "image_prompt": "A water tank filled with clear water and a spoon of white citric acid powder beside it, a small measuring spoon and jar on the counter"
+    },
+    {
+      "title": "진동판 닦기",
+      "lines": [
+        "면봉에 물 묻혀 진동판을 살살 닦아요",
+        "물때가 쌓이면 분무가 약해져요"
+      ],
+      "note": "반드시 전원을 뽑고 닦으세요",
+      "image_prompt": "A hand holding a cotton swab gently wiping the base of the humidifier with the power cord unplugged and lying on the counter"
+    },
+    {
+      "title": "물 종류 지키기",
+      "lines": [
+        "설명서에 적힌 물만 넣어요",
+        "아로마·첨가물은 고장 원인이에요"
+      ],
+      "note": "",
+      "image_prompt": "A clear glass pitcher of water beside the humidifier tank, an instruction booklet open on the counter"
+    },
+    {
+      "title": "안 쓸 땐 말리기",
+      "lines": [
+        "안 쓸 땐 물 비우고 바싹 말려요",
+        "남은 물기가 냄새의 시작이에요"
+      ],
+      "note": "",
+      "image_prompt": "The disassembled humidifier tank and base drying upside down on a clean dish cloth in the sunny window light"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "락스·세제를 물통에 남기지 마세요",
+      "남은 성분이 분무될 수 있어요",
+      "헹굼 없이 바로 켜지 마세요"
+    ],
+    "image_prompt": "A bleach-style cleaner bottle and a dish soap bottle placed next to a humidifier tank on the counter, with a crossed-out feel and no text"
+  },
+  "save_line": "가습기 꺼낸 가족한테 보내주세요",
+  "caption": "가습기 비린내, 물만 갈면 되는 줄 알았어요 😅\n가습기 관리법 6가지를 정리했어요.\n물은 매일 갈고, 물통은 매일 헹구고, 구연산 1큰술로 30분 불려 물때를 풀어요.\n진동판은 전원을 끈 뒤 면봉으로 닦고, 안 쓸 땐 바싹 말려요.\n락스나 세제를 남기는 건 꼭 피하세요.\n저장해두고 가습기 닦을 때 꺼내보세요. 가습기 쓰는 가족·친구에게 보내주세요.\n여러분 집 가습기는 몇 년 됐어요?",
+  "hook": "가습기 물 갈아도 왜 비린내 나요?",
+  "hashtags": [
+    "#가습기청소",
+    "#가습기관리법",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "humidifier kitchen counter",
+  "stake": {
+    "title": "냄새는 물때 때문이에요",
+    "lines": [
+      "고인 물에 생긴 물때가 분무돼요",
+      "물만 갈면 안 없어지는 이유예요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 27,
+      "text": "가습기 물 갈아도 왜 비린내 나요?",
+      "score": 90
+    },
+    {
+      "formula": 19,
+      "text": "겨울 오기 전 가습기 이것부터",
+      "score": 72
+    },
+    {
+      "formula": 10,
+      "text": "가습기 비린내 30분이면 끝",
+      "score": 78
+    }
+  ],
+  "hook_formula": 27,
+  "loop_line": "이제 가습기 비린내 끝",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 937,
+    "has_photo": false
+  }
+}
