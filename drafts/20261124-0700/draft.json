@@ -1,0 +1,109 @@
+{
+  "id": "20261124-0700",
+  "created_at": "2026-11-23T18:05:52.671547+09:00",
+  "publish_at": "2026-11-24T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "에어프라이어 기름때 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "겨울 군고구마·고기 요리로 에어프라이어를 자주 쓰는 철이고 1만원대 에어프라이어 소식으로 관심이 커져서, 바스켓 기름때와 냄새를 안전하게 관리하는 요령을 모았어요.",
+  "title": [
+    "기름때 확 줄이는",
+    "에어프라이어 관리법 7"
+  ],
+  "highlight": "기름때",
+  "subtitle": "굽기만 하고 청소는 미루셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a white countertop of light wood with a single compact black air fryer with its basket slightly pulled out, soft warm sunlight from a window on the left, a small ceramic dish and a folded linen cloth nearby, a clean empty lower third of the countertop, no text, no people's faces",
+  "cover_image_prompt": "The air fryer on the sunny countertop with a clean basket resting beside it, a sponge and a small dish soap bottle placed neatly next to it, warm morning light, no text, no faces",
+  "tips": [
+    {
+      "title": "바스켓 불리기",
+      "lines": [
+        "미지근한 물에 10분 불려요",
+        "굳은 기름이 쉽게 풀려요"
+      ],
+      "note": "뜨거울 때 찬물은 금물",
+      "image_prompt": "The air fryer basket sitting in a sink basin filled with lukewarm water beside the countertop, soft steam, no text, no faces"
+    },
+    {
+      "title": "부드러운 스펀지",
+      "lines": [
+        "주방세제 한 방울, 스펀지로 닦아요",
+        "코팅이 오래가요"
+      ],
+      "note": "철수세미는 쓰지 마세요",
+      "image_prompt": "A hand holding a soft yellow sponge with a little foam over the basket, a small dish soap bottle beside it, no text, no face"
+    },
+    {
+      "title": "열선 주변 닦기",
+      "lines": [
+        "본체 안쪽은 젖은 행주로 닦아요",
+        "열선 주변 기름이 연기를 줄여요"
+      ],
+      "note": "전원 뽑고 식은 뒤에 닦아요",
+      "image_prompt": "A hand wiping the inside of the unplugged air fryer body with a damp cloth, the power cord laid neatly on the counter, no text, no face"
+    },
+    {
+      "title": "소다로 냄새 잡기",
+      "lines": [
+        "물 1컵에 소다 1큰술 풀어 닦아요",
+        "퀴퀴한 냄새가 잘 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "A glass cup of water with a spoon of baking soda next to a small bowl of white powder and a cloth beside the basket, no text, no faces"
+    },
+    {
+      "title": "완전히 말리기",
+      "lines": [
+        "씻은 뒤 뚜껑 열고 완전히 말려요",
+        "습기가 남으면 냄새 나요"
+      ],
+      "note": "",
+      "image_prompt": "The washed basket and tray standing upright on a dish rack in the sunlight to dry, the air fryer lid open nearby, no text, no faces"
+    },
+    {
+      "title": "조리 직후 닦기",
+      "lines": [
+        "조리 직후 키친타월로 쓱 닦아요",
+        "쌓인 기름이 굳지 않아요"
+      ],
+      "note": "식은 뒤 닦으세요",
+      "image_prompt": "A hand holding a sheet of paper towel above the basket with a few crispy chicken pieces still in it, no text, no face"
+    },
+    {
+      "title": "코팅 점검하기",
+      "lines": [
+        "월 1회 바스켓 코팅 상태 살펴요",
+        "벗겨지면 교체를 생각하세요"
+      ],
+      "note": "",
+      "image_prompt": "A hand tilting the basket toward the window light to check the coating surface, no text, no face"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "본체를 물에 담가 씻지 마세요",
+      "전기 부품이 고장 나는 원인이에요",
+      "식기세척기 가능 표시 없으면 손세척"
+    ],
+    "image_prompt": "The air fryer body next to a steel scouring pad and a bucket of water set apart on the countertop, as things to avoid, no text, no faces"
+  },
+  "save_line": "저장해두고 청소할 때 꺼내보세요",
+  "caption": "에어프라이어 청소법, 1년 동안 물로만 헹궜어요 😅\n굽기만 하고 청소는 미루게 되는 요즘, 간단한 요령만 알아도 달라져요.\n미지근한 물에 10분 불리고, 부드러운 스펀지로 닦아 주세요.\n냄새는 베이킹소다 물로 닦고, 마지막엔 완전히 말려 주세요.\n본체는 물에 담그지 말고 젖은 행주로만 닦아요.\n저장해두고 청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 에어프라이어는 몇 년 됐어요?",
+  "hook": "에어프라이어 아직도 물로만?",
+  "hashtags": [
+    "#에어프라이어",
+    "#에어프라이어청소",
+    "#가전꿀팁",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "air fryer kitchen cleaning",
+  "image_note": "9장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 914,
+    "has_photo": false
+  }
+}
