@@ -57,7 +57,7 @@ SCHEMA = {
         "first_screen_text": {"type": "string", "description": "0초 장면에 보이는 큰 글씨 그대로. 없으면 빈 문자열"},
         "first_3s": {"type": "string", "description": "0~3초 장면에서 실제로 보이는 것 (사람·물건·글씨·움직임) 한두 문장"},
         "hook_technique": {"type": "string", "enum": list(HOOK_TECHNIQUES)},
-        "formula": {"type": "integer", "description": "첫 화면 글씨가 해당하는 훅 공식 번호 1~26, 안 맞으면 0"},
+        "formula": {"type": "integer", "description": "첫 화면 글씨가 해당하는 훅 공식 번호 1~27, 안 맞으면 0"},
         "format": {"type": "string", "enum": list(FORMATS)},
         "beats": {
             "type": "array",

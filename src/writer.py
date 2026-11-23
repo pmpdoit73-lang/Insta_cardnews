@@ -418,7 +418,7 @@ SKILL_FIELDS = {
         "items": {
             "type": "object",
             "properties": {
-                "formula": {"type": "integer", "description": "훅 공식 번호 1~26"},
+                "formula": {"type": "integer", "description": "훅 공식 번호 1~27"},
                 "text": {"type": "string", "description": "화면 문구 16자 이내"},
                 "score": {"type": "integer",
                           "description": "0~100. 구체성(숫자·가전 이름)·손해/이득의 크기·2초 안에 읽히는지로 매긴 점수"},
