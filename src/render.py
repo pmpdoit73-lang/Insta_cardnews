@@ -546,9 +546,25 @@ def emoji_icon(ch, size):
         return None
 
 
+def _white_bars(im):
+    """세로·가로로 거의 다 검은 줄(그림 오류)을 흰색으로 칠한다."""
+    g = im.convert("L").resize((128, 128))
+    px = g.load()
+    d = ImageDraw.Draw(im)
+    sx, sy = im.width / 128, im.height / 128
+    for x in range(128):
+        if sum(px[x, y] < 40 for y in range(128)) > 115:
+            d.rectangle([int((x - 1) * sx), 0, int((x + 2) * sx), im.height], fill="white")
+    for y in range(128):
+        if sum(px[x, y] < 40 for x in range(128)) > 115:
+            d.rectangle([0, int((y - 1) * sy), im.width, int((y + 2) * sy)], fill="white")
+    return im
+
+
 def icon_image(path, emoji, size):
     if path:
         im = Image.open(path).convert("RGB")
+        im = _white_bars(im)  # 제미나이가 가끔 위아래를 꽉 채운 검은 띠를 남김 → 흰색으로
         # 흰 여백을 잘라 캐릭터가 칸을 꽉 채우게 (3D 캐릭터는 작게 나오는 일이 많음, 2026-11-23)
         from PIL import ImageOps
         box = ImageOps.invert(im.convert("L")).point(lambda v: 255 if v > 18 else 0).getbbox()
