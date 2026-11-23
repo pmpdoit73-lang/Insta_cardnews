@@ -419,7 +419,7 @@ SKILL_FIELDS = {
             "type": "object",
             "properties": {
                 "formula": {"type": "integer", "description": "훅 공식 번호 1~27"},
-                "text": {"type": "string", "description": "화면 문구 16자 이내"},
+                "text": {"type": "string", "description": "화면 문구 16자 이내 (27번 '왜?' 질문형만 22자까지)"},
                 "score": {"type": "integer",
                           "description": "0~100. 구체성(숫자·가전 이름)·손해/이득의 크기·2초 안에 읽히는지로 매긴 점수"},
             },
@@ -470,7 +470,18 @@ SKILL_RULES = (
     "끝까지 보면 얻는 것(결과)을 미리 살짝 보여 줘.\n"
     "- 소리를 끄고 봐도 다 통하게: 화면 글씨만으로 이해돼야 해.\n"
     "- 우리를 처음 보는 사람 기준으로 써. '지난번에', '저번 영상' 같은 말 금지.\n"
-    "- 캡션 첫 줄의 검색 키워드(가전 이름+고민)를 표지 제목에도 같은 낱말로 넣어 (화면 글씨도 검색에 잡힘)."
+    "- 캡션 첫 줄의 검색 키워드(가전 이름+고민)를 표지 제목에도 같은 낱말로 넣어 (화면 글씨도 검색에 잡힘).\n"
+    "\n## 추가 규칙 ('왜?' 질문형, 2026-11-23 @hea_lthyfriends 벤치마킹: 평소 3~5배 터진 릴스가 모두 이 모양)\n"
+    "- 주제는 누구나 겪지만 이유는 모르는 주방·살림 '왜?'로 골라 (예: 남은 치킨 데우면 왜 눅눅해져요?, "
+    "욕실 분홍 물때는 왜 자꾸 생겨요?, 밥솥 밥은 왜 노랗게 변해요?). 관리법 목록은 그 답으로 이어지게.\n"
+    "- hook_options 3개 중 하나는 반드시 27번 '왜? 말풍선' 공식으로, 물음표로 끝나게. 점수가 비슷하면 27번을 hook으로.\n"
+    "- hook은 시청자가 댓글로 묻는 말투 (예: '남은 치킨 데우면 왜 눅눅해져요?'). 영상 첫 화면에 흰 말풍선으로 나가.\n"
+    "- stake(2번 카드)는 '왜 그런지' 원리를 한 줄로 쉽게 (예: 식으면서 빠진 수분이 튀김옷으로 다시 들어가요).\n"
+    "- cover_image_prompt는 주인공 물건(가전·음식·도구)을 귀여운 3D 애니메이션 캐릭터로: 큰 눈, 작은 팔, 표정이 있는 "
+    "Pixar 느낌 캐릭터가 실제 같은 주방 장면 가운데에 있게 영어로 써. 위쪽 1/4은 말풍선 자리라 비워 둬.\n"
+    "  (예: 'A cute 3D animated character version of a fried chicken drumstick with big expressive eyes, "
+    "worried face and tiny arms, sitting on a plate inside a microwave, realistic warm kitchen lighting, "
+    "Pixar-like render, upper quarter of the frame left empty')"
 )
 
 
@@ -535,6 +546,8 @@ def skill_problems(post):
         errs.append("hook_options가 서로 다른 공식 3개가 아님")
     elif post.get("hook") not in [o.get("text") for o in opts]:
         errs.append("hook이 hook_options 중 하나와 글자 그대로 같지 않음")
+    if 27 not in [o.get("formula") for o in opts]:
+        errs.append("hook_options에 27번 '왜? 말풍선' 공식이 없음")
     if "보내" not in (post.get("save_line") or "") + cap:
         errs.append("save_line이나 캡션에 '친구에게 보내주세요' 같은 보내기 유도가 없음")
     if any(w in (post.get("hook") or "") for w in ("안녕", "오늘은")):

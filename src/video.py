@@ -59,8 +59,53 @@ def durations(n, extra=False):
     return [COVER_SEC] + [round(tip, 2)] * tips + [LAST_SEC]
 
 
-def hook_image(text, out_path):
-    """첫 화면 문구를 노란 띠 그림(투명 배경 PNG, 1080 너비)으로 만든다."""
+def bubble_image(text, out_path):
+    """첫 화면 문구를 '시청자 질문' 흰 말풍선(왼쪽 회색 프로필 동그라미 + 꼬리)으로 만든다.
+    2026-11-23 @hea_lthyfriends 벤치마킹: 평소 3배 넘게 터진 릴스가 모두 이 모양 ('왜 ~해요?')."""
+    from PIL import Image, ImageDraw
+    import render
+    text = " ".join((text or "").split())
+    avatar, pad = 64, 30
+    max_text = W - 200 - avatar - 3 * pad
+    size = 60
+    while size > 40 and render.font("Bold", size).getlength(text) > max_text * 1.9:
+        size -= 4
+    f = render.font("Bold", size)
+    lines = [text]
+    if f.getlength(text) > max_text:  # 두 줄로 나눔
+        words = text.split(" ")
+        best = min(range(1, len(words)), key=lambda i: abs(f.getlength(" ".join(words[:i]))
+                                                               - f.getlength(" ".join(words[i:]))), default=1)
+        lines = [" ".join(words[:best]), " ".join(words[best:])]
+    line_h = int(size * 1.3)
+    tw = int(max(f.getlength(ln) for ln in lines))
+    box_w = avatar + tw + 3 * pad
+    box_h = max(line_h * len(lines) + 2 * pad, avatar + 2 * pad)
+    im = Image.new("RGBA", (W, box_h + 50), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    x0 = (W - box_w) // 2
+    d.rounded_rectangle([x0 + 5, 9, x0 + box_w + 5, box_h + 9], radius=30, fill=(0, 0, 0, 70))  # 그림자
+    d.rounded_rectangle([x0, 4, x0 + box_w, box_h + 4], radius=30, fill=(255, 255, 255, 250))
+    tx = x0 + box_w // 2  # 아래 꼬리
+    d.polygon([(tx - 22, box_h + 2), (tx + 22, box_h + 2), (tx, box_h + 34)], fill=(255, 255, 255, 250))
+    cy = 4 + box_h / 2
+    ax = x0 + pad
+    d.ellipse([ax, cy - avatar / 2, ax + avatar, cy + avatar / 2], fill=(215, 218, 224, 255))
+    d.ellipse([ax + avatar * 0.34, cy - avatar * 0.30, ax + avatar * 0.66, cy + avatar * 0.02], fill=(250, 250, 252, 255))
+    d.pieslice([ax + avatar * 0.18, cy + avatar * 0.06, ax + avatar * 0.82, cy + avatar * 0.62], 180, 360,
+               fill=(250, 250, 252, 255))
+    y = cy - line_h * len(lines) / 2 + (line_h - size) / 2 - 4
+    for ln in lines:
+        d.text((ax + avatar + pad, y), ln, font=f, fill=(25, 25, 28, 255))
+        y += line_h
+    im.save(out_path)
+    return out_path
+
+
+def hook_image(text, out_path, bubble=False):
+    """첫 화면 문구를 노란 띠 그림(투명 배경 PNG, 1080 너비)으로 만든다. bubble=True면 질문 말풍선."""
+    if bubble:
+        return bubble_image(text, out_path)
     from PIL import Image, ImageDraw
     import render
     text = " ".join((text or "").split())
@@ -109,7 +154,7 @@ def story_image(card_path, out_path, text="새 게시물이 올라왔어요"):
     return Path(out_path)
 
 
-def make_reel(card_paths, out_path, hook="", music=None, loop="", extra=False):
+def make_reel(card_paths, out_path, hook="", music=None, loop="", extra=False, bubble=False):
     """카드 사진 경로 목록 → 릴스 MP4. hook: 맨 위 문구(없으면 생략), music: 배경음악 파일(없으면 무음),
     loop: 마지막 카드 동안 hook 대신 띄울 문구(없으면 hook 그대로), extra: durations 참고.
     만든 파일 경로를 돌려준다."""
@@ -132,11 +177,11 @@ def make_reel(card_paths, out_path, hook="", music=None, loop="", extra=False):
     hook_in = None
     if hook:
         hook_in = len(cards) + 1
-        cmd += ["-i", str(hook_image(hook, Path(out_path).with_name("hook.png")))]
+        cmd += ["-i", str(hook_image(hook, Path(out_path).with_name("hook.png"), bubble))]
     loop_in = None
     if hook and loop and len(cards) > 1:
         loop_in = len(cards) + 2
-        cmd += ["-i", str(hook_image(loop, Path(out_path).with_name("loop.png")))]
+        cmd += ["-i", str(hook_image(loop, Path(out_path).with_name("loop.png"), bubble))]
     last_start = total - secs[-1]
 
     parts = []
