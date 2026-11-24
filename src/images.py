@@ -8,6 +8,7 @@
 """
 
 import base64
+import io
 import os
 
 import requests
@@ -117,6 +118,73 @@ def get_icon(icon_prompt, ref=None):
         except Exception as e:
             print(f"[images] Gemini 그림 실패: {e}")
     return None, "이모지"
+
+
+SHEET_STYLE = (  # 2026-11-24 gil: 그림 요금 절감 — 아이콘 10장을 한 장짜리 시트로 한 번에 만들어 잘라 쓴다
+    "A sheet of separate cute 3D animated characters, Pixar-like 3D render, "
+    "big round expressive eyes and a small friendly face on each object itself, tiny arms, "
+    "soft studio lighting, glossy toy-like materials, warm pastel colors. "
+    "All characters share exactly the same style and size. Pure plain white background, no shadows on the background, "
+    "no frame, no borders, no grid lines. Absolutely no text, no letters, no numbers, no labels, no logos. "
+)
+
+
+def sheet_grid(n):
+    """(열, 행). 10개 → 5×2, 7개 → 4×2. 가로로 긴 그림 한 장에 한 줄 5칸씩 들어간다."""
+    cols = 5 if n > 8 else 4
+    return cols, (n + cols - 1) // cols
+
+
+def _cell_ok(cell):
+    """칸 안에 캐릭터가 하나 온전히 들어 있는지: 내용이 있고, 칸 가장자리에 닿아 잘리지 않았는지."""
+    from PIL import ImageOps
+    g = ImageOps.invert(cell.convert("L")).point(lambda v: 255 if v > 18 else 0)
+    box = g.getbbox()
+    if not box:
+        return False
+    w, h = cell.size
+    if (box[2] - box[0]) < w * 0.25 or (box[3] - box[1]) < h * 0.25:
+        return False
+    m = 3
+    return box[0] > m and box[1] > m and box[2] < w - m and box[3] < h - m
+
+
+def get_icon_sheet(icon_prompts):
+    """아이콘 여러 개를 시트 한 장(제미나이 1번 호출)으로 만들어 칸마다 잘라 돌려준다.
+
+    결과: 항목마다 그림 바이트(JPEG) 또는 None(그 칸이 비었거나 잘렸음 → 호출한 쪽이 그 항목만 따로 다시 만든다).
+    시트 전체가 실패하면 전부 None.
+    """
+    from PIL import Image
+    n = len(icon_prompts)
+    cols, rows = sheet_grid(n)
+    listing = "; ".join(f"cell {i + 1}: {p}" for i, p in enumerate(icon_prompts))
+    prompt = (SHEET_STYLE +
+              f"Layout: exactly {rows} rows and {cols} columns of equal invisible cells ({cols * rows} cells, read left to right, "
+              f"top to bottom), one character per cell, each centered in its own cell with wide empty white space around it "
+              f"so no character touches another or the edge. "
+              + (f"The last {cols * rows - n} cell(s) stay empty white. " if cols * rows > n else "")
+              + "Characters: " + listing)
+    try:
+        sheet = Image.open(io.BytesIO(_gemini([{"text": prompt}], "16:9" if cols == 5 else "4:3"))).convert("RGB")
+    except Exception as e:
+        print(f"[images] Gemini 아이콘 시트 실패: {e}")
+        return [None] * n
+    cw, ch = sheet.width / cols, sheet.height / rows
+    out = []
+    for i in range(n):
+        r, c = divmod(i, cols)
+        cell = sheet.crop((int(c * cw), int(r * ch), int((c + 1) * cw), int((r + 1) * ch)))
+        if not _cell_ok(cell):
+            out.append(None)
+            continue
+        side = max(cell.size)  # 정사각 흰 바탕에 올려 render.icon_image가 그대로 다듬게
+        sq = Image.new("RGB", (side, side), "white")
+        sq.paste(cell, ((side - cell.width) // 2, (side - cell.height) // 2))
+        buf = io.BytesIO()
+        sq.save(buf, "JPEG", quality=92)
+        out.append(buf.getvalue())
+    return out
 
 
 def get_hero(prompt, ref=None):

@@ -1,0 +1,60 @@
+name: 아이콘 시트 시험
+
+on:
+  # 시트 한 장으로 아이콘을 만들어 보는 시험. 진짜 초안은 건드리지 않고 텔레그램으로 결과만 보냄
+  workflow_dispatch:
+    inputs:
+      draft_id:
+        description: "항목을 빌려 올 17:30 초안 id (예: 20261124-1730)"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 시트 시험
+        run: |
+          python - <<'PY'
+          import os, sys, copy, shutil, tempfile
+          from pathlib import Path
+          sys.path.insert(0, "src")
+          import draft, images, render, telegram
+          d = draft.load(os.environ["DRAFT_ID"])
+          tmp = Path(tempfile.mkdtemp())
+          sheet = images.get_icon_sheet([it["icon_prompt"] for it in d["items"]])
+          print("[시험] 시트에서 온전히 잘린 칸:", [bool(x) for x in sheet])
+          icons = []
+          for i, data in enumerate(sheet, 1):
+              if data:
+                  (tmp / f"icon{i}.jpg").write_bytes(data)
+                  icons.append(str(tmp / f"icon{i}.jpg"))
+              else:
+                  icons.append(None)
+          keys = ("top_badge", "title", "highlight", "basis", "items", "save_tile", "check",
+                  "footer_line", "footer_highlight", "warning", "save_line", "handle")
+          card = {k: d.get(k, "") for k in keys} | {"slogan": draft.SLOGAN}
+          if draft.publish_time(d).day % 2 == 0:
+              card["style"] = "B"
+          hero = draft.folder(d["id"]) / "hero.jpg"
+          card["hero"] = str(hero) if hero.exists() else ""
+          paths = render.render_info(card, icons, tmp)
+          sheet_ok = sum(bool(x) for x in sheet)
+          telegram.send_album([(Path(p).name, Path(p).read_bytes()) for p in paths],
+                              f"[시험] 아이콘 시트 한 장 방식 · {sheet_ok}/{len(sheet)}칸 성공 (진짜 초안 아님)")
+          PY
+        env:
+          DRAFT_ID: ${{ inputs.draft_id }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INSTAGRAM_HANDLE: ${{ secrets.INSTAGRAM_HANDLE }}

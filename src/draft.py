@@ -184,14 +184,18 @@ def _fill_icons(d):
     for old in _numbered(d, "icon"):
         old.unlink()
     ref, notes = None, []
+    # 2026-11-24 gil: 요금 절감 — 그림 10장을 시트 한 장(제미나이 1번)으로 만들어 자른다. 빈 칸·잘린 칸만 따로 다시 만든다.
+    # (3D 캐릭터는 참고 그림을 주면 첫 그림을 베껴 똑같아져서, 개별 재시도도 글로만 그림체를 맞춘다)
+    sheet = images.get_icon_sheet([it["icon_prompt"] for it in d["items"]])
     for i, item in enumerate(d["items"], 1):
-        # 3D 캐릭터는 참고 그림을 주면 첫 그림을 그대로 베껴 10개가 똑같아져서 글로만 그림체를 맞춘다 (2026-11-23)
-        data, note = images.get_icon(item["icon_prompt"])
+        data, note = sheet[i - 1], "제미나이(시트)"
+        if not data:
+            data, note = images.get_icon(item["icon_prompt"])
         if data:
             (folder(d["id"]) / f"icon{i}.jpg").write_bytes(data)
             ref = ref or data
         notes.append(note)
-    made = notes.count("제미나이")
+    made = sum(n.startswith("제미나이") for n in notes)
     d["image_note"] = f"그림 {len(notes)}개 중 제미나이 {made}개" + (f", 이모지 {len(notes) - made}개" if made < len(notes) else "")
     hero = folder(d["id"]) / "hero.jpg"  # 2번째 카드 큰 3D 캐릭터 (2026-11-23)
     hero.unlink(missing_ok=True)
