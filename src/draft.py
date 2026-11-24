@@ -184,7 +184,7 @@ def _fill_icons(d):
     for old in _numbered(d, "icon"):
         old.unlink()
     ref, notes = None, []
-    # 2026-11-24 gil: 요금 절감 — 그림 10장을 시트 한 장(제미나이 1번)으로 만들어 자른다. 빈 칸·잘린 칸만 따로 다시 만든다.
+    # 2026-11-24 gil: 요금 절감 — 그림 10개를 한 줄짜리 시트 2장(제미나이 2번)으로 만들어 자른다. 못 자른 칸만 따로 다시 만든다.
     # (3D 캐릭터는 참고 그림을 주면 첫 그림을 베껴 똑같아져서, 개별 재시도도 글로만 그림체를 맞춘다)
     sheet = images.get_icon_sheet([it["icon_prompt"] for it in d["items"]])
     for i, item in enumerate(d["items"], 1):

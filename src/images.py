@@ -120,7 +120,7 @@ def get_icon(icon_prompt, ref=None):
     return None, "이모지"
 
 
-SHEET_STYLE = (  # 2026-11-24 gil: 그림 요금 절감 — 아이콘 10장을 한 장짜리 시트로 한 번에 만들어 잘라 쓴다
+SHEET_STYLE = (  # 2026-11-24 gil: 그림 요금 절감 — 아이콘 10개를 한 줄짜리 시트 2장으로 만들어 잘라 쓴다
     "A sheet of separate cute 3D animated characters, Pixar-like 3D render, "
     "big round expressive eyes and a small friendly face on each object itself, tiny arms, "
     "soft studio lighting, glossy toy-like materials, warm pastel colors. "
@@ -129,10 +129,11 @@ SHEET_STYLE = (  # 2026-11-24 gil: 그림 요금 절감 — 아이콘 10장을 �
 )
 
 
-def sheet_grid(n):
-    """(열, 행). 10개 → 5×2, 7개 → 4×2. 가로로 긴 그림 한 장에 한 줄 5칸씩 들어간다."""
-    cols = 5 if n > 8 else 4
-    return cols, (n + cols - 1) // cols
+def sheet_chunks(n):
+    """시트 한 장에 한 줄로 그릴 개수들. 10개 → [5, 5], 7개 → [4, 3].
+    (2줄 이상을 한 장에 시키면 제미나이가 줄·칸 수를 마음대로 바꿔서, 한 줄짜리 시트 2장으로 한다)"""
+    first = (n + 1) // 2
+    return [first, n - first]
 
 
 def _ink(im):
@@ -159,72 +160,68 @@ def _runs(profile, min_gap):
     return runs
 
 
-def _split_sheet(sheet, n, cols, rows):
-    """시트에서 캐릭터 n개의 칸(좌표)을 찾는다. 1) 흰 틈으로 줄·칸을 가르고(캐릭터가 칸 선에서 벗어나도 OK),
-    안 맞으면 2) 균등 격자로 자른다. 결과: [(left, top, right, bottom) 또는 None] × n"""
+def _split_row(sheet, count):
+    """한 줄 시트에서 캐릭터 칸(좌표) count개를 흰 틈으로 찾는다. 개수가 안 맞으면 None."""
     ink = _ink(sheet)
     w, h = sheet.size
-    rowp = [sum(1 for x in range(0, w, 2) if ink.getpixel((x, y))) for y in range(h)]
-    row_runs = _runs(rowp, max(6, h // 40))
+    colp = [sum(1 for y in range(0, h, 2) if ink.getpixel((x, y))) for x in range(w)]
+    runs = _runs(colp, max(8, w // 60))
+    if len(runs) != count:
+        return None
     rects = []
-    if len(row_runs) == rows:
-        for (y0, y1) in row_runs:
-            strip = ink.crop((0, y0, w, y1))
-            colp = [sum(1 for y in range(0, y1 - y0, 2) if strip.getpixel((x, y))) for x in range(w)]
-            col_runs = _runs(colp, max(6, w // 80))
-            want = min(cols, n - len(rects))
-            if len(col_runs) != want:
-                rects = None
-                break
-            rects += [(x0, y0, x1, y1) for (x0, x1) in col_runs]
-    else:
-        rects = None
-    if rects and len(rects) == n:
-        return rects
-    cw, ch = w / cols, h / rows  # 균등 격자
-    out = []
-    for i in range(n):
-        r, c = divmod(i, cols)
-        out.append((int(c * cw), int(r * ch), int((c + 1) * cw), int((r + 1) * ch)))
-    return out
+    for x0, x1 in runs:
+        box = ink.crop((x0, 0, x1, h)).getbbox()
+        if not box:
+            return None
+        rects.append((x0, box[1], x1, box[3]))
+    return rects
+
+
+def _one_sheet(prompts, debug_name=None, debug_dir=None):
+    """캐릭터 len(prompts)개를 한 줄로 그린 시트 한 장 → 칸마다 정사각 흰 바탕 JPEG 바이트. 못 자르면 전부 None. 한 번 더 시도."""
+    from PIL import Image
+    n = len(prompts)
+    listing = "; ".join(f"{i + 1}) {p}" for i, p in enumerate(prompts))
+    prompt = (SHEET_STYLE +
+              f"Layout: ONE single horizontal row with exactly {n} characters, left to right, evenly spaced, "
+              f"each one separate with wide empty white space between them so none touch or overlap. "
+              f"Draw ONLY these {n} characters, no extras, no second row: " + listing)
+    for attempt in range(2):
+        try:
+            sheet = Image.open(io.BytesIO(_gemini([{"text": prompt}], "16:9"))).convert("RGB")
+        except Exception as e:
+            print(f"[images] Gemini 아이콘 시트 실패: {e}")
+            continue
+        if debug_dir:
+            sheet.save(os.path.join(debug_dir, f"{debug_name}_{attempt + 1}.jpg"), quality=90)
+        rects = _split_row(sheet, n)
+        if not rects:
+            print(f"[images] 시트 칸 수가 {n}개와 안 맞음 (시도 {attempt + 1})")
+            continue
+        out = []
+        for rect in rects:
+            cell = sheet.crop(rect)
+            side = max(cell.size)  # 정사각 흰 바탕에 올려 render.icon_image가 그대로 다듬게
+            sq = Image.new("RGB", (side, side), "white")
+            sq.paste(cell, ((side - cell.width) // 2, (side - cell.height) // 2))
+            buf = io.BytesIO()
+            sq.save(buf, "JPEG", quality=92)
+            out.append(buf.getvalue())
+        return out
+    return [None] * n
 
 
 def get_icon_sheet(icon_prompts, debug_dir=None):
-    """아이콘 여러 개를 시트 한 장(제미나이 1번 호출)으로 만들어 칸마다 잘라 돌려준다.
+    """아이콘을 한 줄짜리 시트 2장(제미나이 2번 호출)으로 만들어 칸마다 잘라 돌려준다. 10번 → 2번.
 
-    결과: 항목마다 그림 바이트(JPEG) 또는 None(그 칸이 비었음 → 호출한 쪽이 그 항목만 따로 다시 만든다).
-    시트 전체가 실패하면 전부 None. debug_dir를 주면 원본 시트를 sheet.jpg로 저장(시험용).
+    결과: 항목마다 그림 바이트(JPEG) 또는 None(못 잘랐음 → 호출한 쪽이 그 항목만 따로 만든다).
+    debug_dir를 주면 원본 시트를 sheet_1_1.jpg 같은 이름으로 저장(시험용).
     """
-    from PIL import Image
-    n = len(icon_prompts)
-    cols, rows = sheet_grid(n)
-    listing = "; ".join(f"cell {i + 1}: {p}" for i, p in enumerate(icon_prompts))
-    prompt = (SHEET_STYLE +
-              f"Layout: exactly {rows} rows and {cols} columns of equal invisible cells ({cols * rows} cells, read left to right, "
-              f"top to bottom), one character per cell, each centered in its own cell with wide empty white space around it "
-              f"so no character touches another or the edge. "
-              + (f"The last {cols * rows - n} cell(s) stay empty white. " if cols * rows > n else "")
-              + "Characters: " + listing)
-    try:
-        sheet = Image.open(io.BytesIO(_gemini([{"text": prompt}], "16:9" if cols == 5 else "4:3"))).convert("RGB")
-    except Exception as e:
-        print(f"[images] Gemini 아이콘 시트 실패: {e}")
-        return [None] * n
-    if debug_dir:
-        sheet.save(os.path.join(debug_dir, "sheet.jpg"), quality=90)
-    out = []
-    for rect in _split_sheet(sheet, n, cols, rows):
-        cell = sheet.crop(rect)
-        box = _ink(cell).getbbox()
-        if not box or (box[2] - box[0]) < cell.width * 0.2 or (box[3] - box[1]) < cell.height * 0.2:
-            out.append(None)  # 빈 칸
-            continue
-        side = max(cell.size)  # 정사각 흰 바탕에 올려 render.icon_image가 그대로 다듬게
-        sq = Image.new("RGB", (side, side), "white")
-        sq.paste(cell, ((side - cell.width) // 2, (side - cell.height) // 2))
-        buf = io.BytesIO()
-        sq.save(buf, "JPEG", quality=92)
-        out.append(buf.getvalue())
+    out, start = [], 0
+    for k, count in enumerate(sheet_chunks(len(icon_prompts)), 1):
+        if count:
+            out += _one_sheet(icon_prompts[start:start + count], f"sheet_{k}", debug_dir)
+        start += count
     return out
 
 
