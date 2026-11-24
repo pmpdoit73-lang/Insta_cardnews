@@ -1,12 +1,15 @@
 name: 아이콘 시트 시험
 
 on:
+  # PR에서 이 파일이 바뀌면 최신 17:30 초안으로 한 번 자동 시험 (PR 확인용)
+  pull_request:
+    paths: [".github/workflows/icon-sheet-test.yml"]
   # 시트 한 장으로 아이콘을 만들어 보는 시험. 진짜 초안은 건드리지 않고 텔레그램으로 결과만 보냄
   workflow_dispatch:
     inputs:
       draft_id:
         description: "항목을 빌려 올 17:30 초안 id (예: 20261124-1730)"
-        required: true
+        required: false
 
 permissions:
   contents: read
@@ -29,7 +32,8 @@ jobs:
           from pathlib import Path
           sys.path.insert(0, "src")
           import draft, images, render, telegram
-          d = draft.load(os.environ["DRAFT_ID"])
+          did = os.environ.get("DRAFT_ID") or sorted(p.name for p in Path("drafts").glob("*-1730"))[-1]
+          d = draft.load(did)
           tmp = Path(tempfile.mkdtemp())
           sheet = images.get_icon_sheet([it["icon_prompt"] for it in d["items"]])
           print("[시험] 시트에서 온전히 잘린 칸:", [bool(x) for x in sheet])
