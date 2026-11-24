@@ -2,7 +2,7 @@
   "id": "20261124-1730",
   "created_at": "2026-11-23T19:21:01.219578+09:00",
   "publish_at": "2026-11-24T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "에어프라이어 사용 가능·불가 용기 소재별 총정리",
@@ -121,5 +121,9 @@
   "message": {
     "message_id": 962,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18452139544192654",
+  "permalink": "https://www.instagram.com/p/DgHiFr2Fsck/",
+  "published_at": "2026-11-24T17:32:01.434152+09:00",
+  "story_id": "18135905960505376"
 }
