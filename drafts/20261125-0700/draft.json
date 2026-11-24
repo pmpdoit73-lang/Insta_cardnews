@@ -2,7 +2,7 @@
   "id": "20261125-0700",
   "created_at": "2026-11-24T21:03:01.241244+09:00",
   "publish_at": "2026-11-25T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "커피머신 관리법",
@@ -104,5 +104,9 @@
   "message": {
     "message_id": 993,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17946828888393566",
+  "permalink": "https://www.instagram.com/reel/DgI-4MnFZCW/",
+  "published_at": "2026-11-25T07:03:20.164877+09:00",
+  "story_id": "18152056333598303"
 }
