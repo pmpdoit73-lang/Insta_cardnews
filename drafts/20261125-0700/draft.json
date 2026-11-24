@@ -1,0 +1,108 @@
+{
+  "id": "20261125-0700",
+  "created_at": "2026-11-24T21:03:01.241244+09:00",
+  "publish_at": "2026-11-25T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "커피머신 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "쌀쌀한 늦가을엔 따뜻한 커피를 하루에도 몇 잔씩 내려 마셔서, 커피머신 물통과 추출구에 물때가 끼기 쉬운 때예요.",
+  "title": [
+    "맛이 확 달라지는",
+    "커피머신 관리법 7"
+  ],
+  "highlight": "확 달라지는",
+  "subtitle": "물만 갈고 끝내진 않으셨죠?",
+  "scene": "A bright Korean home kitchen in the morning, a compact espresso coffee machine on a light wood countertop with a clean white ceramic mug, small potted herb and a linen cloth nearby, warm sunlight from a window on the left, simple empty counter area at the bottom third, no text, no faces",
+  "cover_image_prompt": "The espresso coffee machine on the light wood countertop with a steaming white mug under the spout, warm morning sunlight from the window, clean and cozy mood, empty counter space at the bottom",
+  "tips": [
+    {
+      "title": "물통 매일 비우기",
+      "lines": [
+        "남은 물은 버리고 새 물로",
+        "고인 물 냄새가 커피에 안 배요"
+      ],
+      "note": "",
+      "image_prompt": "A hand lifting the removable water tank out of the coffee machine, fresh water being poured in from a glass jug, same countertop"
+    },
+    {
+      "title": "추출구 닦기",
+      "lines": [
+        "마른 행주로 추출구를 매일 닦아요",
+        "커피 찌꺼기가 굳는 걸 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand wiping the coffee spout of the machine with a clean dry linen cloth, same countertop"
+    },
+    {
+      "title": "드립트레이 씻기",
+      "lines": [
+        "트레이는 주 2회 물세척해요",
+        "넘친 커피 물때와 곰팡이를 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A drip tray and grate being rinsed under running water in a bright sink, then placed on a dish towel, same window light"
+    },
+    {
+      "title": "캡슐통 비우기",
+      "lines": [
+        "사용한 캡슐은 그날 바로 비워요",
+        "습기 때문에 곰팡이가 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "A hand emptying used coffee capsules from the capsule container of the machine into a small bowl, same countertop"
+    },
+    {
+      "title": "석회질 세척",
+      "lines": [
+        "설명서에 나온 세척 모드 쓰세요",
+        "물때가 쌓이면 추출이 느려져요"
+      ],
+      "note": "식초는 제품이 허용할 때만 쓰세요",
+      "image_prompt": "The coffee machine with its descaling cleaning cycle running, an empty glass bowl placed under the spout, manual book lying closed beside it, no text visible"
+    },
+    {
+      "title": "원두 보관",
+      "lines": [
+        "원두는 밀폐 용기에 담아 보관해요",
+        "공기와 닿으면 향이 빨리 날아가요"
+      ],
+      "note": "",
+      "image_prompt": "Coffee beans being scooped into an airtight glass canister with a small wooden scoop, same countertop"
+    },
+    {
+      "title": "분쇄기 청소",
+      "lines": [
+        "분쇄기는 전원 끄고 솔로 털어요",
+        "가루가 쌓이면 맛이 탁해져요"
+      ],
+      "note": "전원을 뽑은 뒤에만 손대세요",
+      "image_prompt": "A small brush sweeping ground coffee powder off the grinder area of the unplugged machine, coffee grounds on a white paper towel, same countertop"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "전원 켠 채 내부를 닦지 마세요",
+      "감전과 화상 위험이 있어요",
+      "세제는 헹굼이 어려워 피하세요"
+    ],
+    "image_prompt": "The coffee machine on the same countertop with a dish soap bottle, a steel scrubbing pad and a wet cloth placed beside it, no hands, no text"
+  },
+  "save_line": "저장해두고 커피머신 청소할 때 꺼내보세요",
+  "caption": "커피머신 관리법, 저는 물만 갈고 몇 달을 버텼어요 ☕\n물통은 매일 비우고 추출구는 마른 행주로 닦아요.\n드립트레이와 캡슐통은 자주 씻고 말려야 곰팡이를 막아요.\n석회질은 설명서에 나온 방법으로 정기적으로 관리해요.\n원두는 밀폐해서 보관하면 향이 오래가요.\n저장해두고 커피머신 청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 하루에 커피 몇 잔 내려 드세요?\n\n#커피머신 #커피머신청소 #가전꿀팁 #주방꿀팁 #살림꿀팁 #홈카페 #커피머신관리 #캡슐커피머신 #커피머신물때 #원두보관 #주방가전 #살림스타그램",
+  "hook": "커피머신, 물만 갈아요?",
+  "hashtags": [
+    "#커피머신",
+    "#커피머신청소",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "coffee machine kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 993,
+    "has_photo": false
+  }
+}
