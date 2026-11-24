@@ -1,0 +1,126 @@
+{
+  "id": "20261125-1200",
+  "created_at": "2026-11-25T08:02:18.415594+09:00",
+  "publish_at": "2026-11-25T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "김치통 뚜껑 안 열릴 때 관리법",
+  "kind": "주방 꿀팁",
+  "angle": "김장철 김치통 뚜껑이 안 열려 씨름했다는 글이 온라인에서 화제가 됐어요. 왜 안 열리는지 원리와 쉽게 여는 요령, 평소 관리법을 묶었어요.",
+  "title": [
+    "뚜껑 안 열리는",
+    "김치통 관리법 6"
+  ],
+  "highlight": "김치통",
+  "subtitle": "뚜껑 앞에서 낑낑대신 적 있죠?",
+  "scene": "Bright Korean home kitchen in late autumn morning, a plastic kimchi container with a snap-lock lid sitting on a light wooden countertop, soft sunlight from a window on the left, a small dish towel and a wooden spoon nearby, simple plain counter in the bottom third, warm cozy tone",
+  "cover_image_prompt": "A cute 3D animated character version of a kimchi container with big expressive eyes, a struggling worried face and tiny arms holding its own lid tight, sitting on a sunlit Korean kitchen counter, realistic warm morning window light, Pixar-like render, close-up, face in the upper middle, bottom 40% plain counter",
+  "tips": [
+    {
+      "title": "숟가락으로 공기 넣기",
+      "lines": [
+        "패킹 틈에 숟가락 끝을 살짝 넣어요",
+        "공기가 들어가면 바로 열려요"
+      ],
+      "note": "칼은 쓰지 마세요",
+      "image_prompt": "A hand slipping the tip of a spoon handle under the edge of the kimchi container lid, same kitchen and counter"
+    },
+    {
+      "title": "실온에 10분 두기",
+      "lines": [
+        "냉장고에서 꺼내 10분 두세요",
+        "안팎 압력 차이가 줄어들어요"
+      ],
+      "note": "",
+      "image_prompt": "The kimchi container resting on the counter next to a small kitchen timer, same kitchen"
+    },
+    {
+      "title": "가장자리 톡톡",
+      "lines": [
+        "뚜껑 가장자리를 손바닥으로 톡톡",
+        "눌린 패킹이 풀려 열기 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "A hand gently tapping the rim of the kimchi container lid with the palm, same kitchen"
+    },
+    {
+      "title": "김치는 80%만 담기",
+      "lines": [
+        "김치는 통의 80%만 채우세요",
+        "발효 가스 들어갈 공간이 생겨요"
+      ],
+      "note": "",
+      "image_prompt": "An open kimchi container filled about four fifths with red kimchi, a wooden spoon beside it, same kitchen"
+    },
+    {
+      "title": "패킹 따로 씻기",
+      "lines": [
+        "패킹을 빼서 미지근한 물로 씻어요",
+        "국물 찌꺼기 없으면 덜 달라붙어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand rinsing a white silicone lid gasket under a small stream of water at the sink, same kitchen light"
+    },
+    {
+      "title": "비닐로 한 번 덮기",
+      "lines": [
+        "김치 위에 랩이나 비닐을 덮어요",
+        "공기와 닿는 면이 줄어 맛이 유지돼요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pressing a sheet of plastic wrap over the kimchi inside the open container, same kitchen"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "칼로 뚜껑을 억지로 비틀지 마요",
+      "끓는 물을 부으면 통이 휘어요",
+      "무리하면 손을 다칠 수 있어요"
+    ],
+    "image_prompt": "A kitchen knife and a steaming kettle placed on the counter next to the kimchi container, same kitchen and sunlight, no people"
+  },
+  "save_line": "김치통 뚜껑과 씨름하는 가족에게 보내주세요",
+  "caption": "김치통 뚜껑 안 열려서 한참 씨름했어요 😅\n김치통 뚜껑이 안 열릴 때 쓰는 요령 6가지를 정리했어요.\n통 안 발효 가스와 온도 변화 때문에 압력이 달라져서 그래요.\n숟가락으로 공기 넣기, 실온 10분 두기, 김치 80%만 담기가 핵심이에요.\n패킹은 따로 빼서 씻어 주세요.\n저장해두고 김치통 열기 힘들 때 꺼내보세요. 김장 앞둔 가족·친구에게 보내주세요.\n여러분 집 김치통은 몇 개예요?",
+  "hook": "김치통 뚜껑은 왜 안 열려요?",
+  "hashtags": [
+    "#김치통",
+    "#김치통뚜껑",
+    "#김장꿀팁",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "kimchi container kitchen",
+  "stake": {
+    "title": "김치통이 왜 안 열릴까요",
+    "lines": [
+      "발효 가스와 온도 변화로",
+      "통 안 압력이 변해 뚜껑이 눌려요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 27,
+      "text": "김치통 뚜껑은 왜 안 열려요?",
+      "score": 90
+    },
+    {
+      "formula": 5,
+      "text": "낑낑대던 김치통, 1분이면 열려요",
+      "score": 82
+    },
+    {
+      "formula": 19,
+      "text": "김장 전에 김치통 이것부터",
+      "score": 78
+    }
+  ],
+  "hook_formula": 27,
+  "loop_line": "김치통 뚜껑 이제 쉽게 열려요",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 1007,
+    "has_photo": false
+  }
+}
