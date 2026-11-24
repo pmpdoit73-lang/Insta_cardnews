@@ -904,6 +904,64 @@ def info_end_b(c):
     return im
 
 
+# ---------- 인포그래픽 C안: 크림 바탕 3x3 그리드 (2026-11-24 gil 레퍼런스: hea_lthyfriends '버려야 할 물건 9가지') ----------
+
+C_BG, C_BLUE, C_INK, C_GRAY = (251, 247, 236), (0, 102, 255), (20, 20, 22), (110, 106, 98)
+
+
+def _tight(d, text, f, x, y, fill, track=-3):
+    """자간을 살짝 좁혀 굵은 제목처럼 빽빽하게 그린다. 그린 뒤 끝 x를 돌려준다."""
+    for ch in text:
+        d.text((x, y), ch, font=f, fill=fill)
+        x += d.textlength(ch, font=f) + track
+    return x
+
+
+def _tight_w(d, text, f, track=-3):
+    return sum(d.textlength(ch, font=f) + track for ch in text) - track
+
+
+def info_sheet_c(c, icons):
+    """크림 바탕, 큰 굵은 2줄 제목(강조어 파랑), 부제, 3x3 그림+이름+(힌트), 아래 두 줄 마무리."""
+    im = Image.new("RGB", (W, H), C_BG)
+    d = ImageDraw.Draw(im)
+    lines, hl = c["title"], c.get("highlight", "")
+    size = 104
+    while size > 60 and max(_tight_w(d, ln, font("Black", size)) for ln in lines) > W - 80:
+        size -= 4
+    f = font("Black", size)
+    y = 44
+    for ln in lines:
+        x = (W - _tight_w(d, ln, f)) / 2
+        if hl and hl in ln:
+            a, b = ln.split(hl, 1)
+            x = _tight(d, a, f, x, y, C_INK)
+            x = _tight(d, hl, f, x, y, C_BLUE)
+            _tight(d, b, f, x, y, C_INK)
+        else:
+            _tight(d, ln, f, x, y, C_INK)
+        y += int(size * 1.12)
+    sub = c.get("subtitle") or c.get("basis", "")
+    d.text((W // 2, y + 8), sub, font=font("Medium", 27), fill=C_GRAY, anchor="ma")
+    items = c["items"][:9]
+    top, row_h, col_w, icon = y + 52, 292, W // 3, 212
+    for i, it in enumerate(items):
+        r, k = divmod(i, 3)
+        cx, ry = col_w * k + col_w // 2, top + r * row_h
+        pic = icons[i] if i < len(icons) else None
+        if pic is not None:
+            from PIL import ImageChops  # 그림의 흰 바탕이 크림색 위에 네모로 안 보이게 곱하기로 합친다
+            box = (cx - icon // 2, ry, cx - icon // 2 + icon, ry + icon)
+            im.paste(ImageChops.multiply(im.crop(box), pic.resize((icon, icon), Image.LANCZOS)), box)
+        d.text((cx, ry + icon + 4), it["name"], font=fit(d, [it["name"]], "ExtraBold", 38, col_w - 30), fill=C_INK, anchor="ma")
+        hint = f"({it.get('hint') or it.get('badge', '')})"
+        d.text((cx, ry + icon + 50), hint, font=fit(d, [hint], "Medium", 25, col_w - 30), fill=C_GRAY, anchor="ma")
+    fy = top + 3 * row_h + 6
+    d.text((W // 2, fy), c.get("footer_blue") or c.get("footer_line", ""), font=fit(d, [c.get("footer_blue") or c.get("footer_line", "")], "ExtraBold", 36, W - 100), fill=C_BLUE, anchor="ma")
+    d.text((W // 2, fy + 50), c.get("footer_black") or c.get("save_line", ""), font=fit(d, [c.get("footer_black") or c.get("save_line", "")], "ExtraBold", 34, W - 100), fill=C_INK, anchor="ma")
+    return im
+
+
 def render_info(card, icons, out_dir):
     """인포그래픽형 2장(총정리표 + 저장·주의)을 out_dir/card1.jpg, card2.jpg로 저장하고 경로 목록을 돌려준다.
 
@@ -916,7 +974,10 @@ def render_info(card, icons, out_dir):
     icons = list(icons) + [None] * (len(items) - len(icons))
     side = 200
     pics = [icon_image(p, it.get("emoji", ""), side) for p, it in zip(icons, items)]
-    if card.get("style") == "B":  # 짝수 날 (2026-11-23~)
+    if card.get("style") == "C":  # 크림 3x3 (레퍼런스형, 2026-11-24 시험)
+        pics = [icon_image(p, it.get("emoji", ""), 300) for p, it in zip(icons, items)]
+        images = [info_sheet_c(card, pics), info_end(card)]
+    elif card.get("style") == "B":  # 짝수 날 (2026-11-23~)
         images = [info_sheet_b(card, [icon_image(p, it.get("emoji", ""), 160) for p, it in zip(icons, items)]),
                   info_end_b(card)]
     else:

@@ -243,7 +243,8 @@ def _external_text(external):
 # ---------- 인포그래픽형 (한 장짜리 총정리표, 2026-10-30 gil 요청) ----------
 
 INFO_SIZES = (10, 7)  # 항목 수. 칸 = 항목 + '저장!' 칸 + '체크' 칸 → 3열 × 4줄(12칸) 또는 3열 × 3줄(9칸)
-INFO_NAME_MAX, INFO_BADGE_MAX = 7, 7
+INFO_NAME_MAX, INFO_BADGE_MAX, INFO_HINT_MAX = 7, 7, 12
+INFO_NINE = 9  # 홀수 날 디자인(C안, 크림 3x3 그리드)은 항목 정확히 9개 (2026-11-24 gil)
 
 INFO_ITEM = {
     "type": "object",
@@ -251,12 +252,15 @@ INFO_ITEM = {
         "name": {"type": "string", "description": f"항목 이름 {INFO_NAME_MAX}자 이내 (예: '달걀', '면 티셔츠', '전기장판')"},
         "badge": {"type": "string",
                   "description": f"칸에 크게 들어갈 핵심 숫자·답 {INFO_BADGE_MAX}자 이내 (예: '냉장 3주', '40도', '월 6천원', 'O 가능')"},
+        "hint": {"type": "string",
+                 "description": f"이름 밑 괄호 안에 들어갈 짧은 설명 {INFO_HINT_MAX}자 이내, 괄호는 쓰지 마 "
+                                "(예: '내열 표시 확인', '개봉 후 3일'). 홀수 날 9칸 디자인에서 씀"},
         "detail": {"type": "string", "description": "캡션에 쓸 한 줄 설명 30자 이내 (방법·이유)"},
         "emoji": {"type": "string", "description": "이 항목을 나타내는 이모지 1개 (그림이 안 나올 때 대신 씀)"},
         "icon_prompt": {"type": "string",
                         "description": "이 항목 그림의 영어 묘사: 물건 하나만 (예: 'a carton of fresh eggs'). 글자·얼굴 없이"},
     },
-    "required": ["name", "badge", "detail", "emoji", "icon_prompt"],
+    "required": ["name", "badge", "hint", "detail", "emoji", "icon_prompt"],
     "additionalProperties": False,
 }
 INFO_SCRIPT = {
@@ -269,7 +273,7 @@ INFO_SCRIPT = {
         "basis": {"type": "string",
                   "description": "기준 한 줄 30자 이내: 무엇을 기준으로 정리했는지 (예: '식약처 권장 기준 · 개봉 전 냉장')"},
         "items": {"type": "array", "items": INFO_ITEM,
-                  "description": "총정리표 항목 정확히 10개 (주제가 좁으면 7개). 같은 기준으로 비교되는 것끼리"},
+                  "description": "총정리표 항목 (아래 규칙에 적힌 개수). 같은 기준으로 비교되는 것끼리"},
         "save_tile": {**LINES, "description": "가운데 '저장!' 칸 위에 들어갈 2줄, 한 줄 7자 이내 (예: '장볼 때' / '꺼내 보는 표')"},
         "check": {
             "type": "object",
@@ -316,13 +320,18 @@ INFO_SCHEMA = {
     "additionalProperties": False,
 }
 
-INFO_RULES = (
+
+def info_rules(nine=False):
+    count = ("- items는 정확히 9개 (3x3 그리드 디자인). " if nine else "- items는 정확히 10개 (주제가 좁으면 7개). ")
+    head = (
     "## 형식: 인포그래픽형 '한 장짜리 총정리표' (저장해 두고 다시 꺼내 보는 자료)\n"
     "- 주제는 같은 기준으로 여러 개를 비교·정리할 수 있는 것: 식재료별 보관기한, 얼룩별 지우는 법, "
     "용기별 전자레인지 가능 여부, 세탁기호, 가전 교체 주기, 계절 가전 전기요금 같은 것. "
     "'OO 활용법'처럼 한 가전의 요령 모음은 목록형이 하니까 피해.\n"
-    f"- items는 정확히 10개 (주제가 좁으면 7개). 모든 항목의 badge는 같은 기준의 숫자·답이어야 해 "
-    f"(보관기한이면 전부 기간, 온도면 전부 온도). 이름 {INFO_NAME_MAX}자, badge {INFO_BADGE_MAX}자 이내.\n"
+    )
+    return head + count + (
+    f"모든 항목의 badge는 같은 기준의 숫자·답이어야 해 "
+    f"(보관기한이면 전부 기간, 온도면 전부 온도). 이름 {INFO_NAME_MAX}자, badge {INFO_BADGE_MAX}자 이내, hint {INFO_HINT_MAX}자 이내(이름 밑 괄호 설명).\n"
     f"- title 2줄, 한 줄 {TITLE_MAX}자 이내. 개수 숫자는 직접 쓰지 말고 {N_MARK}로 둬 (코드가 실제 개수로 바꿈).\n"
     "- basis에는 무엇을 기준으로 했는지 써서 믿을 만한 자료로 보이게 해 (예: '식약처 권장 기준', '제품 설명서 기준').\n"
     "- 숫자는 널리 알려진 값만. 모르는 값은 지어내지 말고 그 항목을 빼고 다른 항목을 골라.\n"
@@ -332,25 +341,25 @@ INFO_RULES = (
 )
 
 
-def normalize_info(post):
-    """항목 수를 10개 또는 7개로 맞춘다 (칸이 3열로 꽉 차게). 넘치면 뒤에서 자른다."""
+def normalize_info(post, nine=False):
+    """항목 수를 10개 또는 7개(홀수 날 9칸 디자인은 9개)로 맞춘다 (칸이 3열로 꽉 차게). 넘치면 뒤에서 자른다."""
     items = post.get("items", [])
-    for n in INFO_SIZES:
+    for n in ((INFO_NINE,) if nine else INFO_SIZES):
         if len(items) >= n:
             post["items"] = items[:n]
             break
     return fill_count(post)
 
 
-def info_problems(post):
+def info_problems(post, nine=False):
     errs = []
     title, items = post.get("title", []), post.get("items", [])
     if len(title) != 2:
         errs.append("title이 2줄이 아님")
     if N_MARK not in "".join(title):
         errs.append(f"title에 개수 자리 {N_MARK}가 없음")
-    if len(items) not in INFO_SIZES:
-        errs.append(f"items가 10개(또는 7개)가 아님 ({len(items)}개)")
+    if len(items) not in ((INFO_NINE,) if nine else INFO_SIZES):
+        errs.append(f"items가 {'9개' if nine else '10개(또는 7개)'}가 아님 ({len(items)}개)")
     if post.get("highlight") and post["highlight"] not in "".join(title):
         errs.append("highlight가 title 안에 없음")
     if post.get("footer_highlight") and post["footer_highlight"] not in post.get("footer_line", ""):
@@ -362,12 +371,13 @@ def info_problems(post):
     long = [ln for ln in title if len(ln.replace(N_MARK, "10")) > TITLE_MAX + 2]
     long += [x["name"] for x in items if len(x.get("name", "")) > INFO_NAME_MAX + 2]
     long += [x["badge"] for x in items if len(x.get("badge", "")) > INFO_BADGE_MAX + 2]
+    long += [x["hint"] for x in items if len(x.get("hint", "")) > INFO_HINT_MAX + 3]
     if long:
         errs.append("너무 긴 글: " + ", ".join(long))
     return errs
 
 
-def write_info(trends, recent_issues=()):
+def write_info(trends, recent_issues=(), nine=False):
     """인포그래픽형 총정리표 대본. trends·recent_issues는 write_cards와 같다."""
     recent = "\n".join(f"- {r}" for r in recent_issues) or "(없음)"
     today = datetime.now(timezone(timedelta(hours=9)))
@@ -378,19 +388,19 @@ def write_info(trends, recent_issues=()):
         "1. 계정 소개(주방의 질을 높이는 가성비 가전·살림 꿀팁)에 맞고, 주부·자취생이 '이거 저장해 둬야겠다' 할 "
         "총정리표 주제 하나를 골라. 지금 계절에 맞으면 더 좋아. kind에 종류를 적어.\n"
         "2. 그 주제로 한 장짜리 총정리표 대본, 둘째 장(주의·저장) 문구, 캡션, 해시태그, 그림 프롬프트를 만들어.\n"
-        + INFO_RULES
+        + info_rules(nine)
     )
-    return normalize_info(_checked(user_msg, INFO_SCHEMA, info_problems))
+    return normalize_info(_checked(user_msg, INFO_SCHEMA, lambda p: info_problems(p, nine)), nine)
 
 
-def rewrite_info(d):
+def rewrite_info(d, nine=False):
     """같은 주제로 총정리표 대본만 새로 쓴다."""
     user_msg = (
         f"주제: {d['issue']}\n종류: {d['kind']}\n시선: {d.get('angle', '')}\n\n"
         f"지난번 제목: {' / '.join(d['title'])}\n\n"
-        "같은 주제로 총정리표 대본을 다시 써 줘. 제목은 다른 각도로.\n" + INFO_RULES
+        "같은 주제로 총정리표 대본을 다시 써 줘. 제목은 다른 각도로.\n" + info_rules(nine)
     )
-    return normalize_info(_checked(user_msg, INFO_SCRIPT, info_problems))
+    return normalize_info(_checked(user_msg, INFO_SCRIPT, lambda p: info_problems(p, nine)), nine)
 
 
 # ---------- 스킬형 (2026-11-12 gil 요청, 12:00 회차만) ----------
