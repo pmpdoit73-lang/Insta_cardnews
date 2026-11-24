@@ -1,9 +1,6 @@
 name: 아이콘 시트 시험
 
 on:
-  # PR에서 이 파일이 바뀌면 최신 17:30 초안으로 한 번 자동 시험 (PR 확인용)
-  pull_request:
-    paths: [".github/workflows/icon-sheet-test.yml"]
   # 시트 한 장으로 아이콘을 만들어 보는 시험. 진짜 초안은 건드리지 않고 텔레그램으로 결과만 보냄
   workflow_dispatch:
     inputs:
@@ -74,4 +71,3 @@ jobs:
           git add samples/icon-sheet
           git commit -m "아이콘 시트 시험 결과 샘플" || exit 0
           git push
-# v3
