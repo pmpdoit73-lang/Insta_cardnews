@@ -161,19 +161,30 @@ def _runs(profile, min_gap):
 
 
 def _split_row(sheet, count):
-    """한 줄 시트에서 캐릭터 칸(좌표) count개를 흰 틈으로 찾는다. 개수가 안 맞으면 None."""
-    ink = _ink(sheet)
+    """한 줄 시트에서 캐릭터 칸(좌표) count개를 찾는다. 캐릭터가 같은 간격으로 놓인다고 보고,
+    칸 경계 근처에서 내용이 가장 적은 세로줄(흰 틈, 팔이 닿았으면 가장 얇은 곳)을 경계로 삼는다.
+    모서리의 어두운 그림자·잡티는 무시한다. 빈 칸이 있으면 None."""
+    from PIL import ImageOps
+    ink = ImageOps.invert(sheet.convert("L")).point(lambda v: 255 if v > 60 else 0)
     w, h = sheet.size
+    from PIL import ImageDraw
+    d = ImageDraw.Draw(ink)  # 가장자리 6픽셀은 비움 (모서리 그림자·잡티)
+    d.rectangle([0, 0, w, 6], fill=0); d.rectangle([0, h - 6, w, h], fill=0)
+    d.rectangle([0, 0, 6, h], fill=0); d.rectangle([w - 6, 0, w, h], fill=0)
     colp = [sum(1 for y in range(0, h, 2) if ink.getpixel((x, y))) for x in range(w)]
-    runs = _runs(colp, max(8, w // 60))
-    if len(runs) != count:
-        return None
+    cell = w / count
+    cuts = [0]
+    for k in range(1, count):
+        lo, hi = int(cell * (k - 0.35)), int(cell * (k + 0.35))
+        cuts.append(min(range(lo, hi), key=lambda x: (colp[x], abs(x - cell * k))))
+    cuts.append(w)
     rects = []
-    for x0, x1 in runs:
+    for x0, x1 in zip(cuts, cuts[1:]):
         box = ink.crop((x0, 0, x1, h)).getbbox()
-        if not box:
+        if not box or box[2] - box[0] < cell * 0.2 or box[3] - box[1] < h * 0.06:
             return None
-        rects.append((x0, box[1], x1, box[3]))
+        pad = 6
+        rects.append((max(x0, x0 + box[0] - pad), max(0, box[1] - pad), min(x1, x0 + box[2] + pad), min(h, box[3] + pad)))
     return rects
 
 
