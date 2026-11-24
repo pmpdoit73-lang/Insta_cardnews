@@ -3,7 +3,7 @@
 초안은 drafts/<날짜>/ 폴더에 저장된다.
   draft.json      대본·상태
   bg1~N.jpg       목록형: 제미나이 배경 사진 (표지 + 팁 6~8장 + 마무리, 같은 세트장)
-  icon1~N.jpg     인포그래픽형: 칸마다 들어갈 만화풍 그림 (7개 또는 10개)
+  icon1~N.jpg     인포그래픽형: 칸마다 들어갈 만화풍 그림 (7·9·10개)
   card1~N.jpg     글씨까지 얹은 완성 카드 (목록형 8~10장, 인포그래픽형 2장)
   reel.mp4        목록형 릴스 영상 (카드로 그때그때 다시 만들 수 있어서 저장소에는 안 올림)
 format: list(목록형), info(인포그래픽형 총정리표), skill(스킬형: 목록형 + 공개 인스타 스킬 규칙, 2026-11-12~).
@@ -167,12 +167,17 @@ def _handle():
         return os.environ.get("INSTAGRAM_HANDLE", "").strip()
 
 
+def info_nine(d):
+    """17:30 총정리표 디자인: 홀수 날 = C안(크림 3x3, 9칸), 짝수 날 = B안(남색 표, 10칸 또는 7칸). 2026-11-24 gil 요청."""
+    return publish_time(d).day % 2 == 1
+
+
 def _fill_script(d, avoid=()):
     collected = trends.collect()
     print(f"[draft] 이슈 수집: { {k: len(v) for k, v in collected.items()} }")
     avoid = list(recent_issues()) + list(avoid)
     if is_info(d):
-        post = writer.write_info(collected, avoid)
+        post = writer.write_info(collected, avoid, nine=info_nine(d))
     else:
         post = writer.write_cards(collected, avoid, skill=is_skill(d))
     print(f"[draft] 이슈: {post['issue']} / 표지: {post['title']}")
@@ -243,8 +248,8 @@ def render_cards(d):
         keys = ("top_badge", "title", "highlight", "basis", "items", "save_tile", "check",
                 "footer_line", "footer_highlight", "warning", "save_line", "handle")
         card = {k: d.get(k, "") for k in keys} | {"slogan": SLOGAN}
-        if publish_time(d).day % 2 == 0:  # 2026-11-23 gil: 짝수 날은 남색 표 디자인(B), 홀수 날은 크림 칸 디자인(A)
-            card["style"] = "B"
+        # 2026-11-24 gil: 홀수 날은 레퍼런스형 크림 3x3 디자인(C, 9칸), 짝수 날은 남색 표 디자인(B)
+        card["style"] = "C" if info_nine(d) else "B"
         icons = [folder(d["id"]) / f"icon{i}.jpg" for i in range(1, len(d["items"]) + 1)]
         hero = folder(d["id"]) / "hero.jpg"
         card["hero"] = str(hero) if hero.exists() else ""
@@ -301,7 +306,7 @@ def rewrite(d):
 def retext(d):
     """이슈는 그대로, 대본을 새로 쓴다. 팁 개수가 같으면 사진도 그대로 쓴다."""
     if is_info(d):  # 항목이 바뀌면 그림도 바뀌어야 하므로 그림도 새로
-        d.update(writer.rewrite_info(d))
+        d.update(writer.rewrite_info(d, nine=info_nine(d)))
         _fill_photos(d)
         render_cards(d)
         save(d)
