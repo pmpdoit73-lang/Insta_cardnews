@@ -1,0 +1,128 @@
+{
+  "id": "20261126-1200",
+  "created_at": "2026-11-26T08:03:34.930529+09:00",
+  "publish_at": "2026-11-26T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "전기포트 물때 청소법",
+  "kind": "가전 꿀팁",
+  "angle": "겨울 따뜻한 차와 커피로 전기포트를 매일 쓰는 철이라, 하얀 물때가 왜 생기는지와 구연산 청소법이 필요한 때예요",
+  "title": [
+    "하얀 물때 싹 지우는",
+    "전기포트 청소법 6"
+  ],
+  "highlight": "물때",
+  "subtitle": "끓이기만 하고 닦진 않으셨죠?",
+  "scene": "Bright Korean home kitchen in morning window light, a stainless steel electric kettle on a light wood countertop beside a window, small ceramic mug and a dish towel nearby, plain clean counter in the lower third, warm cozy winter morning feel",
+  "cover_image_prompt": "A cute 3D animated character version of a stainless steel electric kettle with big expressive eyes, worried face and tiny arms, standing on a kitchen counter with white limescale visible inside, realistic warm morning window light, Pixar-like render, close-up, face in the upper middle, bottom 40% plain counter",
+  "tips": [
+    {
+      "title": "구연산 끓이기",
+      "lines": [
+        "물에 구연산 1큰술 넣고 끓여요",
+        "하얀 물때가 녹아 떨어져요"
+      ],
+      "note": "구연산은 락스와 섞지 마세요",
+      "image_prompt": "A hand spooning one tablespoon of white citric acid powder into the kettle filled with water, small jar beside it"
+    },
+    {
+      "title": "구연산 없으면",
+      "lines": [
+        "식초 2큰술 넣고 끓여 10분 둬요",
+        "집에 있는 걸로도 물때가 풀려요"
+      ],
+      "note": "환기하고 끓이세요",
+      "image_prompt": "A hand pouring a small measuring cup of white vinegar into the kettle on the counter"
+    },
+    {
+      "title": "끓인 뒤 두 번 헹구기",
+      "lines": [
+        "물 버리고 맑은 물로 2번 헹궈요",
+        "냄새와 신맛이 남지 않아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand rinsing the kettle under a running kitchen faucet, clear water flowing"
+    },
+    {
+      "title": "입구 거름망 닦기",
+      "lines": [
+        "칫솔로 거름망을 30초 문질러요",
+        "가루가 컵에 들어가는 걸 막아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding a soft toothbrush cleaning the spout filter of the kettle, close-up"
+    },
+    {
+      "title": "쓴 뒤엔 물 비우기",
+      "lines": [
+        "다 쓰면 남은 물을 바로 비워요",
+        "고인 물이 마르며 물때가 돼요"
+      ],
+      "note": "뜨거울 땐 식힌 뒤 비우세요",
+      "image_prompt": "A hand tilting the kettle to pour leftover water into the sink, steam faintly rising"
+    },
+    {
+      "title": "뚜껑 열어 말리기",
+      "lines": [
+        "청소 뒤 뚜껑 열고 1시간 말려요",
+        "습기가 남지 않아 냄새가 없어요",
+        "],"
+      ],
+      "note": "",
+      "image_prompt": "The kettle with its lid open resting on a clean dish towel on the counter, morning sunlight on it"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "철수세미로 박박 닦기",
+      "내부가 긁혀 물때가 더 껴요",
+      "락스와 구연산 섞기 금지",
+      "유해 가스가 나와 위험해요"
+    ],
+    "image_prompt": "A steel wool scrubber, a bottle of bleach and a jar of citric acid placed apart on the counter next to the kettle, no people"
+  },
+  "save_line": "전기포트 쓰는 자취 친구한테 보내주세요",
+  "caption": "전기포트 물때, 1년 넘게 그냥 끓여 마셨어요 😅\n전기포트 하얀 가루는 물속 칼슘이 끓으며 굳은 거예요.\n구연산 1큰술이면 물때가 풀려요.\n끓인 뒤 물로 2번 헹구는 것도 잊지 마세요.\n쓴 뒤 물을 비우고 1시간 말리면 오래 깨끗해요.\n저장해두고 포트 청소할 때 꺼내보세요. 전기포트 쓰는 가족·친구에게 보내주세요.\n여러분 집 전기포트는 안쪽이 얼마나 하얗나요?",
+  "hook": "전기포트 하얀 가루는 왜 자꾸 생겨요?",
+  "hashtags": [
+    "#전기포트청소",
+    "#전기포트물때",
+    "#구연산청소",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "electric kettle kitchen",
+  "stake": {
+    "title": "하얀 가루의 정체",
+    "lines": [
+      "물속 칼슘이 끓으며 굳어요",
+      "닦지 않으면 층이 두꺼워져요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 27,
+      "text": "전기포트 하얀 가루는 왜 자꾸 생겨요?",
+      "score": 90
+    },
+    {
+      "formula": 4,
+      "text": "구연산 1큰술로 물때 끝",
+      "score": 82
+    },
+    {
+      "formula": 10,
+      "text": "포트 물때 생기면 10분이면 끝",
+      "score": 78
+    }
+  ],
+  "hook_formula": 27,
+  "loop_line": "이제 전기포트 물때 끝",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 1042,
+    "has_photo": false
+  }
+}
