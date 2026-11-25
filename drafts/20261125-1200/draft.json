@@ -2,7 +2,7 @@
   "id": "20261125-1200",
   "created_at": "2026-11-25T08:02:18.415594+09:00",
   "publish_at": "2026-11-25T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "김치통 뚜껑 안 열릴 때 관리법",
@@ -122,5 +122,9 @@
   "message": {
     "message_id": 1007,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18123798034956671",
+  "permalink": "https://www.instagram.com/reel/DgJhOE1MrZy/",
+  "published_at": "2026-11-25T12:03:24.794493+09:00",
+  "story_id": "18144663754616370"
 }
