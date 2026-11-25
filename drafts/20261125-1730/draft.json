@@ -1,0 +1,127 @@
+{
+  "id": "20261125-1730",
+  "created_at": "2026-11-25T14:01:48.862607+09:00",
+  "publish_at": "2026-11-25T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "주방가전 청소 주기 총정리",
+  "kind": "주방 꿀팁",
+  "angle": "연말 대청소와 김장철 앞두고 주방가전을 언제 닦았는지 헷갈리는 때, 가전별 청소 주기를 한눈에 정리",
+  "top_badge": "대청소 전 저장하세요!",
+  "title": [
+    "언제 닦았는지 모를",
+    "주방가전 청소 9"
+  ],
+  "highlight": "청소",
+  "basis": "제품 설명서 일반 권장 · 위생 관리 기준",
+  "items": [
+    {
+      "name": "에어프라이어",
+      "badge": "사용 후",
+      "hint": "바스켓·망 세척",
+      "detail": "식으면 바로 세제로 씻어 기름 굳기 전에",
+      "emoji": "🍗",
+      "icon_prompt": "an air fryer with a removable basket"
+    },
+    {
+      "name": "밥솥 패킹",
+      "badge": "사용 후",
+      "hint": "뚜껑·고무패킹",
+      "detail": "밥 후 닦아야 냄새와 곰팡이를 막아요",
+      "emoji": "🍚",
+      "icon_prompt": "an electric rice cooker with open lid"
+    },
+    {
+      "name": "전자레인지",
+      "badge": "주 1회",
+      "hint": "내부 벽면 닦기",
+      "detail": "젖은 행주로 닦으면 튄 음식이 안 눌어요",
+      "emoji": "♨️",
+      "icon_prompt": "a microwave oven with open door"
+    },
+    {
+      "name": "식세기 필터",
+      "badge": "주 1회",
+      "hint": "찌꺼기 걸러내기",
+      "detail": "필터를 빼서 씻어야 세척력이 유지돼요",
+      "emoji": "🍽️",
+      "icon_prompt": "a dishwasher filter basket"
+    },
+    {
+      "name": "전기포트",
+      "badge": "월 1회",
+      "hint": "물때 제거",
+      "detail": "구연산 푼 물로 끓여 헹궈 물때를 없애요",
+      "emoji": "🫖",
+      "icon_prompt": "an electric kettle on a counter"
+    },
+    {
+      "name": "냉장고 선반",
+      "badge": "월 1회",
+      "hint": "비우고 닦기",
+      "detail": "선반을 빼서 닦으면 냄새가 덜 배요",
+      "emoji": "🧊",
+      "icon_prompt": "a clean empty refrigerator shelf"
+    },
+    {
+      "name": "후드 필터",
+      "badge": "월 1회",
+      "hint": "기름때 세척",
+      "detail": "기름이 쌓이기 전에 빼서 씻어 주세요",
+      "emoji": "🌬️",
+      "icon_prompt": "a kitchen range hood filter"
+    },
+    {
+      "name": "세탁기 통",
+      "badge": "월 1회",
+      "hint": "통세척 코스",
+      "detail": "통세척 코스로 세탁조 냄새를 막아요",
+      "emoji": "🧺",
+      "icon_prompt": "a front load washing machine"
+    },
+    {
+      "name": "배수구망",
+      "badge": "매일",
+      "hint": "음식물 버리기",
+      "detail": "매일 비워야 냄새와 날파리를 막아요",
+      "emoji": "🚰",
+      "icon_prompt": "a kitchen sink drain strainer basket"
+    }
+  ],
+  "save_tile": [
+    "대청소할 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "청소 전 체크",
+    "lines": [
+      "전원 끄고 코드 뽑기",
+      "완전히 식은 뒤 닦기"
+    ]
+  },
+  "footer_line": "저장해두고 대청소할 때 꺼내보세요",
+  "footer_highlight": "대청소",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "전원 연결한 채 닦지 마세요",
+      "락스와 식초는 섞지 마세요",
+      "금속 수세미는 코팅을 긁어요"
+    ]
+  },
+  "save_line": "저장하고 연말 대청소에 쓰세요",
+  "caption": "주방가전 청소 주기, 솔직히 언제 닦았는지 기억 안 나죠 😅\n\n연말 대청소 전에 가전별 청소 주기를 한 장으로 정리했어요.\n\n에어프라이어: 사용 후 · 식으면 바로 세제로 씻기\n밥솥 패킹: 사용 후 · 밥 후 닦아야 냄새를 막아요\n전자레인지: 주 1회 · 젖은 행주로 벽면 닦기\n식세기 필터: 주 1회 · 빼서 씻어야 세척력 유지\n전기포트: 월 1회 · 구연산 물로 물때 제거\n냉장고 선반: 월 1회 · 빼서 닦으면 냄새 줄어요\n후드 필터: 월 1회 · 기름 쌓이기 전에 세척\n세탁기 통: 월 1회 · 통세척 코스로 냄새 방지\n배수구망: 매일 · 음식물 비워 날파리 막기\n\n주기는 일반적인 권장 기준이라 제품 설명서도 꼭 확인하세요. 청소 전엔 전원을 끄고 코드를 뽑아 주세요.\n\n저장해두고 대청소할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n\n여러분이 제일 미루는 청소는 어디예요?",
+  "hashtags": [
+    "#주방가전청소",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#대청소",
+    "#가전꿀팁"
+  ],
+  "image_note": "그림 9개 중 제미나이 9개, 캐릭터 제미나이",
+  "message": {
+    "message_id": 1012,
+    "has_photo": false
+  }
+}
