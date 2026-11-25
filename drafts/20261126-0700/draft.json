@@ -1,0 +1,118 @@
+{
+  "id": "20261126-0700",
+  "created_at": "2026-11-25T21:04:25.463023+09:00",
+  "publish_at": "2026-11-26T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "식기세척기 그릇 배치·세제 활용법",
+  "kind": "가전 꿀팁",
+  "angle": "국자가 날개에 걸려 안 닦이는 사례가 화제인데, 연말 손님상 뒤 설거지가 늘어나는 시기라 배치와 세제 요령을 알아두면 좋아요",
+  "title": [
+    "설거지 확 줄이는",
+    "식기세척기 활용법 8"
+  ],
+  "highlight": "설거지",
+  "subtitle": "넣기만 하고 깨끗이 안 나와 다시 씻으셨죠?",
+  "scene": "Bright Korean home kitchen in the morning, a white built-in dishwasher with its door open and the lower rack pulled out, light wood countertop in the foreground, a small plant and a linen towel nearby, soft warm sunlight from a window on the left, bottom third of the frame is a plain empty countertop, no text, no people",
+  "cover_image_prompt": "Same kitchen with the dishwasher door open, neatly loaded rack of clean white plates and glasses sparkling in warm morning sunlight, empty countertop in the foreground",
+  "tips": [
+    {
+      "title": "날개 걸림 확인",
+      "lines": [
+        "세척 전 날개를 손으로 돌려요",
+        "걸리면 날개가 못 돌아가요"
+      ],
+      "note": "긴 국자·집게가 자주 걸려요",
+      "image_prompt": "A hand spinning the spray arm of the open dishwasher, a long ladle laid on the counter beside it"
+    },
+    {
+      "title": "큰 접시는 양옆",
+      "lines": [
+        "큰 접시는 양옆에 세워요",
+        "물줄기가 가운데로 잘 닿아요"
+      ],
+      "note": "",
+      "image_prompt": "Large plates standing at the sides of the lower rack, small bowls in the middle, seen from above"
+    },
+    {
+      "title": "겹치지 않게 꽂기",
+      "lines": [
+        "그릇은 한 칸에 한 개씩 꽂아요",
+        "겹치면 그 부분이 안 씻겨요"
+      ],
+      "note": "",
+      "image_prompt": "Plates slotted one per space in the rack with gaps between them, clean tidy arrangement"
+    },
+    {
+      "title": "컵은 거꾸로",
+      "lines": [
+        "컵과 볼은 입구를 아래로 둬요",
+        "물이 고이지 않고 잘 빠져요"
+      ],
+      "note": "",
+      "image_prompt": "Cups and bowls placed upside down on the upper rack, droplets of water on glass in sunlight"
+    },
+    {
+      "title": "잔반은 먼저",
+      "lines": [
+        "큰 음식물은 휴지로 닦아내요",
+        "배수 필터가 덜 막혀요"
+      ],
+      "note": "물에 헹굴 필요는 없어요",
+      "image_prompt": "A hand wiping leftover food from a plate with paper towel over a small bin on the counter"
+    },
+    {
+      "title": "세제는 정량만",
+      "lines": [
+        "세제는 제품 표기 양만 넣어요",
+        "많이 넣어도 더 깨끗하진 않아요"
+      ],
+      "note": "",
+      "image_prompt": "A hand placing one dishwasher detergent capsule into the open detergent compartment, a small bowl of capsules on the counter"
+    },
+    {
+      "title": "필터 비우기",
+      "lines": [
+        "주 1회 필터 찌꺼기를 비워요",
+        "배수 냄새와 막힘을 막아요"
+      ],
+      "note": "전원이 꺼진 상태에서 하세요",
+      "image_prompt": "A hand lifting the round filter out of the bottom of the empty dishwasher, small brush on the counter"
+    },
+    {
+      "title": "끝나면 문 열기",
+      "lines": [
+        "종료 후 문을 10분 열어두세요",
+        "남은 습기가 빠져 냄새가 줄어요"
+      ],
+      "note": "뜨거운 김은 조심하세요",
+      "image_prompt": "Dishwasher door slightly ajar with steam fading, clean dishes inside glowing in morning sun, folded towel on the counter"
+    }
+  ],
+  "warning": {
+    "title": "주방세제는 금물",
+    "lines": [
+      "손설거지용 세제는 넣지 마세요",
+      "거품이 많이 나서 넘쳐요",
+      "누수와 고장의 원인이 돼요"
+    ],
+    "image_prompt": "A bottle of regular dish soap and a sponge placed on the countertop next to the dishwasher, with a small pile of bubbles, no labels or text"
+  },
+  "save_line": "저장해두고 식기세척기 돌릴 때 꺼내보세요",
+  "caption": "식기세척기 활용법, 저는 그릇을 아무렇게나 넣고 다시 씻었어요 😅\n날개 걸림만 확인해도 세척력이 달라져요.\n큰 접시는 양옆에, 컵은 거꾸로 두면 훨씬 잘 닦여요.\n세제는 정량만, 필터는 주 1회 비워 주세요.\n저장해두고 식기세척기 돌릴 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 식기세척기 하루에 몇 번 돌리세요?",
+  "hook": "식기세척기, 이렇게 넣으면 손해",
+  "hashtags": [
+    "#식기세척기",
+    "#식기세척기활용법",
+    "#주방꿀팁",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "dishwasher kitchen dishes",
+  "image_note": "10장 모두 제미나이",
+  "message": {
+    "message_id": 1027,
+    "has_photo": false
+  }
+}
