@@ -1,0 +1,135 @@
+{
+  "id": "20261126-1730",
+  "created_at": "2026-11-26T14:02:00.128251+09:00",
+  "publish_at": "2026-11-26T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "겨울철 가전별 전기요금 아끼는 설정온도 총정리",
+  "kind": "가전 꿀팁",
+  "angle": "11월 말 난방·겨울 가전 쓰기 시작하는 때라, 가전별 권장 설정값을 한눈에 비교해 전기요금을 아끼려고 골랐어요",
+  "top_badge": "겨울 전기요금 저장!",
+  "title": [
+    "전기요금 걱정될 때",
+    "가전 설정값 10"
+  ],
+  "highlight": "설정값",
+  "basis": "에너지공단 절약 안내 · 제품 설명서 기준",
+  "items": [
+    {
+      "name": "냉장실",
+      "badge": "3~4도",
+      "hint": "너무 차갑지 않게",
+      "detail": "겨울엔 강으로 두지 말고 중간 설정이면 충분해요",
+      "emoji": "🧊",
+      "icon_prompt": "a refrigerator with the door slightly open"
+    },
+    {
+      "name": "냉동실",
+      "badge": "-18도",
+      "hint": "식품 보관 기본값",
+      "detail": "-18도 이하면 냉동 보관에 충분해요",
+      "emoji": "❄️",
+      "icon_prompt": "a freezer drawer with frozen food packs"
+    },
+    {
+      "name": "실내 난방",
+      "badge": "20도",
+      "hint": "겨울 권장 실내온도",
+      "detail": "1도만 낮춰도 난방비를 아낄 수 있어요",
+      "emoji": "🌡️",
+      "icon_prompt": "a wall room thermostat"
+    },
+    {
+      "name": "보일러",
+      "badge": "18~20도",
+      "hint": "외출 땐 외출 모드",
+      "detail": "켰다 껐다 하는 것보다 낮은 온도로 유지해요",
+      "emoji": "🔥",
+      "icon_prompt": "a home boiler control panel"
+    },
+    {
+      "name": "세탁기 물",
+      "badge": "30도",
+      "hint": "일반 빨래 찬물 기준",
+      "detail": "온수 대신 찬물이나 30도면 전기가 덜 들어요",
+      "emoji": "🧺",
+      "icon_prompt": "a front load washing machine"
+    },
+    {
+      "name": "전기장판",
+      "badge": "저온",
+      "hint": "취침 전 예열만",
+      "detail": "잘 땐 낮은 단계로 쓰고 자기 전에 꺼 두세요",
+      "emoji": "🛏️",
+      "icon_prompt": "a folded electric heating blanket"
+    },
+    {
+      "name": "가습기",
+      "badge": "40~60%",
+      "hint": "실내 적정 습도",
+      "detail": "습도계 보며 적정 습도에서 멈추면 돼요",
+      "emoji": "💧",
+      "icon_prompt": "a small humidifier with mist"
+    },
+    {
+      "name": "전기밥솥",
+      "badge": "보온 12시간",
+      "hint": "오래 두지 마세요",
+      "detail": "12시간 넘으면 소분해 냉동하는 게 전기가 덜 들어요",
+      "emoji": "🍚",
+      "icon_prompt": "an electric rice cooker"
+    },
+    {
+      "name": "전기포트",
+      "badge": "필요한 양",
+      "hint": "한 번에 끓일 만큼",
+      "detail": "쓸 만큼만 끓이면 시간과 전기를 아껴요",
+      "emoji": "🫖",
+      "icon_prompt": "an electric kettle"
+    },
+    {
+      "name": "에어프라이어",
+      "badge": "예열 3분",
+      "hint": "짧게 예열해요",
+      "detail": "예열을 짧게 하고 한 번에 모아 조리해요",
+      "emoji": "🍗",
+      "icon_prompt": "an air fryer with basket"
+    }
+  ],
+  "save_tile": [
+    "전기요금 걱정될 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "설정 전 체크",
+    "lines": [
+      "제품 설명서 우선",
+      "안전 설정 지켜요"
+    ]
+  },
+  "footer_line": "저장해두고 설정 바꿀 때 꺼내보세요",
+  "footer_highlight": "저장해두고",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "전기장판 켜 둔 채 외출 ✗",
+      "멀티탭 한 곳에 몰아 꽂기 ✗",
+      "화재 위험이 있어 꼭 끄세요"
+    ]
+  },
+  "save_line": "저장해두고 겨울 내내 꺼내보세요",
+  "caption": "겨울만 되면 전기요금 고지서가 무서워요 😅\n\n겨울 전기요금 아끼는 가전 설정값 정리했어요\n\n냉장실: 3~4도 · 너무 차갑지 않게 중간 설정이면 충분해요\n냉동실: -18도 · 냉동 보관 기본값이에요\n실내 난방: 20도 · 1도만 낮춰도 난방비를 아낄 수 있어요\n보일러: 18~20도 · 외출 땐 외출 모드로 유지해요\n세탁기 물: 30도 · 온수 대신 찬물이나 30도면 충분해요\n전기장판: 저온 · 예열만 하고 잘 땐 낮은 단계로 써요\n가습기: 40~60% · 습도계 보며 적정 습도에서 멈춰요\n전기밥솥: 보온 12시간 · 넘으면 소분해 냉동해요\n전기포트: 필요한 양 · 쓸 만큼만 끓여요\n에어프라이어: 예열 3분 · 짧게 예열하고 모아서 조리해요\n\n제품 설명서와 에너지공단 절약 안내를 기준으로 했고, 전기장판은 켜 둔 채 외출하지 마세요.\n저장해두고 설정 바꿀 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n\n여러분 집 난방은 몇 도로 맞추세요?",
+  "hashtags": [
+    "#전기요금절약",
+    "#겨울가전",
+    "#가전꿀팁",
+    "#살림꿀팁",
+    "#난방비절약"
+  ],
+  "image_note": "그림 10개 중 제미나이 10개, 캐릭터 제미나이",
+  "message": {
+    "message_id": 1046,
+    "has_photo": false
+  }
+}
