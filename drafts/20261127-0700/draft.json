@@ -2,7 +2,7 @@
   "id": "20261127-0700",
   "created_at": "2026-11-26T21:02:01.896859+09:00",
   "publish_at": "2026-11-27T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "키친타올 활용법",
@@ -104,5 +104,9 @@
   "message": {
     "message_id": 1059,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18001453752029323",
+  "permalink": "https://www.instagram.com/reel/DgOIaRMBuxh/",
+  "published_at": "2026-11-27T07:02:36.268948+09:00",
+  "story_id": "18506033920099858"
 }
