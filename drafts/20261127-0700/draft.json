@@ -1,0 +1,108 @@
+{
+  "id": "20261127-0700",
+  "created_at": "2026-11-26T21:02:01.896859+09:00",
+  "publish_at": "2026-11-27T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "키친타올 활용법",
+  "kind": "주방 꿀팁",
+  "angle": "최근 키친타올 활용 꿀템 기사가 화제라 골랐어요. 연말 음식 준비와 겨울 채소 보관 때 닦는 용도 말고도 쓸 수 있는 요령이 많아서 묶었어요.",
+  "title": [
+    "물기·기름 싹 잡는",
+    "키친타올 활용법 7"
+  ],
+  "highlight": "키친타올",
+  "subtitle": "닦고 바로 버리기 아까우셨죠?",
+  "scene": "Bright Korean home kitchen in morning winter sunlight from a window on the left, light wooden countertop, a white paper towel roll on a simple holder as the main appliance-like hero item, a small ceramic bowl and a wooden cutting board nearby, clean empty lower third of the counter, warm soft tones, no people, no text",
+  "cover_image_prompt": "The paper towel roll on its holder in the sunlit Korean kitchen, a few sheets pulled out and draped over the counter edge, fresh lettuce and a cutting board beside it, warm morning light, empty countertop at the bottom, no text, no faces",
+  "tips": [
+    {
+      "title": "채소 감싸 보관",
+      "lines": [
+        "씻은 상추를 키친타올로 감싸요",
+        "수분을 잡아 줘서 덜 물러요"
+      ],
+      "note": "봉지에 담아 냉장 보관하세요",
+      "image_prompt": "Washed lettuce leaves wrapped loosely in a paper towel sheet lying on the counter, a zip bag beside it, hands gently folding the towel, no text, no faces"
+    },
+    {
+      "title": "두부 물기 빼기",
+      "lines": [
+        "두부를 키친타올에 싸 10분 둬요",
+        "부칠 때 기름이 덜 튀어요"
+      ],
+      "note": "",
+      "image_prompt": "A block of tofu resting on folded paper towels on a plate, a gentle hand pressing it, no text, no faces"
+    },
+    {
+      "title": "고기 핏물 닦기",
+      "lines": [
+        "고기 표면을 눌러 닦아 주세요",
+        "잡내가 줄고 겉이 잘 익어요"
+      ],
+      "note": "닦은 뒤엔 손을 꼭 씻으세요",
+      "image_prompt": "A hand pressing a paper towel onto a raw pork slice on a plate, used towel beside it, no text, no faces"
+    },
+    {
+      "title": "튀김 기름 빼기",
+      "lines": [
+        "튀긴 음식은 한 장 깔고 올려요",
+        "겉기름이 빠져 덜 느끼해요"
+      ],
+      "note": "",
+      "image_prompt": "Golden fried dumplings resting on a paper towel lined plate, a pair of chopsticks, no text, no faces"
+    },
+    {
+      "title": "도마 미끄럼 방지",
+      "lines": [
+        "젖은 키친타올을 도마 밑에 깔아요",
+        "썰 때 도마가 밀리지 않아요"
+      ],
+      "note": "칼질은 천천히 하세요",
+      "image_prompt": "A damp paper towel folded under a wooden cutting board with cut cucumber on it, a knife resting aside, no text, no faces"
+    },
+    {
+      "title": "팬 기름 먼저",
+      "lines": [
+        "설거지 전 팬 기름을 한 장 닦아요",
+        "배수구로 가는 기름이 줄어요"
+      ],
+      "note": "팬이 식은 뒤에 닦으세요",
+      "image_prompt": "A hand wiping a cooled frying pan with a paper towel next to an empty sink, no text, no faces"
+    },
+    {
+      "title": "데울 때 덮기",
+      "lines": [
+        "음식 위에 한 장 덮어 데워요",
+        "기름 튐을 막아 줘요"
+      ],
+      "note": "금속·은박 포장은 꼭 빼세요",
+      "image_prompt": "A ceramic plate of rice and side dish covered with a sheet of paper towel on the counter, a microwave blurred in the background, no text, no faces"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "가스불·히터 가까이 두지 마세요",
+      "기름 묻은 키친타올은 불이 붙기 쉬워요",
+      "쓴 타올은 바로 쓰레기통에 버리세요"
+    ],
+    "image_prompt": "The same kitchen counter with a paper towel roll, a used oily paper towel and a small stove burner at a safe distance, no flame, no text, no faces"
+  },
+  "save_line": "저장해두고 장 볼 때 꺼내보세요",
+  "caption": "키친타올 활용법, 닦는 데만 쓰고 있었어요 😅\n채소 보관부터 두부 물기, 튀김 기름 빼기까지 7가지로 모았어요.\n도마 밑에 젖은 키친타올 깔면 썰기가 훨씬 편해요.\n음식을 덮어 데우면 기름 튐도 줄어요.\n저장해두고 장 볼 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분은 키친타올을 어디에 제일 많이 쓰세요?",
+  "hook": "키친타올, 닦는 데만 쓰세요?",
+  "hashtags": [
+    "#키친타올",
+    "#키친타올활용법",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "paper towel kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 1059,
+    "has_photo": false
+  }
+}
