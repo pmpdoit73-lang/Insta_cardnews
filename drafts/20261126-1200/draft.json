@@ -2,7 +2,7 @@
   "id": "20261126-1200",
   "created_at": "2026-11-26T08:03:34.930529+09:00",
   "publish_at": "2026-11-26T12:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "skill",
   "issue": "전기포트 물때 청소법",
@@ -124,5 +124,9 @@
   "message": {
     "message_id": 1042,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18120602720095932",
+  "permalink": "https://www.instagram.com/reel/DgMGDTZxidI/",
+  "published_at": "2026-11-26T12:03:45.677339+09:00",
+  "story_id": "17911718553605369"
 }
