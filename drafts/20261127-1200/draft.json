@@ -1,0 +1,125 @@
+{
+  "id": "20261127-1200",
+  "created_at": "2026-11-27T08:02:12.086003+09:00",
+  "publish_at": "2026-11-27T12:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "skill",
+  "issue": "믹서기 냄새 없애는 관리법",
+  "kind": "주방 꿀팁",
+  "angle": "김장 양념과 팥죽 등 진한 음식을 믹서기로 가는 겨울철에, 씻어도 안 빠지는 냄새의 이유와 해결법을 묶었어요.",
+  "title": [
+    "믹서기 냄새 확 빼는",
+    "관리법 6"
+  ],
+  "highlight": "냄새",
+  "subtitle": "씻었는데도 냄새 나서 찜찜하셨죠?",
+  "scene": "A bright Korean home kitchen in morning window sunlight, a white countertop with one blender with a clear jar and a white base in the center, warm wood cutting board, small dish brush and a folded cotton towel nearby, simple plain counter in the lower third, no text, no people",
+  "cover_image_prompt": "A cute 3D animated character version of a blender with big expressive eyes, worried sniffing face and tiny arms, standing on a sunny Korean kitchen countertop, realistic warm kitchen lighting, Pixar-like render, close-up, face in the upper middle, bottom 40% plain counter",
+  "tips": [
+    {
+      "title": "쓰고 바로 헹구기",
+      "lines": [
+        "쓰고 바로 물 반 컵 넣고 돌려요",
+        "마르면 굳어서 안 떨어져요"
+      ],
+      "note": "",
+      "image_prompt": "Water being poured into the blender jar right after use, a little leftover sauce inside, hand holding the jar"
+    },
+    {
+      "title": "세제 물 30초",
+      "lines": [
+        "물 반 컵+세제 한 방울, 30초",
+        "칼날 사이 때까지 빠져요"
+      ],
+      "note": "뚜껑 꼭 닫고 돌리세요",
+      "image_prompt": "Blender jar with soapy water and light foam, lid closed, hand pressing the lid down"
+    },
+    {
+      "title": "칼날 분리 세척",
+      "lines": [
+        "분리되는 칼날은 빼서 솔로 닦아요",
+        "틈새 찌꺼기가 냄새 원인이에요"
+      ],
+      "note": "칼날은 맨손으로 잡지 마세요",
+      "image_prompt": "Blender blade assembly set on a towel beside a small brush, a hand holding the brush with a cloth wrapped around the blade"
+    },
+    {
+      "title": "소다물로 냄새",
+      "lines": [
+        "소다 1큰술+물 반 컵, 30분 두세요",
+        "플라스틱에 밴 냄새가 줄어요"
+      ],
+      "note": "",
+      "image_prompt": "A spoon of baking soda being added to the blender jar filled with water, small baking soda jar beside it"
+    },
+    {
+      "title": "패킹 따로 닦기",
+      "lines": [
+        "고무패킹은 빼서 따로 닦으세요",
+        "틈에 낀 물때·곰팡이를 막아요"
+      ],
+      "note": "",
+      "image_prompt": "Rubber gasket removed from the blade base lying on a towel, hand wiping it with a sponge"
+    },
+    {
+      "title": "뒤집어 말리기",
+      "lines": [
+        "물기 빠지게 뚜껑 열고 뒤집어요",
+        "습기가 차면 냄새가 다시 나요"
+      ],
+      "note": "",
+      "image_prompt": "Blender jar turned upside down on a dish towel with lid placed beside it, sunlight on the counter"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "모터 본체는 물에 담그지 마세요",
+      "플러그 꽂은 채 칼날 만지지 마세요",
+      "뜨거운 국 가득 담아 갈지 마세요"
+    ],
+    "image_prompt": "Same counter with a blender base partly in a sink basin of water, a plugged cord nearby, a steaming pot of soup beside the jar, no people"
+  },
+  "save_line": "믹서기 냄새 고민하는 친구한테 보내주세요",
+  "caption": "믹서기 냄새 제거, 씻어도 안 빠져서 6가지로 정리했어요 😅\n쓰고 바로 헹구기, 세제 물 30초, 소다 1큰술 30분이면 훨씬 나아요.\n칼날과 고무패킹은 따로 닦고, 뒤집어 말려야 냄새가 덜해요.\n저장해두고 믹서기 닦을 때 꺼내보세요.\n믹서기 냄새로 고민하는 가족·친구에게 보내주세요.\n여러분 집 믹서기는 얼마나 자주 쓰세요?",
+  "hook": "믹서기 컵은 왜 씻어도 냄새나요?",
+  "hashtags": [
+    "#믹서기청소",
+    "#믹서기냄새",
+    "#주방꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "blender kitchen cleaning",
+  "stake": {
+    "title": "왜 냄새가 안 빠질까요",
+    "lines": [
+      "플라스틱 컵은 냄새를 머금어요",
+      "칼날 틈 찌꺼기가 냄새를 키워요"
+    ]
+  },
+  "hook_options": [
+    {
+      "formula": 27,
+      "text": "믹서기 컵은 왜 씻어도 냄새나요?",
+      "score": 88
+    },
+    {
+      "formula": 10,
+      "text": "믹서기 냄새 나면 30초면 끝",
+      "score": 80
+    },
+    {
+      "formula": 2,
+      "text": "믹서기 물에 담그기 그만!",
+      "score": 72
+    }
+  ],
+  "hook_formula": 27,
+  "loop_line": "이제 믹서기 냄새 끝",
+  "image_note": "8장 모두 제미나이",
+  "message": {
+    "message_id": 1074,
+    "has_photo": false
+  }
+}
