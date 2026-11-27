@@ -2,7 +2,7 @@
   "id": "20261128-0700",
   "created_at": "2026-11-27T21:01:14.714933+09:00",
   "publish_at": "2026-11-28T07:00:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "list",
   "issue": "리콜 대상 김치냉장고 확인법",
@@ -105,5 +105,9 @@
   "message": {
     "message_id": 1092,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18132221540296356",
+  "permalink": "https://www.instagram.com/reel/DgQtNMZi4hX/",
+  "published_at": "2026-11-28T07:02:53.393048+09:00",
+  "story_id": "18498739729104749"
 }
