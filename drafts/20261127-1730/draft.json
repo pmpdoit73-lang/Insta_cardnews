@@ -1,0 +1,127 @@
+{
+  "id": "20261127-1730",
+  "created_at": "2026-11-27T14:02:00.694341+09:00",
+  "publish_at": "2026-11-27T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "겨울철 가습기·히터 등 난방가전 곁에 두면 위험한 물건 거리 총정리",
+  "kind": "가전 꿀팁",
+  "angle": "리콜 대상 김치냉장고 화재 소식으로 가전 주변 안전 간격에 관심이 높고, 난방가전을 막 꺼내 쓰는 겨울 초입이라 딱 맞음",
+  "top_badge": "겨울 전에 저장하세요!",
+  "title": [
+    "불나기 쉬운 겨울",
+    "가전 안전거리 9"
+  ],
+  "highlight": "안전거리",
+  "basis": "제품 설명서 일반 안내 · 가전 주변 여유 공간",
+  "items": [
+    {
+      "name": "전기히터",
+      "badge": "1m 이상",
+      "hint": "커튼·이불 멀리",
+      "detail": "열기가 닿는 천류는 1m 이상 떼어 두세요",
+      "emoji": "🔥",
+      "icon_prompt": "a small electric room heater"
+    },
+    {
+      "name": "전기장판",
+      "badge": "접지 금지",
+      "hint": "접어 쓰면 과열",
+      "detail": "접거나 뭉치면 열이 몰려요, 펴서 쓰세요",
+      "emoji": "🛏️",
+      "icon_prompt": "a folded electric heating blanket"
+    },
+    {
+      "name": "김치냉장고",
+      "badge": "벽 5cm",
+      "hint": "뒷면 열 빠질 틈",
+      "detail": "방열 공간이 막히지 않게 벽에서 띄워요",
+      "emoji": "🧊",
+      "icon_prompt": "a compact kimchi refrigerator"
+    },
+    {
+      "name": "냉장고",
+      "badge": "벽 5cm",
+      "hint": "옆·뒤 공간 확보",
+      "detail": "설명서의 설치 간격을 꼭 확인하세요",
+      "emoji": "❄️",
+      "icon_prompt": "a white refrigerator"
+    },
+    {
+      "name": "전기밥솥",
+      "badge": "위 30cm",
+      "hint": "증기 나가는 곳",
+      "detail": "증기구 위에 선반이 없어야 안전해요",
+      "emoji": "🍚",
+      "icon_prompt": "an electric rice cooker"
+    },
+    {
+      "name": "에어프라이어",
+      "badge": "벽 10cm",
+      "hint": "뒷면 배기구 확인",
+      "detail": "뜨거운 바람이 나오는 뒤쪽을 띄우세요",
+      "emoji": "🍟",
+      "icon_prompt": "an air fryer"
+    },
+    {
+      "name": "전자레인지",
+      "badge": "벽 10cm",
+      "hint": "위·옆 환기 공간",
+      "detail": "통풍구를 막지 않게 설명서대로 두세요",
+      "emoji": "♨️",
+      "icon_prompt": "a microwave oven"
+    },
+    {
+      "name": "전기포트",
+      "badge": "벽 10cm",
+      "hint": "증기 나가는 방향",
+      "detail": "증기가 가구나 벽에 닿지 않게 놓아요",
+      "emoji": "☕",
+      "icon_prompt": "an electric kettle"
+    },
+    {
+      "name": "멀티탭",
+      "badge": "문어발 금지",
+      "hint": "열기구는 단독 사용",
+      "detail": "히터·전기장판은 벽 콘센트에 바로 꽂아요",
+      "emoji": "🔌",
+      "icon_prompt": "a power strip with plugs"
+    }
+  ],
+  "save_tile": [
+    "가전 놓을 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "사용 전 체크",
+    "lines": [
+      "플러그 먼지 닦기",
+      "전선 눌림 확인"
+    ]
+  },
+  "footer_line": "저장해두고 가전 놓을 때 꺼내보세요",
+  "footer_highlight": "가전 놓을 때",
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "히터 위에 빨래 널기 금지",
+      "멀티탭 하나에 열기구 여러 개",
+      "젖은 손으로 플러그 만지기 금지"
+    ]
+  },
+  "save_line": "저장해두고 겨울 내내 확인하세요",
+  "caption": "가전 안전거리, 솔직히 대충 놓고 살았어요 😅\n\n겨울 가전 안전거리 정리했어요\n\n전기히터: 1m 이상 · 커튼·이불은 멀리 두세요\n전기장판: 접지 금지 · 접거나 뭉치면 과열돼요\n김치냉장고: 벽 5cm · 뒷면 열이 빠질 틈을 주세요\n냉장고: 벽 5cm · 설명서 설치 간격 확인\n전기밥솥: 위 30cm · 증기구 위는 비워 두세요\n에어프라이어: 벽 10cm · 뒤쪽 배기구를 띄워요\n전자레인지: 벽 10cm · 통풍구를 막지 마세요\n전기포트: 벽 10cm · 증기가 벽에 닿지 않게\n멀티탭: 문어발 금지 · 열기구는 벽 콘센트에 바로\n\n안전거리는 일반 안내 기준이라 제품마다 설명서를 꼭 확인하세요.\n\n저장해두고 가전 놓을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n\n여러분 집에서 제일 오래된 가전은 뭐예요?",
+  "hashtags": [
+    "#가전꿀팁",
+    "#겨울가전",
+    "#화재예방",
+    "#가전안전",
+    "#살림꿀팁"
+  ],
+  "image_note": "그림 9개 중 제미나이 9개, 캐릭터 제미나이",
+  "message": {
+    "message_id": 1079,
+    "has_photo": false
+  }
+}
