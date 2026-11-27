@@ -2,7 +2,7 @@
   "id": "20261127-1730",
   "created_at": "2026-11-27T14:02:00.694341+09:00",
   "publish_at": "2026-11-27T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "겨울철 가습기·히터 등 난방가전 곁에 두면 위험한 물건 거리 총정리",
@@ -123,5 +123,10 @@
   "message": {
     "message_id": 1079,
     "has_photo": false
-  }
+  },
+  "instagram_id": "18132225482297501",
+  "permalink": "https://www.instagram.com/p/DgPQaAwlVm1/",
+  "published_at": "2026-11-27T17:31:26.252845+09:00",
+  "story_id": "17933593545423798",
+  "threads_promo_id": "18096441947283291"
 }
