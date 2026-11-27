@@ -1,0 +1,109 @@
+{
+  "id": "20261128-0700",
+  "created_at": "2026-11-27T21:01:14.714933+09:00",
+  "publish_at": "2026-11-28T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "리콜 대상 김치냉장고 확인법",
+  "kind": "가전 소식",
+  "angle": "부산 아파트에서 리콜 대상 김치냉장고에 불이 난 소식이 나와, 김장철 김치냉장고를 쓰는 집이 리콜 여부를 바로 확인하도록 짚었어요",
+  "title": [
+    "화재 막는 리콜 확인",
+    "김치냉장고 점검법 7"
+  ],
+  "highlight": "리콜 확인",
+  "subtitle": "김장철, 우리 집 냉장고는 괜찮을까요?",
+  "scene": "A bright Korean home kitchen in morning window sunlight, a white lid-top kimchi refrigerator standing next to a light wooden countertop with a clean white tile wall, a small ceramic cup and a folded cotton cloth as props, warm cozy mood, lower third of the frame is a plain empty countertop",
+  "cover_image_prompt": "The white kimchi refrigerator in the sunlit Korean kitchen with its lid slightly open, a soft cloth resting on the plain wooden countertop in front, warm morning light from the window, no text, no people",
+  "tips": [
+    {
+      "title": "제품 라벨 찾기",
+      "lines": [
+        "김치냉장고 안쪽이나 뒷면 라벨을 찾으세요",
+        "모델명과 제조연월이 적혀 있어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand pointing at a small rating label inside the kimchi refrigerator's open lid area, blurred text, countertop below plain"
+    },
+    {
+      "title": "모델명 사진 찍기",
+      "lines": [
+        "모델명을 스마트폰으로 찍어 두세요",
+        "리콜 조회 때 바로 꺼내 쓸 수 있어요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding a smartphone toward the kimchi refrigerator label to take a photo, countertop plain in lower area"
+    },
+    {
+      "title": "리콜 조회하기",
+      "lines": [
+        "제조사 홈페이지나 소비자원에서 조회하세요",
+        "모델명만 넣으면 대상 여부를 알 수 있어요"
+      ],
+      "note": "공식 사이트에서만 확인하세요",
+      "image_prompt": "A smartphone and a notepad with a pen lying on the wooden countertop beside the kimchi refrigerator, screen content blurred"
+    },
+    {
+      "title": "오래된 제품 점검",
+      "lines": [
+        "10년 넘은 제품은 한 번 더 살펴보세요",
+        "오래될수록 부품 노후가 쌓이기 쉬워요"
+      ],
+      "note": "",
+      "image_prompt": "A hand gently wiping the side of the kimchi refrigerator with a dry cloth, countertop plain below"
+    },
+    {
+      "title": "콘센트 먼지 닦기",
+      "lines": [
+        "플러그를 뽑고 마른 천으로 닦으세요",
+        "먼지가 쌓이면 과열 위험이 커져요"
+      ],
+      "note": "반드시 전원을 뽑고 하세요",
+      "image_prompt": "A hand holding an unplugged power plug with a dry cloth next to the refrigerator, countertop plain below"
+    },
+    {
+      "title": "벽에서 10cm 띄우기",
+      "lines": [
+        "뒷면과 옆면은 벽에서 10cm쯤 띄우세요",
+        "열이 잘 빠져 과열을 줄여 줘요"
+      ],
+      "note": "",
+      "image_prompt": "A hand holding a wooden ruler measuring the gap between the kimchi refrigerator and the white tile wall, countertop plain below"
+    },
+    {
+      "title": "이상 신호 살피기",
+      "lines": [
+        "타는 냄새나 이상한 소리가 나면 멈추세요",
+        "플러그를 뽑고 서비스센터에 문의하세요"
+      ],
+      "note": "",
+      "image_prompt": "A hand resting on the closed lid of the kimchi refrigerator as if listening, a small ceramic cup beside it, countertop plain below"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "리콜 제품을 그냥 계속 쓰지 마세요",
+      "직접 분해하거나 수리하지 마세요",
+      "멀티탭 문어발 연결도 피하세요"
+    ],
+    "image_prompt": "The kimchi refrigerator in the sunlit kitchen with a tangled multi-tap power strip with several plugs lying on the countertop, no people, no text"
+  },
+  "save_line": "저장해두고 김치 담글 때 꺼내보세요",
+  "caption": "김치냉장고 리콜 확인, 저도 이번 소식 보고서야 처음 해봤어요 😥\n부산에서 리콜 대상 김치냉장고에 불이 났다는 소식이 있었어요.\n라벨에서 모델명을 찾아 사진으로 남겨 두세요.\n제조사나 소비자원 사이트에서 리콜 대상인지 조회해 보세요.\n뒷면은 벽에서 띄우고, 콘센트 먼지도 닦아 주세요.\n저장해두고 김장할 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 김치냉장고는 몇 년 됐어요?",
+  "hook": "김치냉장고 리콜, 확인하셨나요?",
+  "hashtags": [
+    "#김치냉장고",
+    "#리콜확인",
+    "#김장철",
+    "#가전꿀팁",
+    "#살림꿀팁"
+  ],
+  "photo_query": "kimchi refrigerator kitchen",
+  "image_note": "9장 모두 제미나이",
+  "message": {
+    "message_id": 1092,
+    "has_photo": false
+  }
+}
