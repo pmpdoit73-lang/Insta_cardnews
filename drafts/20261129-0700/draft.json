@@ -1,0 +1,118 @@
+{
+  "id": "20261129-0700",
+  "created_at": "2026-11-28T21:01:27.671409+09:00",
+  "publish_at": "2026-11-29T07:00:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "list",
+  "issue": "전기밥솥 관리법",
+  "kind": "가전 꿀팁",
+  "angle": "겨울엔 밥을 지어 두고 보온하는 일이 잦아 냄새와 밥알 찌꺼기, 패킹 관리가 필요한 계절이에요",
+  "title": [
+    "냄새·누런밥 막는",
+    "전기밥솥 관리법 8"
+  ],
+  "highlight": "전기밥솥",
+  "subtitle": "보온해 둔 밥이 노래진 적 있죠?",
+  "scene": "A single white Korean electric rice cooker with its lid open on a clean light-wood kitchen countertop, bright Korean home kitchen, warm soft morning sunlight from a window on the left, a small ceramic bowl and a wooden rice paddle nearby, simple empty countertop in the lower third",
+  "cover_image_prompt": "The white electric rice cooker with lid open showing fluffy steaming white rice inside, wooden rice paddle resting beside it, warm morning sunlight from the window, clean countertop in the lower third",
+  "tips": [
+    {
+      "title": "내솥 바로 불리기",
+      "lines": [
+        "밥 푼 뒤 내솥에 물 채워 10분 두세요",
+        "눌어붙은 밥알이 불어 쉽게 씻겨요"
+      ],
+      "note": "뜨거운 내솥에 찬물은 피하세요",
+      "image_prompt": "Hands filling the inner pot with water at the sink-side countertop next to the rice cooker, steam rising slightly"
+    },
+    {
+      "title": "스펀지로 세척",
+      "lines": [
+        "부드러운 스펀지에 세제 한 방울로 씻어요",
+        "코팅이 긁히지 않아 오래 써요"
+      ],
+      "note": "철수세미는 쓰지 마세요",
+      "image_prompt": "A soft yellow sponge and a small bottle of dish soap placed beside the inner pot of the rice cooker on the counter"
+    },
+    {
+      "title": "뚜껑 패킹 닦기",
+      "lines": [
+        "분리되는 패킹은 빼서 미지근한 물로 씻어요",
+        "밥 냄새와 곰팡이를 막아줘요"
+      ],
+      "note": "분리 방법은 설명서를 확인하세요",
+      "image_prompt": "A removed silicone rice cooker lid gasket ring lying on a clean dish towel next to the rice cooker"
+    },
+    {
+      "title": "증기구 청소",
+      "lines": [
+        "증기 배출구는 젖은 면봉으로 닦아주세요",
+        "밥물이 튄 찌꺼기가 쌓이지 않아요"
+      ],
+      "note": "전원 플러그를 뽑고 하세요",
+      "image_prompt": "A cotton swab and a small cup of water beside the rice cooker lid showing the steam vent, hand holding the swab"
+    },
+    {
+      "title": "본체 안쪽 닦기",
+      "lines": [
+        "마른 행주로 본체 안쪽 물기를 닦아요",
+        "센서 주변에 이물이 없어야 정확해요"
+      ],
+      "note": "본체는 물에 담그지 마세요",
+      "image_prompt": "A hand holding a dry white cloth wiping the inside rim of the empty rice cooker body"
+    },
+    {
+      "title": "보온은 12시간 이내",
+      "lines": [
+        "남은 밥은 12시간 안에 드시는 게 좋아요",
+        "오래 두면 누렇고 냄새가 나요"
+      ],
+      "note": "",
+      "image_prompt": "The rice cooker with lid closed showing a keep-warm light glowing, a bowl of fresh rice beside it"
+    },
+    {
+      "title": "남은 밥은 소분 냉동",
+      "lines": [
+        "식기 전에 1공기씩 랩에 싸서 얼려요",
+        "데워 먹어도 밥맛이 덜 변해요"
+      ],
+      "note": "한 김만 식힌 뒤 담으세요",
+      "image_prompt": "Several rice portions wrapped in plastic wrap lined up on a tray on the counter beside the rice cooker, hand placing one"
+    },
+    {
+      "title": "뚜껑 열어 말리기",
+      "lines": [
+        "씻은 뒤 뚜껑을 열고 30분 말려 주세요",
+        "습기가 남지 않아 냄새가 덜해요"
+      ],
+      "note": "",
+      "image_prompt": "The rice cooker with lid wide open and the inner pot drying upside down on a rack on the counter, sunlight on it"
+    }
+  ],
+  "warning": {
+    "title": "이건 절대 하지 마세요",
+    "lines": [
+      "내솥을 철수세미로 문지르지 마세요",
+      "코팅이 벗겨져 밥이 눌어붙어요",
+      "본체를 물에 담그면 고장 나요"
+    ],
+    "image_prompt": "A steel wool scrubber and a bucket of water placed on the counter near the rice cooker, set apart as items to avoid"
+  },
+  "save_line": "저장해두고 밥솥 씻을 때 꺼내보세요",
+  "caption": "전기밥솥 관리법, 패킹은 한 번도 안 빼 봤어요 😅\n겨울엔 보온을 오래 하다 보니 밥이 누래지고 냄새가 나기 쉬워요.\n내솥은 불려서 부드럽게 씻고, 패킹과 증기구는 따로 닦아 주세요.\n남은 밥은 12시간 안에 먹거나 소분해서 얼리면 좋아요.\n씻은 뒤엔 뚜껑을 열어 말리는 것도 잊지 마세요.\n저장해두고 밥솥 씻을 때 꺼내보세요, 필요한 가족·친구에게 공유해 주세요.\n여러분 집 전기밥솥은 몇 년 됐어요?",
+  "hook": "밥솥 패킹, 빼 보셨어요?",
+  "hashtags": [
+    "#전기밥솥",
+    "#전기밥솥청소",
+    "#가전꿀팁",
+    "#살림꿀팁",
+    "#주방꿀팁"
+  ],
+  "photo_query": "rice cooker kitchen",
+  "image_note": "10장 모두 사진 준비 실패",
+  "message": {
+    "message_id": 1125,
+    "has_photo": false
+  }
+}
