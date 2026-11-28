@@ -2,7 +2,7 @@
   "id": "20261128-1730",
   "created_at": "2026-11-28T14:02:21.593659+09:00",
   "publish_at": "2026-11-28T17:30:00+09:00",
-  "status": "pending",
+  "status": "published",
   "handle": "@salim.kkultip",
   "format": "info",
   "issue": "주방 분리수거 품목별 배출 가능 여부 총정리",
@@ -132,5 +132,9 @@
   "message": {
     "message_id": 1111,
     "has_photo": false
-  }
+  },
+  "instagram_id": "17979316842168689",
+  "permalink": "https://www.instagram.com/p/DgR1QXvIPcH/",
+  "published_at": "2026-11-28T17:31:55.541389+09:00",
+  "story_id": "18079900259741117"
 }
