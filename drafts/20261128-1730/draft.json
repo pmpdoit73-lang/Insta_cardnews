@@ -1,0 +1,136 @@
+{
+  "id": "20261128-1730",
+  "created_at": "2026-11-28T14:02:21.593659+09:00",
+  "publish_at": "2026-11-28T17:30:00+09:00",
+  "status": "pending",
+  "handle": "@salim.kkultip",
+  "format": "info",
+  "issue": "주방 분리수거 품목별 배출 가능 여부 총정리",
+  "kind": "살림 꿀팁",
+  "angle": "김장철·연말 택배와 배달 용기가 쌓이는 11월 말, 헷갈리는 주방 쓰레기 분리배출을 한눈에 정리",
+  "top_badge": "분리수거 전 저장하세요!",
+  "title": [
+    "헷갈리는 주방 쓰레기",
+    "분리수거 가능 여부 10"
+  ],
+  "highlight": "분리수거",
+  "basis": "환경부 분리배출 안내 기준 · 지자체별 상이",
+  "items": [
+    {
+      "name": "페트병",
+      "badge": "O 가능",
+      "hint": "라벨 떼고 헹굼",
+      "detail": "내용물 비우고 라벨 떼서 압착해요",
+      "emoji": "🧴",
+      "icon_prompt": "a clear empty plastic water bottle"
+    },
+    {
+      "name": "종이컵",
+      "badge": "O 가능",
+      "hint": "헹궈서 말리기",
+      "detail": "깨끗이 헹궈 말려 종이류로 모아요",
+      "emoji": "🥤",
+      "icon_prompt": "a stack of white paper cups"
+    },
+    {
+      "name": "피자박스",
+      "badge": "X 불가",
+      "hint": "기름 묻으면 일반",
+      "detail": "기름·음식물 묻은 박스는 일반쓰레기예요",
+      "emoji": "🍕",
+      "icon_prompt": "a cardboard pizza box"
+    },
+    {
+      "name": "영수증",
+      "badge": "X 불가",
+      "hint": "감열지는 일반",
+      "detail": "코팅된 감열지라 종이류에 섞지 않아요",
+      "emoji": "🧾",
+      "icon_prompt": "a rolled paper receipt"
+    },
+    {
+      "name": "도자기 그릇",
+      "badge": "X 불가",
+      "hint": "사기류는 일반",
+      "detail": "깨진 그릇은 재활용이 안 돼 따로 버려요",
+      "emoji": "🍚",
+      "icon_prompt": "a white ceramic rice bowl"
+    },
+    {
+      "name": "스티로폼",
+      "badge": "O 가능",
+      "hint": "테이프 떼기",
+      "detail": "테이프·송장 떼고 이물질 닦아 배출해요",
+      "emoji": "📦",
+      "icon_prompt": "a white styrofoam food box"
+    },
+    {
+      "name": "비닐봉지",
+      "badge": "O 가능",
+      "hint": "이물질 씻기",
+      "detail": "음식물 묻은 건 씻어서 비닐류로 모아요",
+      "emoji": "🛍️",
+      "icon_prompt": "a clean folded plastic bag"
+    },
+    {
+      "name": "컵라면 용기",
+      "badge": "X 불가",
+      "hint": "양념 배면 일반",
+      "detail": "국물·양념이 배어 안 지워지면 일반쓰레기예요",
+      "emoji": "🍜",
+      "icon_prompt": "an empty instant noodle cup"
+    },
+    {
+      "name": "유리병",
+      "badge": "O 가능",
+      "hint": "뚜껑 분리",
+      "detail": "내용물 비우고 뚜껑 분리해 배출해요",
+      "emoji": "🫙",
+      "icon_prompt": "an empty clean glass jar"
+    },
+    {
+      "name": "키친타올",
+      "badge": "X 불가",
+      "hint": "쓴 건 일반",
+      "detail": "음식물·기름 닦은 휴지류는 일반쓰레기예요",
+      "emoji": "🧻",
+      "icon_prompt": "a roll of paper kitchen towel"
+    }
+  ],
+  "save_tile": [
+    "분리수거할 때",
+    "꺼내 보는 표"
+  ],
+  "check": {
+    "title": "배출 전 체크",
+    "lines": [
+      "내용물 비우기",
+      "이물질 씻기",
+      "라벨·테이프 떼기"
+    ]
+  },
+  "footer_line": "저장해두고 분리수거 날 꺼내보세요",
+  "footer_highlight": "분리수거 날",
+  "warning": {
+    "title": "이건 섞어 버리지 마세요",
+    "lines": [
+      "기름 묻은 종이는 종이류 금지",
+      "음식물 묻은 채 배출 금지",
+      "지자체마다 기준이 달라요"
+    ]
+  },
+  "save_line": "저장해두고 헷갈릴 때 보세요",
+  "caption": "분리수거할 때마다 이게 되나 안 되나 폰으로 검색했어요 😅\n\n주방 분리수거 가능 여부 정리했어요\n\n페트병: O 가능 · 라벨 떼고 헹궈서 압착해요\n종이컵: O 가능 · 깨끗이 헹궈 말려서 종이류로 모아요\n피자박스: X 불가 · 기름·음식물 묻으면 일반쓰레기예요\n영수증: X 불가 · 감열지는 종이류에 섞지 않아요\n도자기 그릇: X 불가 · 사기류는 재활용이 안 돼요\n스티로폼: O 가능 · 테이프·송장 떼고 이물질을 닦아요\n비닐봉지: O 가능 · 음식물 묻은 건 씻어서 비닐류로 모아요\n컵라면 용기: X 불가 · 양념이 배어 안 지워지면 일반쓰레기예요\n유리병: O 가능 · 내용물 비우고 뚜껑을 분리해요\n키친타올: X 불가 · 음식물·기름 닦은 건 일반쓰레기예요\n\n환경부 분리배출 안내 기준이고, 지자체마다 조금 다를 수 있어요.\n저장해두고 분리수거 날 꺼내보세요, 필요한 가족·친구에게 공유해 주세요\n\n여러분은 분리수거 중 가장 헷갈리는 게 뭐예요?",
+  "hashtags": [
+    "#분리수거",
+    "#분리배출",
+    "#주방꿀팁",
+    "#살림꿀팁",
+    "#분리수거방법"
+  ],
+  "image_note": "그림 10개 중 제미나이 0개, 이모지 10개, 캐릭터 없음",
+  "message": {
+    "message_id": 1111,
+    "has_photo": false
+  }
+}
